@@ -1,0 +1,24 @@
+TD {
+	FONT-SIZE: 12px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify
+}
+TABLE {
+	FONT-SIZE: 12px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify
+}
+TR {
+	FONT-SIZE: 12px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify
+}
+BODY {
+	FONT-SIZE: 12px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify
+}
+DIV.stopka {
+	FONT-SIZE: 12px; COLOR: black; TEXT-ALIGN: center
+}
+DIV {
+	FONT-SIZE: 12px
+}
+A {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #7c3400
+}
+A:hover {
+	COLOR: #4169e1
+}

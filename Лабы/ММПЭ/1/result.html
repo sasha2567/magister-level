@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>result</title>
+    <!--[if IE]><script language="javascript" type="text/javascript" src="flot/excanvas.min.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="flot/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="flot/jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="flot/jquery.flot.stack.js"></script>
+    <script language="javascript" type="text/javascript" src="flot/jquery.flot.selection.js"></script>
+    <script language="javascript" type="text/javascript" src="script.js"></script>
+ </head>
+<body>
+    <p><noscript><strong style="color: red;">Для отображения данных необходимо включить JavaScript!</strong></noscript></p>
+    <div>
+      <p>Тип МНК</p>
+      <select class="type">
+        <option value="linear">Линейная</option>
+        <option value="square">Квадратичная</option>
+      </select>
+    </div>
+    <div class="data">
+      <div>
+        <table class="asix-data">
+          <tr>
+            <th>Значения по x</th>
+            <th>Значения по y</th>
+          </tr>
+        </table>
+      </div>
+      <label>Значения по x</label>
+      <input type="text" class="x-asix">
+      <label>Значения по y</label>
+      <input type="text" class="y-asix">
+      <button class="add-asix">Добавить</button>
+    </div>
+    <div>
+      <button class="aprox">Расчитать</button>
+    </div>
+    <div id="placeholder" style="width:600px;height:300px;float:left;"></div>
+    <div style="float:left;">
+      <div id="legend"></div>
+    </div>
+    <div style="clear: both;"></div>
+</body>
+</html>

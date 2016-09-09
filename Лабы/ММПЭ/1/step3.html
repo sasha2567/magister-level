@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>step3</title>
+  <!--[if IE]><script language="javascript" type="text/javascript" src="flot/excanvas.min.js"></script><![endif]-->
+  <script language="javascript" type="text/javascript" src="flot/jquery.js"></script>
+  <script language="javascript" type="text/javascript" src="flot/jquery.flot.js"></script>
+</head>
+<body>
+  <p><noscript><strong style="color: red;">Для отображения данных необходимо включить JavaScript!</strong></noscript></p>
+    <div id="placeholder" style="width:600px;height:300px;float:left;"></div>
+    <div id="legend" style="float:left;"></div>
+    <div style="clear: both;"></div>
+
+<script language="javascript" type="text/javascript">
+// какие данные скрываем - заполняем позже
+var hide = [];
+var all_data = [
+  { label: "Данные 1", color: 0, data: [["2010/10/01", 0], ["2010/10/5", 1], ["2010/10/10", 7], ["2010/10/15", 8]]},
+  { label: "Данные 2", color: 1, data: [["2010/10/01", 13], ["2010/10/5", 23], ["2010/10/10", 32], ["2010/10/15", 33]]}
+];
+// преобразуем даты в UTC
+for(var j = 0; j < all_data.length; ++j) {
+  hide.push(false); // не скрываем j-ый ряд. пока что.
+  for(var i = 0; i < all_data[j].data.length; ++i)
+    all_data[j].data[i][0] = Date.parse(all_data[j].data[i][0]);
+}
+
+var plot_conf = {
+  series: {
+    lines: { 
+      show: true,
+      lineWidth: 2 
+    }
+  },
+  xaxis: {
+    mode: "time",
+    timeformat: "%y/%m/%d",
+  },
+  legend: {
+    container: $("#legend")
+  }
+};
+
+// рисуем графики в первый раз
+redraw();
+
+function redraw() {
+  var data = [];
+  for(var j = 0; j < all_data.length; ++j)
+    if(!hide[j]) // что скрываем, а что нет
+      data.push(all_data[j]);
+
+  $.plot($("#placeholder"), data, plot_conf);
+  
+  // легенду рисуем только один раз
+  plot_conf.legend.show = false;
+}
+
+// рисуем чекбоксы в легенде
+var legend = document.getElementById('legend'); // еще IE не умеет заменять innerHTML в table
+var legend_tbl = legend.getElementsByTagName('table')[0];
+var legend_html = '<table style="font-size: smaller; color: rgb(84, 84, 84);"><tbody>';
+for(var i = 0; i < legend_tbl.rows.length; i++) {
+  legend_html += '<tr>' +
+    '<td><input type="checkbox" onclick="hide['+ i +']=!hide['+ i +'];redraw();" checked="1"></td>'
+    + legend_tbl.rows[i].innerHTML
+    + '</tr>';
+}
+legend_html += "</tbody></table>";
+legend.innerHTML = legend_html;
+
+</script>
+</body>
+</html>

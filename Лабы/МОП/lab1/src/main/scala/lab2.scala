@@ -31,12 +31,20 @@ object lab2 {
     }
 
     def getHostelNeghbors(lst: List[Student], rm: List[Room]): List[_]={//(String, Int, Int)] = {
-      var pairRoomHostel = rm.zip(rm.tail)
-      var avtStudnts = lst.filter(_._4 == "AVT").filter(_._7 == true)
-      var students = for (i <- avtStudnts) yield (i._1)
-      var roomNeghbors = pairRoomHostel.filter(r=>(r._1._1 -r._2._1).abs == 1)
-      //roomNeghbors
-      pairRoomHostel.filter(r=>r._1._3.contains(students))
+      def fromAVTWithRoom (s: Student): Boolean = s._4 == "AVT" && s._7 == true
+      def getStudentByID (id: Int) : Student = lst.filter(s => s._1 == id).head
+      val roomsNeghborWithAVT = rm.map(r => (r._1, r._2, r._3.filter(sID => fromAVTWithRoom(getStudentByID(sID)))))
+      var roomNeghbors = roomsNeghborWithAVT.zip(rm.tail).filter(r=>(r._1._1 -r._2._1).abs == 1)
+      def makeStudentsWithRoom(r: Room): List[(String, Int, Int)] = {
+        val roomStudents = r._3
+        roomStudents.map(sID=> getStudentByID(sID)).map(s => (s._2, s._6, r._1))
+      }
+      val result = roomNeghbors.flatMap(
+        {
+          case (r1: Room , r2: Room) => makeStudentsWithRoom(r1) ::: makeStudentsWithRoom(r2)
+        }
+      ).distinct
+      result
     }
 
     type Student = (

@@ -8,6 +8,47 @@ object lab4 {
   case class ZeroElement(dataFirst: Int, dataSecond: Int) extends Pair
   case class Element(dataFirst: Int, dataSecond: Int) extends Pair
 
+  abstract class NodeElement
+  case class Operation(data: Int) extends NodeElement
+  case class Variable(data: Char) extends NodeElement
+
+  abstract class Tree
+  case class Leaf(data: NodeElement) extends Tree
+  case class Node(data: NodeElement, left: Tree, right: Tree) extends Tree
+
+  def printElement(el: NodeElement): Any = {
+    el match {
+      case Operation(o) => o match {
+        case 1 => '+'
+        case 2 => '-'
+        case 3 => '*'
+        case 4 => '/'
+      }
+      case Variable(v) => v
+    }
+  }
+
+  def printTree(tree: Tree, lvl: Int): Unit = {
+    tree match {
+      case Node(d, l, r) =>
+        printTree(l, lvl + 1)
+        println(" " * lvl + printElement(d))
+        printTree(r, lvl + 1)
+      case Leaf(d) => println(" " * lvl + printElement(d))
+    }
+  }
+
+  def printTreeElement(tree: Tree): Unit = {
+    tree match {
+      case Node(d, l, r) =>
+        printTreeElement(l)
+        printTreeElement(r)
+        print(printElement(d))
+      case Leaf(d) => print(printElement(d))
+    }
+  }
+
+
   def listDivisionWithCase(lst: List[(Pair)]) : List[Option[Double]] = {
     if (lst == Nil)
       return Nil
@@ -46,5 +87,38 @@ object lab4 {
     println(printDivision(listDivision(list)))
     val pairList: List[Pair] = List(new Element(1,2),new Element (2,3), new ZeroElement(1,0))
     println(printDivision(listDivisionWithCase(pairList)))
+
+    println("\n----------------\n")
+
+    val tree = new Node(
+      new Operation(1),
+      new Node(
+        new Operation(3),
+        new Leaf(
+          new Variable('a')
+        ),
+        new Leaf(
+          new Variable('b')
+        )
+      ),
+      new Node(
+        new Operation(4),
+        new Node(
+          new Operation(2),
+          new Leaf(
+            new Variable('c')
+          ),
+          new Leaf(
+            new Variable('d')
+          )
+        ),
+        new Leaf(
+          new Variable('e')
+        )
+      )
+    )
+    printTree(tree,1)
+    println()
+    printTreeElement(tree)
   }
 }

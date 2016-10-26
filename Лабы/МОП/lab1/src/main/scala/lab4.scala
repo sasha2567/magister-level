@@ -4,9 +4,9 @@ package main.scala
   * Created by user on 25.10.2016.
   */
 object lab4 {
-  abstract class Pair
-  case class ZeroElement(dataFirst: Int, dataSecond: Int) extends Pair
-  case class Element(dataFirst: Int, dataSecond: Int) extends Pair
+  //abstract class Pair
+  //case class ZeroElement(dataFirst: Int, dataSecond: Int) extends Pair
+  case class Element(dataFirst: Int, dataSecond: Int)// extends Pair
 
   abstract class NodeElement
   case class Operation(data: Int) extends NodeElement
@@ -49,12 +49,12 @@ object lab4 {
   }
 
 
-  def listDivisionWithCase(lst: List[(Pair)]) : List[Option[Double]] = {
+  def listDivisionWithCase(lst: List[(Element)]) : List[Option[Double]] = {
     if (lst == Nil)
       return Nil
     val res = lst.head match {
+      case Element(dF, 0)=> None
       case Element(dF, dS) => Some(dF * 1.0/ dS)
-      case ZeroElement(dF, dS)=> None
     }
     val result = res :: listDivisionWithCase(lst.tail)
     result
@@ -85,35 +85,35 @@ object lab4 {
   def main(args: Array[String]): Unit = {
     val list = List((1,2),(2,3),(1,0))
     println(printDivision(listDivision(list)))
-    val pairList: List[Pair] = List(new Element(1,2),new Element (2,3), new ZeroElement(1,0))
+    val pairList: List[Element] = List(Element(1,2), Element (2,3), Element(1,0))
     println(printDivision(listDivisionWithCase(pairList)))
 
     println("\n----------------\n")
 
-    val tree = new Node(
-      new Operation(1),
-      new Node(
-        new Operation(3),
-        new Leaf(
-          new Variable('a')
+    val tree = Node(
+      Operation(1),
+      Node(
+        Operation(3),
+        Leaf(
+          Variable('a')
         ),
-        new Leaf(
-          new Variable('b')
+        Leaf(
+          Variable('b')
         )
       ),
-      new Node(
-        new Operation(4),
-        new Node(
-          new Operation(2),
-          new Leaf(
-            new Variable('c')
+      Node(
+        Operation(4),
+        Node(
+          Operation(2),
+          Leaf(
+            Variable('c')
           ),
-          new Leaf(
-            new Variable('d')
+          Leaf(
+            Variable('d')
           )
         ),
-        new Leaf(
-          new Variable('e')
+        Leaf(
+          Variable('e')
         )
       )
     )

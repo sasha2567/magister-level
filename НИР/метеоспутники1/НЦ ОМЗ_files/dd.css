@@ -1,0 +1,21 @@
+#dd1 {
+	LEFT: 27px; POSITION: absolute; TEXT-DECORATION: none; TOP: 235px; VISIBILITY: hidden
+}
+#dd2 {
+	LEFT: 116px; POSITION: absolute; TEXT-DECORATION: none; TOP: 235px; VISIBILITY: hidden
+}
+#dd4 {
+	LEFT: 451px; POSITION: absolute; TEXT-DECORATION: none; TOP: 235px; VISIBILITY: hidden
+}
+#dd5 {
+	LEFT: 555px; POSITION: absolute; TEXT-DECORATION: none; TOP: 235px; VISIBILITY: hidden
+}
+.ddmenu {
+	COLOR: #000000; FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+.ddmenu:visited {
+	COLOR: #000000; FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+.ddmenu:hover {
+	COLOR: #8a1414; FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; FONT-SIZE: 10px; TEXT-DECORATION: none
+}

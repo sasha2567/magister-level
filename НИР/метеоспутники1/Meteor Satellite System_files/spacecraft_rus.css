@@ -1,0 +1,169 @@
+body,td,th 
+{
+	padding: 0px;
+	font-family:"Times New Roman", Times, serif;
+	font-size: 16px;
+	color: #000000;
+}
+
+body 
+{
+	/*
+	background-color: #eef8ff;
+	*/
+	margin-top: 0px;
+	margin-left: 20px;
+}
+
+td
+{
+	border-width: 0px;
+	border-style: solid;
+	padding: 3px;
+}
+
+img
+{
+border: 0px;
+}
+
+.eq
+{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+/*------------------CONTENT------------------*/
+
+.sub_title
+{
+	text-align:center;
+	font-weight:bold;
+	color:#000022;
+}
+
+.text_title
+{
+font-family:"Times New Roman", Times, serif;
+font-size:24px;
+font-weight:normal;
+color:#004488;
+text-align:center;
+vertical-align:top;
+border-width: 0px 0px 1px 0px;
+border-color: #002266;
+}
+
+.text_comments
+{
+font-family:"Times New Roman", Times, serif;
+font-size:12px;
+font-weight:normal;
+color:#000044;
+text-align:center;
+vertical-align:top;
+}
+
+/*-----------------------BORDERS--------------*/
+
+.b1
+{
+border-width: 0px 0px 1px 0px;
+border-color: #000066;
+}
+
+.b2
+{
+border-width: 0px 0px 1px 0px;
+border-color: #002266;
+}
+
+.t2
+{
+border-width: 1px 0px 0px 0px;
+border-color: #002266;
+}
+
+.r1
+{
+border-width: 0px 1px 0px 0px;
+border-color: #000066;
+}
+
+.r2
+{
+border-width: 0px 1px 0px 0px;
+border-color: #002266;
+}
+
+.rltb1
+{
+text-align:left;
+border-width: 1px;
+border-color: #002266;
+}
+
+.rltb2
+{
+border-width: 1px;
+border-color: #002266;
+}
+
+
+/*--------TABLE BORDERS------------*/
+
+.rlb1
+{
+border-width: 0px 1px 1px 1px;
+border-color: #002266;
+}
+
+.rlb2
+{
+border-width: 0px 1px 1px 1px;
+border-color: #002266;
+}
+
+.ltb2
+{
+border-width: 1px 0px 1px 1px;
+border-color: #002266;
+}
+
+.rtb2
+{
+border-width: 1px 1px 1px 0px;
+border-color: #002266;
+}
+
+.rb2
+{
+border-width: 0px 1px 1px 0px;
+border-color: #002266;
+padding-left: 3px;
+padding-right: 3px;
+}
+
+.rb1
+{
+border-width: 0px 1px 1px 0px;
+border-color: #002266;
+}
+
+.lb2
+{
+border-width: 0px 0px 1px 1px;
+border-color: #002266;
+text-align:   left;
+}
+
+/*------------LINKS------------------*/
+.rb2 a
+{
+color:#006699;
+text-decoration:none;
+}
+.sub_title a
+{
+color:#002244;
+text-decoration:none;
+}

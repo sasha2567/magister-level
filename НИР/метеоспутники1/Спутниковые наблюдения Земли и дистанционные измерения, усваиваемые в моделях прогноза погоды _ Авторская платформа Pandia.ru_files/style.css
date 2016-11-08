@@ -1,0 +1,3407 @@
+﻿	/*
+/*
+Theme Name: Twenty Ten
+Theme URI: http://wordpress.org/
+Description: The 2010 theme for WordPress is stylish, customizable, simple, and readable -- make it yours with a custom menu, header image, and background. Twenty Ten supports six widgetized areas (two in the sidebar, four in the footer) and featured images (thumbnails for gallery posts and custom header images for posts and pages). It includes stylesheets for print and the admin Visual Editor, special styles for posts in the "Asides" and "Gallery" categories, and has an optional one-column page template that removes the sidebar.
+Author: the WordPress team
+Version: 1.1
+Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-background, threaded-comments, sticky-post, translation-ready, microformats, rtl-language-support, editor-style
+*/
+
+
+/* =Reset default browser CSS
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+	width:100%;
+	max-width:1220px;
+	margin:0 auto;
+	background-color: #f5f5f5; /* фон */
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+ol, ul {
+	
+}
+blockquote {
+	quotes: none;
+}
+blockquote:before, blockquote:after {
+	content: '';
+	content: none;
+}
+del {
+	text-decoration: line-through;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a img {
+	border: none;
+}
+
+/* =Layout
+-------------------------------------------------------------- */
+
+/*
+LAYOUT: Two columns
+DESCRIPTION: Two-column fixed layout with one sidebar right of content
+*/
+
+#container {
+	float: left;
+	margin: 0 15px 0 10px;
+	min-width: 1100px;
+	width: 98%;
+	
+}
+#content {
+	margin: 0 8px 0 18px; /* =Второе значение - отступ справа статьи */
+/*float: left;  =Благодаря этой строке исправлен баг в IE с сайдбаром в категории */
+}
+#primary,
+#secondary {
+	float: left;
+	overflow: hidden;
+	width: 160px; /* =А это ширина сайдбара слева */
+	background-color: #FFFFFF;
+	text-align: left;
+		
+}
+#secondary {
+	clear: left;
+}
+
+/* =Этот thirdly для вывода на главной блока фоторепортажей. Применяется в functions.php */
+#thirdly {
+	float: left;
+	overflow: hidden;
+	width: 640px; /* =А это ширина сайдбара слева */
+	background-color: #FFFFFF;
+	border-color: #000;
+	text-align: left;
+		
+}
+
+#thirdly .headerss {
+	font-size: 20px;
+	font-style: bold;
+	line-height: 1em;
+	}
+
+	
+#thirdly {
+	clear: left;
+}
+
+
+
+
+
+
+/* = Прописка css в верхние заголовки под главным заголовком статьи */
+
+.toparticlecatandauthor	{
+	float: left;
+	max-width:800px;
+	min-width:795px;
+	min-height:50px;
+	/*max-height:70px; */ /* = Ограничить высоту блока ссылок на рубрики над статей */
+	margin: 1px 30px 10px 0; /* Отступы */
+	padding:2px 3px 5px 1px;
+	display: inline;
+	border: 0px solid #D6D3D3;
+	border-bottom: 0px solid whitesmoke;
+	border-radius: 0px;
+	position:relative;           
+	z-index:1;
+	
+}
+
+
+.author_profile_at_article	{
+	
+	float: left;
+	position:relative;
+	background-color:#FFF;
+	margin:0 15px 0 0;
+	min-width:100px;
+	padding:2px 20px 10px 0px;
+	
+	}
+
+#apaa_1	{
+	float: left;
+	padding:0 5px 0 0;
+	}
+	
+#apaa_1	img {
+	 width:45px;
+	 height:45px;
+	 }
+
+#apaa_2	{
+	float: left;
+	margin:-4px 0 0 0;
+	padding:0 2px -15px 2px;
+	font-size:tahoma, arial, verdana, sans-serif, Lucida;
+	font-size:14px;
+	font-weight:bold;
+	color:black;
+	}
+	
+#apaa_2	a{
+	color:black;
+	}
+
+#apaa_3 {
+	margin:8px 0 0 0;
+	}
+	
+#apaa_3:before {
+	content:"Автор";
+	padding:1px 2px 5px 2px;
+	font-size:12px;
+	font-weight:bold;
+	color:grey;
+	
+	}
+
+
+	
+.topcatblock {
+	display: inline;
+	}
+
+
+#topcats {
+	margin: 0 4px 2px 0; /* Отступы */
+    font-size: 11px; /* Размер шрифта */	
+	line-height: 1.5em;
+	min-width:400px;
+	}
+
+
+
+  #topcats img {
+	margin: 4px 0 0 0; /* Отступы */
+	height: 10px;
+	}
+
+#topcats a {
+               color: #778899;
+		background-color:#FFF;
+        text-decoration: none;
+		}
+
+#topcats a:hover{
+		color: red;
+		text-decoration: underline;
+        }
+		
+		
+		
+
+		
+.inside_row {
+	margin:10px 0 10px 10px;
+	}
+
+.inside_row  a{
+	text-decoration: underline;
+    border-bottom: 1px dashed #000080;
+    color: #f00000;
+   }
+   
+.inside_row  a:hover {
+	color: red;
+	text-decoration: none;
+	border-bottom: 1px dashed #CCC;
+    }
+
+.inside_row:before{
+	content: '';
+	background: url(../../../pics/green-24.png);
+	background-repeat:no-repeat;
+	float: left; 
+	position: relative;
+	z-index:100000;
+    left: -5px;
+    top: 0px;
+	display: block;  
+	width: 25px;
+	height:25px;
+	
+}
+   
+   
+   
+
+   
+
+		
+.inside_stopspam {
+	
+	margin:10px 0 10px 10px;
+	}
+
+.inside_stopspam  a{
+	text-decoration: underline;
+    border-bottom: 1px dashed #000080;
+    color: #f00000;
+   }
+   
+.inside_stopspam  a:hover {
+	color: red;
+	text-decoration: none;
+	border-bottom: 1px dashed #CCC;
+    }
+
+.inside_stopspam:before{
+	content: '';
+	background: url(../../../pics/stopspam.png);
+	background-repeat:no-repeat;
+	float: left; 
+	position: relative;
+	z-index:100000;
+    left: -5px;
+    top: 0px;
+	display: block;  
+	width: 25px;
+	height:25px;
+	
+}
+  
+  
+  
+
+
+#footer {
+	clear: both;
+	width: 100%;
+}
+
+#sidebar-right {
+	float: right;
+	margin-left:auto;
+	margin-top:50px;
+	overflow: hidden;
+	width: 165px;
+	background-color: #FFFFFF;
+}
+
+/*
+LAYOUT: One column, no sidebar
+DESCRIPTION: One centered column with no sidebar
+*/
+
+.one-column #content {
+	margin: 0 auto;
+	width: 640px;
+}
+
+/*
+LAYOUT: Full width, no sidebar
+DESCRIPTION: Full width content with no sidebar; used for attachment pages
+*/
+
+.single-attachment #content {
+	margin: 0 auto;
+	width: 900px;
+}
+
+
+	
+
+/* =Fonts
+-------------------------------------------------------------- */
+body,
+input,
+textarea,
+.page-title span,
+.pingback a.url {
+	font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+}
+h3#comments-title,
+h3#reply-title,
+#access .menu,
+#access div.menu ul,
+#cancel-comment-reply-link,
+.form-allowed-tags,
+#site-info,
+#site-title,
+#wp-calendar,
+.comment-meta,
+.comment-body tr th,
+.comment-body thead th,
+.entry-content label,
+.entry-content tr th,
+.entry-content thead th,
+.entry-meta,
+.entry-title,
+.entry-utility,
+#respond label,
+.navigation,
+.page-title,
+.pingback p,
+.reply,
+.widget-title,
+.wp-caption-text,
+input[type=submit] {
+	font-family: Arial, Helvetica, sans-serif;
+}
+pre {
+	font-family: Arial, Helvetica, sans-serif;
+}
+code {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =Structure
+-------------------------------------------------------------- */
+
+/* The main theme structure */
+#access .menu-header,
+div.menu,
+#colophon,
+#branding,
+#main,
+#wrapper {
+float: left;
+	margin: 0 auto;
+	width: 100%;
+	}
+#wrapper {
+	background: #fff;
+	margin: 0 10px 0 0; /* отступ белого листа от фона */
+	box-shadow: 0 0 10px;
+}
+
+/* Structure the footer area */
+#footer-widget-area {
+	overflow: hidden;
+}
+#footer-widget-area .widget-area {
+	float: left;
+	margin-right: 20px;
+	width: 220px;
+	
+}
+#footer-widget-area #fourth {
+	margin-right: 0;
+}
+#site-info {
+	float: left;
+	font-size: 11px;
+	font-weight: normal;
+	width: 90%;
+}
+#site-generator {
+	float: right;
+	width: 220px;
+}
+
+
+/* =Global Elements
+-------------------------------------------------------------- */
+
+/* Main global 'theme' and typographic styles */
+
+body,
+input,
+textarea {
+	color: #666;
+	font-size: 12px;
+	line-height: 18px;
+}
+hr {
+	background-color: #202932;
+	border: 0;
+	clear: both;
+	height: 1px;
+	margin-bottom: -48px;
+}
+
+/* Text elements */
+p {
+	margin-bottom: 18px;
+}
+ul {
+	
+	margin: 0 0 18px 1.5em;
+	}
+ol {
+	list-style: decimal;
+	margin: 0 0 18px 1.5em;
+}
+ol ol {
+	list-style: upper-alpha;
+}
+ol ol ol {
+	list-style: lower-roman;
+}
+ol ol ol ol {
+	list-style: lower-alpha;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin-bottom: 0;
+}
+dl {
+	margin: 0 0 24px 0;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-bottom: 18px;
+}
+strong {
+	font-weight: bold;
+}
+cite,
+em,
+i {
+	font-style: italic;
+}
+big {
+	font-size: 131.25%;
+}
+ins {
+	background: #ffc;
+	text-decoration: none;
+}
+blockquote {
+	font-style: italic;
+	padding: 0 3em;
+}
+blockquote cite,
+blockquote em,
+blockquote i {
+	font-style: normal;
+}
+pre {
+	background: #f7f7f7;
+	color: #222;
+	line-height: 18px;
+	margin-bottom: 18px;
+	padding: 5px;
+	
+}
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+sup,
+sub {
+	height: 0;
+	line-height: 1;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+
+
+a:link {
+	color: #0066cc;
+	text-decoration:none;
+}
+a:visited {
+	color: #743399;
+	text-decoration:none;
+}
+a:active,
+a:hover {
+	color: #ff4b33;
+	text-decoration:underline;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+	position: absolute;
+	left: -9000px;
+}
+
+
+/* =Header
+-------------------------------------------------------------- */
+
+#header {
+	padding: 0px 0 0 0;
+	}
+	
+
+
+
+
+ 
+	
+#site-title {
+	float: left;
+	font-size: 30px;
+	line-height: 36px;
+	margin: 0 0 10px 0;  /* Отступы линии навигации от верха шапки */
+	
+}
+#site-title a {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#site-googlesearch {
+	
+	float: left;
+	font-style: normal;
+	margin: 100px 0 10px 0px;
+	width: 500px;
+}
+
+#site-description {
+	float: left;
+	font-style: normal;
+	color: #000;
+	margin: 60px 0 0 -50px;
+	left: 330px;
+	width: 550px;
+	position: absolute;
+}
+
+#top-right-menu {
+	float: left;
+	font-style: normal;
+	color: #000;
+	margin: 5px 0 0 0px;
+	right: 10px;
+	top: -20px;
+	width: 470px;
+	position: absolute;
+}
+
+/* This is the custom header image */
+#branding img {
+	border-top: 0px solid #000;
+	border-bottom: 0px solid #000;
+	margin:  2px 0 0 5px; /* Отступы логотипа */
+	clear: both;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS Document */
+ul#cssmenu {
+        margin:0;
+		border: 0 none;
+        list-style: none;
+		height: 30px;
+        font: bold 12px/28px Verdana, Arial;
+        border-left:#003366 0px solid;
+}
+
+ul#cssmenu li {
+        margin: 0;
+        border: 0 none;
+        padding: 0;
+        float: left;
+        display: inline;
+        list-style: none;
+        position: relative;
+		height: 28px;
+}
+
+ul#cssmenu ul {
+        margin: 0;
+        border: 0 none;
+        padding: 0;
+        width: 160px;
+        list-style: none;
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 0;
+		font: bold 10px/28px Verdana, Arial;
+}
+
+ul#cssmenu ul:after {
+        clear: both;
+        display: block;
+        font: 1px/0px serif;
+        content: ".";
+        height: 0;
+        visibility: hidden;
+}
+
+ul#cssmenu ul li {
+        width: 150px;
+        float: left;
+		display: block !important;
+        display: inline;
+		}
+
+/* Main Menu */
+ul#cssmenu a {
+        border: 0px;
+        padding: 0 10px;
+        float: none !important;
+        float: left;
+        display: block;
+        background: #003366;
+        color: #FFFFFF;
+        font: normal 12px/28px Tahoma, sans-serif;
+        text-decoration: none;
+        height: 1%;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+}
+
+ul#cssmenu a:hover{
+		color: #eceff1 !important;
+		text-decoration: underline;
+}
+
+/* Main Menu Hover */
+ul#cssmenu a:hover,
+ul#cssmenu li:hover a,
+ul#cssmenu li.iehover a {
+        color:#FFFFFF;
+        border-top:#003366 0px solid;
+}
+
+/* Second Menu */
+ul#cssmenu li:hover li a,
+ul#cssmenu li.iehover li a {
+        border-top: 1px solid #FFFFFF;
+        float: none;
+        background: #003366;
+        color: #FFFFFF;
+}
+
+/* Second Menu Hover */
+ul#cssmenu li:hover li a:hover,
+ul#cssmenu li:hover li:hover a,
+ul#cssmenu li.iehover li a:hover,
+ul#cssmenu li.iehover li.iehover a {
+        border-top: 1px solid #FFFFFF;
+        background: #FFFFFF;
+        color:#003366;
+        border:#003366 1px solid;
+}
+
+ul#cssmenu ul ul {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 170px;
+}
+
+ul#cssmenu li:hover ul ul,
+ul#cssmenu li.iehover ul ul {
+        display: none;
+}
+
+ul#cssmenu li:hover ul,
+ul#cssmenu ul li:hover ul,
+ul#cssmenu li.iehover ul,
+ul#cssmenu ul li.iehover ul {
+        display: block;
+} 
+
+
+
+
+
+/* =Menu
+-------------------------------------------------------------- */
+
+#access {
+	background: #000;
+	display: block;
+	float: left;
+	margin: 0 auto;
+	width: 100%;
+}
+#access .menu-header,
+div.menu {
+	font-size: 13px;
+	margin-left: 12px;
+	width: 928px;
+}
+#access .menu-header ul,
+div.menu ul {
+	list-style: none;
+	margin: 0;
+}
+#access .menu-header li,
+div.menu li {
+	float: left;
+	position: relative;
+	}
+#access a {
+	color: #aaa;
+	display: block;
+	line-height: 38px;
+	padding: 0 10px;
+	text-decoration: none;
+}
+#access ul ul {
+	box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	display: none;
+	position: absolute;
+	top: 38px;
+	left: 0;
+	float: left;
+	width: 180px;
+	z-index: 99999;
+}
+#access ul ul li {
+	min-width: 180px;
+}
+#access ul ul ul {
+	left: 100%;
+	top: 0;
+}
+#access ul ul a {
+	background: #333;
+	line-height: 1em;
+	padding: 10px;
+	width: 160px;
+	height: auto;
+}
+#access li:hover > a,
+#access ul ul :hover > a {
+	background: #333;
+	color: #fff;
+}
+#access ul li:hover > ul {
+	display: block;
+}
+#access ul li.current_page_item > a,
+#access ul li.current-menu-ancestor > a,
+#access ul li.current-menu-item > a,
+#access ul li.current-menu-parent > a {
+	color: #fff;
+}
+* html #access ul li.current_page_item a,
+* html #access ul li.current-menu-ancestor a,
+* html #access ul li.current-menu-item a,
+* html #access ul li.current-menu-parent a,
+* html #access ul li a:hover {
+	color: #fff;
+}
+
+
+/* =Content
+-------------------------------------------------------------- */
+
+#main {
+	clear: both;
+	overflow: hidden;
+	padding: 5px 0 0 0;
+	
+	
+}
+#content {
+	margin-bottom: 36px;
+	}
+#content,
+#content input,
+#content textarea {
+	color: #000000;
+	font-size: 14px; /* =размер шрифта текста форм */
+	line-height: 160%;
+	padding:5px 5px 5px 10px;
+		
+}
+#content p
+	{
+	margin: 25px 0 25px 0;
+	}
+
+#content ul,
+#content ol,
+#content dd,
+#content pre,
+#content hr {
+	margin-bottom: 10px;
+}
+#content ul ul,
+#content ol ol,
+#content ul ol,
+#content ol ul {
+	margin-bottom: 0;
+}
+#content pre,
+#content kbd,
+#content tt,
+#content var {
+	font-size: 12px;
+	line-height: 21px;
+}
+#content code {
+	font-size: 13px;
+}
+#content dt,
+#content th {
+	color: #000;
+}
+#content h1{
+	font-size:20px;
+	font-weight:normal;
+	border-bottom: 1px solid Gray;
+	padding-bottom: 7px; 
+	margin-top: 20px;  /* Отступ сверху всех заголовков ВНУТРИ статей, пример алфавит http://pandia.ru/text/category/study/ */
+	margin-right:3px;}
+
+
+#content h2{font-size:18px;font-weight:normal;margin-top:30px;margin-bottom:5px;border-bottom: 0px solid Gray;padding-bottom: 7px;}
+#content h3
+	{
+	color: #000;
+	line-height: 1.5em;
+	margin: 20px 0 2px 0;
+	font-weight:bold;
+	}
+
+#content h4,
+#content h5,
+#content h6 {
+	color: #000;
+	line-height: 1.5em;
+	margin: 0 0 20px 0;
+}
+#content table {
+	color: #000;
+	background: #FFF;
+	border: 0px solid #e7e7e7;
+	margin: 0 -1px 0px 0;
+	text-align: left;
+	}
+
+	
+#content tr th,
+#content thead th {
+	color: #888;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 18px;
+	padding: 9px 24px;
+}
+#content tr td {
+	border-top: 0px solid #e7e7e7;
+	padding: 2px 2px;
+	margin: 2px 2px;
+}
+#content tr.odd td {
+	background: #f2f7fc;
+}
+.hentry {
+	margin: 0 0 48px 0;
+}
+.home .sticky {
+	background: #f2f7fc;
+	border-top: 4px solid #000;
+	margin-left: -20px;
+	margin-right: -20px;
+	padding: 18px 20px;
+}
+.single .hentry {
+	margin: 0 0 36px 0;
+}
+.page-title {
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0 0 36px 0;
+	
+	}
+.pagetitle h1{font-size:20px;font-weight:normal;margin-top:15px;border-bottom: 1px solid Gray;padding-bottom: 7px;}
+
+.page-title span {
+	color: #333;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: normal;
+}
+.page-title a:link,
+.page-title a:visited {
+	color: #888;
+	text-decoration: none;
+}
+.page-title a:active,
+.page-title a:hover {
+	color: #ff4b33;
+}
+
+.poster {float:left; width:100%; padding:0 0px 0;text-align:left;}
+
+
+.rotator-top-right {float:right; width:200px; margin-right:10px;padding:6px;text-align:left;}
+
+
+
+.taglinks,
+.taglinks span{
+	margin-top: 2px;  
+	margin-left: 200px;  
+	margin-bottom: 2px;  
+	background-position:left;
+	text-align: left;	min-height: 20px;
+	background-repeat: no-repeat;
+	
+	}
+	
+	
+.per1  	/* =Код оформления статей, пример  http://pandia.ru/245110/ - */
+{   margin-bottom: 100em;
+	margin-top: 25px;  
+	margin-left: 30px;
+	margin-right: 130px;
+	
+	background-color:#EFEDDF;
+	text-align: left;	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	border-style:solid;
+	padding:10px;
+	border-left-width:1px;
+	}
+	
+
+	/* =Прекрасный код оформления статей, пример  http://pandia.ru/245110/ - */
+.per2 {
+  position:relative;           
+  z-index:1;
+}        
+        
+.drop-shadow {
+  position:relative;
+  float:left;
+  width:40%;    
+  padding:1em; 
+  margin:2em 10px 4em; 
+  background:#fff;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.drop-shadow:before, .drop-shadow:after {
+  content:"";
+  position:absolute; 
+  z-index:-2;
+}
+        
+.drop-shadow p {
+  font-size:12px;
+  font-weight:normal;
+  }
+
+.lifted {border-radius:4px;}
+        
+.lifted:before,  .lifted:after { 
+  bottom:15px;
+  left:10px;
+  width:50%;
+  height:20%;
+  max-width:300px;
+  -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);   
+  box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+  -webkit-transform:rotate(-3deg);    
+  -moz-transform:rotate(-3deg);   
+  -ms-transform:rotate(-3deg);   
+  -o-transform:rotate(-3deg);
+  transform:rotate(-3deg);
+}
+
+.lifted:after {
+right:10px; 
+left:auto;
+-webkit-transform:rotate(3deg);   
+-moz-transform:rotate(3deg);  
+-ms-transform:rotate(3deg);  
+-o-transform:rotate(3deg);
+transform:rotate(3deg);
+}   
+	
+        /* = Прекрасный код оформления, пример  http://pandia.ru/245110/ концовочка - */
+		
+		
+		
+		
+		
+		
+	/* =Прекрасный код оформления статей, только справа пример  http://pandia.ru/381521/ - */
+.per3 {
+  position:relative;           
+  z-index:1;
+}        
+        
+.drop-shadow3 {
+  position:relative;
+  float:right;
+  width:40%;    
+  padding:1em; 
+  margin:2em 10px 4em; 
+  background:#fff;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.drop-shadow3:before, .drop-shadow:after {
+  content:"";
+  position:absolute; 
+  z-index:-2;
+}
+        
+.drop-shadow3 p {
+  font-size:12px;
+  font-weight:normal;
+}
+
+.lifted3 {border-radius:4px;}
+        
+.lifted3:before,  .lifted:after { 
+  bottom:15px;
+  left:10px;
+  width:50%;
+  height:20%;
+  max-width:300px;
+  -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);   
+  box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+  -webkit-transform:rotate(-3deg);    
+  -moz-transform:rotate(-3deg);   
+  -ms-transform:rotate(-3deg);   
+  -o-transform:rotate(-3deg);
+  transform:rotate(-3deg);
+}
+
+.lifted3:after {
+right:10px; 
+left:auto;
+-webkit-transform:rotate(3deg);   
+-moz-transform:rotate(3deg);  
+-ms-transform:rotate(3deg);  
+-o-transform:rotate(3deg);
+transform:rotate(3deg);
+}   
+	
+        /* = Прекрасный код оформления, пример  http://pandia.ru/245110/ концовочка - */
+		
+		
+		
+
+
+	/* =Прекрасный код оформления статей, пример  http://pandia.ru/245110/ - */
+.per4 {
+  position:relative;           
+  z-index:1;
+}        
+        
+.drop-shadowan {
+  position:relative;
+  float:left;
+  width:15%;    
+  padding:1em; 
+  margin:2em 30px 3em; 
+  background:#fff;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.drop-shadowan:before, .drop-shadowan:after {
+  content:"";
+  position:absolute; 
+  z-index:-2;
+}
+        
+.drop-shadowan p {
+  font-size:12px;
+  font-weight:normal;
+}
+
+.morozko {border-radius:4px;}
+        
+.morozko:before,  .morozko:after { 
+  bottom:15px;
+  left:10px;
+  width:50%;
+  height:20%;
+  max-width:300px;
+  -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);   
+  box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+  -webkit-transform:rotate(-3deg);    
+  -moz-transform:rotate(-3deg);   
+  -ms-transform:rotate(-3deg);   
+  -o-transform:rotate(-3deg);
+  transform:rotate(-3deg);
+}
+
+.morozko:after {
+right:10px; 
+left:auto;
+-webkit-transform:rotate(3deg);   
+-moz-transform:rotate(3deg);  
+-ms-transform:rotate(3deg);  
+-o-transform:rotate(3deg);
+transform:rotate(3deg);
+}   
+	
+        /* = Прекрасный код оформления, пример  http://pandia.ru/245110/ концовочка - */
+
+
+	
+
+	/* =Прекрасный код оформления статей, пример  http://pandia.ru/245110/ - */
+.autolistper1 {
+  position:relative;           
+  z-index:1;
+}        
+        
+.autolistperdrop-shadow {
+  position:relative;
+  float:left;
+  width:50%;
+  padding:1em; 
+  margin:2em 10px 4em; 
+  background:#fff;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.autolistperdrop-shadow:before, .autolistperdrop-shadow:after {
+  content:"";
+  position:absolute; 
+  z-index:-2;
+}
+        
+.autolistperdrop-shadow p {
+  font-size:12px;
+  font-weight:normal;
+  }
+
+.autolistperifted {border-radius:4px;}
+        
+.autolistperlifted:before,  .autolistperlifted:after { 
+  bottom:15px;
+  left:10px;
+  width:50%;
+  height:20%;
+  max-width:300px;
+  -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);   
+  box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+  -webkit-transform:rotate(-3deg);    
+  -moz-transform:rotate(-3deg);   
+  -ms-transform:rotate(-3deg);   
+  -o-transform:rotate(-3deg);
+  transform:rotate(-3deg);
+}
+
+.autolistperlifted:after {
+right:10px; 
+left:auto;
+-webkit-transform:rotate(3deg);   
+-moz-transform:rotate(3deg);  
+-ms-transform:rotate(3deg);  
+-o-transform:rotate(3deg);
+transform:rotate(3deg);
+}   
+	
+        /* = Прекрасный код оформления, пример  http://pandia.ru/245110/ концовочка - */
+		
+		
+		
+
+ 
+	/* =Прекрасный код оформления страниц порталов, пример  http://pandia.ru/245110/ - */
+.autolistper2 {
+  position:relative;           
+  z-index:1;
+  font-size:12px;
+  font-weight:normal;
+}        
+       
+
+
+.autolistperdrop-shadow2 {
+  position:relative;
+  float:left;
+  width:900px;
+  padding:1em; 
+  margin:2em 10px 4em; 
+  background:#fff;
+  -webkit-box-shadow:0 1px 1px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 1px rgba(0, 0, 0, 0.3), 0 0 2px rgba(0, 0, 0, 0.1) inset;
+}
+
+.autolistperdrop-shadow2 hr {
+	background:#ccc;
+	}
+	
+
+.autolistperdrop-shadow2:before, .autolistperdrop-shadow:after {
+  content:"";
+  position:absolute; 
+  z-index:-2;
+}
+        
+.autolistperdrop-shadow2 p {
+  font-size:11px;
+  font-weight:bold;
+  }
+
+.autolistperifted2 {border-radius:4px;}
+        
+.autolistperlifted2:before,  .autolistperlifted:after { 
+  bottom:15px;
+  left:10px;
+  width:50%;
+  height:20%;
+  max-width:300px;
+  -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);   
+  box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+  -webkit-transform:rotate(-3deg);    
+  -moz-transform:rotate(-3deg);   
+  -ms-transform:rotate(-3deg);   
+  -o-transform:rotate(-3deg);
+  transform:rotate(-3deg);
+}
+
+.autolistperlifted2:after {
+right:10px; 
+left:auto;
+-webkit-transform:rotate(3deg);   
+-moz-transform:rotate(3deg);  
+-ms-transform:rotate(3deg);  
+-o-transform:rotate(3deg);
+transform:rotate(3deg);
+}   
+	
+        /* = Прекрасный код оформления, пример  http://pandia.ru/245110/ концовочка - */
+		
+		
+		
+		
+
+		/*--- Эксперимент для страницы http://pandia.ru/371614/ !!!---*/
+.info {
+	font-size: 12px;
+	color: #191919;
+	background: #ebe9ce url(styling/info.gif) no-repeat 5px center;
+	font-family: Verdana, sans-serif, "Courier New";
+	line-height: 125%;
+	margin: 10px 0px 0px;
+	padding: 12px 12px 12px 25px;
+	display: block;
+	font-weight: 400;
+	width: 80%;
+	border-top: 2px solid #DAD6A5;
+	border-bottom: 2px solid #DAD6A5;
+}
+.warning {
+	font-size: 12px;
+	color: #191919;
+	font-family: Verdana, sans-serif, "Courier New";
+	line-height: 125%;
+	background: #e3aeae url(styling/warning.gif) no-repeat 5px center;
+	display: block;
+	margin: 10px 0px 0px;
+	padding: 12px 12px 12px 25px;
+	font-weight: 400;
+	width: 80%;
+	border-top: 2px solid #D68585;
+	border-bottom: 2px solid #D68585;
+}
+.download {
+	font-size: 11px;
+	color: #191919;
+	font-family: Verdana, sans-serif, "Courier New";
+	line-height: 125%;
+	background: #d5ecd5 url(styling/download.gif) no-repeat 5px center;
+	display: block;
+	margin: 10px 0px 0px;
+	padding: 12px 12px 12px 25px;
+	font-weight: 400;
+	width: 80%;
+	border-top: 2px solid #A9D8A9;
+	border-bottom: 2px solid #A9D8A9;
+}
+.alert {
+	font-size: 11px;
+	color: #191919;
+	line-height: 125%;
+	background: #FFE5BF url(styling/alert.gif) no-repeat 5px center;
+	font-family: Verdana, sans-serif, "Courier New";
+	display: block;
+	margin: 10px 0px 0px;
+	padding: 12px 12px 12px 25px;
+	font-weight: 400;
+	width: 80%;
+	border-top: 2px solid #FFC46A;
+	border-bottom: 2px solid #FFC46A;
+}
+.note1 {
+	font-size: 11px;
+	color: #191919;
+	font-family: Verdana, "Times New Roman", Times, Georgia, serif;
+	line-height: 125%;
+	background: #eaf2f5 url(styling/note.gif) no-repeat 5px center;
+	display: block;
+	margin: 10px 0px 0px;
+	padding: 12px 12px 12px 25px;
+	font-weight: 400;
+	width: 80%;
+	border-top: 2px solid #B7D2DD;
+	border-bottom: 2px solid #B7D2DD;
+}
+
+.click {
+	font-size: 12px;
+	color: #191919;
+	font-family: Verdana, "Times New Roman", Times, Georgia, serif;
+	line-height: 125%;
+	background: #fcfbed url(styling/click.gif) no-repeat 5px center;
+	display: block;
+	margin: 10px 0px 0px;
+	padding: 12px 12px 12px 25px;
+	font-weight: 400;
+	width: 80%;
+	border-top: 2px solid #F2EDB0;
+	border-bottom: 2px solid #F2EDB0;
+}
+
+.add{
+	background-color: #f9f9f9;
+	border: 1px solid silver;
+	padding: 3px 3px 3px 3px;
+	display: block;
+}
+	
+	.adblock {
+	font-size: 12px;
+	color: #191919;
+	font-family: Verdana, "Times New Roman", Times, Georgia, serif;
+	line-height: 125%;
+	background: #fcfbed url(styling/click.gif) no-repeat 5px center;
+	display: block;
+	margin: 10px 0px 0px;
+	padding: 12px 12px 12px 25px;
+	font-weight: 400;
+	width: 80%;
+	border-top: 2px solid #F2EDB0;
+	border-bottom: 2px solid #F2EDB0;
+}	
+
+
+
+#content .entry-title {
+	color: #000;
+	font-size: 22px;
+	font-weight: normal;
+	line-height: 1.3em;
+	margin-top: 3px;  /* Отступ сверху всех заголовков статей */
+	margin-bottom: 0; /* Отступ снизу всех заголовков статей */
+	margin-right: 10px; /* Отступ справа всех заголовков статей */
+	border-bottom: 0px solid Gray; /* Подчеркивание заголовка статей */
+	padding-bottom: 4px;
+}
+
+.entry-title a:link,
+.entry-title a:visited {
+	color: #000;
+	text-decoration: none;
+}
+.entry-title a:active,
+.entry-title a:hover {
+	color: #ff4b33;
+}
+.entry-meta {
+	color: #888;
+	font-size: 12px;
+}
+.entry-meta abbr,
+.entry-utility abbr {
+	border: none;
+}
+.entry-meta abbr:hover,
+.entry-utility abbr:hover {
+	border-bottom: 1px dotted #666;
+}
+.entry-content,
+.entry-summary {
+	clear: both;
+	padding: 0 0 0 0;
+	font-size: 13px; /* размер шрифта на главной и в хороших статьях рубрик  */
+	line-height:1.5;
+}
+
+.entry-summary img{
+ 	display: block; /* отображаем как блок  */
+	border: 1px solid #bbb; /*  рамка серого цвета шириной в 1 пиксель  */
+	float: left; /* выравнивание картинки с левого бока  */
+	margin: 5px;
+	padding: 3px;
+}
+
+
+
+#content .entry-summary p:last-child {
+	margin-bottom: 20px;
+}
+
+
+
+.entry-content fieldset {
+	border: 1px solid #e7e7e7;
+	margin: 0 0 24px 0;
+	padding: 24px;
+}
+.entry-content fieldset legend {
+	background: #fff;
+	color: #000;
+	font-weight: bold;
+	padding: 0 24px;
+}
+.entry-content input {
+	margin: 0 0 24px 0;
+}
+.entry-content input.file,
+.entry-content input.button {
+	margin-right: 24px;
+}
+.entry-content label {
+	color: #888;
+	font-size: 12px;
+}
+.entry-content select {
+	margin: 0 0 24px 0;
+}
+.entry-content sup,
+.entry-content sub {
+	font-size: 10px;
+}
+.entry-content blockquote.left {
+	float: left;
+	margin-left: 0;
+	margin-right: 24px;
+	text-align: right;
+	width: 33%;
+}
+.entry-content blockquote.right {
+	float: right;
+	margin-left: 24px;
+	margin-right: 0;
+	text-align: left;
+	width: 33%;
+}
+.page-link {
+	color: #000;
+	font-weight: bold;
+	margin: 0 0 22px 0;
+	word-spacing: 0.5em;
+}
+.page-link a:link,
+.page-link a:visited {
+	background: #f1f1f1;
+	color: #333;
+	font-weight: normal;
+	padding: 0.5em 0.75em;
+	text-decoration: none;
+}
+.home .sticky .page-link a {
+	background: #d9e8f7;
+}
+.page-link a:active,
+.page-link a:hover {
+	color: #ff4b33;
+}
+body.page .edit-link {
+	clear: both;
+	display: block;
+}
+#entry-author-info {
+	background: #f2f7fc;
+	border-top: 4px solid #000;
+	clear: both;
+	font-size: 14px;
+	line-height: 20px;
+	margin: 24px 0;
+	overflow: hidden;
+	padding: 18px 20px;
+}
+#entry-author-info #author-avatar {
+	background: #fff;
+	border: 1px solid #e7e7e7;
+	float: left;
+	height: 60px;
+	margin: 0 -104px 0 0;
+	padding: 11px;
+}
+#entry-author-info #author-description {
+	float: left;
+	margin: 0 0 0 104px;
+}
+#entry-author-info h2 {
+	color: #000;
+	font-size: 100%;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+.entry-utility {
+	clear: both;
+	margin-bottom: 10px;
+/*  background-color: #EEEEEE;*/
+	font-size: 12px;
+	line-height: 18px;
+/*	border:#CCCCCC 1px solid;padding:10px;*/
+}
+.entry-meta a,
+.entry-utility a {
+	
+}
+.entry-meta a:hover,
+.entry-utility a:hover {
+	color: #ff4b33;
+}
+#content .video-player {
+	padding: 0;
+}
+
+.postter { float:left; width:48%; margin:0; }
+.first  { margin:0 20px 0 0; }
+
+
+
+/* Стиль тела самой статьи*/
+.articlebody  { 
+	font-size:14px; /* Шрифт самой статьи*/
+	line-height:1.7;
+	}
+
+	
+.articlebody  img{ 
+	margin:10px;
+	}
+
+
+
+
+#columnshortcode{float:right;width:180px;margin-top:-20px;padding:0;background:#E6E7EC;}
+.codeentry{float:right;width:100%;margin:0;padding:0 15px 0;}
+.codeentry h1{font-size:20px;font-weight:normal;margin-top:30px;border-bottom: 1px solid Gray;padding-bottom: 7px;}
+.codeentry h2{background:#eee;display:block;font-size:12px;border-top:#CCCCCC 1px solid;margin:0;padding:5px;}
+#rcolumnshortcode{float:right;width:180px;margin:0;padding:0;background:#FFFFFF;}
+#rcolumnshortcode{font-family: Arial, Helvetica, sans-serif;font-size:10px; line-height: 1.5em; font-weight:normal; color:#000000;margin:0;padding:0;}
+
+
+
+
+
+
+
+/* =Стили для шорткодов.
+-------------------------------------------------------------- */
+
+.shortcodes {font-family: Arial, Helvetica, sans-serif;font-size:11px; line-height: 1.6em; font-weight:normal; color:#000000;
+	margin-top:15px;
+	margin-left:1px;
+	margin-right:10px;
+	padding:0px 0px 0px 0px; 
+	vertical-align: center}
+
+
+	
+	
+
+
+/* =Наборы цветовых сочетаний ячеек для шорткодов
+-------------------------------------------------------------- */
+.td1 {background: #EBEFF9;
+	text-align:center; 
+    vertical-align:middle;
+	}
+
+.td2 {background: #F8F7F2;
+	vertical-align: top;
+	font-size:12px;}
+
+
+	
+
+.td3 {background: #EBEFF9;
+	text-align:center; 
+    vertical-align:middle;
+	}
+
+.td4 {background: #F8F7F2;
+	vertical-align: top;
+	font-size:12px;}
+
+
+	/* =для вертикальных вариантов таблички -- */
+
+	
+.td5 {background: #EBEFF9;
+	text-align:center; 
+    vertical-align:middle;
+	}
+
+.td6 {background: #D2B48C;
+	vertical-align: top;
+	font-size:12px;}
+
+	
+		/* =используется в шорткоде a1022 Страны и регионы -- */
+.td7 {background: #F3F8FB;
+ 	text-align:center;
+	
+    vertical-align: middle;
+	}
+
+.td8 {background: #CFDFFF;
+	vertical-align: middle;
+	font-size:11px;}
+
+
+
+		/* =используется в перелистовках text -- */
+.td9 {background: #FFF;
+ 	text-align:center;
+    vertical-align: middle;
+	}
+
+.td10 {background: #FAF0E6;
+	text-align:center; 
+    vertical-align:middle;
+	font-size:12px;}
+
+	
+		/* =используется в перелистовках карты сайта http://pandia.ru/text/77/228/1.php -- */
+.td11 {background: #F3F8FB;
+ 	text-align:center;
+    vertical-align: middle;
+	}
+
+.td12 {background: #D7FFC7;
+	text-align:center; 
+    vertical-align:middle;
+	font-size:11px;}
+
+	
+		/* = объявление для карты сайта http://pandia.ru/text/77/228/1.php-- */
+.td13 {background: #FFF;
+	text-align:center; 
+    vertical-align:middle;
+	}
+
+.td14 {background: #FFF;
+	vertical-align: top;
+	font-size:12px;}
+	
+	
+	
+	
+.td15 {background: #FFF;
+	  vertical-align:top;
+	}
+
+
+	/* =Оформление алфавита рубрик на главной
+-------------------------------------------------------------- */	
+.td16 {background: #FFF;
+	font-size:14px;
+	font-weight:bold;
+	color: #D62002;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding-bottom: 5px;
+	}
+	
+hr.td16 {
+	border-bottom: 1px dotted #386749;
+	text-align: left;
+	margin-left:-15px;
+	margin-right:10px;
+	}
+
+
+	
+	/* =Стили для видео Youtube.
+-------------------------------------------------------------- */
+
+#content
+.shortube {font-family: Arial, Helvetica, sans-serif; font-size:11px; line-height: 1.6em; font-weight:normal; color:#000000; text-align: center;
+	float:left;
+	margin-top: 0px;
+	margin: 3px;
+	text-align: left;
+	padding:0px 0px 0px 0px; 
+	vertical-align: center}
+
+
+
+
+/* =Наборы цветовых сочетаний ячеек для Youtube
+-------------------------------------------------------------- */
+.tdtube1 {background: #F8F7F2;
+	text-align:center; 
+	vertical-align:middle;
+	border: 1px solid #ccc;
+	}
+
+.tdtube2 {background: #EEEEEE;
+	vertical-align: top;
+	font-size:11px;
+	vertical-align:middle;
+	border: 1px solid #ccc;
+	}
+
+
+
+
+	
+	
+	
+
+/* =Asides
+-------------------------------------------------------------- */
+
+.home #content .category-asides p {
+	font-size: 10px;
+	line-height: 200px;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+.home .hentry.category-asides {
+	padding: 0;
+}
+.home #content .category-asides .entry-content {
+	padding-top: 0;
+}
+
+
+/* =Gallery listing
+-------------------------------------------------------------- */
+
+.category-gallery .size-thumbnail img {
+	border: 10px solid #f1f1f1;
+	margin-bottom: 0;
+}
+.category-gallery .gallery-thumb {
+	float: left;
+	margin-right: 20px;
+	margin-top: -4px;
+}
+.home #content .category-gallery .entry-utility {
+	padding-top: 4px;
+}
+
+
+/* =Attachment pages
+-------------------------------------------------------------- */
+
+.attachment .entry-content .entry-caption {
+	font-size: 100%;
+	margin-top: 24px;
+}
+.attachment .entry-content .nav-previous a:before {
+	content: '\2190\00a0';
+}
+.attachment .entry-content .nav-next a:after {
+	content: '\00a0\2192';
+}
+
+
+/* =Images
+-------------------------------------------------------------- */
+
+#content img {
+	vertical-align: top;
+	
+	}
+#content .attachment img {
+	max-width: 900px;
+}
+#content .alignleft,
+#content img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 24px;
+	margin-top: 4px;
+}
+#content .alignright,
+#content img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 24px;
+	margin-top: 4px;
+}
+#content .aligncenter,
+#content img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#content img.alignleft,
+#content img.alignright,
+#content img.aligncenter {
+	margin-bottom: 12px;
+}
+#content .wp-caption {
+	background: #f1f1f1;
+	line-height: 18px;
+	margin-bottom: 20px;
+	padding: 4px;
+	text-align: center;
+}
+#content .wp-caption img {
+	margin: 5px 5px 0;
+}
+#content .wp-caption p.wp-caption-text {
+	color: #888;
+	font-size: 12px;
+	margin: 5px;
+}
+#content .wp-smiley {
+	margin: 0;
+}
+#content .gallery {
+	margin: 0 auto 18px;
+}
+#content .gallery .gallery-item {
+	float: left;
+	margin-top: 0;
+	text-align: center;
+	width: 33%;
+}
+#content .gallery img {
+	border: 2px solid #cfcfcf;
+}
+#content .gallery .gallery-caption {
+	color: #888;
+	font-size: 12px;
+	margin: 0 0 12px;
+}
+#content .gallery dl {
+	margin: 0;
+}
+#content .gallery img {
+	border: 10px solid #f1f1f1;
+}
+#content .gallery br+br {
+	display: none;
+}
+#content .attachment img { /* single attachment images should be centered */
+	display: block;
+	margin: 0 auto;
+}
+
+
+/* =Navigation
+-------------------------------------------------------------- */
+
+.navigation {
+	color: black !important;
+	font-size: 18px;
+	line-height: 40px;
+	overflow: hidden;
+	}
+
+.navigation .nav_ext{
+	padding: 8px;
+	}
+	
+.navigation .nav_current{
+	color: black !important;
+	background-color: #CCC !important;
+	padding: 10px;
+	border-radius: 5px;
+	}
+
+.navigation a:link,
+.navigation a:visited {
+	color: black !important;
+	text-decoration: none;
+	}
+
+	.navigation a:active {
+	}
+	
+.navigation a:hover {
+	color: red;
+	border: 0px solid #DFB14F;
+	background-color: #CCC !important;
+	border-radius: 5px;
+	}
+	
+.nav-previous {
+	float: left;
+	width: 50%;
+}
+.nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+#nav-above {
+	margin: 0 0 18px 0;
+}
+#nav-above {
+	display: none;
+}
+.paged #nav-above,
+.single #nav-above {
+	display: block;
+}
+#nav-below {
+	margin: -18px 0 0 0;
+}
+
+
+/* =Comments
+-------------------------------------------------------------- */
+#comments {
+	clear: both;
+}
+#comments .navigation {
+	padding: 0 0 18px 0;
+}
+h3#comments-title,
+h3#reply-title {
+	color: #000;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+h3#comments-title {
+	padding: 40px 0;
+}
+
+h4#comments {
+	color: #000;
+	font-size: 12px;
+	margin-bottom: 0;
+}
+
+.commentlist {
+	list-style: none;
+	margin: 0;
+	width: 70%;/* = Ширина блока комментариев */
+}
+
+
+/*
+DESCRIPTION: Цвета фона комментариев к статьям, поочередно
+*/
+
+.color1 {
+background-color: #FFF;
+border: 1px solid #CCCCCC;
+padding: 0px;
+margin: 0px;
+}
+.color2 {
+background-color: #FFF;
+border: 1px solid #CCCCCC;
+padding: 0px;
+margin: 0px;
+}
+
+
+
+
+.commentlist li.comment {
+	border-bottom: 1px solid #e7e7e7;
+	line-height: 24px;
+	margin: 0 0 24px 0;
+	padding: 0 0 0 56px;
+	position: relative;
+}
+.commentlist li:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+#comments .comment-body ul,
+#comments .comment-body ol {
+	margin-bottom: 18px;
+}
+#comments .comment-body p:last-child {
+	margin-bottom: 6px;
+}
+#comments .comment-body blockquote p:last-child {
+	margin-bottom: 24px;
+}
+.commentlist ol {
+	list-style: decimal;
+}
+.commentlist .avatar {
+	position: absolute;
+	top: 4px;
+	left: 0;
+}
+.comment-author {
+}
+.comment-author cite {
+	color: #000;
+	font-style: normal;
+	font-weight: bold;
+}
+.comment-author .says {
+	font-style: italic;
+}
+.comment-meta {
+	font-size: 12px;
+	margin: 0 0 18px 0;
+}
+.comment-meta a:link,
+.comment-meta a:visited {
+	color: #888;
+	text-decoration: none;
+}
+.comment-meta a:active,
+.comment-meta a:hover {
+	color: #ff4b33;
+}
+.commentlist .even {
+}
+.commentlist .bypostauthor {
+}
+.reply {
+	font-size: 12px;
+	padding: 0 0 24px 0;
+}
+.reply a,
+a.comment-edit-link {
+	color: #888;
+}
+.reply a:hover,
+a.comment-edit-link:hover {
+	color: #ff4b33;
+}
+.commentlist .children {
+	list-style: none;
+	margin: 0;
+}
+.commentlist .children li {
+	border: none;
+	margin: 0;
+}
+.nopassword,
+.nocomments {
+	display: none;
+}
+#comments .pingback {
+	border-bottom: 1px solid #e7e7e7;
+	margin-bottom: 18px;
+	padding-bottom: 18px;
+}
+.commentlist li.comment+li.pingback {
+	margin-top: -6px;
+}
+#comments .pingback p {
+	color: #888;
+	display: block;
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0;
+}
+#comments .pingback .url {
+	font-size: 13px;
+	font-style: italic;
+}
+
+/* Comments form */
+input[type=submit] {
+	color: #333;
+}
+#respond {
+	border-top: 1px solid #e7e7e7;
+	margin: 24px 0;
+	overflow: hidden;
+	position: relative;
+}
+#respond p {
+	margin: 0;
+}
+#respond .comment-notes {
+	margin-bottom: 1em;
+}
+.form-allowed-tags {
+	line-height: 1em;
+}
+.children #respond {
+	margin: 0 48px 0 0;
+}
+h3#reply-title {
+	margin: 18px 0;
+}
+#comments-list #respond {
+	margin: 0 0 18px 0;
+}
+#comments-list ul #respond {
+	margin: 0;
+}
+#cancel-comment-reply-link {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 18px;
+}
+#respond .required {
+	color: #ff4b33;
+	font-weight: bold;
+}
+#respond label {
+	color: #888;
+	font-size: 12px;
+}
+#respond input {
+	margin: 0 0 9px;
+	width: 98%;
+}
+#respond textarea {
+	width: 98%;
+}
+#respond .form-allowed-tags {
+	color: #888;
+	font-size: 12px;
+	line-height: 18px;
+}
+#respond .form-allowed-tags code {
+	font-size: 11px;
+}
+#respond .form-submit {
+	margin: 12px 0;
+}
+#respond .form-submit input {
+	font-size: 14px;
+	width: auto;
+}
+
+
+/* =Widget Areas
+-------------------------------------------------------------- */
+
+.widget-area ul {
+	list-style: none;
+	margin-left: 0;
+	
+}
+.widget-area ul ul {
+	list-style: square;
+	margin-left: 1.3em;
+}
+.widget_search #s {/* This keeps the search inputs in line */
+	width: 60%;
+}
+.widget_search label {
+	display: none;
+}
+.widget-container {
+	margin: 0 0 80px 0;
+	background: url() repeat-y;
+	}
+.widget-title {
+	color: #222;
+	font-weight: bold;
+	font-size: 12px;
+	margin-top:-3px;
+	border-bottom: 1px solid Gray;
+	padding-bottom: 0px;
+}
+.widget-area a:link,
+.widget-area a:visited {
+	text-decoration: none;
+}
+.widget-area a:active,
+.widget-area a:hover {
+	text-decoration: underline;
+}
+.widget-area .entry-meta {
+	font-size: 11px;
+}
+#wp_tag_cloud div {
+	line-height: 1.6em;
+}
+#wp-calendar {
+	width: 100%;
+}
+#wp-calendar caption {
+	color: #222;
+	font-size: 14px;
+	font-weight: bold;
+	padding-bottom: 4px;
+	text-align: left;
+}
+#wp-calendar thead {
+	font-size: 11px;
+}
+#wp-calendar thead th {
+}
+#wp-calendar tbody {
+	color: #aaa;
+}
+#wp-calendar tbody td {
+	background: #f5f5f5;
+	border: 1px solid #fff;
+	padding: 3px 0 2px;
+	text-align: center;
+}
+#wp-calendar tbody .pad {
+	background: none;
+}
+#wp-calendar tfoot #next {
+	text-align: right;
+}
+.widget_rss a.rsswidget {
+	color: #000;
+}
+.widget_rss a.rsswidget:hover {
+	color: #ff4b33;
+}
+.widget_rss .widget-title img {
+	width: 11px;
+	height: 11px;
+}
+
+
+
+/* Это сайдбар слева главный Sidebar */
+
+#main .widget-area {
+	float: left;	
+	}
+		
+#main .widget-area ul {
+	border-right:#CCC 1px;
+	border-right-style:solid;
+	padding:0px;
+	margin-left:10px; 
+	padding:3px;
+	
+	}
+#main .widget-area ul ul {
+	border: none;
+	margin-left: 1.3em;
+	padding: 0;
+	
+}
+#primary {
+	}
+
+#secondary {
+}
+
+/* Footer widget areas */
+#footer-widget-area {
+}
+
+
+/* =Footer
+-------------------------------------------------------------- */
+
+#footer {
+	margin-bottom: 5px;
+}
+#colophon {
+	border-top: 1px solid #000;
+	margin-top: 5px;
+	overflow: hidden;
+	padding: 18px 0;
+}
+#site-info {
+	color: #000;
+	margin: 15px;
+	font-weight: normal;
+	font-size: 11px;
+	line-height: 18px;
+}
+#site-info a {
+	color: #000;
+	text-decoration: none;
+}
+
+#site-generator {
+	font-style: italic;
+	position: relative;
+}
+#site-generator a {
+	background: url(images/wordpress.png) center left no-repeat;
+	color: #666;
+	display: inline-block;
+	line-height: 16px;
+	padding-left: 20px;
+	text-decoration: none;
+}
+#site-generator a:hover {
+	text-decoration: underline;
+}
+img#wpstats {
+	display: block;
+	margin: 0 auto 10px;
+}
+
+
+#site-footer-description {
+	position: absolute;
+	right: 20px; 
+	bottom: 50px;
+	
+}
+
+
+
+
+
+/* =Mobile Safari ( iPad, iPhone and iPod Touch )
+-------------------------------------------------------------- */
+
+pre {
+	-webkit-text-size-adjust: 140%;
+}
+code {
+	-webkit-text-size-adjust: 160%;
+}
+#access,
+.entry-meta,
+.entry-utility,
+.navigation,
+.widget-area {
+	-webkit-text-size-adjust: 120%;
+}
+#site-description {
+	-webkit-text-size-adjust: none;
+}
+
+
+/* =Print Style
+-------------------------------------------------------------- */
+
+@media print {
+	body {
+		background: none !important;
+	}
+	#wrapper {
+		clear: both !important;
+		display: block !important;
+		float: none !important;
+		position: relative !important;
+	}
+	#header {
+		border-bottom: 2pt solid #000;
+		padding-bottom: 18pt;
+	}
+	#colophon {
+		border-top: 2pt solid #000;
+	}
+	#site-title,
+	#site-description {
+		float: none;
+		line-height: 1.4em;
+		margin: 0;
+		padding: 0;
+	}
+	#site-title {
+		font-size: 13pt;
+	}
+	.entry-content {
+		font-size: 10pt;
+		line-height: 1.6em;
+	}
+	.entry-title {
+		font-size: 21pt;
+	}
+	#access,
+	#branding img,
+	#respond,
+	.comment-edit-link,
+	.edit-link,
+	.navigation,
+	.page-link,
+	.widget-area {
+		display: none !important;
+	}
+	#container,
+	#header,
+	#footer {
+		margin: 0;
+		width: 100%;
+	}
+	#content,
+	.one-column #content {
+		margin: 24pt 0 0;
+		width: 100%;
+	}
+	.wp-caption p {
+		font-size: 11pt;
+	}
+	#site-info,
+	#site-generator {
+		float: none;
+		width: auto;
+	}
+	#colophon {
+		width: auto;
+	}
+	img#wpstats {
+		display: none;
+	}
+	#site-generator a {
+		margin: 0;
+		padding: 0;
+	}
+	#entry-author-info {
+		border: 1px solid #e7e7e7;
+	}
+	#main {
+		display: inline;
+				
+	}
+	.home .sticky {
+		border: none;
+	}
+}
+
+
+
+
+
+/*
+DESCRIPTION: Специальные боксы Special textboxes
+DESCRIPTION: Это технические сообщения-шорткоды для вывода всяких оформлений в постах. Пример http://pandia.ru/445654/
+*/
+.stb-alert_box, 
+.stb-download_box,
+.stb-info_box, 
+.stb-warning_box, 
+.stb-black_box {
+	margin-top: 10px;  
+	margin-bottom: 10px;  
+	margin-left: 10px;
+	padding-left: 25px;
+	background-position:left;
+	text-align: left;	min-height: 20px;
+	background-repeat: no-repeat;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	}
+
+.stb-alert_box {
+	background-color: #EAF2FD;
+	background-image: url(http://pandia.ru/pics/1shortcodes/alert.png);	
+	border: 1px solid #A7D7F9;
+	color: #000000;
+	margin: 20px;
+	margin-right: 420px;
+	margin-bottom: 0px;
+	}
+	
+	
+.stb-info_box {
+	background-color: #E2F8DE;
+		background-image: url(http://pandia.ru/pics/1shortcodes/cursor-question.png);
+		border: 1px solid #7AD975;
+	color: #000000;
+}	
+
+.stb-alert_box,
+.stb-download_box,
+.stb-grey_box,
+.stb-info_box ,
+.stb-warning_box,
+.stb-black_box,
+.stb-custom_box  {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+
+
+
+
+
+
+div.tablesbottom{
+   height:0;
+}
+div.trbottom{
+   height:0;
+}
+/* не для IE */
+div.tablesbottom[class] {height:auto; display: table;}
+div.trbottom[class] { height:auto; display: table-row;}
+div.tdbottom[class] {float:none; display: table-cell;}
+
+div.tdbottom{
+   height:100%; 
+   float:left;
+}
+#main{
+   width:100%;
+}
+#first{
+   position:relative;
+   z-index:1;
+   width:33%;
+}
+#second{
+   width:33%;
+   margin:0 -30% 0 -200px; 
+   padding:0 30% 0 200px;
+}
+/* не для IE */
+#second[id]{
+   width:33%;
+   margin:0;
+   padding:0;
+}
+#third{
+   width:33%;
+}
+
+
+
+.codecenteruniversal {
+	width:980px;
+	text-align: center;
+	margin-top: 5px;  
+	margin-bottom: 5px;  
+	margin-left: 5px;
+	padding-left: 25px;
+	background-color: #FCE4AC;
+	border: 1px solid #A7D7F9;
+	color: #000000;
+	margin: 1px;
+	padding: 8px;
+	}
+	
+
+.imgcenter { vertical-align: middle}
+
+
+
+.to-comments {
+	width:100%;
+	text-align: center;
+	background-color: #E1E7ED;
+	border: 2px solid #ccc;
+	color: #000000;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 5px;
+	font-size: 12px;
+	}
+	
+
+.to-comments h2{
+	width:100%;
+	text-align: left;
+	background-color: #fff;
+	border: 0px solid #A7D7F9;
+	color: #000000;
+	margin: 20px;
+	}
+	
+	
+
+	
+
+.subscribe-to-comments {
+	width:98%;
+	text-align: center;
+	margin-top: 5px;  
+	margin-bottom: 5px;  
+	margin-left: 50px;
+	padding-left: 250px;
+	background-color: #FFF;
+	border: 0px solid #A7D7F9;
+	color: #000000;
+	margin: 1px;
+	padding: 8px;
+	}
+	
+	
+
+.tablesbottom	
+{
+	width: 100%;
+	margin-right: 25px;
+	border: 0px solid #D3D3D3;
+	color: #000000;
+	
+	}
+	
+	
+.toplist-category-post {
+	margin-right: 35px;
+	border: 1px solid #D3D3D3;
+	color: #000000;
+	}
+	
+.toplist-category-post {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 2px;
+}
+.toplist-category-post {
+	margin-top: 20px;  
+	margin-right: 20px;  
+	margin-bottom: 10px;  
+	padding-left: 10px;
+	padding-right: 15px;
+	background-position:left;
+	text-align: left;	
+	min-height: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	}
+	
+	
+.itt_tagBox {
+	position: absolute;
+	top: 60px;  
+	right: 10px;  
+	left: 710px;
+	text-align: left;	min-height: 20px;
+	background-repeat: no-repeat;
+	}
+	
+	
+.edityoursubmission{
+	position: absolute;
+	top: 90px;  
+	right: 110px;  
+	left: 400px;
+	text-align: left;	min-height: 20px;
+	background-repeat: no-repeat;
+	font-size: 12px;
+	font-weight: bold;
+	}
+	
+	
+
+.righttizer{
+	float:right;
+	margin-top: 2px;  
+	margin-right: 20px;  
+	margin-bottom: 2px;  
+	padding-right: 15px;
+	background-position:left;
+	text-align: left;	min-height: 20px;
+	background-repeat: no-repeat;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+/* =Стили категорий, точнее таблиц порталов для поля description
+-------------------------------------------------------------- */
+
+#categdesc1 {
+	margin: 0 2px 0 5px;
+	float: left;
+	width: 95%;
+}
+
+#categdesc1 table {
+	color: #000;
+	border: 1px solid #d4d4d4;
+	margin: 1px 1px 1px 0;
+	text-align: left;
+	font-size: 12px;
+	width: 95%;
+	}
+
+	
+#categdesc1 tr th,
+#categdesc1 thead th {
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 18px;
+	padding: 9px 24px;
+}
+#categdesc1 tr td {
+	border: 0px solid #e7e7e7;
+	padding: 5px 5px;
+		
+}
+#categdesc1 tr.odd td {
+}
+
+
+#categdesc1 h1{font-size:20px;font-weight:normal;color: #000;margin-top:20px;margin-right:205px;border-bottom: 1px solid Gray;padding-bottom: 7px;}
+#categdesc1 h2{font-size:18px;font-weight:normal;color: #000;margin-top:30px;margin-bottom:5px;margin-right:5px;border-bottom: 0px solid Gray;padding-bottom: 7px;}
+#categdesc1 h3,
+#categdesc1 h4,
+#categdesc1 h5,
+#categdesc1 h6 {
+	color: #000;
+	line-height: 1.5em;
+	margin: 0 0 20px 0;
+	}
+	
+#categdesc1 img {
+	border: 0px solid #cfcfcf;
+	vertical-align: top;
+}	
+
+#categdesc1 {
+	margin-bottom: 36px;
+	}
+#categdesc1,
+#categdesc1 input,
+#categdesc1 textarea {
+	color: #000000;
+	font-size: 12px;
+	line-height: 20px;
+}
+#categdesc1 p,
+#categdesc1 ul,
+#categdesc1 ol,
+#categdesc1 dd,
+#categdesc1 pre,
+#categdesc1 hr {
+	margin-bottom: 10px;
+}
+#categdesc1 ul ul,
+#categdesc1 ol ol,
+#categdesc1 ul ol,
+#categdesc1 ol ul {
+	margin-bottom: 0;
+}
+#categdesc1 pre,
+#categdesc1 kbd,
+#categdesc1 tt,
+#categdesc1 var {
+	font-size: 15px;
+	line-height: 21px;
+}
+#categdesc1 code {
+	font-size: 13px;
+}
+#categdesc1 dt,
+#categdesc1 th {
+	color: #000;
+}
+#categdesc1 h1{font-size:20px;font-weight:normal;margin-top:20px;border-bottom: 1px solid Gray;padding-bottom: 7px;}
+#categdesc1 h2{font-size:18px;font-weight:normal;margin-top:30px;margin-bottom:5px;border-bottom: 0px solid Gray;padding-bottom: 7px;}
+#categdesc1 h3{
+	color: #000;
+	font-size:12px;
+	line-height: 1.5em;
+	margin: 0 0 10px 10px;
+	}
+#categdesc1 h4,
+#categdesc1 h5,
+#categdesc1 h6 {
+	color: #000;
+	line-height: 1.5em;
+	margin: 0 0 20px 0;
+}
+#categdesc1 table {
+	color: #000;
+	background: #FFF;
+	border: 0px solid #e7e7e7;
+	margin: 0 -1px 14px 0;
+	text-align: left;
+	font-size: 12px;
+	}
+
+	
+#categdesc1 tr th,
+#categdesc1 thead th {
+	color: #888;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 18px;
+	padding: 9px 24px;
+}
+#categdesc1 tr td {
+	border-top: 0px solid #e7e7e7;
+	padding: 5px 5px;
+}
+#categdesc1 tr.odd td {
+	background: #f2f7fc;
+}
+.hentry {
+	margin: 0 0 48px 0;
+}
+.home .sticky {
+	background: #f2f7fc;
+	border-top: 4px solid #000;
+	margin-left: -20px;
+	margin-right: -20px;
+	padding: 18px 20px;
+}
+.single .hentry {
+	margin: 0 0 36px 0;
+}
+.page-title {
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0 0 36px 0;
+	
+	}
+.pagetitle h1{font-size:20px;font-weight:normal;margin-top:15px;border-bottom: 1px solid Gray;padding-bottom: 7px;}
+
+.page-title span {
+	color: #333;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: normal;
+}
+.page-title a:link,
+.page-title a:visited {
+	color: #888;
+	text-decoration: none;
+}
+.page-title a:active,
+.page-title a:hover {
+	color: #ff4b33;
+}
+
+.poster {float:right; width:100%; padding:0 0px 0;text-align:left;}
+.poster  li  {
+	vertical-align:middle;
+	
+}
+
+.rotator-top-right {float:right; width:200px; margin-right:10px;padding:6px;text-align:left;} 
+
+
+.taglinks,
+.taglinks span{
+	margin-top: 2px;  
+	margin-left: 200px;  
+	margin-bottom: 2px;  
+	background-position:left;
+	text-align: left;	min-height: 20px;
+	background-repeat: no-repeat;
+	}
+
+
+	
+.mainrotatorig	{
+	line-height: 160%;
+	}
+	
+.mainrotatorig	img{
+	
+}
+	
+	
+/*  Порталы и рубрики, аттачи, оформление
+-------------------------------------------------------------- */
+
+.qoutes {
+  -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);   
+  box-shadow:0 10px 10px rgba(0, 0, 0, 0.7);
+  
+  transform:rotate(0deg);
+  
+	width: 90%;
+	text-align: left;
+	float: left;
+	padding:10px;
+	margin:0 10px 30px 10px;
+}
+	
+
+
+.qoutes-categ {
+	border: 1px solid #D6D3D3;
+	border-bottom: 2px solid #C4C2C2;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+	margin:30px;
+	padding:20px;
+	font-size:13px;
+	width:500px;
+	}
+	
+
+
+	
+
+.qoutes-categ-bottom { 
+	border: 1px solid #D6D3D3;
+	border-bottom: 2px solid #C4C2C2;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+	margin:50px;
+	padding:20px;
+	font-size:13px;
+	width:500px;
+        }
+	
+.qoutes-categ-bh { 
+	clear:left;
+	background: url(http://pandia.ru/pics/portal/sets/6/sad.jpg) center left no-repeat;
+	background-position: 0px;
+	border: 1px solid #D6D3D3;
+	border-bottom: 2px solid #C4C2C2;
+	border-left: 5px solid blue;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+	margin:50px 0 40px 30px;
+	padding:15px 15px 15px 100px;
+	font-size:13px;
+	width:600px;
+	max-width:600px;
+        }
+	
+
+.qoutes-categ-mudr { 
+	clear:left;
+	background: url(http://pandia.ru/pics/portal/sets/6/mudr.jpg) center left no-repeat;
+	background-position: 0px;
+	border: 1px solid #D6D3D3;
+	border-bottom: 2px solid #C4C2C2;
+	border-left: 5px solid blue;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+	margin:50px 0 40px 30px;
+	padding:15px 15px 15px 100px;
+	font-size:13px;
+	width:600px;
+	max-width:600px;
+        }
+		
+
+
+
+.qoutes-categ-spravka { 
+	clear:left;
+	background: url(http://pandia.ru/pics/portal/sets/6/diplom.png) center left no-repeat;
+	background-position: 10px;
+	border: 1px solid #D6D3D3;
+	border-bottom: 2px solid #C4C2C2;
+	border-left: 5px solid green;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+	margin:5px;
+	padding:5px 5px 5px 50px;
+	font-size:13px;
+	width:600px;
+	max-width:600px;
+        }
+
+
+.gallery-for-categ { 
+	clear:left;
+	background: url(http://pandia.ru/pics/portal/sets/6/gallery.png) center left no-repeat;
+	background-position: 10px;
+	border: 1px solid #D6D3D3;
+	border-bottom: 2px solid #C4C2C2;
+	border-left: 5px solid pink;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+	margin:15px 5px 5px 5px;
+	padding:5px 5px 5px 50px;
+	font-size:13px;
+	width:600px;
+	max-width:600px;
+        }
+		
+
+
+	
+.qoutes-categ-bhum { 
+	clear:left;
+	background: url(http://pandia.ru/pics/portal/sets/6/bhum.jpg) center left no-repeat;
+	background-position: 0px;
+	border: 1px solid #D6D3D3;
+	border-bottom: 2px solid #C4C2C2;
+	border-left: 5px solid blue;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+	margin:30px 0 30px 30px;
+	padding:15px 15px 15px 100px;
+	font-size:13px;
+	width:600px;
+	max-width:600px;
+        }
+		
+	
+.portal-attach-red { 
+	background: url(http://pandia.ru/pics/attach.png) center left no-repeat;
+	background-position: 20px;
+	border: 1px solid #D6D3D3;
+	border-bottom: 2px solid #C4C2C2;
+	border-left: 5px solid red;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+	margin:30px;
+	padding:15px 0 15px 70px;
+	font-size:13px;
+	width:600px;
+        }
+	
+	
+.portal-attach-blue { 
+	background: url(http://pandia.ru/pics/attach.png) center left no-repeat;
+	background-position: 20px;
+	border: 1px solid #D6D3D3;
+	border-bottom: 2px solid #C4C2C2;
+	border-left: 5px solid blue;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+	margin:30px;
+	padding:15px 0 15px 70px;
+	font-size:13px;
+	width:600px;
+}
+
+
+
+
+
+
+
+.halloween-qoutes {
+	z-index: 1;
+	-webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);   
+	box-shadow:0 10px 10px rgba(0, 0, 0, 0.7);
+	transform:rotate(0deg);
+	width:360px;
+	margin:15px 15px 15px 0;
+	text-align: left;
+	float: left;
+	padding:10px;
+	
+}
+
+.halloween-pics{
+	z-index: 2;
+	display: inline-block;
+	width:360px;
+	height:170px;
+	overflow: hidden;
+}
+
+.halloween-pics img{
+	z-index: 2;
+	width:400px;
+	border: none;
+    position:relative;
+	top:50%;
+	left:50%;
+	border: none;
+    margin-top: -30%;
+	margin-left: -50%;
+    
+}
+
+
+
+.halloween-1993{
+	background:#fff;
+	z-index: 5;
+	position:relative;
+	top:-30px;
+	left:17px;
+	-webkit-box-shadow:0 5px 2px rgba(0, 0, 0, 0.7);   
+	box-shadow:0 5px 2px rgba(0, 0, 0, 0.7);
+	transform:rotate(0deg);
+	width:330px;
+	height:30px;
+	text-align:center;
+	font-size:16px;
+	font-weight:bold;
+	color:black;
+	padding:8px 0 0 0;
+}
+
+
+.halloween-1995{
+	float:left;
+	z-index: 6;
+	margin:5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+/*  Порталы и рубрики, аттачи, оформление - конец
+-------------------------------------------------------------- */
+	
+	
+	
+
+
+
+.categall {
+	width: 95%;
+	text-align: left;
+	float: left;
+}
+
+
+.categall table{
+	width: 100%;
+	text-align: left;
+	float: left;
+	}
+
+
+
+
+.categd {
+ float:left;
+ width: 100%;
+ 
+  }
+ 
+ .categd table{
+	width: 100%;
+	text-align: left;
+	float: left;
+}
+ 
+ 
+
+/* =Спойлеры Spoilers
+-------------------------------------------------------------- */ 
+ 
+ 
+.spoiler-wrap{
+	clear:both; 
+	width:100%;
+	max-width:1250px;
+	margin:0 0 0px 0; 
+	padding:2px;
+	border: 1px solid #CCC;
+	font-family: sans-serif;
+	font-size: 12px;
+	}
+
+.spoiler-head {
+	margin:0; 
+	padding:7px 0;
+	font-size: 13px;
+	font-weight:bold;
+	text-align:center;
+	}
+	
+
+.spoiler-head img{
+	height:18px;
+	float:left;
+	margin:0 0 0 5px;
+	}
+	
+ 
+.spoiler-body {
+	clear:left;
+	margin:0px; 
+	line-height:1.8;
+	font-size:10.77px;
+	font-family: sans-serif;
+	font-variant: normal;
+	}
+
+.spoiler-body hr{
+	height: 1px;
+	border: none;
+	color: #eee;
+	background: #eee;
+	margin: 0; /* устраняем начальный отступ для всех браузеров (в ие6 не работает) */
+}
+
+
+	
+	
+	
+/* =Стиль bottom вставки фотоархива
+-------------------------------------------------------------- */ 
+.rotfotoramk{
+width:80%
+	}
+
+	
+.rotblock{
+	width:800px;
+	margin:0 0 20px 10px;
+	float:left; 
+	min-width: 800px;
+	max-width: 800px;
+	text-align:center;
+	}
+
+	
+.rotblock h2{
+	margin:0 0 0 10px;
+	text-align:left;
+	}
+
+.rotfotos {
+	position:relative;
+	background-color: #fff;
+	margin: 1px;
+	padding: 1px;
+	width: 85px;	/*Это размер превью для ротаторов*/
+	border-radius: 2px;
+	float: left;
+	overflow: hidden;
+	text-align:center;
+	line-height:1.2;
+	font-size:11px;
+        }
+		
+		
+.rotfotos img{
+	position:relative;
+	border: 2px solid;
+	border-color: #ccc;
+	margin: 8px;
+	padding: 0;
+	width: 75px;	/*Это размер превью для ротаторов*/
+	height: 75px;  /*Менять строку для изменения высоты превью ротаторов галерей. Обязательно пропорционально 1 :1 */
+	
+	float: left;
+	overflow: hidden;
+	text-align: center;
+	
+        }
+		
+		
+.rotfotos .im{
+        height: 200px;
+        width: 120px;
+        margin: 8px 8px 0 8px;
+        position:relative;
+        overflow:hidden;
+		}
+.rotfotos .im img{
+        position:absolute;
+        top:-50px;
+        left:0;
+        }
+
+.rotfotos-text{
+		font-size: 12px;
+		font-weight: normal;
+		text-align:center;
+		}
+		
+		
+		
+ 
+ 
+
+ /* =Drop Menu
+-------------------------------------------------------------- */
+
+
+ul.dropdown li { position: relative; }
+ ul.dropdown,
+ ul.dropdown-inside {
+ list-style-type: none;
+ padding: 0;
+ }
+ ul.dropdown-inside {
+ position: absolute;
+ left: -9999px;
+ }
+ ul.dropdown li.dropdown-top {
+ display: inline;
+ float: left;
+ margin: 0 1px 0 0;
+ }
+ ul.dropdown li.dropdown-top a {
+ padding: 3px 5px 4px;
+ display: block;
+ }
+ ul.dropdown a.dropdown-top { background: #efefef; }
+ ul.dropdown a.dropdown-top:hover { padding: 2px 5px 5px; }
+ ul.dropdown li.dropdown-top:hover .dropdown-inside {
+ display: block;
+ left: 0;
+ }
+ ul.dropdown .dropdown-inside { background: #fff; }
+ ul.dropdown .dropdown-inside a:hover { background: #efefef; }

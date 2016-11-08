@@ -1,0 +1,830 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Исследование взаимодействия океана и атмосферы с помощью СВЧ-радиометрических средств спутников EOS-Aqua и Метеор-М №1.</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+h1
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+h2
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:150%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:normal;}
+h3
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:28.0pt;
+	line-height:150%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:normal;}
+h4
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:28.0pt;
+	line-height:150%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman","serif";}
+h5
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	line-height:150%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:normal;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Верхний колонтитул Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Нижний колонтитул Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{mso-style-name:"Основной текст\',Знак; text-align: center; 
+               line-height: 150%; font-size: 14.0pt; font-family: 
+               Times New Roman,serif; 
+               margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; 
+               margin-bottom: .0001pt";
+	}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	
+	text-indent:28.0pt;
+	line-height:150%;
+	font-size:14.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoBodyText2, li.MsoBodyText2, div.MsoBodyText2
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoBodyText3, li.MsoBodyText3, div.MsoBodyText3
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	text-transform:uppercase;}
+p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:20.0pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoBodyTextIndent3, li.MsoBodyTextIndent3, div.MsoBodyTextIndent3
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:20.0pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";
+	color:black;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+strong
+	{font-family:"Times New Roman","serif";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.Iniiaiieoeoo
+	{mso-style-name:"Iniiaiie o?eoo";}
+span.apple-style-span
+	{mso-style-name:apple-style-span;
+	font-family:"Times New Roman","serif";}
+span.a
+	{mso-style-name:"Верхний колонтитул Знак";
+	mso-style-link:"Верхний колонтитул";}
+span.a0
+	{mso-style-name:"Нижний колонтитул Знак";
+	mso-style-link:"Нижний колонтитул";}
+span.a1
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-link:"Текст выноски";
+	font-family:"Tahoma","sans-serif";}
+ /* Page Definitions */
+ @page WordSection1
+	{size:21.0cm 842.0pt;
+	margin:2.0cm 2.0cm 2.0cm 2.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body vlink="purple" link="blue" lang="RU">
+<table class="MsoTableGrid" style="border: medium none ; background: blue none repeat scroll 0% 50%; margin-left: 5.4pt; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; border-collapse: collapse;" width="100%" cellspacing="0" cellpadding="0" border="1" height="24">
+
+
+  <tbody>
+    <tr style="height: 19.85pt;">
+      <td style="border: 1pt solid blue; width: 1252px; height: 22;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm">
+      <p class="MsoNormal" style="text-align: justify; vertical-align: baseline; margin-bottom: 0pt; text-indent: 0pt;">
+      <font color="#ffffff"><b><font face="Arial">"ЖУРНАЛ РАДИОЭЛЕКТРОНИКИ" N
+            <span lang="en-us">3</span>,<span lang="en-us"> 20</span>14</font></b></font></p>
+      </td>
+      <td style="border: 1pt solid blue; width: 1252px; height: 22;padding-left:5.4pt; padding-right:5.4pt; padding-top:0cm; padding-bottom:0cm">
+
+      <p class="MsoNormal" style="text-align: right; vertical-align: baseline; text-indent: 0pt; margin-bottom: 0pt"><font color="#ffffff" face="Arial"><b><font size="2"> 
+      <a href="http://jre.cplire.ru/mac/mar14/index.html"><font color="#ffffff">оглавление</font></a></font></b></font></p></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<blockquote>
+
+
+<p class="MsoBodyText2" style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="left">
+<span style="font-size: 14pt" lang="EN-US">УДК 551.465</span></p>
+
+<p class="MsoBodyText" style="margin-top: 0; margin-bottom: 0" align="center"><b>
+<span style="font-size: 14pt; text-transform: uppercase">Исследование взаимодействия океана и атмосферы
+с помощью СВЧ-радиометрических средств спутников </span>
+<span style="text-transform:uppercase; font-size:14pt" lang="EN-US">EOS</span></b><span style="font-size: 14pt"><b><span style="text-transform:uppercase" lang="EN-US"> </span><span style="text-transform:
+uppercase" lang="EN-US">Aqua</span></b></span><b><span style="text-transform:uppercase"><span style="font-size: 14pt"> И Метеор</span><span style="font-size: 14pt; color: black">-М №1</span></span></b></p>
+
+<p class="MsoBodyText2" style="margin-top:0cm"><span style="font-size:11.0pt;
+color:black">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom:6.0pt;text-align:center" align="center"><b><span style="color:black">А. Г. Гранков<sup>1</sup>, А. А. Мильшин<sup>1</sup>, Н. К.
+Шелобанова<sup>1</sup>, И. В. Черный<sup>2</sup>, Г. Г. Язерян<sup>3</sup></span></b></p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><b><sup><span style="color:black">1</span></sup><span style="color:black">ИРЭ им. В.А.
+Котельникова РАН</span></b></p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><b><sup><span style="color:black">2</span></sup><span style="color:black">НТЦ </span></b><b><span style="font-family:Symbol;color:black">&#178;</span><span style="color:black">Космонит</span></b><b><span style="font-family:Symbol;color:black">&#178;</span><span style="color:black">
+ОАО Российские космические системы</span></b></p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><b><sup><span style="color:black">3</span></sup><span style="color:black">ОАО Российские
+космические системы</span></b></p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:11.0pt;color:black">&nbsp;</span></p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><span style="color:black">Статья получена 12 марта 2014 г.</span></p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><span style="font-size:11.0pt;color:black">&nbsp;</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0cm;line-height:150%"><b><span style="font-size:14.0pt;line-height:150%;color:black">Аннотация.</span></b><span style="font-size:14.0pt;line-height:150%;color:black"> Приведены оригинальные
+результаты исследований теплового и динамического взаимодействия океана и
+атмосферы с помощью американского спутника EOS Aqua (радиометр </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">AMSR</span><span style="font-size:14.0pt;line-height:150%;color:black">-</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">E</span><span style="font-size:14.0pt;line-height:150%;color:black">) и отечественного
+спутника Метеор-М №1 (радиометр МТВЗА-ГЯ) в Северной Атлантике. Демонстрируется
+возможность использования этих средств для анализа среднемесячных значений
+потоков тепла, влаги и импульса на границе раздела океана и атмосферы и их
+сезонных изменений. Исследования проводятся на основе архивов данных
+многолетних спутниковых измерений, созданных в ИРЭ РАН при поддержке
+организаций Роскосмоса и НАС</span><span style="font-size:14.0pt;line-height:
+150%;color:black">А.</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0cm;line-height:150%"><b><span style="font-size:14.0pt;line-height:150%;color:black">Ключевые слова:</span></b><span style="font-size:14.0pt;line-height:150%;color:black"> спутниковая
+СВЧ-радиометрия, яркостная температура, система океан-атмосфера, потоки тепла и
+импульса.</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0cm;line-height:150%"><b><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Abstract. </span></b><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Some original
+results of studies of ocean/atmosphere heat and dynamic interaction in the
+North Atlantic derived from US satellite EOS Aqua with radiometer AMSR-E and
+Russian satellite Meteor-M No.1 equipped by radiometer MTVZA-G are presented. A
+capability of these means for analyzing the monthly mean fluxes of heat,
+moisture and momentum at the ocean-atmosphere boundary and their seasonal
+variability is demonstrated. These studies are carried out basing on the
+archives of long-term satellite measurement data accumulated in IRE RAS under
+support of the Roscosmos and NASA organizations.</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0cm;line-height:150%"><b><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Keywords:</span></b><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> Satellite
+microwave radiometry, brightness temperature, system ocean-atmosphere, heat,
+moisture and impulse fluxes.</span></p>
+
+<p class="MsoBodyText2" style="margin-top:12.0pt;text-align:center;
+line-height:150%; margin-bottom:6pt" align="center"><b><span style="font-size:14.0pt;line-height:150%;color:black;
+text-transform:uppercase">1. </span><span style="font-size:14.0pt;
+line-height:150%;color:black">Спутниковые архивы и их формирование</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify;text-indent:28.0pt;line-height:
+150%"><span style="font-size:14.0pt;line-height:150%;color:black">Наши
+исследования в области теплового и динамического взаимодействия океана и
+атмосферы, проводимые с начала 90-х годов, опираются на данные
+СВЧ-радиометрических измерений современных спутников </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">DMSP</span><span style="font-size:14.0pt;line-height:150%;color:black">, Метеор 3М, </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">EOS</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Aqua</span><span style="font-size:14.0pt;line-height:150%;color:black">, Метеор-М №1.
+Радиометры-сканеры этих спутников, такие как </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">SSM</span><span style="font-size:14.0pt;line-height:150%;color:black">/</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">I</span><span style="font-size:14.0pt;line-height:150%;color:black"> (</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Special</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Sensor</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Microwave</span><span style="font-size:14.0pt;line-height:150%;color:black">/</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Imager</span><span style="font-size:14.0pt;line-height:150%;color:black">), МТВЗА и МТВЗА-ГЯ
+(модуль температурно-влажностного зондирования атмосферы), </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">AMSR</span><span style="font-size:14.0pt;line-height:150%;color:black">-</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">E</span><span style="font-size:14.0pt;line-height:150%;color:black"> (</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Advanced</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Microwave</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Scanning</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Radiometer</span><span style="font-size:14.0pt;line-height:150%;color:black">), являющиеся частотными
+аналогами, позволяют решать актуальные задачи по взаимодействию океана и
+атмосферы: определение приповерхностных турбулентных потоков тепла, влаги и
+импульса на различных масштабах времени, изучение влияния горизонтального
+(адвективного) переноса тепла и влаги в атмосферном пограничном слое на
+яркостную температуру системы </span><span style="font-size:14.0pt;line-height:
+150%;font-family:Symbol;color:black">&#178;</span><span style="font-size:14.0pt;
+line-height:150%;color:black">океан-атмосфера</span><span style="font-size:
+14.0pt;line-height:150%;font-family:Symbol;color:black">&#178;</span><span style="font-size:14.0pt;line-height:150%;color:black"> (СОА) и на ее связь с
+тепловыми процессами в системе, оценка энергетики среднеширотных и тропических
+циклонов и анализ факторов, способствующих их появлению и развитию [<a href="#1">1</a>, 
+<a href="#2">2</a>].</span></p>
+
+<p class="MsoNormal" style="text-align:justify;text-indent:28.0pt;line-height:
+150%"><span style="font-size:14.0pt;line-height:150%;color:black">Данные
+многолетних измерений радиометров </span><span style="font-size:
+14.0pt;line-height:150%;color:black" lang="EN-US">SSM</span><span style="font-size:14.0pt;
+line-height:150%;color:black">/</span><span style="font-size:14.0pt;
+line-height:150%;color:black" lang="EN-US">I</span><span style="font-size:14.0pt;line-height:
+150%;color:black">, </span><span style="font-size:14.0pt;line-height:
+150%;color:black" lang="EN-US">TMI</span><span style="font-size:14.0pt;line-height:150%;
+color:black">, </span><span style="font-size:14.0pt;line-height:
+150%;color:black" lang="EN-US">AMSR</span><span style="font-size:14.0pt;line-height:150%;
+color:black">-</span><span style="font-size:14.0pt;line-height:150%;
+color:black" lang="EN-US">E</span><span style="font-size:14.0pt;line-height:150%;color:black">,
+МТВЗА-ГЯ с суточным разрешением использованы нами для формирования глобальных
+архивов яркостных температур СОА в миллиметровом и сантиметровом диапазонах
+длин волн, а также среднесуточных и среднемесячных значений тепловых потоков. </span><span style="font-size:14.0pt;line-height:150%;color:black">Подробные сведения о
+частотных и поляризационных характеристиках каналов этих радиометров</span><span style="font-size:14.0pt;line-height:150%;color:black"> приведены в [<a href="#3">3</a>, 
+<a href="#4">4</a>].</span></p>
+
+<p class="MsoBodyText2" style="text-align:center;line-height:150%" align="center"><i><span style="font-size:14.0pt;line-height:150%;color:black">Краткое
+описание процедуры формирования файлов ЯТ</span></i></p>
+
+<p class="MsoNormal" style="text-align:justify;text-indent:28.0pt;line-height:
+150%"><span style="font-size:14.0pt;line-height:150%;color:black">При
+формировании файлов яркостных температур (ЯТ) реализуется суточный цикл
+представления информации. Файлы, содержат глобальные поля ЯТ. На каждые сутки
+формируется два файла. Один файл из данных на восходящих витках, другой </span><span style="font-size:14.0pt;line-height:150%;font-family:Symbol;color:black">-</span><span style="font-size:14.0pt;line-height:150%;color:black"> на нисходящих витках.
+Поле представляет собой глобальную прямоугольную сетку с шагом 0,5x0,5 градусов
+(массив 720x360 элементов). Сетка центрирована по экватору и Гринвичскому
+меридиану. Значения ЯТ для каждой ячейки сетки равны средним значениям ЯТ по
+всем пикселям, отнесенным к данной ячейке. Исходный формат файлов hdf и для его
+обработки удобно использовать программный продукт HDF Explorer. На этапе
+предварительной обработки значения ЯТ в различных спутниковых каналах из
+бинарного формата преобразовывались в текстовый формат.</span></p>
+
+<p class="MsoBodyText2" style="text-align:center" align="center"><i><span style="font-size:14.0pt;color:black">Описание созданных архивов яркостных
+температур и тепловых потоков</span></i></p>
+
+<p class="MsoBodyText2" style="text-indent:28.0pt;line-height:150%"><span style="font-size:14.0pt;line-height:150%;color:black">Перечень основных архивов,
+созданных в 2008</span><span style="font-size:14.0pt;line-height:150%;
+font-family:Symbol;color:black">-</span><span style="font-size:14.0pt;
+line-height:150%;color:black">2011 гг. (52000 файлов объемом &gt; 1000 Гб):</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0cm"><span style="font-size:14.0pt;
+color:black">•Архив спутниковых </span><span style="font-size:14.0pt;
+color:black" lang="EN-US">SSM</span><span style="font-size:14.0pt;color:black">/</span><span style="font-size:14.0pt;color:black" lang="EN-US">I</span><span style="font-size:14.0pt;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;
+color:black">данных (1996</span><span style="font-size:14.0pt;font-family:Symbol;
+color:black">-</span><span style="font-size:14.0pt;color:black">1999 гг.)</span></p>
+
+<p class="MsoBodyText2"><span style="font-size:14.0pt;color:black">•Архив спутниковых
+T</span><span style="font-size:14.0pt;color:black" lang="EN-US">MI</span><span style="font-size:14.0pt;color:black" lang="EN-US"> </span><span style="font-size:
+14.0pt;color:black">данных (1997</span><span style="font-size:14.0pt;
+font-family:Symbol;color:black">-</span><span style="font-size:14.0pt;
+color:black">1999 гг.)</span></p>
+
+<p class="MsoBodyText2"><span style="font-size:14.0pt;color:black">•Архив спутниковых
+AMSR-E данных (2002</span><span style="font-size:14.0pt;font-family:Symbol;
+color:black">-</span><span style="font-size:14.0pt;color:black">2008 гг.)</span></p>
+
+<p class="MsoBodyText2"><span style="font-size:14.0pt;color:black">•Архив среднесуточных
+и среднемесячных потоков (1996</span><span style="font-size:14.0pt;font-family:
+Symbol;color:black">-</span><span style="font-size:14.0pt;color:black">1999
+гг.)</span></p>
+
+<p class="MsoBodyText2" style="text-indent:28.0pt;line-height:150%"><span style="font-size:14.0pt;line-height:150%;color:black">Перечень основных архивов
+созданных в 2012-2013 гг. (&gt;9000 файлов объемом &gt;200 Гб)</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">:</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0cm"><span style="font-size:14.0pt;
+color:black">•Архив спутниковых </span><span style="font-size:14.0pt;
+color:black" lang="EN-US">SSM</span><span style="font-size:14.0pt;color:black">/</span><span style="font-size:14.0pt;color:black" lang="EN-US">I</span><span style="font-size:14.0pt;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;
+color:black">данных (2009</span><span style="font-size:14.0pt;font-family:Symbol;
+color:black">-</span><span style="font-size:14.0pt;color:black">20</span><span style="font-size:14.0pt;color:black">11 гг)</span></p>
+
+<p class="MsoBodyText2"><span style="font-size:14.0pt;color:black">•Архив спутниковых
+T</span><span style="font-size:14.0pt;color:black" lang="EN-US">MI</span><span style="font-size:14.0pt;color:black" lang="EN-US"> </span><span style="font-size:
+14.0pt;color:black">данных (2009</span><span style="font-size:14.0pt;
+font-family:Symbol;color:black">-</span><span style="font-size:14.0pt;
+color:black">20</span><span style="font-size:14.0pt;color:black">11 гг.)</span></p>
+
+<p class="MsoBodyText2"><span style="font-size:14.0pt;color:black">•Архив спутниковых
+AMSR-E данных (2009</span><span style="font-size:14.0pt;font-family:Symbol;
+color:black">-</span><span style="font-size:14.0pt;color:black">2010 гг.)</span></p>
+
+<p class="MsoBodyText2"><span style="font-size:14.0pt;color:black">•Архив среднесуточных
+и среднемесячных потоков (2009</span><span style="font-size:14.0pt;font-family:
+Symbol;color:black">-</span><span style="font-size:14.0pt;color:black">2010
+гг.)</span></p>
+
+<p class="MsoBodyText2"><span style="font-size:14.0pt;color:black">•Архив спутниковых
+МТВЗА данных (11.2009</span><span style="font-size:14.0pt;font-family:Symbol;
+color:black">-</span><span style="font-size:14.0pt;color:black">05.2010 гг.)</span></p>
+
+<p class="MsoBodyText2" style="line-height:150%"><span style="font-size:14.0pt;
+line-height:150%;color:black">Всего в архиве &gt; 9000 файлов объемом &gt; 200 ГБ</span></p>
+
+<p class="MsoBodyText2" style="margin-top:12.0pt;text-align:center;
+line-height:150%; margin-bottom:6pt" align="center"><b><span style="font-size:14.0pt;line-height:150%;color:black">2.
+Методика определения потоков тепла, влаги и импульса по спутниковым измерениям</span></b></p>
+
+<p class="MsoBodyText2" style="margin-top:0cm;text-indent:28.0pt;line-height:
+150%"><span style="font-size:14.0pt;line-height:150%;color:black">С учетом
+возможностей современной техники дистанционного зондирования, перспективным
+является подход к определению тепловых потоков, базирующийся на косвенной
+(корреляционной) связи между интегральными (усредненными по высоте) значениями
+температуры и влажности атмосферы, вариации которых надежно регистрируются по
+данным спутниковых СВЧ- и ИК-радиометрических измерений в определенных участках
+спектра, с температурой и влажностью нижних слоев атмосферы [<a href="#1">1</a>, 
+<a href="#2">2</a>]. Эта связь
+обусловлена существующим в приводном и пограничном слоях воздуха механизмом
+турбулентного перемешивания тепла и влаги, которое в атмосфере намного более
+развито и интенсивно по сравнению с океаном.</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0cm;text-indent:28.0pt;line-height:
+150%"><span style="font-size:14.0pt;line-height:150%;color:black">Существование
+корреляционных связей между температурными и влажностными характеристиками в
+различных слоях атмосферы, служит отправной точкой для использования
+спутниковых радиометрических методов при определении основных количественных
+характеристик теплового взаимодействия океана и атмосферы – вертикальных
+турбулентных потоков явного (</span><i><span style="font-size:14.0pt;
+line-height:150%;color:black" lang="EN-US">Q</span></i><sub><span style="font-size:16.0pt;line-height:150%;color:black" lang="EN-US">h</span></sub><span style="font-size:14.0pt;line-height:150%;color:black">) и скрытого (</span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Q</span></i><sub><span style="font-size:16.0pt;line-height:150%;color:black" lang="EN-US">e</span></sub><span style="font-size:14.0pt;line-height:150%;color:black">) тепла на границе
+раздела СОА на основе полуэмпирических формул </span><span style="font-size:
+14.0pt;line-height:150%;font-family:Symbol;color:black">-</span><span style="font-size:14.0pt;line-height:150%;color:black"> так называемых
+балк-формул, полученных на основе аэродинамического метода (</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Global</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Bulk</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Aerodynamic</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Method</span><span style="font-size:14.0pt;line-height:150%;color:black">). В соответствии с этим
+подходом величины </span><i><span style="font-size:14.0pt;
+line-height:150%;color:black" lang="EN-US">Q</span></i><sub><span style="font-size:16.0pt;line-height:150%;color:black" lang="EN-US">h</span></sub><span style="font-size:14.0pt;line-height:150%;color:black"> и </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Q</span></i><sub><span style="font-size:16.0pt;line-height:150%;color:black" lang="EN-US">e</span></sub><span style="font-size:14.0pt;line-height:150%;color:black"> характеризуются
+следующими соотношениями [<a href="#5">5</a>]:</span></p>
+
+<table class="MsoNormalTable" style="width:459.0pt;margin-left:5.4pt;border-collapse:collapse" width="612" cellspacing="0" cellpadding="0" border="0">
+ <tbody><tr>
+  <td style="width:405.0pt;padding:0cm 5.4pt 0cm 5.4pt" width="540" valign="top">
+  <p class="MsoBodyText2" style="text-align:center;line-height:150%" align="center"><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Q</span></i><sub><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">h</span></sub><span style="font-size:14.0pt;line-height:150%;color:black"> = </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">c</span></i><sub><span style="font-size:16.0pt;line-height:150%;color:black" lang="EN-US">p</span></sub><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><i><span style="font-size:14.0pt;line-height:150%;font-family:Symbol;
+  color:black" lang="EN-US">r</span></i><span style="font-size:14.0pt;line-height:150%;
+  color:black">&nbsp; </span><i><span style="font-size:14.0pt;line-height:
+  150%;color:black" lang="EN-US">C</span></i><sub><span style="font-size:14.0pt;
+  line-height:150%;color:black" lang="EN-US">T</span></sub><span style="font-size:14.0pt;
+  line-height:150%;color:black"> (</span><i><span style="font-size:
+  14.0pt;line-height:150%;color:black" lang="EN-US">T</span></i><sub><span style="font-size:
+  16.0pt;line-height:150%;color:black">п</span></sub><span style="font-size:
+  14.0pt;line-height:150%;color:black"> – <i>Т</i></span><sub><span style="font-size:16.0pt;line-height:150%;color:black">а</span></sub><span style="font-size:14.0pt;line-height:150%;color:black">) </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">V</span></i><span style="font-size:14.0pt;line-height:150%;color:black">,</span></p>
+  <p class="MsoBodyText2" style="text-align:center;line-height:150%" align="center"><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Q</span></i><sub><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">e</span></sub><span style="font-size:14.0pt;line-height:150%;color:black"> = </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">L</span></i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><i><span style="font-size:14.0pt;line-height:150%;font-family:Symbol;
+  color:black" lang="EN-US">r</span></i><span style="font-size:14.0pt;line-height:
+  150%;color:black" lang="EN-US"> </span><i><span style="font-size:14.0pt;
+  line-height:150%;color:black" lang="EN-US">C</span></i><sub><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">E</span></sub><span style="font-size:14.0pt;line-height:150%;color:black"> (</span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">q<sub>S</sub></span></i><i><span style="font-size:14.0pt;line-height:150%;color:black"> – </span></i><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">q</span></i><span style="font-size:14.0pt;line-height:150%;color:black">) </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">V</span></i><span style="font-size:14.0pt;line-height:150%;color:black">,</span></p>
+  </td>
+  <td style="width:54.0pt;padding:0cm 5.4pt 0cm 5.4pt" width="72" valign="top">
+  <p class="MsoBodyText2" style="line-height:150%"><span style="font-size:14.0pt;
+  line-height:150%;color:black">(1)</span></p>
+  <p class="MsoBodyText2" style="line-height:150%"><span style="font-size:14.0pt;
+  line-height:150%;color:black">(2)</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoBodyText2" style="line-height:150%"><span class="Iniiaiieoeoo"><span style="font-size:14.0pt;line-height:150%;color:black">т.е. выражаются через
+следующие параметры СОА</span></span><span style="font-size:14.0pt;line-height:
+150%;color:black"> - температуру <i>Т</i><sub>а</sub> и </span><span style="font-size:14.0pt;line-height:150%;color:black">удельную влажность </span><span style="font-size:14.0pt;line-height:150%;color:black">приводного воздуха </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">q</span></i><span style="font-size:14.0pt;line-height:150%;color:black">, давление </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">P</span></i><sub><span style="font-size:16.0pt;line-height:150%;color:black" lang="EN-US">a</span></sub><span style="font-size:14.0pt;line-height:150%;color:black"> и скорость ветра </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">V</span></i><span style="font-size:14.0pt;line-height:150%;color:black"> в приводном воздухе, а
+также через температуру поверхности океана </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">T</span></i><sub><span style="font-size:16.0pt;line-height:150%;color:black">п</span></sub><span style="font-size:14.0pt;line-height:150%;color:black"> и максимальную для
+данной величины ТПО </span><span style="font-size:14.0pt;line-height:150%;
+color:black">насыщенную удельную влажность над поверхностью воды </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">q<sub>S</sub></span></i><span style="font-size:14.0pt;line-height:150%;color:black">. В качестве
+коэффициентов пропорциональности в соотношениях (1) и (2) служат коэффициенты
+обмена теплом </span><i><span style="font-size:14.0pt;line-height:
+150%;color:black" lang="EN-US">C</span></i><sub><span style="font-size:14.0pt;line-height:
+150%;color:black">Т</span></sub><span style="font-size:14.0pt;line-height:150%;
+color:black"> (число Шмидта) и влагой </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">C</span></i><sub><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">E</span></sub><span style="font-size:14.0pt;line-height:150%;color:black"> (число Дальтона), и
+удельная теплота испарения (</span><i><span style="font-size:14.0pt;
+line-height:150%;color:black" lang="EN-US">L</span></i><span style="font-size:14.0pt;
+line-height:150%;color:black">), удельная теплоемкость воздуха при постоянном
+давлении </span><i><span style="font-size:14.0pt;line-height:150%;
+color:black" lang="EN-US">c</span></i><sub><span style="font-size:16.0pt;
+line-height:150%;color:black" lang="EN-US">p</span></sub><span style="font-size:14.0pt;
+line-height:150%;color:black"> и его плотность </span><i><span style="font-size:14.0pt;line-height:150%;font-family:Symbol;color:black" lang="EN-US">r</span></i><span style="font-size:14.0pt;line-height:150%;color:black">.</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0cm;text-indent:28.0pt;line-height:
+150%"><span style="font-size:14.0pt;line-height:150%;color:black">Рамки
+аэродинамического метода допускают также простую параметризацию соотношений
+между интенсивностью механического (динамического) взаимодействия поверхности
+океана и атмосферы </span><i><span style="font-size:14.0pt;
+line-height:150%;color:black" lang="EN-US">Q</span></i><sub><span style="font-size:16.0pt;line-height:150%;color:black" lang="EN-US">v</span></sub><span style="font-size:14.0pt;line-height:150%;color:black"> - потоком количества
+движения (импульса) со скоростью приводного ветра </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">V</span></i><span style="font-size:14.0pt;line-height:150%;color:black">, где в качестве
+коэффициентов пропорциональности фигурируют плотность воздуха </span><i><span style="font-size:14.0pt;line-height:150%;font-family:Symbol;
+color:black" lang="EN-US">r</span></i><span style="font-size:14.0pt;line-height:150%;
+color:black"> и коэффициент сопротивления </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">C</span></i><sub><span style="font-size:16.0pt;line-height:150%;color:black" lang="EN-US">v</span></sub><span style="font-size:14.0pt;line-height:150%;color:black">):</span></p>
+
+<table class="MsoNormalTable" style="width:459.0pt;margin-left:5.4pt;border-collapse:collapse" width="612" cellspacing="0" cellpadding="0" border="0">
+ <tbody><tr style="height:20.05pt">
+  <td style="width:405.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:20.05pt" width="540" valign="top">
+  <p class="MsoBodyText2" style="text-align:center;line-height:150%" align="center"><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Q</span></i><sub><span style="font-size:16.0pt;line-height:150%;color:black" lang="EN-US">v</span></sub><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> = </span><i><span style="font-size:14.0pt;line-height:150%;font-family:Symbol;
+  color:black" lang="EN-US">r</span></i><span style="font-size:14.0pt;line-height:
+  150%;color:black" lang="EN-US"> <i>C</i></span><sub><span style="font-size:
+  16.0pt;line-height:150%;color:black" lang="EN-US">v</span></sub><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> <i>V</i><sup>2</sup></span></p>
+  </td>
+  <td style="width:54.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:20.05pt" width="72" valign="top">
+  <p class="MsoBodyText2" style="line-height:150%"><span style="font-size:14.0pt;
+  line-height:150%;color:black">(3)</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoBodyText2" style="text-indent:28.0pt;line-height:150%"><span style="font-size:14.0pt;line-height:150%;color:black">Формулы (1)</span><span style="font-size:14.0pt;line-height:150%;font-family:Symbol;color:black">-</span><span style="font-size:14.0pt;line-height:150%;color:black">(3) положены в основу
+расчетов срочных, среднесуточных и среднемесячных значений потоков явного,
+скрытого тепла и импульса</span><span style="font-size:14.0pt;line-height:150%">
+<span style="color:black">по данным измерений спутниковых радиометров </span></span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">SSM</span><span style="font-size:14.0pt;line-height:150%;color:black">/</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">I</span><span style="font-size:14.0pt;line-height:150%;color:black">, </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">TMI</span><span style="font-size:14.0pt;line-height:150%;color:black">, </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">AMSR</span><span style="font-size:14.0pt;line-height:150%;color:black">-</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">E</span><span style="font-size:14.0pt;line-height:150%;color:black">, МТВЗА-ГЯ. Развитые в
+настоящее время регрессионные алгоритмы позволяют получить прямые оценки ТПО </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">T</span></i><sub><span style="font-size:16.0pt;line-height:150%;color:black">п</span></sub><span style="font-size:14.0pt;line-height:150%;color:black"> и скорости приводного
+ветра</span><span style="font-size:14.0pt;line-height:150%;color:black"> </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">V</span></i><span style="font-size:14.0pt;line-height:150%;color:black">, а также общего
+влагосодержания атмосферы, тесно связанного с температурой <i>Т</i></span><sub><span style="font-size:16.0pt;line-height:150%;color:black">а</span></sub><span style="font-size:14.0pt;line-height:150%;color:black"> и удельной влажностью </span><i><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">q</span></i><span style="font-size:14.0pt;line-height:150%;color:black"> приводного воздуха.
+Примером может служить разработанный для радиометра </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">AMSR</span><span style="font-size:14.0pt;line-height:150%;color:black">-</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">E</span><span style="font-size:14.0pt;line-height:150%;color:black"> спутника </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">EOS</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Aqua</span><span style="font-size:14.0pt;line-height:150%;color:black"> алгоритм [<a href="#6">6</a>] в виде
+линейных регрессионных соотношений между температурой и удельной влажностью
+приводного воздуха с ЯТ каналов радиометра.</span></p>
+
+<p class="MsoBodyText2" style="margin-top:12.0pt;text-align:center;
+line-height:150%; margin-bottom:6pt" align="center"><b><span style="font-size:14.0pt;line-height:150%;color:black">3.
+Пространственная и сезонная изменчивость полей среднемесячных потоков тепла,
+влаги и импульса в Северной Атлантике по данным радиометра AMSR-E</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify;text-indent:28.0pt;line-height:
+150%"><span style="font-size:14.0pt;line-height:150%;color:black">Обработаны
+восходящие и нисходящие витки за период с ноября 2009 г. по декабрь 2010 г. в
+области Северной Атлантики </span><span style="font-size:14.0pt;line-height:
+150%;color:black">с координатами 67&#186; с.ш., 95&#186; з.д. </span><span style="font-size:14.0pt;line-height:150%;font-family:Symbol;color:black">-</span><span style="font-size:14.0pt;line-height:150%;color:black"> 0&#186; с.ш., 0&#186;
+в.д. </span><span style="font-size:14.0pt;line-height:150%;color:black">и
+получены суточные оценки потоков явного, скрытого тепла и импульса, затем на их
+основе определены среднемесячные значения потоков.</span></p>
+
+<p class="MsoNormal" style="text-align:justify;text-indent:28.0pt;line-height:
+150%"><span style="font-size:14.0pt;line-height:150%;color:black">Некоторые
+результаты обработки представлены на рис. 1 (пространственное разрешение данных
+составляет 0,25х0,25<sup>о</sup>).</span></p>
+
+<p class="MsoBodyTextIndent"><span style="color:black">Отмечается высокая
+пространственная изменчивость потоков всех типов в Северной Атлантике. Для
+потоков скрытого тепла </span><i><span style="color:black" lang="EN-US">Q</span></i><sub><span style="font-size:16.0pt;line-height:150%;color:black" lang="EN-US">e</span></sub><i><span style="color:black" lang="EN-US"> </span></i><span style="color:black">характерно
+более чем десятикратное изменение от минимального значения к максимальному
+значению. Наибольшая интенсивность параметра </span><i><span style="color:black" lang="EN-US">Q</span></i><sub><span style="font-size:16.0pt;
+line-height:150%;color:black" lang="EN-US">e</span></sub><span style="color:black">
+наблюдается в летний сезон, а пик приходит на июль. Повышенным уровнем потоков
+скрытого тепла характеризуется тропическая зона восточнее Кубы в весенний и
+летний сезоны, а также в сентябре – октябре. Эта зона относится к районам
+зарождения, формирования и прохождения тропических циклонов.</span></p>
+
+<p class="MsoBodyTextIndent" style="margin-bottom:12pt"><span style="color:black">Для
+потоков явного тепла наблюдается отчетливая широтная зависимость: – наиболее
+интенсивны потоки на севере Атлантики, их величина снижается по мере
+приближения к экваториальным широтам.</span></p>
+
+<div align="center">
+
+<table class="MsoNormalTable" style="width:466.05pt;border-collapse:collapse" width="621" cellspacing="0" cellpadding="0" border="0">
+ <tbody><tr style="height:154.95pt">
+  <td colspan="3" style="width:154.8pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:154.95pt" width="206" valign="top">
+  <p class="MsoNormal" style="text-align:center;line-height:150%" align="center"><span style="font-size:10.0pt;line-height:150%;color:black"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image001.png" width="197" height="209"></span></p>
+  </td>
+  <td colspan="3" style="width:155.25pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:154.95pt" width="207" valign="top">
+  <p class="MsoNormal" style="text-align:center;line-height:150%" align="center"><span style="font-size:14.0pt;
+  line-height:150%;color:black"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image003.jpg" width="207" height="207"></span></p>
+  </td>
+  <td colspan="2" style="width:156.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:154.95pt" width="208" valign="top">
+  <p class="MsoNormal" style="text-align:center;line-height:150%" align="center"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image002.jpg" width="207" height="207"></p>
+  </td>
+ </tr>
+ <tr style="page-break-inside:avoid">
+  <td colspan="8" style="width:466.05pt;padding:0cm 5.4pt 0cm 5.4pt" width="621" valign="top">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="color:black">Май 2010 г.</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="width:151.65pt;padding:0cm 5.4pt 0cm 5.4pt" width="202" valign="top">
+  <p class="MsoNormal" style="text-align:center;line-height:150%" align="center"><span style="font-size:10.0pt;line-height:150%;color:black"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image005.jpg" width="207" height="207"></span></p>
+  </td>
+  <td colspan="4" style="width:158.0pt;padding:0cm 5.4pt 0cm 5.4pt" width="211" valign="top">
+  <p class="MsoNormal" style="text-align:center;line-height:150%" align="center"><span style="font-size:14.0pt;line-height:150%;color:black"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image006.jpg" width="207" height="207"></span></p>
+  </td>
+  <td colspan="2" style="width:154.45pt;padding:0cm 5.4pt 0cm 5.4pt" width="206" valign="top">
+  <p class="MsoNormal" style="text-align:center;line-height:150%" align="center"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image004.jpg" width="207" height="207"></p>
+  </td>
+  <td style="border:none;padding:0cm 0cm 0cm 0cm" width="3"><p class="MsoNormal">&nbsp;</p></td>
+ </tr>
+ <tr style="page-break-inside:avoid">
+  <td colspan="7" style="width:464.1pt;padding:0cm 5.4pt 0cm 5.4pt" width="619" valign="top">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="color:black">Август 2010 г.</span></p>
+  </td>
+  <td style="border:none;padding:0cm 0cm 0cm 0cm" width="3"><p class="MsoNormal">&nbsp;</p></td>
+ </tr>
+ <tr>
+  <td colspan="2" style="width:154.35pt;padding:0cm 5.4pt 0cm 5.4pt" width="206" valign="top">
+  <p class="MsoNormal" style="text-align:center;line-height:150%" align="center"><span style="font-size:14.0pt;line-height:150%;color:black"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image007.jpg" width="207" height="207"></span></p>
+  </td>
+  <td colspan="2" style="width:153.0pt;padding:0cm 5.4pt 0cm 5.4pt" width="204" valign="top">
+  <p class="MsoNormal" style="line-height:150%"><span style="font-size:14.0pt;
+  line-height:150%;color:black"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image008.jpg" width="207" height="207"></span></p>
+  </td>
+  <td colspan="3" style="width:156.75pt;padding:0cm 5.4pt 0cm 5.4pt" width="209" valign="top">
+  <p class="MsoNormal" style="text-align:center;line-height:150%" align="center"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image009.jpg" width="207" height="207"></p>
+  </td>
+  <td style="border:none;padding:0cm 0cm 0cm 0cm" width="3"><p class="MsoNormal">&nbsp;</p></td>
+ </tr>
+ <tr>
+  <td colspan="2" style="width:154.35pt;padding:0cm 5.4pt 0cm 5.4pt" width="206" valign="top">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="color:black">а)</span></p>
+  </td>
+  <td colspan="2" style="width:153.0pt;padding:0cm 5.4pt 0cm 5.4pt" width="204" valign="top">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="color:black">б)</span></p>
+  </td>
+  <td colspan="3" style="width:156.75pt;padding:0cm 5.4pt 0cm 5.4pt" width="209" valign="top">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="color:black">в)</span></p>
+  </td>
+  <td style="border:none;padding:0cm 0cm 0cm 0cm" width="3"><p class="MsoNormal">&nbsp;</p></td>
+ </tr>
+ <tr style="page-break-inside:avoid">
+  <td colspan="7" style="width:464.1pt;padding:0cm 5.4pt 0cm 5.4pt" width="619" valign="top">
+  <p class="MsoNormal" style="text-align:center" align="center"><span style="color:black">Ноябрь 2010 г.</span></p>
+  </td>
+  <td style="border:none;padding:0cm 0cm 0cm 0cm" width="3"><p class="MsoNormal">&nbsp;</p></td>
+ </tr>
+ <tr height="0">
+  <td style="border:none" width="221"></td>
+  <td style="border:none" width="3"></td>
+  <td style="border:none" width="1"></td>
+  <td style="border:none" width="221"></td>
+  <td style="border:none" width="4"></td>
+  <td style="border:none" width="1"></td>
+  <td style="border:none" width="169"></td>
+  <td style="border:none" width="2"></td>
+ </tr>
+</tbody></table>
+
+</div>
+
+<p class="MsoBodyText2" style="text-align:center" align="center"><span style="font-size:14.0pt;color:black">Рис. 1. Среднемесячные потоки: а) скрытого
+тепла; б) явного тепла; в) импульса</span></p>
+
+<p class="MsoBodyTextIndent" style="margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12pt;margin-left:0cm"><span style="color:black">На рис. 2
+приведен пример восстановления параметров, необходимых для определения потоков
+явного, скрытого тепла и импульса – температуры поверхности океана (ТПО),
+приводного ветра в приводном слое атмосферы и общего влагосодержания атмосферы,
+вариации которого тесно связаны с температурой и влажностью приводного воздуха.
+Именно такие ежесуточные данные, накапливаемые в течение месяца, позволят
+рассчитать среднемесячные значения потоков явного, скрытого тепла и импульса в
+Северной Атлантике.</span></p>
+
+<div align="center">
+  <center>
+
+<table class="MsoNormalTable" style="width:464.4pt;border-collapse:collapse;border:none" width="619" cellspacing="0" cellpadding="0" border="1">
+ <tbody><tr>
+  <td style="width:158.4pt;border:none;padding:0cm 5.4pt 0cm 5.4pt" width="211" valign="top">
+  <p class="MsoNormal" style="text-align:right;line-height:150%" align="right"><b><span style="color:black"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image010.jpg" width="194" height="216"></span></b></p>
+  </td>
+  <td style="width:153.0pt;border:none;padding:0cm 5.4pt 0cm 5.4pt" width="204" valign="top">
+  <p class="MsoNormal" style="text-align:center;line-height:150%" align="center"><b><span style="color:black"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image011.jpg" width="195" height="214"></span></b></p>
+  </td>
+  <td style="width:153.0pt;border:none;padding:0cm 5.4pt 0cm 5.4pt" width="204" valign="top">
+  <p class="MsoNormal" style="text-align:center;line-height:150%" align="center"><b><span style="color:black"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image012.jpg" width="195" height="214"></span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td style="width:158.4pt;border:none;padding:0cm 5.4pt 0cm 5.4pt" width="211" valign="top">
+  <p class="MsoBodyText" style="text-align:center" align="center"><span style="font-size:12.0pt;line-height:150%;color:black">ТПО</span></p>
+  </td>
+  <td style="width:153.0pt;border:none;padding:0cm 5.4pt 0cm 5.4pt" width="204" valign="top">
+  <p class="MsoBodyText" style="text-align:center" align="center"><span style="font-size:12.0pt;line-height:150%;color:black">Скорость ветра</span></p>
+  </td>
+  <td style="width:153.0pt;border:none;padding:0cm 5.4pt 0cm 5.4pt" width="204" valign="top">
+  <p class="MsoBodyText" style="text-align:center" align="center"><span style="font-size:12.0pt;line-height:150%;color:black">Общее влагосодержание</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+  </center>
+</div>
+
+<p class="MsoNormal" style="text-align:center" align="center"><span style="color:black">&nbsp;</span></p>
+
+<div align="center">
+  <center>
+
+<table class="MsoNormalTable" style="border-collapse:collapse" cellspacing="0" cellpadding="0" border="0">
+ <tbody><tr>
+  <td style="width:492.75pt;padding:0cm 5.4pt 0cm 5.4pt" width="657" valign="top">
+  <p class="MsoBodyTextIndent" style="text-align:center;text-indent:
+  0cm;line-height:normal" align="center"><span style="color:black">Рис.2. Распределение ТПО,
+  скорости ветра, общего влагосодержания в Северной Атлантике по данным AMSR-E
+  на 4.11.2009 г.</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+  </center>
+</div>
+
+<p class="MsoBodyTextIndent" style="margin-top:12.0pt"><span style="color:black">Результаты,
+иллюстрируемые на рис. 1, демонстрирует важный результат – возможность
+наблюдения из космоса течения Гольфстрим <i>в поле потоков скрытого тепла</i>
+при пространственном разрешении 0,25х0,25<sup>о</sup>, которое обеспечивается
+современными спутниковыми СВЧ-радиометрическими средствами.</span></p>
+
+<p class="MsoNormal" style="margin-top:12.0pt;text-align:center;
+line-height:150%; margin-bottom:6pt" align="center"><b><span style="font-size:14.0pt;line-height:150%;color:black">4.
+Соотношение суточных и среднемесячных значений ЯТ радиометров AMSR-E и МТВЗА-ГЯ</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify;text-indent:28.0pt;line-height:
+150%;text-autospace:none"><span style="font-size:14.0pt;line-height:150%;
+color:black">Здесь приведены результаты анализа статистической связи ЯТ
+радиометра МТВЗА-ГЯ спутника Метеор-М №1 и AMSR</span><span style="font-size:
+14.0pt;line-height:150%;font-family:Symbol;color:black">-</span><span style="font-size:14.0pt;line-height:150%;color:black">E спутника </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">EOS</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Aqua</span><span style="font-size:14.0pt;line-height:150%;color:black"> на среднемесячных
+масштабах времени на длинах волн, близких к линии резонансного поглощения
+радиоволн в водяном паре 1,35 см (частота 22,23 ГГц. Эти результаты для
+американских и российских космических аппаратов обычно различались благодаря
+различиям в ширине полосы обзора тех и других радиометров, обусловленным
+существенным их различиям в углах зондирования антенных систем.</span></p>
+
+<p class="MsoNormal" style="text-align:justify;text-indent:28.0pt;line-height:
+150%;text-autospace:none"><span style="font-size:14.0pt;line-height:150%;
+color:black">Мы убедились в этом, проводя сравнительный анализ пространственных
+полей яркостной температуры СОА и их временной динамики для ряда энергоактивных
+зон Северной Атлантики, находящихся в русле течения Гольфстрим и его
+продолжения – Северно-Атлантического течения в рамках договорных отношений с
+НТЦ </span><span style="font-size:14.0pt;line-height:150%;font-family:Symbol;
+color:black">&#178;</span><span style="font-size:14.0pt;line-height:150%;
+color:black">Космонит</span><span style="font-size:14.0pt;line-height:150%;
+font-family:Symbol;color:black">&#178;</span><span style="font-size:14.0pt;
+line-height:150%;color:black"> ООО Российские космические системы и
+Маршалльским центром космических полетов (</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">MSFC</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Disributed</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Active</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Archive</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"> </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Center</span><span style="font-size:14.0pt;line-height:150%;color:black">), предоставившим
+архивные данные долговременных СВЧ-радиометрических измерений со спутников
+серии </span><span style="font-size:14.0pt;line-height:150%;
+color:black" lang="EN-US">DMSP</span><span style="font-size:14.0pt;line-height:150%;
+color:black"> [<a href="#7">7</a>].</span></p>
+
+<p class="MsoBodyTextIndent"><span style="line-height:150%;color:black">Нами были
+отобраны массивы ЯТ AMSR-E с пространственным разрешением 0,25&#186;х0,25&#186;
+и МТВЗА-ГЯ с пространственным разрешением 0,5&#186;х0,5&#186; за период с
+ноября 2009 г. по апрель 2010 г. для области Северной Атлантики с координатами
+67&#186; с.ш., 95&#186; з.д. - 0&#186; с.ш., 0&#186; в.д. Затем данные AMSR-E
+были преобразованы в данные с разрешением 0,5&#186;х0,5&#186;. На следующем
+этапе выполнялось временное осреднение срочных данных с пространственным
+размером 134х170 элементов по широте и долготе для шестимесячного интервала. На
+заключительном этапе для океана (суша исключалась) строилась регрессионная
+зависимость вида:</span></p>
+
+<p class="MsoNormal" style="text-align:center;line-height:150%" align="center"><span style="font-size:14.0pt;line-height:150%;color:black"><span style="position:
+relative;top:6.0pt"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image013.png" width="131" height="28"></span>,</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0cm;line-height:150%"><span style="font-size:14.0pt;line-height:150%;color:black">где <span style="position:relative;top:6.0pt"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image014.png" width="65" height="28"></span>- среднемесячные яркостные температуры
+радиометров МТВЗА-ГЯ и AMSR-E.</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0cm;text-indent:28.0pt;line-height:
+150%"><span style="font-size:14.0pt;line-height:150%;color:black">На рис. 3 в
+качестве примера представлены результаты сопоставления среднемесячных значений
+ЯТ МТВЗА и AMSR-E на длине волны 1,26 см в феврале 2010 г. на вертикальной и
+горизонтальной поляризациях (в виде линейных регрессий типа </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">y</span><span style="font-size:14.0pt;line-height:150%;color:black"> = </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">a</span><span style="font-size:14.0pt;line-height:150%;color:black"> + </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">bx</span><span style="font-size:14.0pt;line-height:150%;color:black">). Н</span><span style="font-size:14.0pt;line-height:150%;color:black">аблюдается хорошая
+сопоставимость данных измерений ЯТ для радиометров МТВЗА и </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">AMSR</span><span style="font-size:14.0pt;line-height:150%;color:black">-</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">E</span><span style="font-size:14.0pt;line-height:150%;color:black"> на значительной части
+акватории Северной Атлантики, несмотря на некоторые отличия их тактико-технических
+характеристик.</span></p>
+
+<div align="center">
+  <center>
+
+<table class="MsoNormalTable" style="width:478.8pt;border-collapse:collapse" width="638" cellspacing="0" cellpadding="0" border="0">
+ <tbody><tr style="height:171.15pt">
+  <td style="width:245.55pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:171.15pt" width="327" valign="top">
+  <p class="MsoNormal" style="margin-top:12.0pt;line-height:150%;text-autospace:
+  none"><span style="font-size:14.0pt;line-height:150%;color:black"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image015.jpg" width="313" height="215"></span></p>
+  </td>
+  <td style="width:233.25pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:171.15pt" width="311" valign="top">
+  <p class="MsoNormal" style="margin-top:12.0pt;line-height:150%;text-autospace:
+  none"><span style="font-size:14.0pt;line-height:150%;color:black"><img src="%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B2%D0%B7%D0%B0%D0%B8%D0%BC%D0%BE%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD%D0%B0%20%D0%B8%20%D0%B0%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D1%8B%20%D1%81%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E%20%D0%A1%D0%92%D0%A7-%D1%80%D0%B0%D0%B4%D0%B8%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%20%D1%81%D0%BF%D1%83%D1%82%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20EOS-Aqua%20%D0%B8%20%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80-%D0%9C%20%E2%84%961_files/image016.png" width="297" height="214"></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+  </center>
+</div>
+
+<p class="MsoBodyText2" style="text-align:center;text-autospace:
+none" align="center"><span style="font-size:14.0pt;color:black">Рис. 3. Сопоставление
+среднемесячных яркостных температур МТВЗА и AMSR-E на волне 1,26 см в феврале
+2010 г. на вертикальной (левый рисунок) и горизонтальной (правый рисунок)
+поляризациях</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0cm;text-indent:20.0pt"><span style="font-size:10.0pt;color:black">&nbsp;</span></p>
+
+<p class="MsoBodyText2" style="text-align:center;line-height:150%; margin-bottom:6pt" align="center"><b><span style="font-size:14.0pt;line-height:150%;color:black">Заключение</span></b></p>
+
+<p class="MsoNormal" style="text-align:justify;text-indent:28pt;line-height:
+150%"><span style="font-size:14.0pt;line-height:150%;color:black">Получены
+впервые глобальные оценки сезонной динамики среднемесячных вертикальных
+турбулентных потоков явного, скрытого тепла и импульса в Северной Атлантике по
+данным сканирующего радиометра AMSR-E спутника </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">EOS Aqua</span><span style="font-size:14.0pt;line-height:150%;color:black"> в период с ноября 2009
+г. по декабрь 2010 г. Установлено, что в</span><span style="font-size:14.0pt;
+line-height:150%;color:black"> поле потока скрытого тепла, восстановленного
+радиометром </span><span style="font-size:14.0pt;line-height:150%;
+color:black" lang="EN-US">AMSR</span><span style="font-size:14.0pt;line-height:150%;
+color:black">, отчетливо наблюдается течение Гольфстрим и хорошо прослеживается
+его внутригодовая динамика.</span></p>
+
+<p class="MsoNormal" style="text-align:justify;text-indent:28.0pt;line-height:
+150%; margin-bottom:12pt"><span style="font-size:14.0pt;line-height:150%;color:black">Результаты
+исследования показывают, что спутниковые радиометры-сканеры типа радиометра AMSR</span><span style="font-size:14.0pt;line-height:150%;font-family:Symbol;color:black">-</span><span style="font-size:14.0pt;line-height:150%;color:black">E (в частности, его
+частотный аналог – радиометр МТВЗА-ГЯ) могут служить эффективным инструментом
+изучения сезонной и межгодовой динамики вертикальных турбулентных потоков
+явного, скрытого тепла и импульса на границе раздела поверхности океана и атмосферы,
+важных при исследовании климатических тенденций в Северной Атлантике и ее
+влияния на погодные условия в Европе и в Европейской части России.</span></p>
+
+<p class="MsoBodyText2" style="margin-bottom:6.0pt;text-align:center" align="center"><b><span style="font-size:14.0pt;color:black">Литература</span></b></p>
+
+<p class="MsoBodyText2" style="line-height:150%; margin-left:0; margin-right:0; margin-top:0; margin-bottom:6pt"><span style="font-size:14.0pt;
+line-height:150%;color:black;text-transform:none"><a name="1"></a>1. А.Г. Гранков, А.А.
+Мильшин. Взаимосвязь радиоизлучения системы океан-атмосфера с тепловыми и
+динамическими процессами на границе раздела. М.: Физматлит, 2004, 168 с.</span></p>
+
+<p class="MsoBodyText2" style="margin-top: 0; margin-bottom: 6pt"><span style="font-size: 14pt; color: black" lang="EN-US">
+<a name="2"></a>2. A.G. Grankov, A.A.
+Milshin. Microwave Radiation of the Ocean-Atmosphere: Boundary Heat and Dynamic
+Interaction, Springer, 2009, 160 p.</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0;line-height:150%; margin-left:0; margin-right:0; margin-bottom:6pt"><span style="font-size:14.0pt;line-height:150%;color:black"><a name="3"></a>3. А.Г. Гранков, А.А.
+Мильшин, В.Ю. Солдатов, Н.К. Шелобанова. </span><span style="font-size:14.0pt;
+line-height:150%;color:black">Архивы микроволновых, океанографических и
+метеорологических данных в зонах возникновения тропических ураганов // </span><span style="font-size:14.0pt;line-height:150%;color:black">Проблемы окружающей среды
+и природных ресурсов. 2012. №5. С. 107-124.</span></p>
+
+<p class="MsoBodyText2" style="margin-top: 0; margin-bottom: 6pt"><span style="font-size: 14pt; color: black"><a name="4">
+</a>4. И Д</span><span style="font-size: 14pt">.<span style="color:black"> Барсуков, О.В. Никитин, А.М. Стрельцов, И.В. Черный, Г.М.
+Чернявский. Предварительная обработка данных СВЧ-радиометра МТВЗА-ГЯ КА
+«Метеор-М» №1 // Современные проблемы дистанционного зондирования Земли из
+космоса. 2011. Т.8. №2. С</span></span><span style="font-size: 14pt; color: black" lang="EN-US">. 257-263.</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0;line-height:150%; margin-left:0; margin-right:0; margin-bottom:6pt"><span style="font-size:14.0pt;line-height:150%;color:black"><a name="5"></a>5. С.С. </span><strong><span style="font-size:14.0pt;line-height:150%;color:black;font-weight:normal">Лаппо,
+С.К. Гулев, А.Е. Рождественский. Крупномасштабное тепловое взаимодействие в
+системе океан атмосфера и энергоактивные области Мирового океана. </span></strong><span class="apple-style-span"><span style="font-size:14.0pt;line-height:150%;
+color:black">Л.: Гидрометеоиздат. 1990. 336с.</span></span></p>
+
+<p class="MsoBodyText2" style="margin-top:0;line-height:150%; margin-left:0; margin-right:0; margin-bottom:6pt"><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US"><a name="6"></a>6. </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="FI">M</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">.</span><span style="font-size:14.0pt;line-height:150%;color:black" lang="FI"> Kubota, T. Hihara. </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">Retrieval of
+Surface Air Specific Humidity Over the Ocean Using AMSR-E Measurements // Sensors.
+</span><span style="font-size:14.0pt;line-height:150%;color:black">2008, 8, </span><span style="font-size:14.0pt;line-height:150%;color:black" lang="EN-US">P</span><span style="font-size:14.0pt;line-height:150%;color:black">. 8016-8026.</span></p>
+
+<p class="MsoBodyText2" style="margin-top:0;line-height:150%; margin-left:0; margin-right:0; margin-bottom:6pt"><span style="font-size:14.0pt;line-height:150%;color:black"><a name="7"></a>7. А.Г. Гранков, А.А.
+Мильшин, И.В. Черный. Результаты моделирования измерений радиометра МВТЗА ИСЗ </span><span style="font-size:14.0pt;line-height:150%;font-family:Symbol;color:black;
+text-transform:uppercase">&#178;</span><span style="font-size:14.0pt;
+line-height:150%;color:black">Метеор-3М</span><span style="font-size:14.0pt;
+line-height:150%;font-family:Symbol;color:black;text-transform:uppercase">&#178;</span><span style="font-size:14.0pt;line-height:150%;color:black"> и их валидация на основе
+фактических измерений радиометра SSM/I ИСЗ F-08 (DMSP) в Северной Атлантике //
+Исслед. Земли из космоса. </span><span style="font-size:14.0pt;
+line-height:150%;color:black" lang="EN-US">2000. № 5. </span><span style="font-size:14.0pt;
+line-height:150%;color:black">С</span><span style="font-size:14.0pt;
+line-height:150%;color:black" lang="EN-US">. 20-27.</span></p>
+
+
+</blockquote>
+
+
+
+</body></html>

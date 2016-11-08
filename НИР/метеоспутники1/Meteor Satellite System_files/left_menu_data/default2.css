@@ -1,0 +1,158 @@
+P {
+	color : #231F20;
+	font-size :12pt;
+	padding : 0;
+	margin :0;
+	font-family: "Times New Roman", Times, serif;
+	font-weight:lighter;
+}
+
+h1 {
+	color : #042445;
+	font-size :18pt;
+	padding : 0;
+	margin :0;
+	font-family: "Times New Roman", Times, serif;
+	font-weight:Bold;
+}
+
+h2 {
+	coslor : #231F20;
+	color : darkblue;
+	font-size :13pt;
+	padding : 0;
+	margin :0;
+	font-family: "Times New Roman", Times, serif;
+	font-weight:Bold;
+}
+h3 {
+	color : #231F20;
+	font-size :11pt;
+	padding : 0;
+	margin :0;
+	font-family: "Times New Roman", Times, serif;
+	font-weight:Bold;
+}
+
+big {
+	color : #231F20;
+	font-size :11pt;
+	padding : 0;
+	margin :0;
+	font-family: "Times New Roman", Times, serif;
+	font-weight:Bold;
+}
+.formainli {
+	color : #15365C;
+	font-size :11pt;
+	padding : 0;
+	margin :0;
+	font-family: "Times New Roman", Times, serif;
+	font-weight:Bold;
+}
+.forli {
+	color : #231F20;
+	font-size :10pt;
+	padding : 0;
+	margin :0;
+	font-family: "Times New Roman", Times, serif;
+	font-weight:Bold;
+}
+
+li 
+{
+color : #231F20;
+font-size :12pt;
+padding : 0;
+margin :0;
+font-family: "Times New Roman", Times, serif;
+font-weight: lighter;
+}
+
+.gip 
+{
+color :#323C49;
+font-size :8pt;
+padding : 0;
+margin :0;
+font-family: "Times New Roman", Times, serif;
+font-weight:lighter;
+}
+
+.upframe 
+{
+color :  #231F20;
+font-size :10pt;
+padding : 0;
+margin :0;
+font-family: "Times New Roman", Times, serif;
+font-weight:lighter;
+}
+
+
+		
+.a 
+{
+color : #2E5165;
+font-size :9pt;
+font-family: "Times New Roman", Times, serif;
+font-weight:Bold;
+CURSOR: Hand;
+TEXT-DECORATION: none;
+}
+
+.a_main
+{
+color : #2E5165;
+font-size :10pt;
+font-family: "Times New Roman", Times, serif;
+font-weight:Bold;
+CURSOR: Hand;
+TEXT-DECORATION: none;
+}
+
+A
+{
+COLOR: #2E5165;
+font-size :11pt;
+font-family: "Times New Roman", Times, Geneva, sans-serif;
+font-weight: bold;
+TEXT-DECORATION: none;
+}
+
+A:visited 
+{
+font-weight:BOLD; 
+CURSOR: Hand;
+TEXT-DECORATION: none;
+}
+
+A:hover 
+{
+COLOR:Black;
+CURSOR: Hand;
+TEXT-DECORATION: underline;
+}
+A:active {
+	COLOR:889BAF;
+	CURSOR: default;
+	TEXT-DECORATION: none;
+}
+.submenu {
+
+	font-size: smaller;
+}  
+
+A.submenu {
+	font-size: 9pt;
+}	
+
+table.inner {
+	padding: 10pt;
+	margin: 10pt;
+}
+
+
+td.emptylink {
+	cursor: hand;
+}

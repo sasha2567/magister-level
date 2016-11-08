@@ -1,0 +1,2149 @@
+
+                    topadvertCallbacks["HyT8sTooeJ"]({
+                        process: function(adapter, api) {
+                            var topadvert_feed = {"items":[{"adv_favicon":"https://image.adrelayer.com/favicon/E/N/ENKnvLemeorDwYUBAB2g.png","adv_host":"ozon.ru","cost":"466","cost_str":"466&nbsp;р.","currency":"RUB","description":"С. Петерсен","image":"https://image.adrelayer.com/88/15/205505188-1-small.gif","image_height":"74","image_width":"47","images":{"max_size":{"height":"1200","url":"https://image.adrelayer.com/88/15/205505188-2-basic.gif","width":"765"}},"is_image":1,"pps":"2.53","shop_name":"Озон","title":"Анализ и прогноз погоды","topic_id":"10","type":"3","url":"https://feed.adrelayer.com/tds?key=U2FsdGVkX1-KbwoITPB9itGi7o-cqSu8uHGpy1uomNuwwpWV-ChiaJBxiStxMzBhD2chpfcd7PrmH-P-yEIjGaAggZr6lAm1VS_sjpoNKwjKRaT3ArHsLZm78A6EzX6RsOb_waHXYThbnPOsNnlszQ","yml_author":"С. Петерсен","yml_description":"В книге в доступной и достаточно строгой форме излагаются важнейшие вопросы динамической и синоптической метеорологии. Большое внимание уделяется физическому истолкованию сложных процессов, происходящих в атмосфере, и количественным оценкам этих процессов. Особое внимание уделяется численным методам прогноза погоды. Книга представляет интерес для метеорологов всех специальностей и может быть использована в качестве дополнительной литературы при изучении синоптической и динамической метеорологии в вузах.","yml_isbn":"","yml_name":"Анализ и прогноз погоды","yml_part":"","yml_publisher":"Гидрометеорологическое издательство","yml_series":"","yml_year":"1961"},{"adv_favicon":"https://image.adrelayer.com/favicon/E/N/ENKnvLemeorDwYUBAB2g.png","adv_host":"ozon.ru","cost":"280","cost_str":"280&nbsp;р.","currency":"RUB","description":"О. Г. Богаткин","image":"https://image.adrelayer.com/33/21/205321233-1-small.gif","image_height":"70","image_width":"50","images":{"max_size":{"height":"279","url":"https://image.adrelayer.com/33/21/205321233-2-basic.gif","width":"200"}},"is_image":1,"pps":"2.53","shop_name":"Озон","title":"Авиационные прогнозы погоды","topic_id":"10","type":"3","url":"https://feed.adrelayer.com/tds?key=U2FsdGVkX1_lRhbwNPYjr6ZGeZfqpBZD4PHT9sO9Bf4Rkqc6dSAVt_6TR2PvhB6Q8SXCzE1pGjEp9jX0hfmC8S5q1N_3JfVipgT955f_5aDALImnNYp-IWe1ulCa862KUDRJMQ5ON9iq7BT7-I4nkQ","yml_author":"О. Г. Богаткин","yml_description":"Кратко изложены основы метеорологии, а также физические причины возникновения различных неблагоприятных и опасных явлений погоды. На простых примерах и с использованием несложного математического аппарата показана взаимосвязь процессов, происходящих в атмосфере. Рассмотрены современные методы прогноза опасных явлений погоды (температуры воздуха, ветра, атмосферной турбулентности, низкой облачности, туманов, гроз, осадков, видимости и др.), используемые в практике метеорологического обеспечения гражданской авиации. Приведена полезная справочная информация, а также оценка экономического эффекта метеорологических прогнозов. Для студентов гидрометеорологических вузов, курсантов летных училищ, специалистов-метеорологов, а также для летного и диспетчерского состава гражданской и военной авиации.","yml_isbn":"978-5-9775-0605-2","yml_name":"Авиационные прогнозы погоды","yml_part":"","yml_publisher":"БХВ-Петербург","yml_series":"Учебное пособие","yml_year":"2010"},{"adv_favicon":"https://image.adrelayer.com/favicon/E/N/ENKnvLemeorDwYUBAB2g.png","adv_host":"ozon.ru","cost":"588","cost_str":"588&nbsp;р.","currency":"RUB","description":"М. И. Юдин","image":"https://image.adrelayer.com/40/76/205756704-1-small.gif","image_height":"73","image_width":"48","images":{"max_size":{"height":"1199","url":"https://image.adrelayer.com/40/76/205756704-2-basic.gif","width":"797"}},"is_image":1,"pps":"2.53","shop_name":"Озон","title":"Новые методы и проблемы...","topic_id":"10","type":"3","url":"https://feed.adrelayer.com/tds?key=U2FsdGVkX19x03VfTpM-WLVezDz-RHQe1nwxEPUX20ZIuNMMXpMbo8kjRm4Eeq8hZxHk6VKImy91hpNZCH-4-5w1y1ZQoYKG64vQJD33k4eQGhcSHXTaXLKV2X8T3vQnFofQZnmkSmFKypTs-2Zf6Q","yml_author":"М. И. Юдин","yml_description":"Монография обобщает современные данные о состоянии исследований в области краткосрочного численного прогноза погоды. Рассматриваемый этап характеризуется быстрым развитием методов прогнозов и внедрением наиболее апробированных из них в оперативную практику, как в Советском Союзе, так и за рубежом. В книге отражены теоретические основы численного прогноза погоды и вместе с тем большое внимание уделено физическому толкованию рассматриваемых методов, практическому использованию и анализу полученных результатов. Рассчитана на теоретиков-метеорологов и метеорологов-синоптиков, а также на студентов старших курсов вузов, специализирующихся в области метеорологии. Может быть использована также специалистами смежных областей знания, желающими познакомиться с достижениями современной динамической метеорологии, или же применить аналогичные методы решения в своей области.","yml_isbn":"","yml_name":"Новые методы и проблемы краткосрочного прогноза погоды","yml_part":"","yml_publisher":"Гидрометеорологическое издательство","yml_series":"","yml_year":"1963"},{"adv_favicon":"https://image.adrelayer.com/favicon/E/N/ENKnvLemeorDwYUBAB2g.png","adv_host":"ozon.ru","cost":"163","cost_str":"163&nbsp;р.","currency":"RUB","description":"Л. Б. Фесюкова","image":"https://image.adrelayer.com/64/17/203097146-1-small.gif","image_height":"49","image_width":"71","images":{"max_size":{"height":"491","url":"https://image.adrelayer.com/64/17/203097146-2-basic.gif","width":"700"}},"is_image":1,"pps":"2.53","shop_name":"Озон","title":"Белочкин календарь наблюдений за погодой","topic_id":"10","type":"3","url":"https://feed.adrelayer.com/tds?key=U2FsdGVkX19WimEzwlq8EtrQr0Ej8NBU-oHvJEzaBr4j6RPVGjEEygqTpFzThhkplueD-VzicGBEBfeTlfzIPXG1TlY0Ce9v6AM8hVzMzg-P8xjG3zbA_WompMKlgv6AQ29NnAy3qIuHTjM0t8DBaw","yml_author":"Л. Б. Фесюкова","yml_description":"&quot;Путешествуя от месяца Сентября к месяцу Августу, ты вместе с Белочкой научишься наблюдать и отмечать погоду, описывать цветные картинки, готовить подарки для мамы и для Белочки, а также, соединяя точки, получишь важные и добрые слова о природе. А еще ты непременно разучишь стихи, загадки, считалки, добавлялки. Ты по-своему раскрасишь каждый месяц&quot;. Лариса Борисовна Фесюкова","yml_isbn":"978-966-7534-37-0","yml_name":"Белочкин календарь наблюдений за погодой","yml_part":"","yml_publisher":"Сфера, Ранок","yml_series":"Наглядные пособия","yml_year":"2009"},{"adv_favicon":"https://image.adrelayer.com/favicon/E/N/ENKnvLemeorDwYUBAB2g.png","adv_host":"ozon.ru","cost":"374","cost_str":"374&nbsp;р.","currency":"RUB","description":"Марк Бьюкенен","image":"https://image.adrelayer.com/44/28/205298244-1-small.gif","image_height":"71","image_width":"49","images":{"max_size":{"height":"700","url":"https://image.adrelayer.com/44/28/205298244-2-basic.gif","width":"489"}},"is_image":1,"pps":"2.53","shop_name":"Озон","title":"Прогноз. Как, наблюдая за погодой,...","topic_id":"10","type":"3","url":"https://feed.adrelayer.com/tds?key=U2FsdGVkX1-SHJiqH6r8El1oFnBM0eJKnmid4nuLk89G4hxQFxXboOiZ6ZENhVis4s8yqpfn7QcM6Os9ZMRuFh8jE3KjFNoahW5kf_jn3hduYEhH96lHQfx1mxHLOiUfKslH8ADHLblu-Z_bUvS0Bg","yml_author":"Марк Бьюкенен","yml_description":"Рыночная нестабильность так же естественна и опасна, как торнадо. Можно ли научиться своевременно замечать признаки надвигающегося кризиса? Предугадывать, как будут развиваться события на рынках? Какие методы прогнозирования нужно использовать для этого современным экономистам? Марк Бьюкенен - физик, автор нескольких научно-популярных бестселлеров и финансовый обозреватель Bloomberg View, в своей книге стремится найти ответы на эти и многие другие непростые и крайне актуальные вопросы. Он развенчивает традиционную концепцию &quot;мудрости рынка&quot;, поддерживаемую многими специалистами. Используя богатый и разноплановый фактический материал, автор предлагает читателям уроки более продвинутой экономики, которые показывают, что происходящее на рынках имеет много общего с погодными явлениями. Его подход к исследованию и прогнозированию позволяет по-новому увидеть жизнь экономических и финансовых систем, найти пересечения естественных и социальных наук, чтобы в итоге - лучше понимать.","yml_isbn":"978-5-389-05672-5","yml_name":"Прогноз. Как, наблюдая за погодой, научиться предсказывать экономические кризисы","yml_part":"","yml_publisher":"Азбука-Аттикус, Азбука Бизнес","yml_series":"","yml_year":"2014"},{"adv_favicon":"https://image.adrelayer.com/favicon/E/N/ENKnvLemeorDwYUBAB2g.png","adv_host":"ozon.ru","cost":"190","cost_str":"190&nbsp;р.","currency":"RUB","description":"П. Н. Белов","image":"https://image.adrelayer.com/75/63/204933657-1-small.gif","image_height":"74","image_width":"47","images":{"max_size":{"height":"700","url":"https://image.adrelayer.com/75/63/204933657-2-basic.gif","width":"443"}},"is_image":1,"pps":"2.53","shop_name":"Озон","title":"Практические методы численного...","topic_id":"10","type":"3","url":"https://feed.adrelayer.com/tds?key=U2FsdGVkX1_WTYJlDBEYwfWegPaMPSdRgVqiVrtKgjF_lqwASr7rMjYdOrXwqWZAlKiztWy6pWYUFU4jaXMLNNL5NvHK5fiZPogbhHetvl0kWoqYYBkFnRB0q2VnW-9s5bx0TDD_BTp9whFv3s7bJw","yml_author":"П. Н. Белов","yml_description":"В книге излагаются основы современной теории гидродинамического прогноза пого ды. Особое внимание уделяется негеостро-фическим методам прогноза, применяемым в оперативной работе службы прогнозов. Рассмотрены вопросы численного анализа метеорологической информации и физико-статистические методы прогнозирования. Книга рассчитана на метеорологов, си ноптиков-практиков оперативных подразде лений службы прогнозов, студентов и аспи рантов.","yml_isbn":"","yml_name":"Практические методы численного прогноза погоды","yml_part":"","yml_publisher":"Гидрометеорологическое издательство","yml_series":"","yml_year":"1967"},{"adv_favicon":"https://image.adrelayer.com/favicon/E/N/ENKnvLemeorDwYUBAB2g.png","adv_host":"ozon.ru","cost":"230","cost_str":"230&nbsp;р.","currency":"RUB","description":"Л. С. Гандин, А. С. Дубов","image":"https://image.adrelayer.com/26/63/204933662-1-small.gif","image_height":"72","image_width":"49","images":{"max_size":{"height":"700","url":"https://image.adrelayer.com/26/63/204933662-2-basic.gif","width":"468"}},"is_image":1,"pps":"2.53","shop_name":"Озон","title":"Численные методы краткосрочного...","topic_id":"10","type":"3","url":"https://feed.adrelayer.com/tds?key=U2FsdGVkX18P1frbn0CfR1yejUtg5i1T69fjeke0atiQ1i_8azcDjnHeVTH9sX5sIrSKdbeRJApwQB8oItQymYjSEc4ec7w2cbXa-ouAu6K5JvJXPYs6pE_dQBlf1bMv4BZ6COg41EcZFtOewE7GAA","yml_author":"Л. С. Гандин, А. С. Дубов","yml_description":"В книге дается систематическое изложение основ численных методов краткосрочного прогноза погоды. Значительное внимание уделяется физическому анализу прогностических моделей атмосферы, а также их практической реализации. Математическая сторона вопроса наиболее полно излагается применительно к простейшим прогностическим моделям. Учебник предназначается для студентов университетов и гидрометеорологических институтов, специализирующихся по численным методам прогноза погоды. Книга может быть также полезна студентам и аспирантам других метеорологических специальностей и синоптикам-практикам.","yml_isbn":"","yml_name":"Численные методы краткосрочного прогноза погоды","yml_part":"","yml_publisher":"Гидрометеорологическое издательство","yml_series":"","yml_year":"1968"},{"adv_favicon":"https://image.adrelayer.com/favicon/E/N/ENKnvLemeorDwYUBAB2g.png","adv_host":"ozon.ru","cost":"123","cost_str":"123&nbsp;р.","currency":"RUB","description":"Е. В. Андреева, Ю. Н. Андреев","image":"https://image.adrelayer.com/00/81/205161800-1-small.gif","image_height":"74","image_width":"47","images":{"max_size":{"height":"1000","url":"https://image.adrelayer.com/00/81/205161800-2-basic.gif","width":"635"}},"is_image":1,"pps":"2.53","shop_name":"Озон","title":"Б. П. Мультановский. Основоположник...","topic_id":"10","type":"3","url":"https://feed.adrelayer.com/tds?key=U2FsdGVkX18jBmpt6irAcpHbMnhK4CGMF5Dg4yPo-YtUEEfHcH8yFicKxz6npYUaRaA9iwfh0HHDgNgBNaOK5W4X_w4vaYIGX9CvIrQbLI75HbMbeLfImJl_HhSk8ptTteiV0zM2P7NJlnRMCHLB9A","yml_author":"Е. В. Андреева, Ю. Н. Андреев","yml_description":"Книга знакомит читателей с жизнью и деятельностью русского метеоролога, академика ВАСХНИЛ Бориса Помпеевича Мультановского (1876 - 1938). Мультановский разработал свой метод метеопрогноза, в 1915 году опубликовал работу &quot;Влияние центров действия атмосферы на погоду Европейской России&quot;. В последующем он и его ученики расширили созданный им метод прогнозирования, нашли возможность его применения к прогнозу гололеда, ливней, вскрытия рек. Эти научные разработки Мультановский обобщил в монографии &quot;Основные положения синоптического метода долгосрочных прогнозов&quot;.","yml_isbn":"","yml_name":"Б. П. Мультановский. Основоположник метода долгосрочных прогнозов погоды","yml_part":"","yml_publisher":"Гидрометеорологическое издательство","yml_series":"","yml_year":"1950"},{"adv_favicon":"https://image.adrelayer.com/favicon/E/N/ENKnvLemeorDwYUBAB2g.png","adv_host":"ozon.ru","cost":"99","cost_str":"99&nbsp;р.","currency":"RUB","description":"Диана Бивер","image":"https://image.adrelayer.com/24/93/205663942-1-small.gif","image_height":"75","image_width":"47","images":{"max_size":{"height":"321","url":"https://image.adrelayer.com/24/93/205663942-2-basic.gif","width":"200"}},"is_image":1,"pps":"2.53","shop_name":"Озон","title":"Как быстро усвоить большой объем...","topic_id":"10","type":"3","url":"https://feed.adrelayer.com/tds?key=U2FsdGVkX18bciRfyZ5ZN2dQ9lZMNSLi6S9e6WmC9AB_yBzUFf44Lp3wP2KlPHr5uBLWMAHGg_NF7HNEKA98RWC4T1gGvyj538CHyl8Ter7Ti0SrSwsIhnFqMFGfgNeOOJH84h2AtBOgltfZlVvFJQ","yml_author":"Диана Бивер","yml_description":"Доказано, что с помощью НЛП можно не только лучше запоминать полученную информацию, но и усваивать знания практически в любой области науки или повседневной жизни. Нейролингвистическое программирование - новейшая методика познания человеком собственного скрытого потенциала и возможности получения необходимых знаний без излишних усилий и затрат. НЛП подарит вам возможность по-новому взглянуть на привычную еще с детства картину обучения. Прочитав данную книгу, вы научитесь: овладевать большим объемом знаний за гораздо меньшее время; выигрывать в любых жизненных ситуациях; выявлять в себе способности, приносящие реальные дивиденды; без проблем сдавать экзамены и различные тесты; больше зарабатывать. и многому другому.","yml_isbn":"978-1-84340-373-9, 978-5-17-067161-8, 978-5-271-27867-9","yml_name":"Как быстро усвоить большой объем знаний. Учимся без мучений. Новейшие методы НЛП","yml_part":"","yml_publisher":"АСТ, Астрель, Кладезь","yml_series":"Психология - лучшее","yml_year":"2011"},{"adv_favicon":"https://image.adrelayer.com/favicon/S/c/ScHxgw8ZUodJ79C9VkVN.png","adv_host":"my-shop.ru","cost":"497","cost_str":"497&nbsp;р.","currency":"RUB","description":"Calogeras Joao Pandia","image":"https://image.adrelayer.com/63/10/153380136-1-small.gif","image_height":"68","image_width":"51","images":{"max_size":{"height":"235","url":"https://image.adrelayer.com/63/10/153380136-2-basic.gif","width":"179"}},"is_image":1,"pps":"0.81","shop_name":"my-shop.ru","title":"La Politique Monetaire Du Bresil...","topic_id":"10","type":"3","url":"https://feed.adrelayer.com/tds?key=U2FsdGVkX18A341Jg0sQaK7dv9hd5g-qoVThJnCm58d2VuvHhdsa324opkBe0OdkTQzyJjq7sd6-bWfeP4R59yKtBpXr1TnaxnSmwpNFsnmKsxc8IyKelNdDs88dY8PpkCD3G24Xt5on83NEXADukg","yml_author":"Calogeras Joao Pandia","yml_description":"Эта книга будет изготовлена в соответствии с Вашим заказом по технологии Print-on-Demand. Книга представляет собой репринтное издание. Несмотря на то, что была проведена серьезная работа по восстановлению первоначального качества издания, на некоторых.","yml_isbn":"","yml_name":"La Politique Monetaire Du Bresil (French Edition)","yml_part":"","yml_publisher":"Книга по Требованию","yml_series":"-","yml_year":"2011"}],"ref_url":"http://www.topadvert.ru/?ref_id=10424"};
+var topadvert_params = {adv_limit:1,alt_text:"",feed_id:11976,format:"offer_list",has_image:0,hit_feed_id:11976,hit_pattern_id:8080,is_available:0,is_partner:0,item_id:null,item_page_limit:10,item_page_this:1,limit:10,pattern_id:8080,query:null,search:"pandia модель дистанционный платформа земля в и усваивать прогноз авторский спутниковый ru погода наблюдение измерение",sub_id:null,title:""};
+
+                            var topadvert_loader_domain = 'loader.adrelayer.com';
+
+                            var user_defined_params = {
+    'item_limit': 10,          // максимальное количество предложений в списке
+    // общие настройки блока
+    'block': {
+        'background-color': 'white',
+        'margin-top': 0,            // верхний внешний отступ
+        'align': 'center',          // выравнивание блока в строке
+        'max_width': 800,           // содержимое блока попытается вписаться в указанную ширину
+        'min_width': 0              // растянуть блок до указанной ширины, если он получился уже (в пикселях)
+    },
+    // настройки блока предложения
+    'row': {
+        'border': '1px dotted #DCDCDC',         // разделитель рядов
+        'mouseover_color': '#E8E8E8',           // цвет фона ряда при наведении
+        'odd_background_color': '#F5F5F5',      // цвет фона нечетного ряда
+        'even_background_color': 'white',       // цвет фона четного ряда
+        'height': '38px',                       // высота строки
+        'horizontal_indent': 16,                // горизонтальный отступ содержимого ячеек в строке
+        'outer_horizontal_indent': 8            // внешний горизонтальный отступ с краев
+    },
+    // заголовок блока
+    'block_title': {
+        'enabled': true,                            // показывать заголовок
+        'align': 'left',
+        'bold': false,
+        'color': '#000',
+        'font-family': 'arial, sans-serif',
+        'font-size': '18px',
+        'font-style': 'normal',
+        'text': 'Это то, что Вы ищите?',   // текст заголовка (если задан, переопределяет стандартный)
+        'bottom_indent': 8,                         // нижний отступ (в пикселях)
+        "horizontal_indent": 8,                     // отступ с краев
+        'max_chars': 45                             // максимальное количество знаков в строке
+    },
+    // цена
+    'price': {
+        'enabled': 'false',
+        'clickable': false,
+        'bold': true,
+        'color': '#000',
+        'font-family': 'arial, sans-serif',
+        'font-size': '17px',
+        'font-style': 'normal',
+        'underline': false
+    },
+    // иконка магазина
+    'favicon': {
+        'enabled': 'false',
+        'indent': '3px'         // расстояние меджу иконкой и названием магазина
+    },
+    // название товара
+    'title': {
+        'bold': false,
+        'color': '#00C',
+        'font-family': 'arial, sans-serif',
+        'font-size': '14px',
+        'font-style': 'normal',
+        'min_length': 30       // минимальное количество символов в названии товара
+    },
+    // название магазина
+    'shop_name': {
+        'enabled': false,
+        'bold': false,
+        'color': '#060',
+        'font-family': 'arial, sans-serif',
+        'font-size': '11px',
+        'font-style': 'normal',
+        'min_length': 3         // минимальное количество символов в названии магазина
+    },
+    // автор (для книг)
+    'author': {
+        'enabled': false,
+        'clickable': false,
+        'bold': false,
+        'color': '#000',
+        'font-color': '#000',
+        'font-family': 'arial, sans-serif',
+        'font-size': '14px',
+        'font-style': 'normal',
+        'max_langth': 25,       // максимальное количество символов в строке
+        'min_length': 9         // минимальное количество символов в строке
+    },
+    // кнопка
+    'button': {
+        'border-color': '#dcdcdc',
+        'mouseover-border-color': '#d02718',
+        'button-color': '#ededed',
+        'mouseover-button-color': '#f24537',
+        'gradient-top-color': '#ededed',
+        'gradient-bottom-color': '#dfdfdf',
+        'mouseover-gradient-top-color': '#f24537',
+        'mouseover-gradient-bottom-color': '#c62d1f',
+        'corner-radius': '4px',
+        'button-height': '20px',
+        'font-color': 'black',
+        'mouseover-font-color': 'black',
+        'mouseover-font-color': 'white',
+        'font-family': 'Verdana, Arial, Sans-serif',
+        'font-size': '12px',
+        'font-style': 'normal',
+        'bold': 0,
+        'width': '70px',
+        'shadow-color': '#ffffff',
+        'mouseover-shadow-color': '#f5978e',
+        'text-indent': 10      // расстояние от текста до краев кнопки по горизонтали
+    },
+    // ссылка на сервис
+    'service_link': {
+        'enabled': false,            // показывать реферальскую ссылку
+        'align': 'right',
+        'color' : '#00C',
+        'font_family' : 'arial, sans-serif',
+        'font_size' : '11px',
+        'font_weight' : 'normal',
+        'font_style' : 'normal',
+        'line_height': 1.25,
+        'horizontal_indent': 5,
+        'vertical_indent': 5        // вертикальный отступ от списка предложений
+    }
+}
+;
+var default_params = {
+    'item_limit': 6,          // максимальное количество предложений в списке
+    // общие настройки блока
+    'block': {
+        'background-color': 'white',
+        'margin-top': 0,            // верхний внешний отступ
+        'align': 'center',          // выравнивание блока в строке
+        'max_width': 800,           // содержимое блока попытается вписаться в указанную ширину
+        'min_width': 0              // растянуть блок до указанной ширины, если он получился уже (в пикселях)
+    },
+    // настройки блока предложения
+    'row': {
+        'border': '1px dotted #DCDCDC',         // разделитель рядов
+        'mouseover_color': '#E8E8E8',           // цвет фона ряда при наведении
+        'odd_background_color': '#F5F5F5',      // цвет фона нечетного ряда
+        'even_background_color': 'white',       // цвет фона четного ряда
+        'height': '38px',                       // высота строки
+        'horizontal_indent': 16,                // горизонтальный отступ содержимого ячеек в строке
+        'outer_horizontal_indent': 8            // внешний горизонтальный отступ с краев
+    },
+    // заголовок блока
+    'block_title': {
+        'enabled': true,                            // показывать заголовок
+        'align': 'left',
+        'bold': false,
+        'color': '#000',
+        'font-family': 'arial, sans-serif',
+        'font-size': '18px',
+        'font-style': 'normal',
+        'text': 'Предложения интернет-магазинов',   // текст заголовка (если задан, переопределяет стандартный)
+        'bottom_indent': 8,                         // нижний отступ (в пикселях)
+        "horizontal_indent": 8,                     // отступ с краев
+        'max_chars': 35                             // максимальное количество знаков в строке
+    },
+    // цена
+    'price': {
+        'clickable': false,
+        'bold': true,
+        'color': '#000',
+        'font-family': 'arial, sans-serif',
+        'font-size': '17px',
+        'font-style': 'normal',
+        'underline': false
+    },
+    // иконка магазина
+    'favicon': {
+        'enabled': 'true',
+        'indent': '5px'         // расстояние меджу иконкой и названием магазина
+    },
+    // название товара
+    'title': {
+        'bold': false,
+        'color': '#00C',
+        'font-family': 'arial, sans-serif',
+        'font-size': '14px',
+        'font-style': 'normal',
+        'min_length': 20       // минимальное количество символов в названии товара
+    },
+    // название магазина
+    'shop_name': {
+        'bold': false,
+        'color': '#060',
+        'font-family': 'arial, sans-serif',
+        'font-size': '14px',
+        'font-style': 'normal',
+        'min_length': 9         // минимальное количество символов в названии магазина
+    },
+    // автор (для книг)
+    'author': {
+        'enabled': true,
+        'clickable': false,
+        'bold': false,
+        'color': '#000',
+        'font-color': '#000',
+        'font-family': 'arial, sans-serif',
+        'font-size': '14px',
+        'font-style': 'normal',
+        'max_langth': 25,       // максимальное количество символов в строке
+        'min_length': 9         // минимальное количество символов в строке
+    },
+    // кнопка
+    'button': {
+        'border-color': '#dcdcdc',
+        'mouseover-border-color': '#d02718',
+        'button-color': '#ededed',
+        'mouseover-button-color': '#f24537',
+        'gradient-top-color': '#ededed',
+        'gradient-bottom-color': '#dfdfdf',
+        'mouseover-gradient-top-color': '#f24537',
+        'mouseover-gradient-bottom-color': '#c62d1f',
+        'corner-radius': '4px',
+        'button-height': '20px',
+        'font-color': 'black',
+        'mouseover-font-color': 'black',
+        'mouseover-font-color': 'white',
+        'font-family': 'Verdana, Arial, Sans-serif',
+        'font-size': '12px',
+        'font-style': 'normal',
+        'bold': 0,
+        'width': '70px',
+        'shadow-color': '#ffffff',
+        'mouseover-shadow-color': '#f5978e',
+        'text-indent': 10      // расстояние от текста до краев кнопки по горизонтали
+    },
+    // ссылка на сервис
+    'service_link': {
+        'enabled': true,            // показывать реферальскую ссылку
+        'align': 'right',
+        'color' : '#00C',
+        'font_family' : 'arial, sans-serif',
+        'font_size' : '11px',
+        'font_weight' : 'normal',
+        'font_style' : 'normal',
+        'line_height': 1.25,
+        'horizontal_indent': 5,
+        'vertical_indent': 5        // вертикальный отступ от списка предлоежний
+    }
+};
+function topadvert_draw(feed, params) {
+    if (!feed.items || feed.items.length < 1) {
+        return '';
+    }
+
+    // style container ...
+    var StyleSet = function (args) {
+        var storage = {
+            "_data": {},
+            "apply_styles": function (styles) {
+                if (!styles) {
+                    return;
+                }
+                for (var keyName in styles) {
+                    if (!this._data.hasOwnProperty(keyName)) {
+                        this._data[keyName] = [];
+                    }
+                    if (Object.prototype.toString.call(styles[keyName]) == "[object Array]") {
+                        for (var i = 0; i < styles[keyName].length; ++i) {
+                            this._data[keyName].push(styles[keyName][i]);
+                        }
+                    } else {
+                        this._data[keyName].push(styles[keyName]);
+                    }
+                }
+            },
+            "drop_key": function (keyName) {
+                delete(this._data[keyName]);
+            },
+            "getCssText": function () {
+                var cssText = "";
+                for (var key in this._data) {
+                    for (var i = 0; i < this._data[key].length; ++i) {
+                        cssText += (key + ": " + this._data[key][i] + " !important;");
+                    }
+                }
+                return cssText;
+            }
+        };
+        if (args) {
+            storage.apply_styles(args);
+        }
+        return storage;
+    };
+    // ... style container
+
+    // m ...
+    var m = {
+        "mergeAttributes": function (attrs1, attrs2) {
+            var result = {};
+            if (attrs1) {
+                for (var key in attrs1) {
+                    result[key] = attrs1[key];
+                }
+            }
+            if (attrs2) {
+                for (var key in attrs2) {
+                    result[key] = attrs2[key];
+                }
+            }
+            return result;
+        },
+        "getElementDefaultAttributes": function () {
+            return {};
+        },
+        "getElementDefaultStyleSet": function () {
+            return StyleSet({
+                "background-color": "transparent",
+                "border": 0,
+                "border-collapse": "collapse",
+                "border-spacing": 0,
+                "font-size": 0,
+                "font-weight": "normal",
+                "letter-spacing": "normal",
+                "line-height": 0,
+                "margin": 0,
+                "outline": 0,
+                "padding": 0,
+                "text-align": "left",
+                "text-shadow": "none",
+                "text-indent": 0
+            });
+        },
+        "_createElement": function (elementName, attributes, style_set) {
+            var el = document.createElement(elementName);
+
+            // DEI = Dom Element Interface
+            var getDEI = function (element) {
+                return {
+                    set_attributes: function (attributes) {
+                        if (!attributes) {
+                            return;
+                        }
+                        for (var key in attributes) {
+                            element.setAttribute(key, attributes[key]);
+                        }
+                    },
+                    drop_css: function () {
+                        element.style.cssText = '';
+                    },
+                    set_css: function (css) {
+                        if (!css) {
+                            return;
+                        }
+                        element.style.cssText = css;
+                    },
+                    apply_css: function (css) {
+                        if (!css) {
+                            return;
+                        }
+                        element.style.cssText += ";" + css;
+                    },
+                    apply_styles: function (styles) {
+                        if (!styles) {
+                            return;
+                        }
+                        element.dei.apply_css(StyleSet(styles).getCssText());
+                    }
+                };
+            }
+
+            el.dei = getDEI(el);
+
+            // set attributes
+            el.dei.set_attributes(attributes);
+
+            // set styles
+            el.dei.apply_css(style_set.getCssText());
+
+            return el;
+        },
+        "getDivDefaultStyleSet": function () {
+            var style_set = this.getElementDefaultStyleSet();
+            style_set.apply_styles({
+                "display": "block",
+                "height": "auto"
+            });
+            return style_set;
+        },
+        "createDivElement": function (attributes, styles) {
+            var style_set = this.getDivDefaultStyleSet();
+            style_set.apply_styles(styles);
+            return this._createElement('div', attributes, style_set);
+        },
+        "createImgElement": function (attributes, styles) {
+            var style_set = this.getElementDefaultStyleSet();
+            style_set.apply_styles(styles);
+            return this._createElement('img', attributes, style_set);
+        },
+        "createAElement": function (attributes, styles) {
+            var style_set = this.getElementDefaultStyleSet();
+            style_set.apply_styles({
+                "display": "inline",
+                "text-decoration": "underline"
+            });
+            style_set.apply_styles(styles);
+            return this._createElement('a', attributes, style_set);
+        },
+        "createSpanElement": function (attributes, styles) {
+            var style_set = this.getElementDefaultStyleSet();
+            style_set.apply_styles({
+                "display": "inline"
+            });
+            style_set.apply_styles(styles);
+            return this._createElement('span', attributes, style_set);
+        },
+        "createUlElement": function (attributes, styles) {
+            var style_set = this.getElementDefaultStyleSet();
+            // style_set.apply_styles({});
+            style_set.apply_styles(styles);
+            return this._createElement('ul', attributes, style_set);
+        },
+        "createOlElement": function (attributes, styles) {
+            var style_set = this.getElementDefaultStyleSet();
+            // style_set.apply_styles({});
+            style_set.apply_styles(styles);
+            return this._createElement('ol', attributes, style_set);
+        },
+        "createLiElement": function (attributes, styles) {
+            var style_set = this.getElementDefaultStyleSet();
+            // style_set.apply_styles({});
+            style_set.apply_styles(styles);
+            return this._createElement('li', attributes, style_set);
+        },
+        "createTableElement": function (attributes, styles) {
+            var style_set = this.getElementDefaultStyleSet();
+            style_set.apply_styles({
+                "display": "table",
+                "height": "auto",
+                "width": "auto"
+            });
+            style_set.apply_styles(styles);
+            var table = this._createElement('table', attributes, style_set);
+            var thead_style_set = this.getElementDefaultStyleSet();
+            thead_style_set.apply_styles({
+                "display": "none"
+            });
+            table.appendChild(this._createElement('thead', null, thead_style_set));
+            return table;
+        },
+        "createTbodyElement": function (attributes, styles) {
+            var style_set = this.getElementDefaultStyleSet();
+            style_set.apply_styles({
+                "display": "table-row-group"
+            });
+            style_set.apply_styles(styles);
+            return this._createElement('tbody', attributes, style_set);
+        },
+        "createTrElement": function (attributes, styles) {
+            var style_set = this.getElementDefaultStyleSet();
+            style_set.apply_styles({
+                "display": "table-row"
+            });
+            style_set.apply_styles(styles);
+            return this._createElement('tr', attributes, style_set);
+        },
+        "createTdElement": function (attributes, styles) {
+            var style_set = this.getElementDefaultStyleSet();
+            style_set.apply_styles({
+                "display": "table-cell",
+                "text-align": "left",
+                "vertical-align": "middle"
+            });
+            style_set.apply_styles(styles);
+            return this._createElement('td', attributes, style_set);
+        },
+        "getRandomString": function (length) {
+            var str = "";
+            var availables = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            for (var i=0; i < 5; i++) {
+                str += availables.charAt(Math.floor(Math.random() * availables.length));
+            }
+            return str;
+        },
+        "generateId": function () {
+            return "_" + this.getRandomString(11);
+        }
+    };
+    // ... m
+
+    // init block ...
+    function merge(obj1, obj2) {
+        var result = {};
+        for (var key in obj1) {
+            result[key] = obj1[key];
+        }
+        for (var key in obj2) {
+            if (obj1.hasOwnProperty(key) && typeof(obj1[key]) == 'object' && typeof(obj2[key]) == 'object') {
+                result[key] = merge(result[key], obj2[key]);
+            } else {
+                result[key] = obj2[key];
+            }
+        }
+        return result;
+    }
+
+    function getBlockParams() {
+        var topadvert_draw_params = merge(default_params, user_defined_params);
+        var overriden = {
+        };
+        return merge(topadvert_draw_params, overriden);
+    }
+
+    function getItemLimit(item_feed) {
+        var items_limit = item_feed.items.length;
+        var params_limit = parseInt(block_params.item_limit);
+        return Math.min(items_limit, params_limit);
+    }
+
+    function hasAuthor(feed) {
+        if (!block_params.author.enabled) {
+            return false;
+        }
+        for (var i = 0; i < block_params.item_limit; ++i) {
+            var item = feed.items[i];
+            if (itemIsBook(item) && item.yml_author) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // vars:
+    var SHOP_NAME_AREA_CLICK = 1;
+    var TITLE_AREA_CLICK = 2;
+    var IMAGE_AREA_CLICK = 3;
+    var PRICE_AREA_CLICK = 4;
+    var BUTTON_AREA_CLICK = 5;
+    var AUTHOR_AREA_CLICK = 101;
+
+    var DEFAULT_LINE_HEIGHT = 1.25;
+
+    var ref_url = feed.ref_url;
+    var block_params = getBlockParams();
+    block_params.item_limit = getItemLimit(feed);
+    block_params.has_author = hasAuthor(feed);
+
+    var longest_price_string = '';
+    var longest_shop_name_string = '';
+    var longest_author_string = '';
+    var longest_name_string = '';
+    for (var i = 0; i < block_params.item_limit; ++i) {
+        var item = feed.items[i];
+        if (longest_price_string.length < item.cost_str.length) {
+            longest_price_string = item.cost_str;
+        }
+        if (longest_shop_name_string.length < item.shop_name.length) {
+            longest_shop_name_string = item.shop_name;
+        }
+        if (longest_name_string.length < getItemNameString(item).length) {
+            longest_name_string = getItemNameString(item);
+        }
+        if (block_params.has_author) {
+            if (item.yml_author && longest_author_string.length < item.yml_author.length) {
+                longest_author_string = item.yml_author;
+            }
+        }
+    }
+    // ... init block
+
+    function setWbrInWord(word, len) {
+        if (word.length <= len) {
+            return word;
+        }
+        var list_of_cutted = new Array();
+        list_of_cutted.push(word.substring(0, len));
+        list_of_cutted.push(setWbrInWord(word.substring(len), len));
+        return(list_of_cutted.join("<wbr>"));
+    }
+
+    function setWbrInText(text, len) {
+        var list_of_cutted = [];
+        var word_list = text.split(/\s+/);
+        for (var i = 0; i < word_list.length; ++i) {
+            var word = word_list[i];
+            list_of_cutted.push(setWbrInWord(word, len));
+        }
+        return list_of_cutted.join(" ");
+    }
+
+    function clip(str, len) {
+        if (str.length <= len) {
+            return str;
+        }
+        return str.substr(0, len).replace(/[^0-9a-zA-Zа-яА-Я]+$/, '');
+    }
+
+    function clipWithHellip(str, len) {
+        var suffix_length = 1;
+        if (str.length > len) {
+            var result = clip(str, len - suffix_length);
+            result += "&hellip;";
+            return result;
+        }
+        return str;
+    }
+
+    function getHiddenBlock() {
+        return m.createDivElement(null, {
+            "position": "absolute",
+            "display": "block",
+            "visibility": "hidden",
+            "top": 0,
+            "width": 0,
+            "z-index": -999
+        });
+    }
+
+    function getUrl(url, params, click_area) {
+        var result = url + '&utm_content=' + 'topadvert';
+        result += '_2';                                             // utm_content_version
+        result += '_block-name_h-list';
+        result += '_click-id_' + click_area;
+        result += '_pin_%25pin%25';
+        return result;
+    }
+
+    function getAuthor(item) {
+        return (item.yml_author ? item.yml_author : '');
+    }
+
+    function getPriceString(item, params) {
+        if (params.price_string) {
+            return params.price_string;
+        }
+        return item.cost_str;
+    }
+
+    function getPriceBlock(item, params) {
+        var price_block_attrs = {};
+        var price_container_styles = {
+            "color": block_params.price["color"],
+            "font-family": block_params.price["font-family"],
+            "font-size": block_params.price["font-size"],
+            "font-style": block_params.price["font-style"],
+            "font-weight": (block_params.price["bold"] ? "bold" : "normal"),
+            "line-height": block_params.price["font-style"],
+            "text-decoration": (block_params.price["underline"] ? "underline" : "none"),
+            "width": "auto"
+        };
+
+        if (block_params.price.clickable) {
+            price_block_attrs.href = getUrl(item.url, block_params, PRICE_AREA_CLICK);
+            price_block_attrs.target = "_blank";
+
+            price_container_styles["text-decoration"] = "underline";
+        }
+
+        var block = m.createAElement(price_block_attrs, price_container_styles);
+        block.innerHTML = getPriceString(item, params);
+
+        return block;
+    }
+
+    function getPriceCell(item, params) {
+        var price_cell_styles = {};
+        if (block_params.row.border) {
+            price_cell_styles["border-bottom"] = block_params.row.border;
+        }
+        if (params.price_block_width) {
+            price_cell_styles.width = params.price_block_width + "px"
+        }
+        if (params.row_styles.height) {
+            price_cell_styles.height = params.row_styles.height;
+        }
+        if (params.row_styles && params.row_styles["background-color"]) {
+            price_cell_styles["background-color"] = params.row_styles["background-color"];
+        }
+        var td = m.createTdElement(null, price_cell_styles);
+
+        td.appendChild(getPriceBlock(item, params));
+
+        return td;
+    }
+
+    function getFaviconBlock(item, params) {
+        var table = m.createTableElement(null, {
+            "height": "16px",
+            "width": "16px"
+        });
+        var tbody = m.createTbodyElement();
+        table.appendChild(tbody);
+        var tr = m.createTrElement();
+        tbody.appendChild(tr);
+        var td = m.createTdElement();
+        tr.appendChild(td);
+        var block = m.createAElement(
+            {
+                "href": getUrl(item.url, block_params, SHOP_NAME_AREA_CLICK),
+                "target": "_blank",
+                "title": getItemNameString(item)
+            },
+            {
+                "border": 0,
+                "height": "16px",
+                "text-decoration": "none",
+                "width": "16px"
+            }
+        );
+
+        var image = m.createImgElement(
+            {
+                "src": item.adv_favicon
+            },
+            {
+                "border": 0,
+                "height": "16px",
+                "width": "16px"
+            }
+        );
+        block.appendChild(image);
+        td.appendChild(block);
+
+        return table;
+    }
+
+    function getShopNameString(item, params) {
+        if (params.shop_name) {
+            return params.shop_name;
+        }
+        return item.shop_name;
+    }
+
+    function getShopNameBlock(item, params) {
+        var block = m.createAElement(
+            {
+                "href": getUrl(item.url, block_params, SHOP_NAME_AREA_CLICK),
+                "target": "_block",
+                "title": getItemNameString(item)
+            },
+            {
+                "color": block_params.shop_name["color"],
+                "font-family": block_params.shop_name["font-family"],
+                "font-size": block_params.shop_name["font-size"],
+                "font-style": block_params.shop_name["font-style"],
+                "font-weight": (block_params.shop_name["bold"] ? "bold" : "normal"),
+                "line-height": block_params.shop_name["font-size"],
+                "text-align": "left",
+                "white-space": "nowrap"
+            }
+        );
+
+        var shop_name_string = getShopNameString(item, params);
+        if (params.shop_name_length) {
+            shop_name_string = clipWithHellip(shop_name_string, params.shop_name_length);
+        }
+        block.innerHTML = shop_name_string;
+
+        return block;
+    }
+
+    function getShopBlock(item, params) {
+        var shop_block_attrs = {};
+        if (params.shop_block_id) {
+            shop_block_attrs.id = params.shop_block_id;
+        }
+        var shop_block_styles = {};
+        if (params.shop_block_width) {
+            shop_block_styles.width = params.shop_block_width + "px";
+        }
+        var table = m.createTableElement(shop_block_attrs, shop_block_styles);
+
+        var tbody = m.createTbodyElement();
+        table.appendChild(tbody);
+
+        var row = m.createTrElement();
+        tbody.appendChild(row);
+
+        if (block_params.favicon.enabled) {
+            var favicon_cell = m.createTdElement(null, {
+                "width": "16px"
+            });
+            favicon_cell.appendChild(getFaviconBlock(item, params));
+            row.appendChild(favicon_cell);
+
+            var indent_cell = m.createTdElement(null, {
+                "width": block_params.favicon.indent
+            });
+            indent_cell.appendChild(m.createTableElement(null, {
+                "width": block_params.favicon.indent
+            }));
+            row.appendChild(indent_cell);
+        }
+
+        var shop_name_cell = m.createTdElement(null, {
+            "text-align": "left",
+            "vertical-align": "middle"
+        });
+        shop_name_cell.appendChild(getShopNameBlock(item, params));
+
+        row.appendChild(shop_name_cell);
+
+        return table;
+    }
+
+    function getShopCell(item, params) {
+        var shop_cell_styles = {
+            "margin": "auto 0"
+        };
+        if (block_params.row.border) {
+            shop_cell_styles["border-bottom"] = block_params.row.border;
+        }
+        if (params.row_styles.height) {
+            shop_cell_styles.height = params.row_styles.height;
+        }
+        if (params.row_styles && params.row_styles["background-color"]) {
+            shop_cell_styles["background-color"] = params.row_styles["background-color"];
+        }
+        if (params.shop_block_width) {
+            shop_cell_styles["width"] = params.shop_block_width + "px";
+        }
+        var td = m.createTdElement(null, shop_cell_styles);
+
+        td.appendChild(getShopBlock(item, params));
+
+        return td;
+    }
+
+    function getAuthorString(item, params) {
+        if (params.author) {
+            return params.author;
+        }
+        return item.yml_author;
+    }
+
+    function getAuthorBlock(item, params) {
+        var author_block_params = {};
+        if (params.author_block_id) {
+            author_block_params.id = params.author_block_id;
+        }
+        var author_block_styles = {
+            "color": block_params.author["color"],
+            "font-family": block_params.author["font-family"],
+            "font-size": block_params.author["font-size"],
+            "font-style": block_params.author["font-style"],
+            "font-weight": block_params.author["font-weight"],
+            "line-height": block_params.author["font-size"],
+            "text-decoration": "none",
+            "white-space": "nowrap"
+        };
+        if (block_params.author.clickable) {
+            author_block_params.href = getUrl(item.url, block_params, AUTHOR_AREA_CLICK);
+            author_block_params.target = "_blank";
+
+            author_block_styles["text-decoration"] = "underline";
+        }
+
+        var author_block = m.createAElement(author_block_params, author_block_styles);
+        var author_string = getAuthorString(item, params);
+        if (params.author_length) {
+            author_string = clipWithHellip(author_string, params.author_length);
+        }
+        author_block.innerHTML = author_string;
+
+        return author_block;
+    }
+
+    function getAuthorCell(item, params) {
+        var author_block_styles = {};
+        if (block_params.row.border) {
+            author_block_styles["border-bottom"] = block_params.row.border;
+        }
+        if (params.author_block_width) {
+            author_block_styles["width"] = params.author_block_width + "px";
+        }
+        if (params.row_styles.height) {
+            author_block_styles.height = params.row_styles.height;
+        }
+        if (params.row_styles && params.row_styles["background-color"]) {
+            author_block_styles["background-color"] = params.row_styles["background-color"];
+        }
+        var td = m.createTdElement(null, author_block_styles);
+
+        td.appendChild(getAuthorBlock(item, params));
+
+        return td;
+    }
+
+    function itemIsBook(item) {
+        return (item.type == 3 || item.type == 8);
+    }
+
+    function capitalize(str) {
+        if (!str) {
+            return str;
+        }
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    function getItemNameString(item) {
+        var name = item.title;
+        if (item.type == 3 || item.type == 8) {
+            // book or audiobook
+            if (item.yml_name) {
+                name = item.yml_name;
+            }
+        } else {
+            if (item.yml_name) {
+                name = capitalize(item.yml_name);
+            } else {
+                var name_word_list = [];
+                if (item.yml_type_prefix) {
+                    name_word_list.push(capitalize(item.yml_type_prefix));
+                }
+                if (item.yml_vendor) {
+                    name_word_list.push(capitalize(item.yml_vendor));
+                }
+                if (item.yml_model) {
+                    name_word_list.push(capitalize(item.yml_model));
+                }
+                name = name_word_list.join(' ');
+            }
+        }
+        return name;
+    }
+
+    function getNameBlock(item, params) {
+        var name_string = getItemNameString(item, params);
+        var name_block_attrs = {
+            "href": getUrl(item.url, block_params, TITLE_AREA_CLICK),
+            "target": "_blank",
+            "title": name_string
+        };
+        if (params.name_block_id) {
+            name_block_attrs.id = params.name_block_id;
+        }
+        var name_block_styles = {
+            "color": block_params.title["color"],
+            "font-family": block_params.title["font-family"],
+            "font-size": block_params.title["font-size"],
+            "font-style": block_params.title["font-style"],
+            "font-weight": (block_params.title["bold"] ? "bold" : "normal"),
+            "line-height": block_params.title["font-size"],
+            "text-align": block_params.title["text-align"],
+            "white-space": "nowrap"
+        };
+        if (params.name_block_width) {
+            name_block_styles.width = params.name_block_width + "px"
+        }
+
+        var name_block = m.createAElement(name_block_attrs, name_block_styles);
+        if (params.name_max_chars) {
+            name_string = clipWithHellip(name_string, params.name_max_chars);
+        }
+        name_block.innerHTML = name_string;
+
+        return name_block;
+    }
+
+    function getNameCell(item, params) {
+        var name_cell_styles = {
+            "background-color": params.row_styles["background-color"]
+        };
+        if (block_params.row.border) {
+            name_cell_styles["border-bottom"] = block_params.row.border;
+        }
+        if (params.row_styles.height) {
+            name_cell_styles.height = params.row_styles.height;
+        }
+        if (params.row_styles && params.row_styles["background-color"]) {
+            name_cell_styles["background-color"] = params.row_styles["background-color"];
+        }
+        if (params.name_block_width) {
+//            name_cell_styles.width = params.name_block_width + "px";
+        }
+        var td = m.createTdElement(null, name_cell_styles);
+
+        td.appendChild(getNameBlock(item, params));
+
+        return td;
+    }
+
+    function getButtonMouseoverStyles() {
+        return {
+            "-moz-box-shadow": ("inset 0px 1px 0px 0px " + block_params.button["mouseover-shadow-color"]),
+            "-webkit-box-shadow": ("inset 0px 1px 0px 0px " + block_params.button["mouseover-shadow-color"]),
+            "box-shadow": "inset 0px 1px 0px 0px " + block_params.button["mouseover-shadow-color"],
+            "background": [
+                "-webkit-gradient(linear, left top, left bottom, color-stop(0.05, " + block_params.button["mouseover-gradient-top-color"] + "), color-stop(1, " + block_params.button["mouseover-gradient-bottom-color"] + "))",
+                "-moz-linear-gradient(center top, " + block_params.button["mouseover-gradient-top-color"] + " 5%, " + block_params.button["mouseover-gradient-bottom-color"] + " 100%)"
+            ],
+            "filter": "progid:DXImageTransform.Microsoft.gradient(startColorstr='" + block_params.button["mouseover-gradient-top-color"] + "', endColorstr='" + block_params.button["mouseover-gradient-bottom-color"] + "')",
+            "background-color": block_params.button["mouseover-button-color"],
+            "border": "1px solid " + block_params.button["mouseover-border-color"],
+            "color": block_params.button["mouseover-font-color"],
+            "visibility": "visible"
+        };
+    }
+
+    function getButtonMouseoutStyles() {
+        return {
+            "-moz-box-shadow": "inset 0px 1px 0px 0px " + block_params.button["shadow-color"],
+            "-webkit-box-shadow": "inset 0px 1px 0px 0px " + block_params.button["shadow-color"],
+            "box-shadow": "inset 0px 1px 0px 0px " + block_params.button["shadow-color"],
+            "background": [
+                "-webkit-gradient(linear, left top, left bottom, color-stop(0.05, " + block_params.button["gradient-top-color"] + "), color-stop(1, " + block_params.button["gradient-bottom-color"] + "))",
+                "-moz-linear-gradient(center top, " + block_params.button["gradient-top-color"] + " 5%, " + block_params.button["gradient-bottom-color"] + " 100%)"
+            ],
+            "filter": "progid: DXImageTransform.Microsoft.gradient(startColorstr='" + block_params.button["gradient-top-color"] + "', endColorstr='" + block_params.button["gradient-bottom-color"] + "')",
+            "background-color": block_params.button["button-color"],
+            "-webkit-border-top-left-radius": block_params.button["corner-radius"],
+            "-moz-border-radius-topleft": block_params.button["corner-radius"],
+            "border-top-left-radius": block_params.button["corner-radius"],
+            "-webkit-border-top-right-radius": block_params.button["corner-radius"],
+            "-moz-border-radius-topright": block_params.button["corner-radius"],
+            "border-top-right-radius": block_params.button["corner-radius"],
+            "-webkit-border-bottom-right-radius": block_params.button["corner-radius"],
+            "-moz-border-radius-bottomright": block_params.button["corner-radius"],
+            "border-bottom-right-radius": block_params.button["corner-radius"],
+            "-webkit-border-bottom-left-radius": block_params.button["corner-radius"],
+            "-moz-border-radius-bottomleft": block_params.button["corner-radius"],
+            "border-bottom-left-radius": block_params.button["corner-radius"],
+            "text-indent": 0,
+            "border": "1px solid " + block_params.button["border-color"],
+            "color": block_params.button["font-color"],
+            "display": "inline-block",
+            "font-family": block_params.button["font-family"],
+            "font-size": block_params.button["font-size"],
+            "font-weight": (block_params.button["bold"] ? 'bold' : 'normal'),
+            "font-style": block_params.button["font-style"],
+            "height": block_params.button["button-height"],
+            "line-height": block_params.button["button-height"],
+            "width": block_params.button["width"],
+            "text-decoration": "none",
+            "text-align": "center",
+            "visibility": (block_params.button.disappeared ? "hidden" : "visible")
+        };
+    }
+
+    function getButtonBlock(item, params) {
+        var button_block_attrs = {
+            "href": getUrl(item.url, block_params, BUTTON_AREA_CLICK),
+            "target": "_blank"
+        };
+        var button_block_styles = getButtonMouseoutStyles();
+        var button_block = m.createAElement(button_block_attrs, button_block_styles);
+
+        button_block.onmouseover = function () {
+            button_block.dei.apply_styles(getButtonMouseoverStyles());
+        };
+        button_block.onmouseout = function () {
+            button_block.dei.apply_styles(getButtonMouseoutStyles());
+        };
+
+        button_block.innerHTML = "Купить";
+
+        return button_block;
+    }
+
+    function getButtonCell(item, params) {
+        var button_cell_styles = {};
+        if (block_params.row.border) {
+            button_cell_styles["border-bottom"] = block_params.row.border;
+        }
+        if (params.price_block_width) {
+            button_cell_styles["width"] = params.price_block_width + "px";
+        }
+        if (params.row_styles.height) {
+            button_cell_styles.height = params.row_styles.height;
+        }
+        if (params.row_styles && params.row_styles["background-color"]) {
+            button_cell_styles["background-color"] = params.row_styles["background-color"];
+        }
+        var button_cell = m.createTdElement(null, button_cell_styles);
+
+        var button_block = getButtonBlock(item, params);
+        button_cell.appendChild(button_block);
+        button_cell.button_block = button_block;
+
+        return button_cell;
+    }
+
+    function getIndentCell(params) {
+        var styles = {
+            "width": params.width + "px"
+        };
+        if (params["background-color"]) {
+            styles["background-color"] = params["background-color"];
+        }
+        var spacer = m.createTableElement(null, styles);
+        if (block_params.row.border) {
+            styles["border-bottom"] = block_params.row.border;
+        }
+        var cell = m.createTdElement(null, styles);
+        cell.appendChild(spacer);
+        return cell;
+    }
+
+    function getHIndentCell(params) {
+        var indent_cell_params = {
+            "width": block_params.row.horizontal_indent
+        };
+        if (params.row_styles && params.row_styles["background-color"]) {
+            indent_cell_params["background-color"] = params.row_styles["background-color"];
+        }
+        return getIndentCell(indent_cell_params);
+    }
+
+    function getSIndentCell(params) {
+        var indent_cell_params = {
+            "width": Math.floor(block_params.row.horizontal_indent / 2)
+        };
+        if (params.row_styles && params.row_styles["background-color"]) {
+            indent_cell_params["background-color"] = params.row_styles["background-color"];
+        }
+        return getIndentCell(indent_cell_params);
+    }
+
+    function getOfferRow(item, params) {
+        var tr = m.createTrElement(null, params.row_styles);
+
+        var left_indent_cell = getSIndentCell(params);
+        tr.appendChild(left_indent_cell);
+            var shop_cell = getShopCell(item, params);
+            tr.appendChild(shop_cell);
+            if (block_params.has_author) {
+                var author_left_indent_cell = getHIndentCell(params);
+                tr.appendChild(author_left_indent_cell);
+                var author_cell = getAuthorCell(item, params);
+                tr.appendChild(author_cell);
+            }
+            var name_left_indent_cell = getHIndentCell(params);
+            tr.appendChild(name_left_indent_cell);
+            var name_cell = getNameCell(item, params);
+            tr.appendChild(name_cell);
+            var price_left_indent_cell = getHIndentCell(params);
+            tr.appendChild(price_left_indent_cell);
+            var price_cell = getPriceCell(item, params);
+            tr.appendChild(price_cell);
+            var button_left_indent_cell = getHIndentCell(params);
+            tr.appendChild(button_left_indent_cell);
+            var button_cell = getButtonCell(item, params);
+            tr.appendChild(button_cell);
+        var right_indent_cell = getSIndentCell(params);
+        tr.appendChild(right_indent_cell);
+
+        tr.onmouseover = function () {
+            tr.dei.apply_styles({
+                "background-color": block_params.row.mouseover_color
+            });
+            left_indent_cell.dei.apply_styles({
+                "background-color": block_params.row.mouseover_color
+            });
+            shop_cell.dei.apply_styles({
+                "background-color": block_params.row.mouseover_color
+            });
+            if (block_params.has_author) {
+                author_left_indent_cell.dei.apply_styles({
+                    "background-color": block_params.row.mouseover_color
+                });
+                author_cell.dei.apply_styles({
+                    "background-color": block_params.row.mouseover_color
+                });
+            }
+            name_left_indent_cell.dei.apply_styles({
+                "background-color": block_params.row.mouseover_color
+            });
+            name_cell.dei.apply_styles({
+                "background-color": block_params.row.mouseover_color
+            });
+            price_left_indent_cell.dei.apply_styles({
+                "background-color": block_params.row.mouseover_color
+            });
+            price_cell.dei.apply_styles({
+                "background-color": block_params.row.mouseover_color
+            });
+            button_left_indent_cell.dei.apply_styles({
+                "background-color": block_params.row.mouseover_color
+            });
+            button_cell.dei.apply_styles({
+                "background-color": block_params.row.mouseover_color
+            });
+            right_indent_cell.dei.apply_styles({
+                "background-color": block_params.row.mouseover_color
+            });
+            if (button_cell.button_block) {
+                button_cell.button_block.onmouseover();
+            }
+        };
+
+        var bgcolor = params.row_styles["background-color"];
+        tr.onmouseout = function () {
+            tr.dei.apply_styles({
+                "background-color": bgcolor
+            });
+            left_indent_cell.dei.apply_styles({
+                "background-color": bgcolor
+            });
+            shop_cell.dei.apply_styles({
+                "background-color": bgcolor
+            });
+            if (block_params.has_author) {
+                author_left_indent_cell.dei.apply_styles({
+                    "background-color": bgcolor
+                });
+                author_cell.dei.apply_styles({
+                    "background-color": bgcolor
+                });
+            }
+            name_left_indent_cell.dei.apply_styles({
+                "background-color": bgcolor
+            });
+            name_cell.dei.apply_styles({
+                "background-color": bgcolor
+            });
+            price_left_indent_cell.dei.apply_styles({
+                "background-color": bgcolor
+            });
+            price_cell.dei.apply_styles({
+                "background-color": bgcolor
+            });
+            button_left_indent_cell.dei.apply_styles({
+                "background-color": bgcolor
+            });
+            button_cell.dei.apply_styles({
+                "background-color": bgcolor
+            });
+            right_indent_cell.dei.apply_styles({
+                "background-color": bgcolor
+            });
+            if (button_cell.button_block) {
+                button_cell.button_block.onmouseout();
+            }
+        };
+
+        return tr;
+    }
+
+    function getOfferList(feed, params) {
+        var table_styles = {};
+        if (params.width) {
+            table_styles.width = params.width + "px";
+        }
+        var table = m.createTableElement(null, table_styles);
+
+        var tbody = m.createTbodyElement();
+        table.appendChild(tbody);
+
+        for (var i = 0; i < block_params.item_limit; ++i) {
+            var item = feed.items[i];
+
+            params.row_styles = {
+                "border-bottom": block_params.row.border,
+                "background-color": ((i % 2) ? block_params.row.even_background_color : block_params.row.odd_background_color),
+                "height": block_params.row.height
+            };
+
+            tbody.appendChild(getOfferRow(item, params));
+        }
+
+        return table;
+    }
+
+    function getBlockTitleString() {
+        var result = '';
+        if (block_params.block_title.enabled) {
+            result = block_params.block_title.text;
+            if (!result) {
+                result = params.title;
+            }
+        }
+        return result;
+    }
+
+    function getTitleBlock(params) {
+        var block = m.createDivElement(null, {
+            "color": block_params.block_title["color"],
+            "font-family": block_params.block_title["font-family"],
+            "font-size": block_params.block_title["font-size"],
+            "font-style": block_params.block_title["font-style"],
+            "font-weight": (block_params.block_title["bold"] ? "bold" : "normal"),
+            "line-height": 1.25,
+            "text-align": block_params.block_title["align"],
+            "margin-bottom": block_params.block_title["bottom_indent"] + "px",
+            "padding-left": block_params.block_title["horizontal_indent"] + "px",
+            "padding-right": block_params.block_title["horizontal_indent"] + "px"
+        });
+        block.innerHTML = clipWithHellip(getBlockTitleString(), block_params.block_title.max_chars);
+        return block;
+    }
+
+    function getServiceInfoBlock() {
+        var container = m.createDivElement(null, {
+            "margin-top": block_params.service_link["vertical_indent"] + "px",
+            "padding-left": block_params.service_link["text_indent"] + "px",
+            "padding-right": block_params.service_link["text_indent"] + "px",
+            "text-align": block_params.service_link["align"]
+        });
+
+        var link = m.createAElement(
+            {
+                "href": ref_url,
+                "target": "_blank"
+            },
+            {
+                "color": block_params.service_link["color"],
+                "font-family": block_params.service_link["font_family"],
+                "font-size": block_params.service_link["font_size"],
+                "font-style": block_params.service_link["font_style"],
+                "font-weight": (block_params.service_link["bold"] ? "bold" : "normal"),
+                "line-height": 1.25
+            }
+        );
+        container.appendChild(link);
+
+        link.innerHTML = "Рекламная сеть Topadvert";
+
+        return container;
+    }
+
+    function getServiceLinkBlock() {
+        var block = m.createDivElement(null, {
+            "padding-top": block_params.service_link["vertical_indent"] + "px",
+            "padding-bottom": block_params.service_link["vertical_indent"] + "px",
+            "padding-left": block_params.service_link["horizontal_indent"] + "px",
+            "padding-right": block_params.service_link["horizontal_indent"] + "px",
+            "text-align": block_params.service_link["align"]
+        });
+
+        var link = m.createAElement(
+            {
+                "href": ref_url,
+                "target": "_blank"
+            },
+            {
+                "color": block_params.service_link["color"],
+                "font-family": block_params.service_link["font_family"],
+                "font-size": block_params.service_link["font_size"],
+                "font-style": block_params.service_link["font_style"],
+                "font-weight": (block_params.service_link["bold"] ? "bold" : "normal"),
+                "line-height": (block_params.service_link["line_height"] ? block_params.service_link["line_height"] : DEFAULT_LINE_HEIGHT)
+            }
+        );
+        block.appendChild(link);
+
+        link.innerHTML = "Рекламная сеть Topadvert";
+
+        return block;
+    }
+
+    function getMainContainer(feed, params) {
+        var container_attrs = {};
+        var container_styles = {
+            "background-color": block_params.block["background-color"]
+        };
+        if (block_params.block.align == 'left') {
+            container_styles["margin-left"] = 0;
+            container_styles["margin-right"] = "auto";
+        } else if (block_params.block.align == 'right') {
+            container_styles["margin-left"] = "auto";
+            container_styles["margin-right"] = 0;
+        } else {
+            container_styles["margin-left"] = "auto";
+            container_styles["margin-right"] = "auto";
+        }
+        var table = m.createTableElement(container_attrs, container_styles);
+
+        var tbody = m.createTbodyElement();
+        table.appendChild(tbody);
+
+        var tr = m.createTrElement();
+        tbody.appendChild(tr);
+
+        var td = m.createTdElement();
+        tr.appendChild(td);
+
+        if (block_params.block_title.enabled) {
+            td.appendChild(getTitleBlock(item, params));
+        }
+        td.appendChild(getOfferList(feed, params));
+        if (block_params.service_link.enabled) {
+            td.appendChild(getServiceLinkBlock());
+        }
+
+        if (params.row_block_id) {
+            td.id = params.row_block_id;
+        }
+
+        return table;
+    }
+
+    function getBlockWidth(contentDomElement, params) {
+        var hidden_block = getHiddenBlock();
+
+        var table = m.createTableElement();
+        hidden_block.appendChild(table);
+
+        var tbody = m.createTbodyElement();
+        table.appendChild(tbody);
+
+        var tr = m.createTrElement();
+        tbody.appendChild(tr);
+
+        var td = m.createTdElement();
+        tr.appendChild(td);
+
+        td.appendChild(contentDomElement);
+
+        document.body.appendChild(hidden_block);
+        var width = contentDomElement.offsetWidth;
+        document.body.removeChild(hidden_block);
+
+        return width;
+    }
+
+    function getRowData() {
+        var shop_name_step = 1;
+        var author_step = 1;
+        var title_step = 3;
+
+        var shop_name_length = parseInt(block_params.shop_name.min_length);
+        var author_length = parseInt(block_params.author.min_length);
+        var name_max_chars = parseInt(block_params.title.min_length);
+
+        var price_cell_width = getBlockWidth(getPriceBlock(feed.items[0], {'price_string': longest_price_string}), {});
+        var button_cell_width = getBlockWidth(getButtonBlock(feed.items[0], {}), {});
+
+        var row_draw_data = {
+            'button_block_width': button_cell_width,
+            'shop_block_width': 0,
+            'shop_name_length': shop_name_length,
+            'author_block_width': 0,
+            'author_length': author_length,
+            'price_block_width': price_cell_width,
+            'name_block_width': 0,
+            'name_max_chars': name_max_chars
+        };
+
+        var max_width = Math.max(parseInt(block_params.block.max_width), parseInt(block_params.block.min_width));
+
+        do {
+            var row_block_id = 'row_block_' + (Math.floor(Math.random() * 999999999)).toString();
+            var shop_block_id = 'shop_block_' + (Math.floor(Math.random() * 999999999)).toString();
+            var author_block_id = 'author_block_' + (Math.floor(Math.random() * 999999999)).toString();
+            var name_block_id = 'name_block_' + (Math.floor(Math.random() * 999999999)).toString();
+
+            // calculate the block geometry ...
+            var hidden_block = getHiddenBlock();
+            var test_block = getMainContainer(feed, {
+                'button_block_width': button_cell_width,
+                'row_block_id': row_block_id,
+                'price_block_width': price_cell_width,
+                'author_block_id': author_block_id,
+                'author_length': author_length,
+                'shop_name_length': shop_name_length,
+                'shop_block_id': shop_block_id,
+                'name_max_chars': name_max_chars,
+                'name_block_id': name_block_id
+            });
+            hidden_block.appendChild(test_block);
+
+            document.body.appendChild(hidden_block);
+            var row_block_width = document.getElementById(row_block_id).offsetWidth;
+            var shop_block_width = document.getElementById(shop_block_id).offsetWidth;
+            var author_block = document.getElementById(author_block_id);
+            var author_block_width = author_block ? author_block.offsetWidth : 0;
+            var name_block_width = document.getElementById(name_block_id).offsetWidth;
+
+            document.body.removeChild(hidden_block);
+            // ... calculate the block geometry
+
+            if (row_block_width < max_width || row_draw_data.shop_block_width == 0) {
+                row_draw_data.row_block_width = row_block_width;
+                row_draw_data.shop_block_width = shop_block_width;
+                row_draw_data.shop_name_length = shop_name_length;
+                row_draw_data.author_block_width = author_block_width;
+                row_draw_data.author_length = author_length;
+                row_draw_data.name_block_width = name_block_width;
+                row_draw_data.name_max_chars = name_max_chars;
+
+                if (shop_name_length < longest_shop_name_string.length || name_max_chars < longest_name_string.length || author_length < longest_author_string.length) {
+                    if (shop_name_length + shop_name_step > longest_shop_name_string.length) {
+                        shop_name_length = longest_shop_name_string.length;
+                    } else {
+                        shop_name_length += shop_name_step;
+                    }
+                    if (name_max_chars + title_step > longest_name_string.length) {
+                        name_max_chars = longest_name_string.length;
+                    } else {
+                        name_max_chars += title_step;
+                    }
+                    if (author_length + author_step > longest_author_string.length) {
+                        author_length = longest_author_string.length;
+                    } else {
+                        author_length += author_step;
+                    }
+                } else {
+                    break;
+                }
+            }
+        } while (row_block_width < max_width);
+
+        return row_draw_data;
+    }
+
+
+    // draw:
+    if (block_params.item_limit < 1) {
+        return '';
+    }
+
+    var static_block_id = m.generateId();
+
+    var interval = window.setInterval(function () {
+        var container = document.getElementById(static_block_id);
+        if (!container) {
+            return;
+        }
+        window.clearInterval(interval);
+
+        // get geometry data of the block
+        var row_data = getRowData();
+
+        var row_block_width = row_data.row_block_width;
+        var min_width = parseInt(block_params.block.min_width);
+        if (min_width && row_block_width) {
+            row_data.width = min_width;
+        }
+
+        // build block with true params
+        var block = getMainContainer(feed, row_data);
+        if (block) {
+            container.appendChild(block);
+        }
+    }, 100);
+
+    // for static obj only:
+    function asHTML(obj) {
+        var container = m.createDivElement();
+        container.appendChild(obj.cloneNode(true));
+        return container.innerHTML;
+    }
+
+    return asHTML(
+        m.createDivElement({
+                "id": static_block_id
+        })
+    );
+}
+
+                            //var topadvert_draw;
+//var adapter;
+//var topadvert_feed;
+//var topadvert_params;
+(function () {
+    if (adapter.getLoadEvent() === 'page_load') {
+        handleDiv();
+    } else if (adapter.getLoadEvent() === 'mouse_action') {
+        handleEvent(false);
+    } else if (adapter.getLoadEvent() === 'old_mouse_action') {
+        handleEvent(true);
+    }
+
+    function handleDiv () {
+        function topadvert_get_random_id(){
+            return ('topadvert_' + Math.random()).replace( /0?\./g, '' );
+        }
+
+        function topadvert_get_div (textarea) {
+            var div = null;
+            var elem = textarea;
+            var is_up = false;
+            var iterations = 10;
+            while (iterations > 0 && div == null && elem != null) {
+                iterations--;
+                if (is_up) {
+                    elem = elem.parentNode;
+                    is_up = false;
+                    continue;
+                }
+                if (elem.nextSibling == null) {
+                    is_up = true;
+                    continue;
+                }
+                elem = elem.nextSibling;
+                if (elem.nodeType == 1) {
+                    is_up = true;
+                    var tag_name = elem.tagName.toLowerCase();
+                    if( tag_name == 'div' ){
+                        if (div == null && /topadvert_div/.test(elem.className)) {
+                            div = elem;
+                            is_up = false;
+                        }
+                    }
+                }
+            }
+            if( div != null ){
+                var div_id = div.id;
+                if( div_id == null || div_id == '' ){
+                    div_id = topadvert_get_random_id();
+                    div.id = div_id;
+                }
+            }
+            return div;
+        }
+
+        function topadvert_create_div_by_elem(elem) {
+            if (elem == null) {
+                return null;
+            }
+            var elemParent = elem.parentNode;
+            if (elemParent == null) {
+                return null;
+            }
+            var div = document.createElement('div');
+            elemParent.insertBefore(div, elem);
+            return div;
+        }
+        var divFoundCallback = function (div, inserted) {
+            var div_id = div.id;
+            if (!div_id) {
+                div_id = topadvert_get_random_id();
+                div.id = div_id;
+            }
+            topadvert_params['div_id'] = div_id;
+            var html = topadvert_draw(topadvert_feed, topadvert_params);
+            if (html != null && html.length > 0) {
+                div.innerHTML = html;
+                div.style.display = 'block';
+                if (!inserted) {
+                    var parentElement = adapter.getCodeElement().parentNode;
+                    if (!parentElement) {
+                        return;
+                    }
+                    parentElement.insertBefore(div, adapter.getCodeElement());
+                }
+            }
+        };
+        var div;
+        var div_id = adapter.getDivId();
+        if (div_id != null) {
+            var waitingCallback = function () {
+                var div = document.getElementById(div_id);
+                if (div == null) {
+                    setTimeout(waitingCallback, 100);
+                } else {
+                    divFoundCallback(div, true);
+                }
+            };
+            waitingCallback();
+            return;
+        }
+        if (adapter.getCodeElement()) {
+            div = topadvert_get_div(adapter.getCodeElement());
+        }
+        var inserted = true;
+        if (div == null) {
+            div = document.createElement('div');
+            inserted = false;
+        }
+        divFoundCallback(div, inserted);
+    }
+
+    function handleEvent (isOld) {
+        function TopadvertHtmlElement( name ){
+            this.name = name;
+            this.attributes = {};
+            this.styles = {};
+            this.childs = [];
+            this.class_name = '';
+            this.set_attribute = function( name, value ){
+                this.attributes[name] = value;
+            };
+            this.set_style = function( name, value ){
+                this.styles[name] = value;
+            };
+            this.set_style_sides = function( name_prefix, name_postfix, value ){
+                var prefix = name_prefix + '-';
+                var postfix = name_postfix ? '-' + name_postfix : '';
+                this.styles[prefix + 'top' + postfix] = value;
+                this.styles[prefix + 'right' + postfix] = value;
+                this.styles[prefix + 'bottom' + postfix] = value;
+                this.styles[prefix + 'left' + postfix] = value;
+            };
+            this.set_class_name = function( class_name ){
+                this.class_name = class_name;
+            };
+            this.append_child = function( child ){
+                this.childs.push( child );
+            };
+            this.append_text = function( text ){
+                this.childs.push( new TopadvertHtmlText( text ) );
+            };
+            this.to_string = function(){
+                var s = '';
+                s += '<' + this.name;
+                for( var k in this.attributes ){
+                    s += ' ' + k + '="' + this.attributes[k] + '"';
+                }
+                if( this.class_name ){
+                    s += ' class="' + this.class_name + '"';
+                }
+                s += ' style="' + this._get_style_str() + '">';
+                s += this._get_inner_html();
+                s += '</' + this.name + '>';
+                return s;
+            };
+            this.to_document_element = function(){
+                var e = document.createElement( this.name );
+                for( var k in this.attributes ){
+                    var value = this.attributes[k];
+                    if( /^on/.test( k ) ){
+                        e[k] = new Function( value );
+                    } else {
+                        e[k] = value;
+                    }
+                }
+                var style = e.style;
+                for( var k in this.styles ){
+                    var k_style = '';
+                    var arr = k.split( '-' );
+                    for( var i = 0; i < arr.length; i++ ){
+                        k_style += i ? arr[i].substring( 0, 1 ).toUpperCase() + arr[i].substring( 1 ) : arr[i];
+                    }
+                    style[k_style] = this.styles[k];
+                }
+                var inner_html = this._get_inner_html();
+                if( inner_html ){
+                    e.innerHTML = inner_html;
+                }
+                return e;
+            };
+            this._get_style_str = function(){
+                var style_str = '';
+                for( var k in this.styles ){
+                    style_str += k + ':' + this.styles[k] + ';';
+                }
+                return style_str;
+            };
+            this._get_inner_html = function(){
+                var inner_html = '';
+                for( var i = 0; i < this.childs.length; i++ ){
+                    inner_html += this.childs[i].to_string();
+                }
+                return inner_html;
+            };
+        }
+
+        function TopadvertHtmlText( text ){
+            this.text = text;
+            this.to_string = function(){
+                return this.text;
+            };
+        }
+
+        function topadvert_create_div(){
+            var d = new TopadvertHtmlElement( 'div' );
+            d.set_style( 'display', 'block' );
+            d.set_style( 'visibility', 'visible' );
+            d.set_style_sides( 'margin', '', '0' );
+            d.set_style( 'text-align', 'left' );
+            d.set_style_sides( 'border', 'style', 'solid' );
+            d.set_style_sides( 'border', 'width', '0' );
+            d.set_style( 'vertical-align', 'top' );
+            d.set_style( 'white-space', 'normal' );
+            d.set_style( 'clear', 'none' );
+            d.set_style( 'float', 'none' );
+            d.set_style( 'width', '' );
+            d.set_style( 'height', '' );
+            return d;
+        }
+
+        function topadvert_create_table(){
+            var t = new TopadvertHtmlElement( 'table' );
+            t.set_style( 'visibility', 'visible' );
+            t.set_style( 'border-collapse', 'separate' );
+            t.set_style( 'border-spacing', '0' );
+            t.set_attribute( 'cellpadding', '0' );
+            t.set_attribute( 'cellspacing', '0' );
+            t.set_style_sides( 'margin', '', '0' );
+            t.set_style_sides( 'padding', '', '0' );
+            t.set_style_sides( 'border', 'style', 'solid' );
+            t.set_style_sides( 'border', 'width', '0' );
+            t.set_style( 'clear', 'none' );
+            return t;
+        }
+
+        function topadvert_create_tr(){
+            var tr = new TopadvertHtmlElement( 'tr' );
+            tr.set_style( 'visibility', 'visible' );
+            tr.set_attribute( 'valign', 'top' );
+            tr.set_style_sides( 'margin', '', '0' );
+            tr.set_style_sides( 'padding', '', '0' );
+            tr.set_style_sides( 'border', 'style', 'solid' );
+            tr.set_style_sides( 'border', 'width', '0' );
+            tr.set_style( 'clear', 'none' );
+            return tr;
+        }
+
+        function topadvert_create_td(){
+            var td = new TopadvertHtmlElement( 'td' );
+            td.set_style( 'visibility', 'visible' );
+            td.set_style_sides( 'margin', '', '0' );
+            td.set_style_sides( 'padding', '', '0' );
+            td.set_style_sides( 'border', 'style', 'solid' );
+            td.set_style_sides( 'border', 'width', '0' );
+            td.set_style( 'text-align', 'left' );
+            td.set_style( 'vertical-align', 'top' );
+            td.set_style( 'clear', 'none' );
+            return td;
+        }
+
+        function topadvert_create_a(){
+            var a = new TopadvertHtmlElement( 'a' );
+            a.set_style( 'visibility', 'visible' );
+            a.set_style_sides( 'margin', '', '0' );
+            a.set_style_sides( 'padding', '', '0' );
+            a.set_attribute( 'target', '_blank' );
+            a.set_style( 'text-decoration', 'underline' );
+            return a;
+        }
+
+        function topadvert_create_img(){
+            var img = new TopadvertHtmlElement( 'img' );
+            img.set_style( 'visibility', 'visible' );
+            img.set_style( 'float', 'none' );
+            img.set_style_sides( 'margin', '', '0' );
+            img.set_style_sides( 'padding', '', '0' );
+            img.set_attribute( 'hspace', '0' );
+            img.set_attribute( 'vspace', '0' );
+            img.set_style_sides( 'border', 'width', '0' );
+            return img;
+        }
+
+        function topadvert_create_span(){
+            var s = new TopadvertHtmlElement( 'span' );
+            s.set_style( 'visibility', 'visible' );
+            return s;
+        }
+
+        var is_inited = false;
+        var div = undefined;
+        var div_fixed_width = undefined;
+        var timeout = undefined;
+        var div_onmouseover = false;
+        var first_coords = undefined;
+        var location_horizontal = 'right';
+        var location_vertical = 'bottom';
+        var shift_horizontal = 5;
+        var shift_vertical = -5;
+        if (topadvert_params['location_horizontal'] != undefined) {
+            location_horizontal = topadvert_params['location_horizontal'];
+        }
+        if (topadvert_params['location_vertical'] != undefined) {
+            location_vertical = topadvert_params['location_vertical'];
+        }
+        if (topadvert_params['shift_horizontal'] != undefined) {
+            shift_horizontal = parseInt(topadvert_params['shift_horizontal'] );
+        }
+        if (topadvert_params['shift_vertical'] != undefined) {
+            shift_vertical = parseInt(topadvert_params['shift_vertical']);
+        }
+        var slowCloseTimeout = 3000;
+        var fastCloseTimeout = 500;
+        if (isOld) {
+            adapter.setOpenHandler(function(coords){
+                openByCoords(coords);
+                if (adapter.hasMissedCloseEvent()) {
+                    closeByTimeout(slowCloseTimeout);
+                    adapter.delMissedCloseEvent();
+                }
+            });
+            adapter.setCloseHandler(function () {
+                if (div != undefined) {
+                    div.style.display = 'none';
+                }
+            });
+            adapter.setOpenActionHandler(function (coords) {
+                adapter.activate(true, coords);
+            });
+            adapter.setCloseActionHandler(function () {
+                closeByTimeout(fastCloseTimeout);
+            });
+            first_coords = adapter.getEventCoords();
+            if (first_coords && adapter.isActual()) {
+                adapter.activate(false, first_coords);
+            }
+        } else {
+            adapter.setCloseHandler(function () {
+                if (div != undefined) {
+                    div.style.display = 'none';
+                }
+            });
+            var activation_type = topadvert_params['activation_type'];
+            if (activation_type == null) {
+                activation_type = adapter.getEvent();
+            }
+            if (activation_type == 'click') {
+                adapter.setOpenHandler(function(coords){
+                    openByCoords(coords);
+                });
+                adapter.setLinkOnClickHandler(function (coords) {
+                    adapter.activate(true, coords);
+                });
+                adapter.setLinkOnMouseOverHandler(function (coords) {});
+                adapter.setLinkOnMouseOutHandler(function () {
+                    closeByTimeout(slowCloseTimeout);
+                });
+                first_coords = adapter.getLinkOnClickCoords();
+            } else {
+                adapter.setOpenHandler(function(coords){
+                    openByCoords(coords);
+                    if (!(adapter.linkIsMouseOver || div_onmouseover)) {
+                        closeByTimeout(fastCloseTimeout);
+                    }
+                });
+                adapter.setLinkOnClickHandler(function (coords) {});
+                adapter.setLinkOnMouseOverHandler(function (coords) {
+                    if (!adapter.isActive()) {
+                        adapter.activate(true, coords);
+                    }
+                });
+                adapter.setLinkOnMouseOutHandler(function () {
+                    closeByTimeout(fastCloseTimeout);
+                });
+                first_coords = adapter.getLinkMouseOverCoords();
+            }
+            if (first_coords && adapter.isActual()) {
+                adapter.activate(false, first_coords);
+            }
+        }
+
+        function close () {
+            adapter.deactivate();
+        }
+
+        function closeDelayed () {
+            if (div_onmouseover) {
+                return;
+            }
+            if (adapter.getLinkIsMouseOver) {
+                if (adapter.getLinkIsMouseOver()) {
+                    return;
+                }
+            }
+            close();
+        }
+
+        function closeByTimeout (close_timeout) {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+            timeout = setTimeout(function(){
+                closeDelayed();
+            }, close_timeout);
+        }
+
+        function openByCoords (coords) {
+            if (!coords) {
+                return;
+            }
+            if (!is_inited) {
+                is_inited = true;
+                var html = topadvert_draw(topadvert_feed, topadvert_params);
+                if (html == undefined) {
+                    html = topadvert_params['alt_text'];
+                }
+                if (html == undefined || html == '') {
+                    return;
+                }
+                var div_obj = topadvert_create_div();
+                div_obj.set_style('display', 'none');
+                div_obj.set_style('z-index', '1000000');
+                div_obj.set_style('position', 'absolute');
+                div_obj.set_style('background', 'white');
+                var div_in = topadvert_create_div();
+                div_in.set_style_sides('border', 'width', '1px');
+                div_in.set_style_sides('border', 'color', 'black');
+                var table = topadvert_create_table();
+                table.set_style('width', '1px');
+                var tr1 = topadvert_create_tr();
+                var td1 = topadvert_create_td();
+                td1.set_style('line-height', '0');
+                var td1_id = topadvert_get_random_id();
+                td1.set_attribute('id', td1_id);
+                td1.set_attribute('nowrap', 'true');
+                td1.set_attribute('align', 'right');
+                td1.set_style('text-align', 'right');
+                tr1.append_child(td1);
+                table.append_child(tr1);
+                var tr2 = topadvert_create_tr();
+                var td2 = topadvert_create_td();
+                td2.set_attribute('nowrap', 'true');
+                td2.set_style('padding-right', '12px');
+                td2.set_style('padding-bottom', '12px');
+                td2.set_style('padding-left', '12px');
+                td2.append_text(html);
+                tr2.append_child(td2);
+                table.append_child(tr2);
+                div_in.append_child(table);
+                div_obj.append_child(div_in);
+                div = div_obj.to_document_element();
+                div.onmouseover = function (e) {
+                    e = e ? e : window.event;
+                    div_onmouseover = true;
+                };
+                div.onmouseout = function (e) {
+                    e = e ? e : window.event;
+                    div_onmouseover = false;
+                    closeByTimeout(fastCloseTimeout);
+                };
+                div.innerHTML = div.innerHTML;
+                var body = document.getElementsByTagName('body')[0];
+                if (body == null) {
+                    var codeElement = adapter.getCodeElement();
+                    codeElement.parentNode.insertBefore(div, codeElement);
+                } else {
+                    body.insertBefore(div, body.firstChild);
+                }
+                var td1_onevent = topadvert_get_is_opera_lost_click_event() ? 'onmouseup' : 'onclick';
+                document.getElementById(td1_id)[td1_onevent] = function (e) {
+                    e = e ? e : window.event;
+                    close();
+                };
+            }
+            if (div != undefined && div.style.display == 'none') {
+                var c = [coords.x, coords.y];
+                if (c != null) {
+                    div.style.visibility = 'hidden';
+                    div.style.left = '0px';
+                    div.style.top = '0px';
+                    div.style.display = 'block';
+                    var leftScreenShift = div.getBoundingClientRect().left;
+                    var topScreenShift = div.getBoundingClientRect().top;
+                    var div_width = div_fixed_width;
+                    if (div_width == null) {
+                        div_width = div.offsetWidth;
+                        div_fixed_width = div_width;
+                    }
+                    div.style.width = div_width + 'px';
+                    var b = document.getElementsByTagName('body')[0];
+                    if (b != null) {
+                        var window_wh = topadvert_get_window_wh();
+                        var window_w = window_wh[0];
+                        var window_h = window_wh[1];
+                        var scroll_xy = topadvert_get_scroll_xy();
+                        var scroll_x = scroll_xy[0];
+                        var scroll_y = scroll_xy[1];
+                        var right_is_ok = c[0] + div_width + shift_horizontal <
+                            scroll_x + window_w;
+                        var left_is_ok = scroll_x + div_width + shift_horizontal < c[0];
+                        var bottom_is_ok = c[1] + div.offsetHeight + shift_vertical <
+                            scroll_y + window_h;
+                        var top_is_ok = scroll_y + div.offsetHeight + shift_vertical < c[1];
+                        var is_right = location_horizontal == 'right';
+                        if (is_right) {
+                            if (!right_is_ok && left_is_ok) {
+                                is_right = false;
+                            }
+                        } else {
+                            if (!left_is_ok && right_is_ok) {
+                                is_right = true;
+                            }
+                        }
+                        var left = c[0] - scroll_x - leftScreenShift;
+                        if (is_right) {
+                            left = left + shift_horizontal;
+                        } else {
+                            left = left - div_width - shift_horizontal;
+                        }
+                        var is_bottom = location_vertical == 'bottom';
+                        if (is_bottom) {
+                            if (!bottom_is_ok && top_is_ok) {
+                                is_bottom = false;
+                            }
+                        } else {
+                            if (!top_is_ok && bottom_is_ok) {
+                                is_bottom = true;
+                            }
+                        }
+                        var top = c[1] - scroll_y - topScreenShift;
+                        if (is_bottom) {
+                            top = top + shift_vertical;
+                        } else {
+                            top = top - div.offsetHeight - shift_vertical;
+                        }
+                        div.style.left = left + 'px';
+                        div.style.top = top + 'px';
+                    }
+                    div.style.display = 'none';
+                    div.style.visibility = 'visible';
+                    div.style.width = div_width + 'px';
+                }
+                div.style.display = 'block';
+            }
+        }
+
+        function topadvert_get_is_opera_lost_click_event () {
+            return window.opera != null && window.opera.version != null && window.opera.version() > 9.27;
+        }
+
+        function topadvert_get_window_wh() {
+            var w = 0, h = 0;
+            if( typeof( window.innerWidth ) == 'number' ) {
+                //Non-IE
+                w = window.innerWidth;
+                h = window.innerHeight;
+            } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                //IE 6+ in 'standards compliant mode'
+                w = document.documentElement.clientWidth;
+                h = document.documentElement.clientHeight;
+            } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                //IE 4 compatible
+                w = document.body.clientWidth;
+                h = document.body.clientHeight;
+            }
+            return [w, h];
+        }
+
+        function topadvert_get_scroll_xy() {
+            var x = 0;
+            var y = 0;
+            if (window.pageXOffset != null && window.pageYOffset != null) {
+                x = parseInt(window.pageXOffset);
+                y = parseInt(window.pageYOffset);
+            } else if (document.body != null
+                && (document.body.scrollLeft || document.body.scrollTop)
+                ) {
+                x = parseInt(document.body.scrollLeft);
+                y = parseInt(document.body.scrollTop);
+            } else if (document.documentElement != null
+                && (document.documentElement.scrollLeft || document.documentElement.scrollTop)
+                ) {
+                x = parseInt(document.documentElement.scrollLeft);
+                y = parseInt(document.documentElement.scrollTop);
+            }
+            return [x, y];
+        }
+
+        function topadvert_get_random_id(){
+            return ('topadvert_' + Math.random()).replace( /0?\./g, '' );
+        }
+    }
+
+    function create_base_url(domain) {
+        return 'http' + (location.protocol == 'https:' ? 's' : '') + '://' + domain;
+    }
+})();
+
+                        }
+                    });
+                

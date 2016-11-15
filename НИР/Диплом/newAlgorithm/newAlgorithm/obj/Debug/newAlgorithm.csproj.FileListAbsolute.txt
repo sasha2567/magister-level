@@ -1,0 +1,9 @@
+D:\Sasha\Магистратура\НИР\Диплом\newAlgorithm\newAlgorithm\bin\Debug\newAlgorithm.exe.config
+D:\Sasha\Магистратура\НИР\Диплом\newAlgorithm\newAlgorithm\bin\Debug\newAlgorithm.exe
+D:\Sasha\Магистратура\НИР\Диплом\newAlgorithm\newAlgorithm\bin\Debug\newAlgorithm.pdb
+D:\Sasha\Магистратура\НИР\Диплом\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.csprojResolveAssemblyReference.cache
+D:\Sasha\Магистратура\НИР\Диплом\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.Form1.resources
+D:\Sasha\Магистратура\НИР\Диплом\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.Properties.Resources.resources
+D:\Sasha\Магистратура\НИР\Диплом\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.csproj.GenerateResource.Cache
+D:\Sasha\Магистратура\НИР\Диплом\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.exe
+D:\Sasha\Магистратура\НИР\Диплом\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.pdb

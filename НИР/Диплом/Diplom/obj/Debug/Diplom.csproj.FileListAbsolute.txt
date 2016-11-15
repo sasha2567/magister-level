@@ -1,0 +1,13 @@
+D:\Sasha\!Диплом\Первая версия программы - копия\Diplom\bin\Debug\Diplom.exe.config
+D:\Sasha\!Диплом\Первая версия программы - копия\Diplom\bin\Debug\Diplom.exe
+D:\Sasha\!Диплом\Первая версия программы - копия\Diplom\bin\Debug\Diplom.pdb
+D:\Sasha\!Диплом\Первая версия программы - копия\Diplom\obj\Debug\Diplom.csprojResolveAssemblyReference.cache
+D:\Sasha\!Диплом\Первая версия программы - копия\Diplom\obj\Debug\Diplom.Form1.resources
+D:\Sasha\!Диплом\Первая версия программы - копия\Diplom\obj\Debug\Diplom.Properties.Resources.resources
+D:\Sasha\!Диплом\Первая версия программы - копия\Diplom\obj\Debug\Diplom.TimeForm.resources
+D:\Sasha\!Диплом\Первая версия программы - копия\Diplom\obj\Debug\Diplom.csproj.GenerateResource.Cache
+D:\Sasha\!Диплом\Первая версия программы - копия\Diplom\obj\Debug\Diplom.exe
+D:\Sasha\!Диплом\Первая версия программы - копия\Diplom\obj\Debug\Diplom.pdb
+D:\Sasha\Магистратура\НИР\Диплом\Diplom\bin\Debug\Diplom.exe.config
+D:\Sasha\Магистратура\НИР\Диплом\Diplom\obj\Debug\Diplom.exe
+D:\Sasha\Магистратура\НИР\Диплом\Diplom\obj\Debug\Diplom.pdb

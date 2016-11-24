@@ -55,40 +55,37 @@ namespace newAlgorithm
         {
             int countType = (int)numericUpDown1.Value;
             int countBatches = Convert.ToInt32(textBox1.Text);
-            List<List<List<int>>> A1 = new List<List<List<int>>>();
-            List<List<int>> temp = new List<List<int>>();
+            var A1 = new List<List<List<int>>>();
+            var temp = new List<List<int>>();
             temp.Add(new List<int>());
             temp.Add(new List<int>());
             temp[0].Add(countBatches - 2);
             temp[0].Add(2);
-            for (int i = 0; i < countType; i++)
+            for (int ii = 0; ii < countType; ii++)
             {
                 A1.Add(составыПартий(temp));
             }
-            List<int> mass = new List<int>();
-            for (int i = 0; i < countType; i++)
+            var mass = new List<int>();
+            for (int ii = 0; ii < countType; ii++)
             {
                 mass.Add(0);
             }
-            while (true)
+            //while (true)
             {
                 for (int i = 0; i < countType - 1; i++)
                 {
                     for (int j = i + 1; j < countType; j++)
                     {
-                        MessageBox.Show("Solution " + i + " type and " + j + " type");
-                        MessageBox.Show("1)" + A1[i][mass[i]][0] + "; 2)" + A1[i][mass[i]][1]);
-                        MessageBox.Show("1)" + A1[j][mass[j]][0] + "; 2)" + A1[j][mass[j]][1]);
-                        mass[j]++;
-                    }
-                    for (int k = 0; k < countType; k++)
-                    {
-                        if (k != i)
+                        for (mass[i] = 0; mass[i] < A1[i].Count; mass[i]++)
                         {
-                            mass[k]--;
+                            for (mass[j] = 0; mass[j] < A1[j].Count; mass[j]++)
+                            {
+                                MessageBox.Show("Solution " + i + " type and " + j + " type");
+                                MessageBox.Show("1)" + A1[i][mass[i]][0] + "; 2)" + A1[i][mass[i]][1]);
+                                MessageBox.Show("1)" + A1[j][mass[j]][0] + "; 2)" + A1[j][mass[j]][1]);
+                            }
                         }
                     }
-                    mass[i]++;
                 }
             }
         }

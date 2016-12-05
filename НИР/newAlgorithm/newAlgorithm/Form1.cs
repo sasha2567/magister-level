@@ -70,22 +70,21 @@ namespace newAlgorithm
             {
                 mass.Add(0);
             }
-            //while (true)
+            while (true)
             {
                 for (int i = 0; i < countType - 1; i++)
                 {
                     for (int j = i + 1; j < countType; j++)
                     {
-                        for (mass[i] = 0; mass[i] < A1[i].Count; mass[i]++)
+                        for (mass[i] = 1; mass[i] < A1[i].Count; mass[i]++)
                         {
-                            for (mass[j] = 0; mass[j] < A1[j].Count; mass[j]++)
+                            for (mass[j] = 1; mass[j] < A1[j].Count; mass[j]++)
                             {
-                                MessageBox.Show("Solution " + i + " type and " + j + " type");
-                                MessageBox.Show("1)" + A1[i][mass[i]][0] + "; 2)" + A1[i][mass[i]][1]);
-                                MessageBox.Show("1)" + A1[j][mass[j]][0] + "; 2)" + A1[j][mass[j]][1]);
+                                MessageBox.Show("Solution " + (i+1) + " type and " + (j+1) + " type");
+                                MessageBox.Show("Составы партий " + (i + 1) + " типа : " + A1[i][mass[i]][0] + "; " + A1[i][mass[i]][1] + "Составы партий " + (j + 1) + " типа : " + A1[j][mass[j]][0] + "; " + A1[j][mass[j]][1]);
                             }
                         }
-                    }
+                    }   
                 }
             }
         }

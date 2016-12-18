@@ -396,10 +396,10 @@ namespace newAlgorithm
                         int f1g = 0;
                         List<List<int>> tempA = CopyMatrix(this.A);
                         tempA[this.i] = this.A2[indexQ];
-                        SecondLevel secondLevel = new SecondLevel();
-                        secondLevel.GenerateSolution(tempA);
-                        List<List<int>> tempMatrixA = secondLevel.ReturnAMatrix();
-                        f1g = this.GetCriterion(tempMatrixA);
+                        //SecondLevel secondLevel = new SecondLevel();
+                        //secondLevel.GenerateSolution(tempA);
+                        //List<List<int>> tempMatrixA = secondLevel.ReturnAMatrix();
+                        //f1g = this.GetCriterion(tempMatrixA);
                         if (f1g >= this.f1)
                         {
                             this.q2i = indexQ;

@@ -119,14 +119,6 @@ namespace newAlgorithm
                     criterion += inMatrix[i][j];
                 }
             }
-            int criterionA = 0;
-            for (int i = 1; i < this.A.Count; i++)
-            {
-                for (int j = 1; j < this.A[i].Count; j++)
-                {
-                    criterionA += this.A[i][j];
-                }
-            }
             return criterion;
         }
 
@@ -144,7 +136,7 @@ namespace newAlgorithm
                 case 1:
                     try
                     {
-                        for (int i = 2; i < this.A2[1].Count; i++)
+                        for (int i = 2; i < this.A2[type][1].Count; i++)
                             if (this.A2[type][1][1] < this.A2[type][1][i])
                             {
                                 return false;
@@ -155,7 +147,7 @@ namespace newAlgorithm
                         return false;
                     }
                     break;
-               case 2:
+                case 2:
                     try
                     {
                         if (this.A2[type][1][1] < 2)
@@ -219,164 +211,131 @@ namespace newAlgorithm
         public void GenerateSolution()
         {
             this.GenerateStartSolution();
-            SecondLevel secondLevel = new SecondLevel();
-            List<List<int>> temp = this.CopyMatrix(this.A);
-            secondLevel.GenerateSolution(temp);
-            List<List<int>> tmpMatrixA = secondLevel.ReturnAMatrix();
             this.k = 0;
-            this.f1 = this.GetCriterion(tmpMatrixA);
+            this.f1 = 0;
             this.f1Buf = this.f1;
             int currentChangeType = 0;
             //Добавить вычисление значения критерия
             List<List<int>> MaxA = this.CopyMatrix(this.A);
             int maxF1 = this.f1;
             string s = "";
-            //if (flag == true)
-            //{
-            //    while (!this.CheckType(this.I))
-            //    {
-            //        this.solutionFlag = false;
-            //        //1 - Копируем I в Ii
-            //        for (int j = 0; j < this.countType; j++)
-            //        {
-            //            this.Ii[j] = this.I[j];
-            //        }
-            //        this.ABuf = this.CopyMatrix(this.A);
-            //        //this.f1 = this.GetCriterion(this.ABuf);
-            //        //Для каждого рассматриваемого типа
-            //        for (int iter = 0; iter < this.Ii.Count; iter++)
-            //        {
-            //            if (this.Ii[iter] != 0)
-            //            {
-            //                this.i = iter;
-            //                if (this.np1i[this.i] > 0)
-            //                {
-            //                    this.A1 = this.CopyMatrix(this.ABuf);
-            //                    //MessageBox.Show("Решение по составу партий данных " + (this.i + 1) + " типа на " + (this.k + 1) + " шаге алгоритма");
-            //                    //Получение состава партий фиксированного типа
-            //                    List<List<int>> toBatchAlgoritm = new List<List<int>>();
-            //                    toBatchAlgoritm.Add(new List<int>());
-            //                    toBatchAlgoritm.Add(new List<int>());
-            //                    toBatchAlgoritm[1] = this.A1[this.i + 1];
-            //                    test = new BatchTypeClaims(this.f1, this.i + 1, this.countClaims[this.i], toBatchAlgoritm, this.A1);
-            //                    test.GenerateSolution();
+            if (flag == true)
+            {
+                while (!this.CheckType(this.I))
+                {
+                    this.solutionFlag = false;
+                    //1 - Копируем I в Ii
+                    for (int j = 0; j < this.countType; j++)
+                    {
+                        this.Ii[j] = this.I[j];
+                    }
+                    this.ABuf = this.CopyMatrix(this.A);
+                    //this.f1 = this.GetCriterion(this.ABuf);
+                    //Для каждого рассматриваемого типа
+                    for (this.i = 0; this.i < this.Ii.Count; this.i++)
+                    {
+                        if (this.Ii[this.i] != 0)
+                        {
+                            if (this.np1i[this.i] > 0)
+                            {
+                                this.A1[this.i] = this.CopyMatrix(this.ABuf);
+                                //MessageBox.Show("Решение по составу партий данных " + (this.i + 1) + " типа на " + (this.k + 1) + " шаге алгоритма");
+                                //Получение состава партий фиксированного типа
+                                List<List<int>> toBatchAlgoritm = new List<List<int>>();
+                                toBatchAlgoritm.Add(new List<int>());
+                                toBatchAlgoritm = this.A1[this.i];
+                                test = new BatchTypeClaims(this.f1, this.i + 1, this.countClaims[this.i], toBatchAlgoritm, this.A1[this.i]);
+                                test.GenerateSolution();
 
-            //                    //test.PrintMatrix(2);
-            //                    //test.PrintMatrix(3);
+                                //test.PrintMatrix(2);
+                                //test.PrintMatrix(3);
 
-            //                    List<List<int>> tempA2 = test.ReturnMatrix(3);
-            //                    if (tempA2.Count < 2)
-            //                    {
-            //                        this.mi[this.i]++;
-            //                        this.A2 = new List<List<int>>();
-            //                        this.A2.Add(new List<int>());
-            //                        this.A2.Add(new List<int>());
-            //                        this.A2[1].Add(0);
-            //                        this.A2[1].Add(0);
-            //                        int sum = 0;
-            //                        for (int j = 1; j < this.mi[this.i]; j++)
-            //                        {
-            //                            this.A2[1].Add(2);
-            //                            sum += 2;
-            //                        }
-            //                        this.A2[1][1] = this.countClaims[this.i] - sum;
-            //                        if (!this.CheckingMatrix(1) && !this.CheckingMatrix(2))
-            //                        {
-            //                            this.I[this.i] = 0;
-            //                            this.mi[this.i] = 0;
-            //                            continue;
-            //                        }
-            //                    }
-            //                    else
-            //                    {
-            //                        //this.A2 = this.CopyMatrix(tempA2);
-            //                        this.A2 = new List<List<int>>();
-            //                        this.A2.Add(new List<int>());
-            //                        for (int ii = 1; ii < tempA2.Count; ii++)
-            //                        {
-            //                            //this.A2.Add(new List<int>());
-            //                            this.A2.Insert(ii, tempA2[ii]);
-            //                            this.A2[ii].Insert(0, 0);
-            //                        }
-            //                    }
+                                List<List<int>> tempA2 = test.ReturnMatrix(3);
+                                if (tempA2.Count < 2)
+                                {
+                                    this.mi[this.i]++;
+                                    this.A2[this.i] = new List<List<int>>();
+                                    this.A2[this.i].Add(new List<int>());
+                                    this.A2[this.i][0].Add(0);
+                                    int sum = 0;
+                                    for (int j = 1; j < this.mi[this.i]; j++)
+                                    {
+                                        this.A2[this.i][0].Add(2);
+                                        sum += 2;
+                                    }
+                                    this.A2[this.i][0][0] = this.countClaims[this.i] - sum;
+                                    if (!this.CheckingMatrix(1, this.i) && !this.CheckingMatrix(2, this.i))
+                                    {
+                                        this.I[this.i] = 0;
+                                        this.mi[this.i] = 0;
+                                        continue;
+                                    }
+                                }
+                                else
+                                {
+                                    //this.A2 = this.CopyMatrix(tempA2);
+                                    this.A2[this.i] = new List<List<int>>();
+                                    for (int ii = 1; ii < tempA2.Count; ii++)
+                                    {
+                                        //this.A2.Add(new List<int>());
+                                        this.A2[this.i].Insert(ii, tempA2[ii]);
+                                    }
+                                }
 
-            //                    //Буферизируем текущее решение для сравнения
-            //                    this.A1i = this.CopyMatrix(this.A1);
+                                //Буферизируем текущее решение для сравнения
+                                this.A1i = this.CopyMatrix(this.A1[this.i]);
 
-            //                    for (this.q2 = 1; this.q2 < this.A2.Count; this.q2++)
-            //                    {
-            //                        this.A1i[this.i + 1] = this.A2[this.q2];
-            //                        int f1g = 0;
-            //                        secondLevel = new SecondLevel();
-            //                        List<List<int>> tempA = CopyMatrix(this.A1i);
-            //                        secondLevel.GenerateSolution(tempA);
-            //                        List<List<int>> tempMatrixA = secondLevel.ReturnAMatrix();
-            //                        f1g = this.GetCriterion(tempMatrixA);
-            //                        Random rand = new Random();
-            //                        int ret = rand.Next(5, 15);
-            //                        //if(ret < 10)
-            //                        if (f1g >= this.f1Buf)
-            //                        //if (f1g - this.f1Buf < 0 || f1g == 0)
-            //                        {
-            //                            this.f1Buf = f1g;
-            //                            this.solutionFlag = true;
-            //                            this.ABuf = this.CopyMatrix(this.A1i);
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //        }
-            //        this.k++;
-            //        if (this.solutionFlag)
-            //        {
-            //            if (this.f1Buf > this.f1)
-            //            {
-            //                MaxA = this.CopyMatrix(ABuf);
-            //                maxF1 = this.f1Buf;
-            //            }
-            //            this.f1 = this.f1Buf;
-            //            this.A = this.CopyMatrix(ABuf);
-            //            s = "Решение на текущем шаге\n";
-            //            foreach (List<int> row in this.A)
-            //            {
-            //                foreach (int colum in row)
-            //                {
-            //                    if (colum >= 2)
-            //                        s += colum + ", ";
-            //                }
-            //                s += "\n";
-            //            }
-            //            MessageBox.Show(s);
-            //        }
-            //        else
-            //        {
-            //            /*
-            //            //this.A = new List<List<int>>();
-            //            //this.A.Add(new List<int>());
-            //            this.A[currentChangeType + 1].Clear();
-            //            //for (int ii = 0; ii < this.I.Count; ii++)
-            //            //{
-            //            //this.A.Add(new List<int>());
-            //            this.A[currentChangeType + 1].Add(0);
-            //            this.A[currentChangeType + 1].Add(0);
-            //            int sum = 0;
-            //            //this.mi[currentChangeType]++;
-            //            for (int j = 1; j < this.mi[currentChangeType]; j++)
-            //            {
-            //                this.A[currentChangeType + 1].Add(2);
-            //                sum += 2;
-            //            }
-            //            this.A[currentChangeType + 1][1] = this.countClaims[currentChangeType] - sum;
-            //            currentChangeType++;
-            //            if (currentChangeType == this.countType)
-            //            {
-            //                currentChangeType = 0;
-            //            }
-            //            //}
-            //            */ 
-            //        }
-            //    }
-            //}
+                                for (this.q2 = 1; this.q2 < this.A2[this.i].Count; this.q2++)
+                                {
+                                    this.A1i[this.i + 1] = this.A2[this.i][this.q2];
+                                    int f1g = 0;
+                                    //secondLevel = new SecondLevel();
+                                    //List<List<int>> tempA = CopyMatrix(this.A1i);
+                                    //secondLevel.GenerateSolution(tempA);
+                                    //List<List<int>> tempMatrixA = secondLevel.ReturnAMatrix();
+                                    //f1g = this.GetCriterion(tempMatrixA);
+                                    Random rand = new Random();
+                                    int ret = rand.Next(5, 15);
+                                    //if(ret < 10)
+                                    if (f1g >= this.f1Buf)
+                                    //if (f1g - this.f1Buf < 0 || f1g == 0)
+                                    {
+                                        this.f1Buf = f1g;
+                                        this.solutionFlag = true;
+                                        this.ABuf = this.CopyMatrix(this.A1i);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    this.k++;
+                    if (this.solutionFlag)
+                    {
+                        if (this.f1Buf > this.f1)
+                        {
+                            MaxA = this.CopyMatrix(ABuf);
+                            maxF1 = this.f1Buf;
+                        }
+                        this.f1 = this.f1Buf;
+                        this.A = this.CopyMatrix(ABuf);
+                        s = "Решение на текущем шаге\n";
+                        foreach (List<int> row in this.A)
+                        {
+                            foreach (int colum in row)
+                            {
+                                if (colum >= 2)
+                                    s += colum + ", ";
+                            }
+                            s += "\n";
+                        }
+                        MessageBox.Show(s);
+                    }
+                    else
+                    {
+                        this.Perestanovka();
+                    }
+                }
+            }
             MessageBox.Show("На текущем " + this.k + " шаге получено решение");
             s = "Максимальное решение\n";
             foreach (List<int> row in MaxA)

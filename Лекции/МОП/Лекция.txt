@@ -153,6 +153,8 @@ l-исчисления как язык программирования
 
 	s =^ l nfx.f(fx) - операция следования
 
-	is zero n =^ n(l x.false)false
+	is zero n =^ n(l x.false)((l x.false)^n)true
 
-	m*n =^ l fx.m(nf)x
+	n+m =^ l fx.mf(nfx) =^ l fx.f^(n+m)x
+
+	m*n =^ l fx.m(nf)x =^ l fx.f^(nm)x

@@ -172,19 +172,6 @@ namespace newAlgorithm
             return ret;
         }
 
-        private void ChangeColumTime(int ind1, int ind2)
-        {
-            for (int i = 0; i < L; i++)
-            {
-                List<int> temp = this.CopyList(this.StartProcessing[i][ind1]);
-                this.StartProcessing[i][ind1] = this.CopyList(this.StartProcessing[i][ind2]);
-                this.StartProcessing[i][ind2] = temp;
-                List<int> temp1 = this.CopyList(this.EndProcessing[i][ind1]);
-                this.EndProcessing[i][ind1] = this.CopyList(this.EndProcessing[i][ind2]);
-                this.EndProcessing[i][ind2] = temp1;
-            }
-        }
-
         public List<List<int>> ConstructShedule()
         {
             List<List<int>> tempR = new List<List<int>>();

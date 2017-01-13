@@ -27,6 +27,7 @@ namespace newAlgorithm
         private int L;                      // Количество сегментов конвейера
         private int G;                      // Текущее значение критерия
 
+
         /* 
          * Конструктор с параметрами
          * 
@@ -42,6 +43,7 @@ namespace newAlgorithm
             this.I = new List<int>(this.countType);
             this.Ii = new List<int>(this.countType);
         }
+
 
         /*
          * Функция копирования значений между матрицами, предотвращающая копирование указателей
@@ -76,6 +78,7 @@ namespace newAlgorithm
             return ret;
         }
 
+
         /*
          * Алгоритм формирования начальных решений по составам партий всех типов
          *  
@@ -107,6 +110,7 @@ namespace newAlgorithm
             this.G = 0;    
         }
 
+
         /*
          * Функция вычисления f1 критерия
          * 
@@ -124,47 +128,6 @@ namespace newAlgorithm
             return criterion;
         }
 
-        ///*
-        // * Функция проверок для реализации алгоритма 
-        // * 
-        // * flag == 1 - проверка на количество требований в соответствии с теоремой 1
-        // * flag == 2 - проверка на количество требований в первой партии в соответствии с теоремой 1
-        // * 
-        // */
-        //public bool CheckingMatrix(int flag, int type)
-        //{
-        //    switch (flag)
-        //    {
-        //        case 1:
-        //            try
-        //            {
-        //                for (int i = 2; i < this.A2[type][1].Count; i++)
-        //                    if (this.A2[type][1][1] < this.A2[type][1][i])
-        //                    {
-        //                        return false;
-        //                    }
-        //            }
-        //            catch
-        //            {
-        //                return false;
-        //            }
-        //            break;
-        //        case 2:
-        //            try
-        //            {
-        //                if (this.A2[type][1][1] < 2)
-        //                {
-        //                    return false;
-        //                }
-        //            }
-        //            catch
-        //            {
-        //                return false;
-        //            }
-        //            break;
-        //    }
-        //    return true;
-        //}
 
         /*
          * Функция проверки наличия оставшихся в рассмотрении типов
@@ -181,6 +144,18 @@ namespace newAlgorithm
             if (count == 0)
                 return false;
             return true;
+        }
+
+
+        /*
+         * Построчное формирование матрицы промежуточного решения
+         * 
+         */
+        private List<List<int>> SetTempAFromA2(int type, int ind2)
+        {
+            List<List<int>> result = this.CopyMatrix(this.Ai);
+            result[type] = this.CopyVector(this.A2[type][ind2]);
+            return result;
         }
 
 
@@ -203,19 +178,7 @@ namespace newAlgorithm
         {
             List<List<int>> result = new List<List<int>>();
             return result;
-        }
-
-
-        /*
-         * Построчное формирование матрицы промежуточного решения
-         * 
-         */
-        private List<List<int>> SetTempAFromA2(int type, int ind2)
-        {
-            List<List<int>> result = this.CopyMatrix(this.Ai);
-            result[type] = this.CopyVector(this.A2[type][ind2]);
-            return result;
-        }
+        }        
 
 
         /*

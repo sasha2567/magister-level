@@ -177,6 +177,18 @@ namespace newAlgorithm
         private List<List<int>> NewData(int type)
         {
             List<List<int>> result = new List<List<int>>();
+            for (int i = 0; i < this.A1[type].Count; i++)
+            {
+                result.Add(this.CopyVector(this.A1[type][i]));
+                for (int j = 1; j < result[i].Count; j++)
+                {
+                    if (result[i][0] > result[i][j] + 1)
+                    {
+                        result[i][0]--;
+                        result[i][j]++;
+                    }
+                }
+            }
             return result;
         }        
 
@@ -191,6 +203,7 @@ namespace newAlgorithm
             this.k = 0;
             List<List<int>> R = this.RenerateR(this.A);
             Shedule shedule = new Shedule(R, this.L);
+            //R = shedule.ConstructShedule();
             // получаем решение от расписания
             // получаем критерий этого решения
             this.f1 = this.GetCriterion(this.A);
@@ -207,22 +220,27 @@ namespace newAlgorithm
                 }
                 // Буферезируем текущее решение для построение нового на его основе
                 this.Ai = this.CopyMatrix(this.A);
+                this.A1 = new List<List<List<int>>>();
                 for (int i = 0; i < this.countType; i++)
-                {
+                {   
+                    this.A1.Add(new List<List<int>>());
+                    this.A1[i].Add(new List<int>());
                     this.A1[i][0] = this.CopyVector(this.A[i]);
                 }
                 bool typeSolutionFlag = false;
                 List<List<int>> tempA = this.CopyMatrix(this.Ai);
                 // Для каждого типа и каждого решения в типе строим новое решение и проверяем его на критерий
+                this.A2 = new List<List<List<int>>>();
                 for (int i = 0; i < this.countType; i++)
                 {
-                    this.A2[i] = this.CopyMatrix(this.A1[i]);
+                    this.A2.Add(new List<List<int>>());
                     this.A2[i] = this.NewData(i);
                     for (int j = 0; j < this.A2[i].Count; j++)
                     {
                         tempA = this.SetTempAFromA2(i, j);
                         R = this.RenerateR(tempA);
                         shedule = new Shedule(R, this.L);
+                        //R = shedule.ConstructShedule();
                         // получаем решение от расписания
                         // получаем критерий этого решения
                         int fBuf = 0;
@@ -235,16 +253,37 @@ namespace newAlgorithm
                 }
                 if (!typeSolutionFlag)
                 {
-                    for (int i = 0; i < this.countType; i++)
-                    {
-                        this.A2[i] = this.CopyMatrix(this.A1[i]);
-                    }
+                    //for (int i = 0; i < this.countType; i++)
+                    //{
+                    //    this.A2[i] = this.CopyMatrix(this.A1[i]);
+                    //}
                     for (int i = 0; i < this.countType - 1; i++)
                     {
                         for (int j = i + 1; j < this.countType; j++)
                         {
                             this.A2[i] = this.NewData(i);
                             this.A2[j] = this.NewData(j);
+                            for (int ii = 0; ii < this.A2[i].Count; ii++)
+                            {
+                                for (int jj = 0; jj < this.A2[j].Count; jj++)
+                                {
+                                    {
+                                        tempA = this.SetTempAFromA2(i, ii);
+                                        tempA[j] = this.SetTempAFromA2(j, jj)[j];
+                                        R = this.RenerateR(tempA);
+                                        shedule = new Shedule(R, this.L);
+                                        //R = shedule.ConstructShedule();
+                                        // получаем решение от расписания
+                                        // получаем критерий этого решения
+                                        int fBuf = 0;
+                                        if (fBuf > this.f1Buf)
+                                        {
+                                            this.Ai = this.SetTempAFromA2(ii, jj);
+                                            typeSolutionFlag = true;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

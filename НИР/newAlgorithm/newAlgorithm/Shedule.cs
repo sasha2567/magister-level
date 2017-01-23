@@ -216,13 +216,5 @@ namespace newAlgorithm
         {
             return this.timeConstructShedule;
         }
-
-        public bool shedule1(List<List<int>> Nz)
-        {
-            if (this.timeConstructShedule > 100)//здесь вместо суммы нужно вставить f3
-                return true;
-            else
-                return false;
-        }
     }
 }

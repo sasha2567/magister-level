@@ -55,35 +55,38 @@ namespace newAlgorithm
         {
             int countType = (int)numericUpDown1.Value;
             int countBatches = Convert.ToInt32(textBox1.Text);
-            var A1 = new List<List<List<int>>>();
-            var temp = new List<List<int>>();
-            temp.Add(new List<int>());
-            temp.Add(new List<int>());
-            temp[0].Add(countBatches - 2);
-            temp[0].Add(2);
+            List<int> listCountButches = new List<int>();
+            //var A1 = new List<List<List<int>>>();
+            //var temp = new List<List<int>>();
+            //temp.Add(new List<int>());
+            //temp.Add(new List<int>());
+            //temp[0].Add(countBatches - 2);
+            //temp[0].Add(2);
             for (int ii = 0; ii < countType; ii++)
             {
-                A1.Add(составыПартий(temp));
+                //A1.Add(составыПартий(temp));
+                listCountButches.Add(countBatches);
             }
-            var mass = new List<int>();
-            for (int ii = 0; ii < countType; ii++)
-            {
-                mass.Add(0);
-            }
-            for (int i = 0; i < countType - 1; i++)
-            {
-                for (int j = i + 1; j < countType; j++)
-                {
-                    for (mass[i] = 1; mass[i] < A1[i].Count; mass[i]++)
-                    {
-                        for (mass[j] = 1; mass[j] < A1[j].Count; mass[j]++)
-                        {
-                            MessageBox.Show("Solution " + (i+1) + " type and " + (j+1) + " type");
-                            MessageBox.Show("Составы партий " + (i + 1) + " типа : " + A1[i][mass[i]][0] + "; " + A1[i][mass[i]][1] + "Составы партий " + (j + 1) + " типа : " + A1[j][mass[j]][0] + "; " + A1[j][mass[j]][1]);
-                        }
-                    }
-                }   
-            }
+            FirstLevel firstLevel = new FirstLevel(countType, listCountButches);
+            firstLevel.GenetateSolutionForAllTypes();
+            //var mass = new List<int>();
+            //for (int ii = 0; ii < countType; ii++)
+            //{
+            //    mass.Add(0);
+            //}
+            //for (int i = 0; i < countType - 1; i++)
+            //{
+            //    for (int j = i + 1; j < countType; j++)
+            //    {
+            //        for (mass[i] = 1; mass[i] < A1[i].Count; mass[i]++)
+            //        {
+            //            for (mass[j] = 1; mass[j] < A1[j].Count; mass[j]++)
+            //            {
+            //                MessageBox.Show("Составы партий " + (i + 1) + " типа : " + A1[i][mass[i]][0] + "; " + A1[i][mass[i]][1] + "Составы партий " + (j + 1) + " типа : " + A1[j][mass[j]][0] + "; " + A1[j][mass[j]][1]);
+            //            }
+            //        }
+            //    }   
+            //}
         }
     }
 }

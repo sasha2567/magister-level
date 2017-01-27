@@ -20,10 +20,9 @@ namespace newAlgorithm
         
 
 
-        public Shedule(List<List<int>> r, int l)
+        public Shedule(List<List<int>> r)
         {
             this.R = r;
-            L = l;
         }
 
         private void SetTime()
@@ -176,7 +175,7 @@ namespace newAlgorithm
         {
             List<List<int>> tempR = new List<List<int>>();
             int tempTime = 9999999;
-            switch (this.R[1].Count)
+            switch (this.R[0].Count)
             {
                 case 1:
                     this.CalculateShedule();

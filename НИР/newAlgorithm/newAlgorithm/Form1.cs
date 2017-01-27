@@ -54,39 +54,43 @@ namespace newAlgorithm
         private void button1_Click(object sender, EventArgs e)
         {
             int countType = (int)numericUpDown1.Value;
-            int countBatches = Convert.ToInt32(textBox1.Text);
+            int countBatches = Convert.ToInt32(countBatchesTB.Text);
             List<int> listCountButches = new List<int>();
-            //var A1 = new List<List<List<int>>>();
-            //var temp = new List<List<int>>();
-            //temp.Add(new List<int>());
-            //temp.Add(new List<int>());
-            //temp[0].Add(countBatches - 2);
-            //temp[0].Add(2);
             for (int ii = 0; ii < countType; ii++)
             {
-                //A1.Add(составыПартий(temp));
                 listCountButches.Add(countBatches);
             }
+            int l, maxS, maxT;
+            l = Convert.ToInt32(LTB.Text);
+            maxS = Convert.ToInt32(timeSwitchingTB.Text);
+            maxT = Convert.ToInt32(timeTreatmentingTB.Text);
+            List<List<List<int>>> temptS = new List<List<List<int>>>();
+            List<List<int>> temptT = new List<List<int>>();
+            int count = 0;
+            for (int i = 0; i < l; i++)
+            {
+                temptT.Add(new List<int>());
+                temptS.Add(new List<List<int>>());
+                for (int j = 0; j < countType; j++)
+                {
+                    int temp = (count % 2 == 0) ? 2 : maxT;
+                    temptT[i].Add(temp);
+                    temptS[i].Add(new List<int>());
+                    for (int k = 0; k < countType; k++)
+                    {
+                        temp = (count % 2 == 0) ? 2 : maxS;
+                        temptS[i][j].Add(temp);
+                    }
+                }
+            }
+            Shedule.L = l;
+            Shedule.maxTimeSwitching = maxS;
+            Shedule.maxTimeTreatment = maxT;
+            Shedule.TSwitching = temptS;
+            Shedule.TTreatment = temptT;
             FirstLevel firstLevel = new FirstLevel(countType, listCountButches);
             firstLevel.GenetateSolutionForAllTypes();
-            //var mass = new List<int>();
-            //for (int ii = 0; ii < countType; ii++)
-            //{
-            //    mass.Add(0);
-            //}
-            //for (int i = 0; i < countType - 1; i++)
-            //{
-            //    for (int j = i + 1; j < countType; j++)
-            //    {
-            //        for (mass[i] = 1; mass[i] < A1[i].Count; mass[i]++)
-            //        {
-            //            for (mass[j] = 1; mass[j] < A1[j].Count; mass[j]++)
-            //            {
-            //                MessageBox.Show("Составы партий " + (i + 1) + " типа : " + A1[i][mass[i]][0] + "; " + A1[i][mass[i]][1] + "Составы партий " + (j + 1) + " типа : " + A1[j][mass[j]][0] + "; " + A1[j][mass[j]][1]);
-            //            }
-            //        }
-            //    }   
-            //}
+            
         }
     }
 }

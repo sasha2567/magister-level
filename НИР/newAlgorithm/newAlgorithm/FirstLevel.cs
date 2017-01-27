@@ -54,11 +54,7 @@ namespace newAlgorithm
             List<List<int>> ret = new List<List<int>>();
             for (int i = 0; i < inMatrix.Count; i++)
             {
-                ret.Add(new List<int>());
-                for (int j = 0; j < inMatrix[i].Count; j++)
-                {
-                    ret[i].Add(inMatrix[i][j]);
-                }
+                ret.Add(this.CopyVector(inMatrix[i]));
             }
             return ret;
         }
@@ -166,6 +162,28 @@ namespace newAlgorithm
         private List<List<int>> RenerateR(List<List<int>> m)
         {
             List<List<int>> result = new List<List<int>>();
+            int summ = 0;
+            for (int i = 0; i < m.Count; i++)
+            {
+                summ += m[i].Count;
+            }
+            for (int i = 0; i < this.countType; i++)
+            {
+                result.Add(new List<int>());
+                for (int j = 0; j < summ; j++)
+                {
+                    result[i].Add(0);
+                }
+            }
+            int ind = 0;
+            for (int i = 0; i < m.Count; i++)
+            {
+                for (int j = 0; j < m[i].Count; j++)
+                {
+                    result[i][ind] = m[i][j];
+                    ind++;
+                }
+            }
             return result;
         }
 
@@ -188,9 +206,40 @@ namespace newAlgorithm
                         result[i][j]++;
                     }
                 }
+                if (result[i][0] == this.A1[type][i][0])
+                {
+                    int summ = this.A1[type][i][0];
+                    result[i].Add(2);
+                    for (int j = 1; j < this.A1[type][i].Count; j++)
+                    {
+                        summ += this.A1[type][i][j];
+                        result[i][j] = 2;
+                    }
+                    result[i][0] = summ - 2 * this.A1[type][i].Count;                    
+                }
+            }
+            
+            return result;
+        }
+
+
+        /*
+         * Формирование новых решений по составим партий текущего типа данных
+         * 
+         */
+        private string PrintA(List<List<int>> m)
+        {
+            string result = "";
+            for (int i = 0; i < m.Count; i++)
+            {
+                for (int j = 0; j < m[i].Count - 1; j++)
+                {
+                    result += m[i][j] + ", ";
+                }
+                result += m[i][m[i].Count - 1] + "; ";
             }
             return result;
-        }        
+        }
 
 
         /*
@@ -202,15 +251,18 @@ namespace newAlgorithm
             this.GenerateStartSolution();
             this.k = 0;
             List<List<int>> R = this.RenerateR(this.A);
-            Shedule shedule = new Shedule(R, this.L);
-            //R = shedule.ConstructShedule();
+            Shedule shedule = new Shedule(R);
+            R = shedule.ConstructShedule();
             // получаем решение от расписания
             // получаем критерий этого решения
-            this.f1 = this.GetCriterion(this.A);
+            this.f1 = shedule.GetTime();
+            MessageBox.Show(this.PrintA(this.A));
+            MessageBox.Show("Время обработки " + f1);
             this.f1Buf = this.f1;
             //Добавить вычисление значения критерия
             List<List<int>> MaxA = this.CopyMatrix(this.A);
             int maxF1 = this.f1;
+            bool flagA1 = true;
             while (this.CheckType(this.I))
             {
                 // Копируем I в Ii
@@ -220,13 +272,17 @@ namespace newAlgorithm
                 }
                 // Буферезируем текущее решение для построение нового на его основе
                 this.Ai = this.CopyMatrix(this.A);
-                this.A1 = new List<List<List<int>>>();
-                for (int i = 0; i < this.countType; i++)
-                {   
-                    this.A1.Add(new List<List<int>>());
-                    this.A1[i].Add(new List<int>());
-                    this.A1[i][0] = this.CopyVector(this.A[i]);
+                if (flagA1)
+                {
+                    this.A1 = new List<List<List<int>>>();
+                    for (int i = 0; i < this.countType; i++)
+                    {
+                        this.A1.Add(new List<List<int>>());
+                        this.A1[i].Add(new List<int>());
+                        this.A1[i][0] = this.CopyVector(this.A[i]);
+                    }
                 }
+                flagA1 = false;
                 bool typeSolutionFlag = false;
                 List<List<int>> tempA = this.CopyMatrix(this.Ai);
                 // Для каждого типа и каждого решения в типе строим новое решение и проверяем его на критерий
@@ -239,12 +295,14 @@ namespace newAlgorithm
                     {
                         tempA = this.SetTempAFromA2(i, j);
                         R = this.RenerateR(tempA);
-                        shedule = new Shedule(R, this.L);
-                        //R = shedule.ConstructShedule();
+                        shedule = new Shedule(R);
+                        R = shedule.ConstructShedule();
                         // получаем решение от расписания
                         // получаем критерий этого решения
-                        int fBuf = 0;
-                        if (fBuf > this.f1Buf)
+                        int fBuf = shedule.GetTime();
+                        MessageBox.Show(this.PrintA(tempA));
+                        MessageBox.Show("Время обработки " + fBuf);
+                        if (fBuf < this.f1Buf)
                         {
                             this.Ai = this.SetTempAFromA2(i, j);
                             typeSolutionFlag = true;
@@ -253,10 +311,6 @@ namespace newAlgorithm
                 }
                 if (!typeSolutionFlag)
                 {
-                    //for (int i = 0; i < this.countType; i++)
-                    //{
-                    //    this.A2[i] = this.CopyMatrix(this.A1[i]);
-                    //}
                     for (int i = 0; i < this.countType - 1; i++)
                     {
                         for (int j = i + 1; j < this.countType; j++)
@@ -271,12 +325,14 @@ namespace newAlgorithm
                                         tempA = this.SetTempAFromA2(i, ii);
                                         tempA[j] = this.SetTempAFromA2(j, jj)[j];
                                         R = this.RenerateR(tempA);
-                                        shedule = new Shedule(R, this.L);
-                                        //R = shedule.ConstructShedule();
+                                        shedule = new Shedule(R);
+                                        R = shedule.ConstructShedule();
                                         // получаем решение от расписания
                                         // получаем критерий этого решения
-                                        int fBuf = 0;
-                                        if (fBuf > this.f1Buf)
+                                        int fBuf = shedule.GetTime();
+                                        MessageBox.Show(this.PrintA(tempA));
+                                        MessageBox.Show("Время обработки " + fBuf);
+                                        if (fBuf < this.f1Buf)
                                         {
                                             this.Ai = this.SetTempAFromA2(ii, jj);
                                             typeSolutionFlag = true;
@@ -286,6 +342,9 @@ namespace newAlgorithm
                             }
                         }
                     }
+                }
+                if (!typeSolutionFlag){
+                    this.A1 = this.A2;
                 }
             }
         }        

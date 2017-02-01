@@ -37,7 +37,7 @@ namespace newAlgorithm
          * Функция копирования значений между матрицами, предотвращающая копирование указателей
          * 
          */
-        private List<List<int>> CopyMatrix(List<List<int>> inMatrix)
+        public static List<List<int>> CopyMatrix(List<List<int>> inMatrix)
         {
             List<List<int>> ret = new List<List<int>>();
             for (int i = 0; i < inMatrix.Count; i++)
@@ -134,12 +134,12 @@ namespace newAlgorithm
         public BatchTypeClaims(int valieCriterion, int valueI, int valueCountClaims, List<List<int>> valueA1, List<List<int>> valueA)
         {
 
-            this.A = this.CopyMatrix(valueA);
+            this.A = CopyMatrix(valueA);
             if (this.A[1].Count <= 1)
             {
                 this.inMatrixFlag = true;
             }
-            this.A1 = this.CopyMatrix(valueA1);
+            this.A1 = CopyMatrix(valueA1);
             this.A2 = new List<List<int>>();
             try
             {
@@ -224,15 +224,15 @@ namespace newAlgorithm
          * Функция получения неповторяющихся решений в матрице А2 на шаге 9
          *
          */
-        public List<List<int>> SortedMatrix(List<List<int>> inMatrix)
+        public static List<List<int>> SortedMatrix(List<List<int>> inMatrix)
         {
-            List<List<int>> temp = this.CopyMatrix(inMatrix);
+            List<List<int>> temp = CopyMatrix(inMatrix);
             //сортировка буферной матрицы
             foreach (List<int> row in temp)
             {
                 row.Sort(delegate(int mc1, int mc2)
                 {
-                    return mc1.CompareTo(mc2);
+                    return (mc1 > mc2) ? 1 : -1;
                 });
             }
 
@@ -385,7 +385,7 @@ namespace newAlgorithm
             this.np2 = this.A2.Count;
             if (this.np2 > 1)
             {
-                this.A2 = this.SortedMatrix(this.A2);
+                this.A2 = SortedMatrix(this.A2);
                 this.np2 = this.A2.Count - 1;
                 this.G = 0;
                 if (this.np2 > 0)

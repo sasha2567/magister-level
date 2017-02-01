@@ -12,7 +12,6 @@ namespace newAlgorithm
         private List<int> I;                // Вектор интерпритируемых типов данных
         private List<int> Ii;               // Вектор интерпритируемых типов данных на текущем шагу алгоритма
         private List<int> mi;               // Вектор количества партий данных для каждого типа данных
-        private List<int> countBatches;     // Количество требований каждого типа
         private List<List<int>> Ai;         // Буферизированная матрица составов партий требований на k+1 шаге 
         private List<List<List<int>>> A1;   // Матрица составов партий требований на k+1 шаге 
         private List<List<List<int>>> A2;   // Матрица составов партий требований фиксированного типа
@@ -195,31 +194,42 @@ namespace newAlgorithm
         private List<List<int>> NewData(int type)
         {
             List<List<int>> result = new List<List<int>>();
-            for (int i = 0; i < this.A1[type].Count; i++)
+            foreach(List<int> row in this.A1[type])
             {
-                result.Add(this.CopyVector(this.A1[type][i]));
-                for (int j = 1; j < result[i].Count; j++)
+                for (int j = 1; j < row.Count; j++)
                 {
-                    if (result[i][0] > result[i][j] + 1)
+                    result.Add(this.CopyVector(row));
+                    if (row[0] > row[j] + 1)
                     {
-                        result[i][0]--;
-                        result[i][j]++;
+                        result[result.Count - 1][0]--;
+                        result[result.Count - 1][j]++;
                     }
                 }
-                if (result[i][0] == this.A1[type][i][0])
+                if (result[result.Count - 1][0] == row[0])
                 {
                     int summ = this.A1[type][i][0];
-                    result[i].Add(2);
-                    for (int j = 1; j < this.A1[type][i].Count; j++)
+                    result[result.Count - 1].Add(2);
+                    for (int j = 1; j < row.Count; j++)
                     {
                         summ += this.A1[type][i][j];
-                        result[i][j] = 2;
+                        result[result.Count - 1][j] = 2;
                     }
-                    result[i][0] = summ - 2 * this.A1[type][i].Count;                    
+                    result[i][0] = summ - 2 * (result[result.Count - 1].Count - 1);
                 }
             }
-            
-            return result;
+            for (int i = 1; i < result.Count; i++)
+            {
+                for (int j = 1; j < result[i].Count; j++)
+                {
+                    if (result[i][j] > result[i][j - 1])
+                    {
+                        result.Remove(result[i]);
+                        break;
+                    }
+                }
+            }
+            //MessageBox.Show(this.PrintA(result));
+            return BatchTypeClaims.SortedMatrix(result);
         }
 
 

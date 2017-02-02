@@ -148,7 +148,7 @@ namespace newAlgorithm
          */
         private List<List<int>> SetTempAFromA2(int type, int ind2)
         {
-            List<List<int>> result = this.CopyMatrix(this.Ai);
+            List<List<int>> result = this.CopyMatrix(this.A);
             result[type] = this.CopyVector(this.A2[type][ind2]);
             return result;
         }
@@ -188,6 +188,70 @@ namespace newAlgorithm
 
 
         /*
+         * Функция получения неповторяющихся решений в матрице А2 на шаге 9
+         *
+         */
+        public List<List<int>> SortedMatrix(List<List<int>> inMatrix)
+        {
+            List<List<int>> temp = this.CopyMatrix(inMatrix);
+            //Удаление повторяющихся строк
+            int countLoops = 0;
+            while (true)
+            {
+                for (int i = 1; i < temp.Count; i++)
+                {
+                    int lastIndexForDelete = temp.FindLastIndex(delegate(List<int> inList)
+                    {
+                        int count_find = 0;
+                        if (inList.Count != temp[i].Count)
+                        {
+                            return false;
+                        }
+                        for (int k = 0; k < inList.Count; k++)
+                        {
+                            if (inList[k] == temp[i][k])
+                            {
+                                count_find++;
+                            }
+                        }
+                        return count_find == inList.Count ? true : false;
+                    });
+                    if (lastIndexForDelete != i)
+                    {
+                        temp.RemoveAt(lastIndexForDelete);
+                        inMatrix.RemoveAt(lastIndexForDelete);
+                    }
+                }
+                countLoops++;
+                if (countLoops > 100)
+                    break;
+            }
+            return inMatrix;
+        }
+
+        /// <summary>
+        /// Удаление повторений новых решений и A1
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        private List<List<int>> CheckMatrix(List<List<int>> inMatrix, int type)
+        {
+
+            foreach (List<int> row2 in this.A1[type])
+            {
+                foreach (List<int> rowMatrix in inMatrix.ToList())
+                {
+                    if (rowMatrix.Zip(row2, (a, b) => new { a, b }).All(pair => pair.a == pair.b))
+                    {
+                        inMatrix.Remove(rowMatrix);
+                    }
+                }
+            }
+            return inMatrix;
+        }
+
+
+        /*
          * Формирование новых решений по составим партий текущего типа данных
          * 
          */
@@ -207,58 +271,39 @@ namespace newAlgorithm
                 }
                 if (result[result.Count - 1][0] == row[0])
                 {
-                    int summ = this.A1[type][i][0];
+                    int summ = row[0];
                     result[result.Count - 1].Add(2);
                     for (int j = 1; j < row.Count; j++)
                     {
-                        summ += this.A1[type][i][j];
+                        summ += row[j];
                         result[result.Count - 1][j] = 2;
                     }
                     result[result.Count - 1][0] = summ - 2 * (result[result.Count - 1].Count - 1);
                 }
             }
-            for (int i = 1; i < result.Count; i++)
-            {
-                for (int j = 1; j < result[i].Count; j++)
-                {
-                    if (result[i][j] > result[i][j - 1])
-                    {
-                        result.Remove(result[i]);
-                        break;
-                    }
-                }
-            }
-            //Удаление повторяющихся строк
-            int countLoops = 0;
+            int count = 0;
             while (true)
             {
                 for (int i = 1; i < result.Count; i++)
                 {
-                    int lastIndexForDelete = result.FindLastIndex(delegate(List<int> inList)
+                    for (int j = 1; j < result[i].Count; j++)
                     {
-                        int count_find = 0;
-                        if (inList.Count != result[i].Count)
+                        if (result[i][j] > result[i][j - 1])
                         {
-                            return false;
+                            result.Remove(result[i]);
+                            break;
                         }
-                        for (int k = 0; k < inList.Count; k++)
-                        {
-                            if (inList[k] == result[i][k])
-                            {
-                                count_find++;
-                            }
-                        }
-                        return count_find == inList.Count ? true : false;
-                    });
-                    if (lastIndexForDelete != i)
-                    {
-                        result.RemoveAt(lastIndexForDelete);
                     }
                 }
-                countLoops++;
-                if (countLoops > 100)
+                count++;
+                if (count > 3)
+                {
                     break;
+                }
             }
+            
+            result = SortedMatrix(result);
+            result = CheckMatrix(result,type);
             return result;
         }
 
@@ -341,11 +386,11 @@ namespace newAlgorithm
                         // получаем критерий этого решения
                         int fBuf = shedule.GetTime();
                         MessageBox.Show(this.PrintA(tempA));
-                        MessageBox.Show("Время обработки " + fBuf);
                         if (fBuf < this.f1Buf)
                         {
-                            this.Ai = this.SetTempAFromA2(i, j);
+                            this.Ai = CopyMatrix(tempA);
                             typeSolutionFlag = true;
+                            MessageBox.Show("Время обработки " + fBuf);
                         }
                     }
                 }
@@ -371,11 +416,11 @@ namespace newAlgorithm
                                         // получаем критерий этого решения
                                         int fBuf = shedule.GetTime();
                                         MessageBox.Show(this.PrintA(tempA));
-                                        MessageBox.Show("Время обработки " + fBuf);
                                         if (fBuf < this.f1Buf)
                                         {
-                                            this.Ai = this.SetTempAFromA2(ii, jj);
+                                            this.Ai = CopyMatrix(tempA);
                                             typeSolutionFlag = true;
+                                            MessageBox.Show("Время обработки " + fBuf);
                                         }
                                     }
                                 }
@@ -383,8 +428,10 @@ namespace newAlgorithm
                         }
                     }
                 }
-                if (!typeSolutionFlag){
-                    this.A1 = this.A2;
+                this.A1 = this.A2;
+                if (typeSolutionFlag)
+                {
+                    this.A = CopyMatrix(this.Ai);
                 }
             }
         }        

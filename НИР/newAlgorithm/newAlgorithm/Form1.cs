@@ -81,6 +81,7 @@ namespace newAlgorithm
                         temp = (count % 2 == 0) ? 2 : maxS;
                         temptS[i][j].Add(temp);
                     }
+                    count++;
                 }
             }
             Shedule.L = l;

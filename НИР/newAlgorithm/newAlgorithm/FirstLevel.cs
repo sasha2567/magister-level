@@ -214,7 +214,7 @@ namespace newAlgorithm
                         summ += this.A1[type][i][j];
                         result[result.Count - 1][j] = 2;
                     }
-                    result[i][0] = summ - 2 * (result[result.Count - 1].Count - 1);
+                    result[result.Count - 1][0] = summ - 2 * (result[result.Count - 1].Count - 1);
                 }
             }
             for (int i = 1; i < result.Count; i++)
@@ -228,8 +228,38 @@ namespace newAlgorithm
                     }
                 }
             }
-            //MessageBox.Show(this.PrintA(result));
-            return BatchTypeClaims.SortedMatrix(result);
+            //Удаление повторяющихся строк
+            int countLoops = 0;
+            while (true)
+            {
+                for (int i = 1; i < result.Count; i++)
+                {
+                    int lastIndexForDelete = result.FindLastIndex(delegate(List<int> inList)
+                    {
+                        int count_find = 0;
+                        if (inList.Count != result[i].Count)
+                        {
+                            return false;
+                        }
+                        for (int k = 0; k < inList.Count; k++)
+                        {
+                            if (inList[k] == result[i][k])
+                            {
+                                count_find++;
+                            }
+                        }
+                        return count_find == inList.Count ? true : false;
+                    });
+                    if (lastIndexForDelete != i)
+                    {
+                        result.RemoveAt(lastIndexForDelete);
+                    }
+                }
+                countLoops++;
+                if (countLoops > 100)
+                    break;
+            }
+            return result;
         }
 
 

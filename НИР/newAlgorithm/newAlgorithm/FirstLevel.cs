@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace newAlgorithm
 {
@@ -27,13 +28,11 @@ namespace newAlgorithm
         private int G;                      // Текущее значение критерия
 
 
-        /* 
-         * Конструктор с параметрами
-         * 
-         * count_type - количество типов рассматриваемых данных
-         * count_claims - количество требований всех типов данных
-         * 
-         */
+        /// <summary>
+        /// Конструктор с параметрами
+        /// </summary>
+        /// <param name="count_type">количество типов рассматриваемых данных</param>
+        /// <param name="count_claims">количество требований всех типов данных</param>
         public FirstLevel(int count_type, List<int> count_claims)
         {
             this.countType = count_type;
@@ -44,10 +43,11 @@ namespace newAlgorithm
         }
 
 
-        /*
-         * Функция копирования значений между матрицами, предотвращающая копирование указателей
-         * 
-         */
+        /// <summary>
+        /// Функция копирования значений между матрицами, предотвращающая копирование указателей
+        /// </summary>
+        /// <param name="inMatrix">Входная матрица</param>
+        /// <returns>Выходная матрица</returns>
         private List<List<int>> CopyMatrix(List<List<int>> inMatrix)
         {
             List<List<int>> ret = new List<List<int>>();
@@ -59,10 +59,11 @@ namespace newAlgorithm
         }
 
 
-        /*
-         * Функция копирования значений между векторами, предотвращающая копирование указателей
-         * 
-         */
+        /// <summary>
+        /// Функция копирования значений между векторами, предотвращающая копирование указателей
+        /// </summary>
+        /// <param name="inMatrix">Входной вектор</param>
+        /// <returns>Выходной вектор</returns>
         private List<int> CopyVector(List<int> inMatrix)
         {
             List<int> ret = new List<int>();
@@ -74,10 +75,9 @@ namespace newAlgorithm
         }
 
 
-        /*
-         * Алгоритм формирования начальных решений по составам партий всех типов
-         *  
-         */ 
+        /// <summary>
+        /// Алгоритм формирования начальных решений по составам партий всех типов
+        /// </summary>
         public void GenerateStartSolution()
         {
             int claim = 2;
@@ -106,10 +106,11 @@ namespace newAlgorithm
         }
 
 
-        /*
-         * Функция вычисления f1 критерия
-         * 
-         */
+        /// <summary>
+        /// Функция вычисления f1 критерия
+        /// </summary>
+        /// <param name="inMatrix">Матрица А на текущем шаге</param>
+        /// <returns>Значение критериия</returns>
         public int GetCriterion(List<List<int>> inMatrix)
         {
             int criterion = 0;
@@ -124,10 +125,11 @@ namespace newAlgorithm
         }
 
 
-        /*
-         * Функция проверки наличия оставшихся в рассмотрении типов
-         * 
-         */ 
+        /// <summary>
+        /// Функция проверки наличия оставшихся в рассмотрении типов
+        /// </summary>
+        /// <param name="type">список всех рассматриваемых типов</param>
+        /// <returns>наличие еще рассматриваемых типов</returns>
         private bool CheckType(List<int> type)
         {
             int count = 0;
@@ -142,22 +144,25 @@ namespace newAlgorithm
         }
 
 
-        /*
-         * Построчное формирование матрицы промежуточного решения
-         * 
-         */
+        /// <summary>
+        /// Построчное формирование матрицы промежуточного решени
+        /// </summary>
+        /// <param name="type">тип рассматриваемого решения</param>
+        /// <param name="ind2">индекс подставляемого решения</param>
+        /// <returns>матрица А с подставленным новым решением в соответствующий тип</returns>
         private List<List<int>> SetTempAFromA2(int type, int ind2)
         {
-            List<List<int>> result = this.CopyMatrix(this.A);
+            List<List<int>> result = this.CopyMatrix(this.Ai);
             result[type] = this.CopyVector(this.A2[type][ind2]);
             return result;
         }
 
 
-        /*
-         * Формирование матрицы для передачи её в модуль расписания
-         * 
-         */
+        /// <summary>
+        /// Формирование матрицы для передачи её в модуль расписания
+        /// </summary>
+        /// <param name="m">входная матрица А</param>
+        /// <returns>сформированная матрица для уровня расписания</returns>
         private List<List<int>> RenerateR(List<List<int>> m)
         {
             List<List<int>> result = new List<List<int>>();
@@ -187,10 +192,11 @@ namespace newAlgorithm
         }
 
 
-        /*
-         * Функция получения неповторяющихся решений в матрице А2 на шаге 9
-         *
-         */
+        /// <summary>
+        /// Функция получения неповторяющихся решений в матрице А2 на шаге 9
+        /// </summary>
+        /// <param name="inMatrix">входная матрица сформированных решений</param>
+        /// <returns>Новые решения без повторений</returns>
         public List<List<int>> SortedMatrix(List<List<int>> inMatrix)
         {
             List<List<int>> temp = this.CopyMatrix(inMatrix);
@@ -229,11 +235,13 @@ namespace newAlgorithm
             return inMatrix;
         }
 
+        
         /// <summary>
-        /// Удаление повторений новых решений и A1
+        /// Удаление повторений новых решений совпадающих с A1
         /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
+        /// <param name="inMatrix">матрица новых решений</param>
+        /// <param name="type">рассматриваемый тип</param>
+        /// <returns>Полученные новые решения</returns>
         private List<List<int>> CheckMatrix(List<List<int>> inMatrix, int type)
         {
 
@@ -251,10 +259,11 @@ namespace newAlgorithm
         }
 
 
-        /*
-         * Формирование новых решений по составим партий текущего типа данных
-         * 
-         */
+        /// <summary>
+        /// Формирование новых решений по составим партий текущего типа данных
+        /// </summary>
+        /// <param name="type">рассматриваемый тип</param>
+        /// <returns>новые решения для этого типа</returns>
         private List<List<int>> NewData(int type)
         {
             List<List<int>> result = new List<List<int>>();
@@ -308,10 +317,11 @@ namespace newAlgorithm
         }
 
 
-        /*
-         * Формирование новых решений по составим партий текущего типа данных
-         * 
-         */
+        /// <summary>
+        /// Формирование новых решений по составим партий текущего типа данных
+        /// </summary>
+        /// <param name="m">матрица А для печати</param>
+        /// <returns>строка с составами партий по типам</returns>
         private string PrintA(List<List<int>> m)
         {
             string result = "";
@@ -327,12 +337,12 @@ namespace newAlgorithm
         }
 
 
-        /*
-         * Алгоритм формирования решения по составам паритй всех типов данных
-         * 
-         */
+        /// <summary>
+        /// Алгоритм формирования решения по составам паритй всех типов данных
+        /// </summary>
         public void GenetateSolutionForAllTypes()
         {
+            StreamWriter file = new StreamWriter("output.txt");
             this.GenerateStartSolution();
             this.k = 0;
             List<List<int>> R = this.RenerateR(this.A);
@@ -355,6 +365,7 @@ namespace newAlgorithm
                 {
                     this.Ii[i] = this.I[i];
                 }
+                
                 // Буферезируем текущее решение для построение нового на его основе
                 this.Ai = this.CopyMatrix(this.A);
                 if (flagA1)
@@ -367,9 +378,20 @@ namespace newAlgorithm
                         this.A1[i][0] = this.CopyVector(this.A[i]);
                     }
                 }
+                for (int i = 0; i < this.A.Count; i++)
+                {
+                    if (this.A[i][0] == 2)
+                    {
+                        I[i] = 0;
+                    }
+                }
+                
                 flagA1 = false;
                 bool typeSolutionFlag = false;
                 List<List<int>> tempA = this.CopyMatrix(this.Ai);
+                List<List<int>> Abuf = this.CopyMatrix(this.Ai);
+                this.f1Buf = this.f1;
+                
                 // Для каждого типа и каждого решения в типе строим новое решение и проверяем его на критерий
                 this.A2 = new List<List<List<int>>>();
                 for (int i = 0; i < this.countType; i++)
@@ -385,12 +407,13 @@ namespace newAlgorithm
                         // получаем решение от расписания
                         // получаем критерий этого решения
                         int fBuf = shedule.GetTime();
-                        MessageBox.Show(this.PrintA(tempA));
+                        file.WriteLine(this.PrintA(tempA) + " " + fBuf);
                         if (fBuf < this.f1Buf)
                         {
-                            this.Ai = CopyMatrix(tempA);
+                            Abuf = CopyMatrix(tempA);
                             typeSolutionFlag = true;
-                            MessageBox.Show("Время обработки " + fBuf);
+                            
+                            this.f1Buf = fBuf;
                         }
                     }
                 }
@@ -415,12 +438,13 @@ namespace newAlgorithm
                                         // получаем решение от расписания
                                         // получаем критерий этого решения
                                         int fBuf = shedule.GetTime();
-                                        MessageBox.Show(this.PrintA(tempA));
+                                        file.WriteLine(this.PrintA(tempA) + " " + fBuf);
                                         if (fBuf < this.f1Buf)
                                         {
-                                            this.Ai = CopyMatrix(tempA);
+                                            Abuf = CopyMatrix(tempA);
+                                            
                                             typeSolutionFlag = true;
-                                            MessageBox.Show("Время обработки " + fBuf);
+                                            this.f1Buf = fBuf;
                                         }
                                     }
                                 }
@@ -428,12 +452,18 @@ namespace newAlgorithm
                         }
                     }
                 }
-                this.A1 = this.A2;
+                if (!typeSolutionFlag)
+                {
+                    this.A1 = this.A2;
+                }
                 if (typeSolutionFlag)
                 {
-                    this.A = CopyMatrix(this.Ai);
+                    this.A = CopyMatrix(Abuf);
+                    this.f1 = this.f1Buf;
                 }
             }
+            file.Close();
+            MessageBox.Show("Решения найдены");
         }        
     }
 }

@@ -182,6 +182,37 @@ namespace newAlgorithm
             }
             nabor = nabor1;
         }
+
+        public List<List<int>> ToArray()
+        {
+            List<List<int>> arr= new List<List<int>>();
+            int index=-1;
+           
+            foreach(var hromosoma in nabor){
+                index++;
+                arr.Add(new List<int>());
+                for (int i = 0; i < hromosoma.GenA.Count; i++)
+                {                   
+                    arr[index].Add(hromosoma.GenA[i]);                
+                }
+                index++;
+                arr.Add(new List<int>());
+                //2 строка
+                for (int i = 0; i < hromosoma.GenB.Count; i++)
+                {                   
+                    arr[index].Add(hromosoma.GenB[i]);                   
+                }
+                index++;
+                arr.Add(new List<int>());
+                //3 строка
+                for (int i = 0; i < hromosoma.GenC.Count; i++)
+                {
+                    arr[index].Add(hromosoma.GenC[i]);
+                }
+            }
+            return arr;
+
+        }
         void mutation()
         {
             Random rand = new Random();

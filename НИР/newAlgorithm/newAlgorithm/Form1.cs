@@ -93,5 +93,15 @@ namespace newAlgorithm
             firstLevel.GenetateSolutionForAllTypes();
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var gaa = new GAA();
+            gaa.SetXrom();
+            var shedule = new Shedule(gaa.ToArray());
+            shedule.ConstructShedule();
+            var s=shedule.GetTime();
+
+        }
     }
 }

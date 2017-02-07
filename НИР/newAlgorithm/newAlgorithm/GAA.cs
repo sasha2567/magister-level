@@ -127,54 +127,54 @@ namespace newAlgorithm
             return xrom;
         }
 
-        public List<Xromossomi> SetXrom()
+        public List<Xromossomi> SetXrom(int size)
         {
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < size; i++)
             {
                 nabor.Add(nach());
             }
-            xor();
+            xor(size);
 
             return nabor;
         }
 
-        void xor()
+        void xor(int size)
         {
-            int[] massA = new int[50];
-            int[] massB = new int[50];
-            int[] massC = new int[50];
+            int[] massA = new int[size];
+            int[] massB = new int[size];
+            int[] massC = new int[size];
             int buff;
             int v;
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < size; i++)
             {
                 massA[i] = i;
             }
             List<Xromossomi> nabor1 = new List<Xromossomi>();
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < size; i++)
                 nabor1.Add(new Xromossomi());
 
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < size; i++)
             {
-                buff = massA[v = rand.Next(50)];
-                massA[v] = massA[v = rand.Next(50)];
+                buff = massA[v = rand.Next(size)];
+                massA[v] = massA[v = rand.Next(size)];
                 massA[v] = buff;
             }
             //
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < size; i++)
             {
-                buff = massB[v = rand.Next(50)];
-                massB[v] = massB[v = rand.Next(50)];
+                buff = massB[v = rand.Next(size)];
+                massB[v] = massB[v = rand.Next(size)];
                 massB[v] = buff;
             }
             //
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < size; i++)
             {
-                buff = massC[v = rand.Next(50)];
-                massC[v] = massC[v = rand.Next(50)];
+                buff = massC[v = rand.Next(size)];
+                massC[v] = massC[v = rand.Next(size)];
                 massC[v] = buff;
             }
 
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < size; i++)
             {
                 nabor1[i].GenA = nabor[massA[i]].GenA;
                 nabor1[i].GenB = nabor[massA[i]].GenB;

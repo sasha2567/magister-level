@@ -97,8 +97,9 @@ namespace newAlgorithm
         private void button2_Click(object sender, EventArgs e)
         {
             var gaa = new GAA();
-            gaa.SetXrom();
-            var shedule = new Shedule(gaa.ToArray());
+            gaa.SetXrom(1);
+            var S = gaa.ToArray();
+            var shedule = new Shedule(S);
             shedule.ConstructShedule();
             var s=shedule.GetTime();
 

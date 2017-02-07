@@ -384,7 +384,7 @@ namespace newAlgorithm
                 f1Buf = f1;
                 //Добавить вычисление значения критерия
                 List<List<int>> MaxA = CopyMatrix(A);
-                bool flagA1 = true;
+                bool typeSolutionFlag = false;
                 while (CheckType(I))
                 {
                     // Копируем I в Ii
@@ -395,7 +395,7 @@ namespace newAlgorithm
 
                     // Буферезируем текущее решение для построение нового на его основе
                     Ai = CopyMatrix(A);
-                    if (flagA1)
+                    if (!typeSolutionFlag)
                     {
                         A1 = new List<List<List<int>>>();
                         for (int i = 0; i < countType; i++)
@@ -406,8 +406,6 @@ namespace newAlgorithm
                         }
                     }
 
-                    flagA1 = false;
-                    bool typeSolutionFlag = false;
                     List<List<int>> tempA = CopyMatrix(Ai);
                     List<List<int>> Abuf = CopyMatrix(Ai);
                     f1Buf = f1;
@@ -432,9 +430,8 @@ namespace newAlgorithm
                                 // получаем критерий этого решения
                                 int fBuf = shedule.GetTime();
                                 s = PrintA(tempA);
-                                MessageBox.Show(s + " Время обработки " + fBuf);
                                 file.WriteLine(s + " " + fBuf);
-                                if (fBuf < f1Buf)
+                                if (fBuf <= f1Buf)
                                 {
                                     Abuf = CopyMatrix(tempA);
                                     typeSolutionFlag = true;
@@ -471,9 +468,8 @@ namespace newAlgorithm
                                                     // получаем критерий этого решения
                                                     int fBuf = shedule.GetTime();
                                                     s = PrintA(tempA);
-                                                    MessageBox.Show(s + " Время обработки " + fBuf);
                                                     file.WriteLine(s + " " + fBuf);
-                                                    if (fBuf < f1Buf)
+                                                    if (fBuf <= f1Buf)
                                                     {
                                                         Abuf = CopyMatrix(tempA);
                                                         typeSolutionFlag = true;
@@ -495,6 +491,7 @@ namespace newAlgorithm
                     {
                         A = CopyMatrix(Abuf);
                         f1 = f1Buf;
+                        typeSolutionFlag = false;
                     }
                 }
                 file.Close();

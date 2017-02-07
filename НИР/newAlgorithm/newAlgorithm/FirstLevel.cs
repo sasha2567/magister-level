@@ -35,11 +35,11 @@ namespace newAlgorithm
         /// <param name="count_claims">количество требований всех типов данных</param>
         public FirstLevel(int count_type, List<int> count_claims)
         {
-            this.countType = count_type;
-            this.countClaims = count_claims;
-            this.mi = new List<int>(this.countType);
-            this.I = new List<int>(this.countType);
-            this.Ii = new List<int>(this.countType);
+            countType = count_type;
+            countClaims = count_claims;
+            mi = new List<int>(countType);
+            I = new List<int>(countType);
+            Ii = new List<int>(countType);
         }
 
 
@@ -53,7 +53,7 @@ namespace newAlgorithm
             List<List<int>> ret = new List<List<int>>();
             for (int i = 0; i < inMatrix.Count; i++)
             {
-                ret.Add(this.CopyVector(inMatrix[i]));
+                ret.Add(CopyVector(inMatrix[i]));
             }
             return ret;
         }
@@ -81,28 +81,28 @@ namespace newAlgorithm
         public void GenerateStartSolution()
         {
             int claim = 2;
-            this.A = new List<List<int>>();
-            for (int i = 0; i < this.countType; i++)
+            A = new List<List<int>>();
+            for (int i = 0; i < countType; i++)
             {
-                this.I.Add(1);
-                this.Ii.Add(1);
-                this.mi.Add(claim);
-                this.A.Add(new List<int>());
-                this.A[i].Add(this.countClaims[i] - claim);
-                this.A[i].Add(claim);
+                I.Add(1);
+                Ii.Add(1);
+                mi.Add(claim);
+                A.Add(new List<int>());
+                A[i].Add(countClaims[i] - claim);
+                A[i].Add(claim);
             }
-            for (int i = 0; i < this.countType; i++)
+            for (int i = 0; i < countType; i++)
             {
-                if (this.A[i][0] < 2 || this.A[i][0] < this.A[i][1])
+                if (A[i][0] < 2 || A[i][0] < A[i][1])
                 {
-                    this.A[i].Clear();
-                    this.A[i].Add(this.countClaims[i]);
-                    this.mi[i] = 1;
-                    this.I[i] = 0;
-                    this.Ii[i] = 0;
+                    A[i].Clear();
+                    A[i].Add(countClaims[i]);
+                    mi[i] = 1;
+                    I[i] = 0;
+                    Ii[i] = 0;
                 }
             }
-            this.G = 0;    
+            G = 0;    
         }
 
 
@@ -133,7 +133,7 @@ namespace newAlgorithm
         private bool CheckType(List<int> type)
         {
             int count = 0;
-            for (int j = 0; j < this.countType; j++)
+            for (int j = 0; j < countType; j++)
             {
                 if (type[j] != 0)
                     count++;
@@ -152,8 +152,8 @@ namespace newAlgorithm
         /// <returns>матрица А с подставленным новым решением в соответствующий тип</returns>
         private List<List<int>> SetTempAFromA2(int type, int ind2)
         {
-            List<List<int>> result = this.CopyMatrix(this.Ai);
-            result[type] = this.CopyVector(this.A2[type][ind2]);
+            List<List<int>> result = CopyMatrix(Ai);
+            result[type] = CopyVector(A2[type][ind2]);
             return result;
         }
 
@@ -163,7 +163,7 @@ namespace newAlgorithm
         /// </summary>
         /// <param name="m">входная матрица А</param>
         /// <returns>сформированная матрица для уровня расписания</returns>
-        private List<List<int>> RenerateR(List<List<int>> m)
+        private List<List<int>> GenerateR(List<List<int>> m)
         {
             List<List<int>> result = new List<List<int>>();
             int summ = 0;
@@ -171,7 +171,7 @@ namespace newAlgorithm
             {
                 summ += m[i].Count;
             }
-            for (int i = 0; i < this.countType; i++)
+            for (int i = 0; i < countType; i++)
             {
                 result.Add(new List<int>());
                 for (int j = 0; j < summ; j++)
@@ -199,7 +199,7 @@ namespace newAlgorithm
         /// <returns>Новые решения без повторений</returns>
         public List<List<int>> SortedMatrix(List<List<int>> inMatrix)
         {
-            List<List<int>> temp = this.CopyMatrix(inMatrix);
+            List<List<int>> temp = CopyMatrix(inMatrix);
             //Удаление повторяющихся строк
             int countLoops = 0;
             while (true)
@@ -245,7 +245,7 @@ namespace newAlgorithm
         private List<List<int>> CheckMatrix(List<List<int>> inMatrix, int type)
         {
 
-            foreach (List<int> row2 in this.A1[type])
+            foreach (List<int> row2 in A1[type])
             {
                 foreach (List<int> rowMatrix in inMatrix.ToList())
                 {
@@ -267,11 +267,11 @@ namespace newAlgorithm
         private List<List<int>> NewData(int type)
         {
             List<List<int>> result = new List<List<int>>();
-            foreach(List<int> row in this.A1[type])
+            foreach(List<int> row in A1[type])
             {
                 for (int j = 1; j < row.Count; j++)
                 {
-                    result.Add(this.CopyVector(row));
+                    result.Add(CopyVector(row));
                     if (row[0] > row[j] + 1)
                     {
                         result[result.Count - 1][0]--;
@@ -338,132 +338,168 @@ namespace newAlgorithm
 
 
         /// <summary>
-        /// Алгоритм формирования решения по составам паритй всех типов данных
+        /// Проверка на достижение максимально возможного решения по составам типов
         /// </summary>
-        public void GenetateSolutionForAllTypes()
+        /// <param name="inMatrix">Матрица текущих составов</param>
+        private void CheckSolution(List<List<int>> inMatrix)
         {
-            StreamWriter file = new StreamWriter("output.txt");
-            this.GenerateStartSolution();
-            this.k = 0;
-            List<List<int>> R = this.RenerateR(this.A);
-            Shedule shedule = new Shedule(R);
-            R = shedule.ConstructShedule();
-            // получаем решение от расписания
-            // получаем критерий этого решения
-            this.f1 = shedule.GetTime();
-            MessageBox.Show(this.PrintA(this.A));
-            MessageBox.Show("Время обработки " + f1);
-            this.f1Buf = this.f1;
-            //Добавить вычисление значения критерия
-            List<List<int>> MaxA = this.CopyMatrix(this.A);
-            int maxF1 = this.f1;
-            bool flagA1 = true;
-            while (this.CheckType(this.I))
+            for (int i = 0; i < inMatrix.Count; i++)
             {
-                // Копируем I в Ii
-                for (int i = 0; i < this.countType; i++)
+                int elem = inMatrix[i][0];
+                if (elem == 2)
                 {
-                    this.Ii[i] = this.I[i];
-                }
-                
-                // Буферезируем текущее решение для построение нового на его основе
-                this.Ai = this.CopyMatrix(this.A);
-                if (flagA1)
-                {
-                    this.A1 = new List<List<List<int>>>();
-                    for (int i = 0; i < this.countType; i++)
+                    int count = 1;
+                    for (int j = 1; j < inMatrix[i].Count; j++)
                     {
-                        this.A1.Add(new List<List<int>>());
-                        this.A1[i].Add(new List<int>());
-                        this.A1[i][0] = this.CopyVector(this.A[i]);
+                        if (inMatrix[i][j] == elem)
+                        {
+                            count++;
+                        }
                     }
-                }
-                for (int i = 0; i < this.A.Count; i++)
-                {
-                    if (this.A[i][0] == 2)
+                    if (count == inMatrix[i].Count)
                     {
                         I[i] = 0;
                     }
                 }
-                
-                flagA1 = false;
-                bool typeSolutionFlag = false;
-                List<List<int>> tempA = this.CopyMatrix(this.Ai);
-                List<List<int>> Abuf = this.CopyMatrix(this.Ai);
-                this.f1Buf = this.f1;
-                
-                // Для каждого типа и каждого решения в типе строим новое решение и проверяем его на критерий
-                this.A2 = new List<List<List<int>>>();
-                for (int i = 0; i < this.countType; i++)
+            }
+        }
+
+
+        /// <summary>
+        /// Алгоритм формирования решения по составам паритй всех типов данных
+        /// </summary>
+        public void GenetateSolutionForAllTypes()
+        {
+            using (var file = new StreamWriter("output.txt"))
+            {
+                GenerateStartSolution();
+                k = 0;
+                List<List<int>> R = GenerateR(A);
+                Shedule shedule = new Shedule(R);
+                R = shedule.ConstructShedule();
+                // получаем решение от расписания
+                // получаем критерий этого решения
+                f1 = shedule.GetTime();
+                MessageBox.Show(PrintA(A) + " Время обработки " + f1);
+                f1Buf = f1;
+                //Добавить вычисление значения критерия
+                List<List<int>> MaxA = CopyMatrix(A);
+                bool flagA1 = true;
+                while (CheckType(I))
                 {
-                    this.A2.Add(new List<List<int>>());
-                    this.A2[i] = this.NewData(i);
-                    for (int j = 0; j < this.A2[i].Count; j++)
+                    // Копируем I в Ii
+                    for (int i = 0; i < countType; i++)
                     {
-                        tempA = this.SetTempAFromA2(i, j);
-                        R = this.RenerateR(tempA);
-                        shedule = new Shedule(R);
-                        R = shedule.ConstructShedule();
-                        // получаем решение от расписания
-                        // получаем критерий этого решения
-                        int fBuf = shedule.GetTime();
-                        file.WriteLine(this.PrintA(tempA) + " " + fBuf);
-                        if (fBuf < this.f1Buf)
+                        Ii[i] = I[i];
+                    }
+
+                    // Буферезируем текущее решение для построение нового на его основе
+                    Ai = CopyMatrix(A);
+                    if (flagA1)
+                    {
+                        A1 = new List<List<List<int>>>();
+                        for (int i = 0; i < countType; i++)
                         {
-                            Abuf = CopyMatrix(tempA);
-                            typeSolutionFlag = true;
-                            
-                            this.f1Buf = fBuf;
+                            A1.Add(new List<List<int>>());
+                            A1[i].Add(new List<int>());
+                            A1[i][0] = CopyVector(A[i]);
                         }
                     }
-                }
-                if (!typeSolutionFlag)
-                {
-                    for (int i = 0; i < this.countType - 1; i++)
+
+                    flagA1 = false;
+                    bool typeSolutionFlag = false;
+                    List<List<int>> tempA = CopyMatrix(Ai);
+                    List<List<int>> Abuf = CopyMatrix(Ai);
+                    f1Buf = f1;
+
+                    // Для каждого типа и каждого решения в типе строим новое решение и проверяем его на критерий
+                    A2 = new List<List<List<int>>>();
+                    string s;
+                    for (int i = 0; i < countType; i++)
                     {
-                        for (int j = i + 1; j < this.countType; j++)
+                        if (I[i] != 0)
                         {
-                            this.A2[i] = this.NewData(i);
-                            this.A2[j] = this.NewData(j);
-                            for (int ii = 0; ii < this.A2[i].Count; ii++)
+                            A2.Add(new List<List<int>>());
+                            A2[i] = NewData(i);
+                            for (int j = 0; j < A2[i].Count; j++)
                             {
-                                for (int jj = 0; jj < this.A2[j].Count; jj++)
+                                tempA = SetTempAFromA2(i, j);
+                                CheckSolution(tempA);
+                                R = GenerateR(tempA);
+                                shedule = new Shedule(R);
+                                R = shedule.ConstructShedule();
+                                // получаем решение от расписания
+                                // получаем критерий этого решения
+                                int fBuf = shedule.GetTime();
+                                s = PrintA(tempA);
+                                MessageBox.Show(s + " Время обработки " + fBuf);
+                                file.WriteLine(s + " " + fBuf);
+                                if (fBuf < f1Buf)
                                 {
+                                    Abuf = CopyMatrix(tempA);
+                                    typeSolutionFlag = true;
+                                    f1Buf = fBuf;
+                                }
+                            }
+                        }
+
+                    }
+                    if (!typeSolutionFlag)
+                    {
+                        for (int i = 0; i < countType - 1; i++)
+                        {
+                            if (I[i] != 0)
+                            {
+                                for (int j = i + 1; j < countType; j++)
+                                {
+                                    if (I[j] != 0)
                                     {
-                                        tempA = this.SetTempAFromA2(i, ii);
-                                        tempA[j] = this.SetTempAFromA2(j, jj)[j];
-                                        R = this.RenerateR(tempA);
-                                        shedule = new Shedule(R);
-                                        R = shedule.ConstructShedule();
-                                        // получаем решение от расписания
-                                        // получаем критерий этого решения
-                                        int fBuf = shedule.GetTime();
-                                        file.WriteLine(this.PrintA(tempA) + " " + fBuf);
-                                        if (fBuf < this.f1Buf)
+                                        A2[i] = NewData(i);
+                                        A2[j] = NewData(j);
+                                        for (int ii = 0; ii < A2[i].Count; ii++)
                                         {
-                                            Abuf = CopyMatrix(tempA);
-                                            
-                                            typeSolutionFlag = true;
-                                            this.f1Buf = fBuf;
+                                            for (int jj = 0; jj < A2[j].Count; jj++)
+                                            {
+                                                {
+                                                    tempA = SetTempAFromA2(i, ii);
+                                                    tempA[j] = SetTempAFromA2(j, jj)[j];
+                                                    CheckSolution(tempA);
+                                                    R = GenerateR(tempA);
+                                                    shedule = new Shedule(R);
+                                                    R = shedule.ConstructShedule();
+                                                    // получаем решение от расписания
+                                                    // получаем критерий этого решения
+                                                    int fBuf = shedule.GetTime();
+                                                    s = PrintA(tempA);
+                                                    MessageBox.Show(s + " Время обработки " + fBuf);
+                                                    file.WriteLine(s + " " + fBuf);
+                                                    if (fBuf < f1Buf)
+                                                    {
+                                                        Abuf = CopyMatrix(tempA);
+                                                        typeSolutionFlag = true;
+                                                        f1Buf = fBuf;
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
                     }
+                    if (!typeSolutionFlag)
+                    {
+                        A1 = A2;
+                    }
+                    if (typeSolutionFlag)
+                    {
+                        A = CopyMatrix(Abuf);
+                        f1 = f1Buf;
+                    }
                 }
-                if (!typeSolutionFlag)
-                {
-                    this.A1 = this.A2;
-                }
-                if (typeSolutionFlag)
-                {
-                    this.A = CopyMatrix(Abuf);
-                    this.f1 = this.f1Buf;
-                }
+                file.Close();
+                MessageBox.Show("Решения найдены");
             }
-            file.Close();
-            MessageBox.Show("Решения найдены");
         }        
     }
 }

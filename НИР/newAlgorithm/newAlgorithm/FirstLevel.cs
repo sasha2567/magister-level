@@ -374,8 +374,8 @@ namespace newAlgorithm
             {
                 GenerateStartSolution();
                 k = 0;
-                List<List<int>> R = GenerateR(A);
-                Shedule shedule = new Shedule(R);
+                var R = GenerateR(A);
+                var shedule = new Shedule(R);
                 R = shedule.ConstructShedule();
                 // получаем решение от расписания
                 // получаем критерий этого решения

@@ -177,5 +177,29 @@ namespace newAlgorithm
             var s = shedule.GetTime();
 
         }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            countType = (int)numericUpDown1.Value;
+            l = Convert.ToInt32(LTB.Text);
+            maxS = Convert.ToInt32(timeSwitchingTB.Text);
+            maxT = Convert.ToInt32(timeTreatmentingTB.Text);
+            temptS = new List<List<List<int>>>();
+            temptT = new List<List<int>>();
+            RandomTime();
+            PrintTime();
+        }
+
+        private void LTB_TextChanged(object sender, EventArgs e)
+        {
+            countType = (int)numericUpDown1.Value;
+            l = Convert.ToInt32(LTB.Text);
+            maxS = Convert.ToInt32(timeSwitchingTB.Text);
+            maxT = Convert.ToInt32(timeTreatmentingTB.Text);
+            temptS = new List<List<List<int>>>();
+            temptT = new List<List<int>>();
+            RandomTime();
+            PrintTime();
+        }
     }
 }

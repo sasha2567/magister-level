@@ -76,6 +76,7 @@
             0,
             0,
             0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // countBatchesTB
             // 
@@ -136,6 +137,7 @@
             this.LTB.Size = new System.Drawing.Size(100, 20);
             this.LTB.TabIndex = 7;
             this.LTB.Text = "4";
+            this.LTB.TextChanged += new System.EventHandler(this.LTB_TextChanged);
             // 
             // label3
             // 

@@ -47,6 +47,8 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -121,6 +123,7 @@
             this.timeSwitchingTB.Size = new System.Drawing.Size(100, 20);
             this.timeSwitchingTB.TabIndex = 5;
             this.timeSwitchingTB.Text = "2";
+            this.timeSwitchingTB.TextChanged += new System.EventHandler(this.timeSwitchingTB_TextChanged);
             // 
             // timeTreatmentingTB
             // 
@@ -129,6 +132,7 @@
             this.timeTreatmentingTB.Size = new System.Drawing.Size(100, 20);
             this.timeTreatmentingTB.TabIndex = 6;
             this.timeTreatmentingTB.Text = "2";
+            this.timeTreatmentingTB.TextChanged += new System.EventHandler(this.timeTreatmentingTB_TextChanged);
             // 
             // LTB
             // 
@@ -188,6 +192,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.checkBox1);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.numericUpDown1);
@@ -258,6 +264,26 @@
             this.dataGridView1.Size = new System.Drawing.Size(280, 288);
             this.dataGridView1.TabIndex = 17;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(161, 33);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(41, 17);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Да";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(158, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(130, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Фиксированные партии";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,6 +325,8 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

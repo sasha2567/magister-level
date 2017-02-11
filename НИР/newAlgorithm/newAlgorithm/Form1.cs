@@ -162,7 +162,7 @@ namespace newAlgorithm
             Shedule.maxTimeTreatment = maxT;
             Shedule.TSwitching = temptS;
             Shedule.TTreatment = temptT;
-            FirstLevel firstLevel = new FirstLevel(countType, listCountButches);
+            FirstLevel firstLevel = new FirstLevel(countType, listCountButches, checkBox1.Checked);
             firstLevel.GenetateSolutionForAllTypes();
 
         }
@@ -178,28 +178,48 @@ namespace newAlgorithm
 
         }
 
+        private void Change()
+        {
+            try
+            {
+                countType = (int)numericUpDown1.Value;
+                l = Convert.ToInt32(LTB.Text);
+                maxS = Convert.ToInt32(timeSwitchingTB.Text);
+                maxT = Convert.ToInt32(timeTreatmentingTB.Text);
+                temptS = new List<List<List<int>>>();
+                temptT = new List<List<int>>();
+                RandomTime();
+                PrintTime();
+            }
+            catch 
+            {
+                return;
+            }
+        }
+
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            countType = (int)numericUpDown1.Value;
-            l = Convert.ToInt32(LTB.Text);
-            maxS = Convert.ToInt32(timeSwitchingTB.Text);
-            maxT = Convert.ToInt32(timeTreatmentingTB.Text);
-            temptS = new List<List<List<int>>>();
-            temptT = new List<List<int>>();
-            RandomTime();
-            PrintTime();
+            Change();
         }
 
         private void LTB_TextChanged(object sender, EventArgs e)
         {
-            countType = (int)numericUpDown1.Value;
-            l = Convert.ToInt32(LTB.Text);
-            maxS = Convert.ToInt32(timeSwitchingTB.Text);
-            maxT = Convert.ToInt32(timeTreatmentingTB.Text);
-            temptS = new List<List<List<int>>>();
-            temptT = new List<List<int>>();
-            RandomTime();
-            PrintTime();
+            Change();
+        }
+
+        private void timeSwitchingTB_TextChanged(object sender, EventArgs e)
+        {
+            Change();
+        }
+
+        private void timeTreatmentingTB_TextChanged(object sender, EventArgs e)
+        {
+            Change();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -19,13 +19,9 @@ namespace newAlgorithm
         private List<List<int>> A;          // Матрица составов партий требований на k шаге
         private int countType;              // Количество типов
         private List<int> countClaims;      // Начальное количество требований для каждого типа данных
-        private int i;                      // идентификатор текущего изменяемого типа
-        private int k;                      // Шаг алгоритма
-        private List<int> fi;               // Критерии решений всех типов данных
         private int f1;                     // Критерий текущего решения для всех типов
         private int f1Buf;                  // Критерий текущего решения для всех типов
-        private int L;                      // Количество сегментов конвейера
-        private int G;                      // Текущее значение критерия
+        private bool staticSolution;        // Признак фиксированных партий
 
 
         /// <summary>
@@ -33,10 +29,11 @@ namespace newAlgorithm
         /// </summary>
         /// <param name="count_type">количество типов рассматриваемых данных</param>
         /// <param name="count_claims">количество требований всех типов данных</param>
-        public FirstLevel(int count_type, List<int> count_claims)
+        public FirstLevel(int count_type, List<int> count_claims, bool stat)
         {
             countType = count_type;
             countClaims = count_claims;
+            staticSolution = stat;
             mi = new List<int>(countType);
             I = new List<int>(countType);
             Ii = new List<int>(countType);
@@ -102,7 +99,6 @@ namespace newAlgorithm
                     Ii[i] = 0;
                 }
             }
-            G = 0;    
         }
 
 
@@ -373,7 +369,6 @@ namespace newAlgorithm
             using (var file = new StreamWriter("output.txt"))
             {
                 GenerateStartSolution();
-                k = 0;
                 var R = GenerateR(A);
                 var shedule = new Shedule(R);
                 R = shedule.ConstructShedule();
@@ -382,98 +377,105 @@ namespace newAlgorithm
                 f1 = shedule.GetTime();
                 MessageBox.Show(PrintA(A) + " Время обработки " + f1);
                 f1Buf = f1;
+                file.WriteLine(PrintA(A) + " " + f1Buf);
                 //Добавить вычисление значения критерия
                 List<List<int>> MaxA = CopyMatrix(A);
-                bool typeSolutionFlag = false;
-                while (CheckType(I))
+                bool typeSolutionFlag = true;
+                if (!staticSolution)
                 {
-                    // Копируем I в Ii
-                    for (int i = 0; i < countType; i++)
+                    while (CheckType(I))
                     {
-                        Ii[i] = I[i];
-                    }
-
-                    // Буферезируем текущее решение для построение нового на его основе
-                    Ai = CopyMatrix(A);
-                    if (!typeSolutionFlag)
-                    {
-                        A1 = new List<List<List<int>>>();
+                        // Копируем I в Ii
                         for (int i = 0; i < countType; i++)
                         {
-                            A1.Add(new List<List<int>>());
-                            A1[i].Add(new List<int>());
-                            A1[i][0] = CopyVector(A[i]);
+                            Ii[i] = I[i];
                         }
-                    }
 
-                    List<List<int>> tempA = CopyMatrix(Ai);
-                    List<List<int>> Abuf = CopyMatrix(Ai);
-                    f1Buf = f1;
+                        // Буферезируем текущее решение для построение нового на его основе
+                        Ai = CopyMatrix(A);
+                        if (typeSolutionFlag)
+                        {
+                            A1 = new List<List<List<int>>>();
+                            for (int i = 0; i < countType; i++)
+                            {
+                                A1.Add(new List<List<int>>());
+                                A1[i].Add(new List<int>());
+                                A1[i][0] = CopyVector(A[i]);
+                            }
+                            typeSolutionFlag = false;
+                        }
 
-                    // Для каждого типа и каждого решения в типе строим новое решение и проверяем его на критерий
-                    A2 = new List<List<List<int>>>();
-                    string s;
-                    for (int i = 0; i < countType; i++)
-                    {
-                        if (I[i] != 0)
+                        List<List<int>> tempA = CopyMatrix(Ai);
+                        List<List<int>> Abuf = CopyMatrix(Ai);
+                        f1Buf = f1;
+
+                        // Для каждого типа и каждого решения в типе строим новое решение и проверяем его на критерий
+                        A2 = new List<List<List<int>>>();
+                        string s;
+                        for (int i = 0; i < countType; i++)
                         {
                             A2.Add(new List<List<int>>());
-                            A2[i] = NewData(i);
-                            for (int j = 0; j < A2[i].Count; j++)
-                            {
-                                tempA = SetTempAFromA2(i, j);
-                                CheckSolution(tempA);
-                                R = GenerateR(tempA);
-                                shedule = new Shedule(R);
-                                R = shedule.ConstructShedule();
-                                // получаем решение от расписания
-                                // получаем критерий этого решения
-                                int fBuf = shedule.GetTime();
-                                s = PrintA(tempA);
-                                file.WriteLine(s + " " + fBuf);
-                                if (fBuf <= f1Buf)
-                                {
-                                    Abuf = CopyMatrix(tempA);
-                                    typeSolutionFlag = true;
-                                    f1Buf = fBuf;
-                                }
-                            }
-                        }
-
-                    }
-                    if (!typeSolutionFlag)
-                    {
-                        for (int i = 0; i < countType - 1; i++)
-                        {
                             if (I[i] != 0)
                             {
-                                for (int j = i + 1; j < countType; j++)
+                                A2[i] = NewData(i);
+                                for (int j = 0; j < A2[i].Count; j++)
                                 {
-                                    if (I[j] != 0)
+                                    tempA = SetTempAFromA2(i, j);
+                                    CheckSolution(tempA);
+                                    R = GenerateR(tempA);
+                                    shedule = new Shedule(R);
+                                    R = shedule.ConstructShedule();
+                                    // получаем решение от расписания
+                                    // получаем критерий этого решения
+                                    int fBuf = shedule.GetTime();
+                                    s = PrintA(tempA);
+                                    file.WriteLine(s + " " + fBuf);
+                                    MessageBox.Show(s + " Время обработки " + fBuf);                                    
+                                    if (fBuf < f1Buf)
                                     {
-                                        A2[i] = NewData(i);
-                                        A2[j] = NewData(j);
-                                        for (int ii = 0; ii < A2[i].Count; ii++)
+                                        Abuf = CopyMatrix(tempA);
+                                        typeSolutionFlag = true;
+                                        f1Buf = fBuf;
+                                    }
+                                }
+                            }
+
+                        }
+                        if (!typeSolutionFlag)
+                        {
+                            for (int i = 0; i < countType - 1; i++)
+                            {
+                                if (I[i] != 0)
+                                {
+                                    for (int j = i + 1; j < countType; j++)
+                                    {
+                                        if (I[j] != 0)
                                         {
-                                            for (int jj = 0; jj < A2[j].Count; jj++)
+                                            A2[i] = NewData(i);
+                                            A2[j] = NewData(j);
+                                            for (int ii = 0; ii < A2[i].Count; ii++)
                                             {
+                                                for (int jj = 0; jj < A2[j].Count; jj++)
                                                 {
-                                                    tempA = SetTempAFromA2(i, ii);
-                                                    tempA[j] = SetTempAFromA2(j, jj)[j];
-                                                    CheckSolution(tempA);
-                                                    R = GenerateR(tempA);
-                                                    shedule = new Shedule(R);
-                                                    R = shedule.ConstructShedule();
-                                                    // получаем решение от расписания
-                                                    // получаем критерий этого решения
-                                                    int fBuf = shedule.GetTime();
-                                                    s = PrintA(tempA);
-                                                    file.WriteLine(s + " " + fBuf);
-                                                    if (fBuf <= f1Buf)
                                                     {
-                                                        Abuf = CopyMatrix(tempA);
-                                                        typeSolutionFlag = true;
-                                                        f1Buf = fBuf;
+                                                        tempA = SetTempAFromA2(i, ii);
+                                                        tempA[j] = SetTempAFromA2(j, jj)[j];
+                                                        CheckSolution(tempA);
+                                                        R = GenerateR(tempA);
+                                                        shedule = new Shedule(R);
+                                                        R = shedule.ConstructShedule();
+                                                        // получаем решение от расписания
+                                                        // получаем критерий этого решения
+                                                        int fBuf = shedule.GetTime();
+                                                        s = PrintA(tempA);
+                                                        file.WriteLine(s + " " + fBuf);
+                                                        MessageBox.Show(s + " Время обработки " + fBuf);
+                                                        if (fBuf < f1Buf)
+                                                        {
+                                                            Abuf = CopyMatrix(tempA);
+                                                            typeSolutionFlag = true;
+                                                            f1Buf = fBuf;
+                                                        }
                                                     }
                                                 }
                                             }
@@ -482,16 +484,16 @@ namespace newAlgorithm
                                 }
                             }
                         }
-                    }
-                    if (!typeSolutionFlag)
-                    {
-                        A1 = A2;
-                    }
-                    if (typeSolutionFlag)
-                    {
-                        A = CopyMatrix(Abuf);
-                        f1 = f1Buf;
-                        typeSolutionFlag = false;
+                        if (!typeSolutionFlag)
+                        {
+                            A1 = A2;
+                        }
+                        if (typeSolutionFlag)
+                        {
+                            MessageBox.Show("Лучшее решение "+PrintA(Abuf) + " Время обработки " + f1Buf);
+                            A = CopyMatrix(Abuf);
+                            f1 = f1Buf;
+                        }
                     }
                 }
                 file.Close();

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.7"
+    ComputedModelVersion    "1.10"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -38,9 +38,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "irina"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 13 12:36:03 2017"
+  LastModifiedDate	  "Mon Feb 13 15:08:40 2017"
   RTWModifiedTimeStamp	  408887865
-  ModelVersionFormat	  "1.%<AutoIncrement:7>"
+  ModelVersionFormat	  "1.%<AutoIncrement:10>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -812,7 +812,7 @@ Model {
   }
   System {
     Name		    "first"
-    Location		    [686, 245, 1222, 534]
+    Location		    [623, 223, 1159, 512]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -856,7 +856,7 @@ Model {
       Name		      "Discrete-Time\nIntegrator"
       SID		      "4"
       Ports		      [1, 1]
-      Position		      [340, 119, 375, 151]
+      Position		      [355, 84, 390, 116]
       ZOrder		      -7
       IntegratorMethod	      "Integration: Forward Euler"
       ExternalReset	      "none"
@@ -987,7 +987,7 @@ Model {
       Name		      "MATLAB Function2"
       SID		      "12"
       Ports		      [1, 1]
-      Position		      [150, 22, 220, 68]
+      Position		      [160, 32, 230, 78]
       ZOrder		      -4
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
@@ -1116,7 +1116,7 @@ Model {
       Name		      "Relational\nOperator"
       SID		      "5"
       Ports		      [2, 1]
-      Position		      [280, 117, 310, 148]
+      Position		      [280, 82, 310, 113]
       ZOrder		      -14
       Operator		      "<="
       InputSameDT	      off
@@ -1127,7 +1127,7 @@ Model {
       Name		      "To Workspace"
       SID		      "17"
       Ports		      [1]
-      Position		      [415, 120, 475, 150]
+      Position		      [435, 85, 495, 115]
       ZOrder		      -7
       VariableName	      "simout"
       MaxDataPoints	      "inf"
@@ -1157,6 +1157,7 @@ Model {
     Line {
       SrcBlock		      "MATLAB Function"
       SrcPort		      1
+      Points		      [40, 0]
       DstBlock		      "Relational\nOperator"
       DstPort		      2
     }
@@ -1169,13 +1170,14 @@ Model {
     Line {
       SrcBlock		      "Constant"
       SrcPort		      1
+      Points		      [75, 0]
       DstBlock		      "MATLAB Function2"
       DstPort		      1
     }
     Line {
       SrcBlock		      "MATLAB Function2"
       SrcPort		      1
-      Points		      [20, 0; 0, 80]
+      Points		      [10, 0; 0, 35]
       DstBlock		      "Relational\nOperator"
       DstPort		      1
     }
@@ -1354,7 +1356,7 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function y = fcn(u)\n    y = chi2rnd(u,1,1);\nend"
+      script		      "function y = fcn(u)\n    y = chi2rnd(u(1),1,1);\nend"
       editorLayout	      "100 M4x1[201 264 1080 733]"
     }
   }

@@ -430,12 +430,13 @@ namespace newAlgorithm
                                     int fBuf = shedule.GetTime();
                                     s = PrintA(tempA);
                                     file.WriteLine(s + " " + fBuf);
-                                    MessageBox.Show(s + " Время обработки " + fBuf);                                    
+                                    //MessageBox.Show(s + " Время обработки " + fBuf);                                    
                                     if (fBuf < f1Buf)
                                     {
                                         Abuf = CopyMatrix(tempA);
                                         typeSolutionFlag = true;
                                         f1Buf = fBuf;
+                                        file.WriteLine("+");
                                     }
                                 }
                             }
@@ -469,12 +470,13 @@ namespace newAlgorithm
                                                         int fBuf = shedule.GetTime();
                                                         s = PrintA(tempA);
                                                         file.WriteLine(s + " " + fBuf);
-                                                        MessageBox.Show(s + " Время обработки " + fBuf);
+                                                        //MessageBox.Show(s + " Время обработки " + fBuf);
                                                         if (fBuf < f1Buf)
                                                         {
                                                             Abuf = CopyMatrix(tempA);
                                                             typeSolutionFlag = true;
                                                             f1Buf = fBuf;
+                                                            file.WriteLine("+");
                                                         }
                                                     }
                                                 }
@@ -484,15 +486,19 @@ namespace newAlgorithm
                                 }
                             }
                         }
-                        if (!typeSolutionFlag)
-                        {
-                            A1 = A2;
-                        }
                         if (typeSolutionFlag)
                         {
                             MessageBox.Show("Лучшее решение "+PrintA(Abuf) + " Время обработки " + f1Buf);
                             A = CopyMatrix(Abuf);
                             f1 = f1Buf;
+                            file.WriteLine("++++++");
+                        }
+                        else
+                        {
+                            for (int i = 0; i < countType - 1; i++)
+                            {
+                                A1[i] = CopyMatrix(A2[i]);
+                            }
                         }
                     }
                 }

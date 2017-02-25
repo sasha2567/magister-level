@@ -221,5 +221,28 @@ namespace newAlgorithm
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            countType = (int)numericUpDown1.Value;
+            countBatches = Convert.ToInt32(countBatchesTB.Text);
+            List<int> listCountButches = new List<int>();
+            for (int ii = 0; ii < countType; ii++)
+            {
+                listCountButches.Add(countBatches);
+            }
+
+            l = Convert.ToInt32(LTB.Text);
+            maxS = Convert.ToInt32(timeSwitchingTB.Text);
+            maxT = Convert.ToInt32(timeTreatmentingTB.Text);
+            GetTime();
+            Shedule.L = l;
+            Shedule.maxTimeSwitching = maxS;
+            Shedule.maxTimeTreatment = maxT;
+            Shedule.TSwitching = temptS;
+            Shedule.TTreatment = temptT;
+            FirstLevel firstLevel = new FirstLevel(countType, listCountButches, checkBox1.Checked);
+            firstLevel.GenetateSolutionForAllTypesSecondAlgorithm();
+        }
     }
 }

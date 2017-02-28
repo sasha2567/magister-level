@@ -507,7 +507,6 @@ namespace newAlgorithm
                     summ *= _a2[i].Count;
                 }
             }
-            temp.Add(1);
             for (int i = 0; i < summ; i++)
             {
                 ret.Add(new List<int>());
@@ -516,21 +515,20 @@ namespace newAlgorithm
                     ret[i].Add(0);
                 }
             }
-            var count = temp[temp.Count - 1];
-            for (int k = _countType - 1; k > 0; k--)
+            var count = 1;
+            for (int k = _countType - 1; k >= 0; k--)
             {
-                count *= temp[k];
-                for (int j = 0; j < summ; j += count)
+                for (int j = 0; j < summ; j++)
                 {
                     for (int i = 0; i < temp[k]; i++)
                     {
-                        var x = count / temp[k];
-                        for (int l = 0; l < x; l++)
+                        for (int l = 0; l < count; l++)
                         {
-                            ret[j + l][k] = i;
+                               ret[j+l][k] = i;
                         }
                     }
                 }
+                count *= temp[k];
             }
             return ret;
         }

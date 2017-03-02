@@ -40,10 +40,10 @@ namespace newAlgorithm
         /// <returns>Выходная матрица</returns>
         private List<List<int>> CopyMatrix(List<List<int>> inMatrix)
         {
-            List<List<int>> ret = new List<List<int>>();
-            for (int i = 0; i < inMatrix.Count; i++)
+            var ret = new List<List<int>>();
+            foreach (var t in inMatrix)
             {
-                ret.Add(CopyVector(inMatrix[i]));
+                ret.Add(CopyVector(t));
             }
             return ret;
         }
@@ -56,10 +56,10 @@ namespace newAlgorithm
         /// <returns>Выходной вектор</returns>
         private List<int> CopyVector(List<int> inMatrix)
         {
-            List<int> ret = new List<int>();
-            for (int i = 0; i < inMatrix.Count; i++)
+            var ret = new List<int>();
+            foreach (var t in inMatrix)
             {
-                ret.Add(inMatrix[i]);
+                ret.Add(t);
             }
             return ret;
         }
@@ -70,16 +70,16 @@ namespace newAlgorithm
         /// </summary>
         public void GenerateStartSolution()
         {
-            int claim = 2;
+            var claim = 2;
             _a = new List<List<int>>();
-            for (int i = 0; i < _countType; i++)
+            for (var i = 0; i < _countType; i++)
             {
                 _i.Add(1);
                 _a.Add(new List<int>());
                 _a[i].Add(_countClaims[i] - claim);
                 _a[i].Add(claim);
             }
-            for (int i = 0; i < _countType; i++)
+            for (var i = 0; i < _countType; i++)
             {
                 if (_a[i][0] < 2 || _a[i][0] < _a[i][1])
                 {
@@ -98,15 +98,7 @@ namespace newAlgorithm
         /// <returns>Значение критериия</returns>
         public int GetCriterion(List<List<int>> inMatrix)
         {
-            int criterion = 0;
-            for (int i = 0; i < inMatrix.Count; i++)
-            {
-                for (int j = 0; j < inMatrix[i].Count; j++)
-                {
-                    criterion += inMatrix[i][j];
-                }
-            }
-            return criterion;
+            return inMatrix.SelectMany(t => t).Sum();
         }
 
 
@@ -117,8 +109,8 @@ namespace newAlgorithm
         /// <returns>наличие еще рассматриваемых типов</returns>
         private bool CheckType(List<int> type)
         {
-            int count = 0;
-            for (int j = 0; j < _countType; j++)
+            var count = 0;
+            for (var j = 0; j < _countType; j++)
             {
                 if (type[j] > 0)
                     count++;
@@ -137,7 +129,7 @@ namespace newAlgorithm
         /// <returns>матрица А с подставленным новым решением в соответствующий тип</returns>
         private List<List<int>> SetTempAFromA2(int type, int ind2)
         {
-            List<List<int>> result = CopyMatrix(_a);
+            var result = CopyMatrix(_a);
             result[type] = CopyVector(_a2[type][ind2]);
             return result;
         }
@@ -180,21 +172,21 @@ namespace newAlgorithm
         /// <returns>Новые решения без повторений</returns>
         public List<List<int>> SortedMatrix(List<List<int>> inMatrix)
         {
-            List<List<int>> temp = CopyMatrix(inMatrix);
+            var temp = CopyMatrix(inMatrix);
             //Удаление повторяющихся строк
-            int countLoops = 0;
+            var countLoops = 0;
             while (true)
             {
-                for (int i = 1; i < temp.Count; i++)
+                for (var i = 1; i < temp.Count; i++)
                 {
-                    int lastIndexForDelete = temp.FindLastIndex(delegate(List<int> inList)
+                    var lastIndexForDelete = temp.FindLastIndex(delegate(List<int> inList)
                     {
-                        int countFind = 0;
+                        var countFind = 0;
                         if (inList.Count != temp[i].Count)
                         {
                             return false;
                         }
-                        for (int k = 0; k < inList.Count; k++)
+                        for (var k = 0; k < inList.Count; k++)
                         {
                             if (inList[k] == temp[i][k])
                             {
@@ -305,14 +297,14 @@ namespace newAlgorithm
         /// <returns>строка с составами партий по типам</returns>
         private string PrintA(List<List<int>> m)
         {
-            string result = "";
-            for (int i = 0; i < m.Count; i++)
+            var result = "";
+            foreach (var t in m)
             {
-                for (int j = 0; j < m[i].Count - 1; j++)
+                for (var j = 0; j < t.Count - 1; j++)
                 {
-                    result += m[i][j] + ", ";
+                    result += t[j] + ", ";
                 }
-                result += m[i][m[i].Count - 1] + "; ";
+                result += t[t.Count - 1] + "; ";
             }
             return result;
         }
@@ -324,13 +316,13 @@ namespace newAlgorithm
         /// <param name="inMatrix">Матрица текущих составов</param>
         private void CheckSolution(List<List<int>> inMatrix)
         {
-            for (int i = 0; i < inMatrix.Count; i++)
+            for (var i = 0; i < inMatrix.Count; i++)
             {
-                int elem = inMatrix[i][0];
+                var elem = inMatrix[i][0];
                 if (elem == 2)
                 {
-                    int count = 1;
-                    for (int j = 1; j < inMatrix[i].Count; j++)
+                    var count = 1;
+                    for (var j = 1; j < inMatrix[i].Count; j++)
                     {
                         if (inMatrix[i][j] == elem)
                         {

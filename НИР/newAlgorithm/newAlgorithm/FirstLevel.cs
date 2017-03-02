@@ -150,24 +150,20 @@ namespace newAlgorithm
         /// <returns>сформированная матрица для уровня расписания</returns>
         private List<List<int>> GenerateR(List<List<int>> m)
         {
-            List<List<int>> result = new List<List<int>>();
-            int summ = 0;
-            for (int i = 0; i < m.Count; i++)
-            {
-                summ += m[i].Count;
-            }
-            for (int i = 0; i < _countType; i++)
+            var result = new List<List<int>>();
+            var summ = m.Sum(t => t.Count);
+            for (var i = 0; i < _countType; i++)
             {
                 result.Add(new List<int>());
-                for (int j = 0; j < summ; j++)
+                for (var j = 0; j < summ; j++)
                 {
                     result[i].Add(0);
                 }
             }
-            int ind = 0;
-            for (int i = 0; i < m.Count; i++)
+            var ind = 0;
+            for (var i = 0; i < m.Count; i++)
             {
-                for (int j = 0; j < m[i].Count; j++)
+                for (var j = 0; j < m[i].Count; j++)
                 {
                     result[i][ind] = m[i][j];
                     ind++;

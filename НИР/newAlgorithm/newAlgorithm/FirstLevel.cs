@@ -38,14 +38,9 @@ namespace newAlgorithm
         /// </summary>
         /// <param name="inMatrix">Входная матрица</param>
         /// <returns>Выходная матрица</returns>
-        private List<List<int>> CopyMatrix(List<List<int>> inMatrix)
+        private List<List<int>> CopyMatrix(IEnumerable<List<int>> inMatrix)
         {
-            var ret = new List<List<int>>();
-            foreach (var t in inMatrix)
-            {
-                ret.Add(CopyVector(t));
-            }
-            return ret;
+            return inMatrix.Select(CopyVector).ToList();
         }
 
 
@@ -54,14 +49,9 @@ namespace newAlgorithm
         /// </summary>
         /// <param name="inMatrix">Входной вектор</param>
         /// <returns>Выходной вектор</returns>
-        private List<int> CopyVector(List<int> inMatrix)
+        private static List<int> CopyVector(List<int> inMatrix)
         {
-            var ret = new List<int>();
-            foreach (var t in inMatrix)
-            {
-                ret.Add(t);
-            }
-            return ret;
+            return inMatrix.ToList();
         }
 
 
@@ -70,7 +60,7 @@ namespace newAlgorithm
         /// </summary>
         public void GenerateStartSolution()
         {
-            var claim = 2;
+            const int claim = 2;
             _a = new List<List<int>>();
             for (var i = 0; i < _countType; i++)
             {
@@ -107,7 +97,7 @@ namespace newAlgorithm
         /// </summary>
         /// <param name="type">список всех рассматриваемых типов</param>
         /// <returns>наличие еще рассматриваемых типов</returns>
-        private bool CheckType(List<int> type)
+        private bool CheckType(IReadOnlyList<int> type)
         {
             var count = 0;
             for (var j = 0; j < _countType; j++)
@@ -115,9 +105,7 @@ namespace newAlgorithm
                 if (type[j] > 0)
                     count++;
             }
-            if (count == 0)
-                return false;
-            return true;
+            return count != 0;
         }
 
 
@@ -140,7 +128,7 @@ namespace newAlgorithm
         /// </summary>
         /// <param name="m">входная матрица А</param>
         /// <returns>сформированная матрица для уровня расписания</returns>
-        private List<List<int>> GenerateR(List<List<int>> m)
+        private List<List<int>> GenerateR(IReadOnlyList<List<int>> m)
         {
             var result = new List<List<int>>();
             var summ = m.Sum(t => t.Count);
@@ -181,25 +169,16 @@ namespace newAlgorithm
                 {
                     var lastIndexForDelete = temp.FindLastIndex(delegate(List<int> inList)
                     {
-                        var countFind = 0;
                         if (inList.Count != temp[i].Count)
                         {
                             return false;
                         }
-                        for (var k = 0; k < inList.Count; k++)
-                        {
-                            if (inList[k] == temp[i][k])
-                            {
-                                countFind++;
-                            }
-                        }
+                        var countFind = inList.Where((t, k) => t == temp[i][k]).Count();
                         return countFind == inList.Count ? true : false;
                     });
-                    if (lastIndexForDelete != i)
-                    {
-                        temp.RemoveAt(lastIndexForDelete);
-                        inMatrix.RemoveAt(lastIndexForDelete);
-                    }
+                    if (lastIndexForDelete == i) continue;
+                    temp.RemoveAt(lastIndexForDelete);
+                    inMatrix.RemoveAt(lastIndexForDelete);
                 }
                 countLoops++;
                 if (countLoops > 100)
@@ -239,23 +218,21 @@ namespace newAlgorithm
         /// <returns>новые решения для этого типа</returns>
         private List<List<int>> NewData(int type)
         {
-            List<List<int>> result = new List<List<int>>();
-            foreach(List<int> row in _a1[type])
+            var result = new List<List<int>>();
+            foreach(var row in _a1[type])
             {
-                for (int j = 1; j < row.Count; j++)
+                for (var j = 1; j < row.Count; j++)
                 {
                     result.Add(CopyVector(row));
-                    if (row[0] > row[j] + 1)
-                    {
-                        result[result.Count - 1][0]--;
-                        result[result.Count - 1][j]++;
-                    }
+                    if (row[0] <= row[j] + 1) continue;
+                    result[result.Count - 1][0]--;
+                    result[result.Count - 1][j]++;
                 }
-                if (result[result.Count - 1][0] == row[0])
+                if (result[result.Count - 1][0] != row[0]) continue;
                 {
-                    int summ = row[0];
+                    var summ = row[0];
                     result[result.Count - 1].Add(2);
-                    for (int j = 1; j < row.Count; j++)
+                    for (var j = 1; j < row.Count; j++)
                     {
                         summ += row[j];
                         result[result.Count - 1][j] = 2;
@@ -263,18 +240,16 @@ namespace newAlgorithm
                     result[result.Count - 1][0] = summ - 2 * (result[result.Count - 1].Count - 1);
                 }
             }
-            int count = 0;
+            var count = 0;
             while (true)
             {
-                for (int i = 1; i < result.Count; i++)
+                for (var i = 1; i < result.Count; i++)
                 {
-                    for (int j = 1; j < result[i].Count; j++)
+                    for (var j = 1; j < result[i].Count; j++)
                     {
-                        if (result[i][j] > result[i][j - 1])
-                        {
-                            result.Remove(result[i]);
-                            break;
-                        }
+                        if (result[i][j] <= result[i][j - 1]) continue;
+                        result.Remove(result[i]);
+                        break;
                     }
                 }
                 count++;
@@ -295,7 +270,7 @@ namespace newAlgorithm
         /// </summary>
         /// <param name="m">матрица А для печати</param>
         /// <returns>строка с составами партий по типам</returns>
-        private string PrintA(List<List<int>> m)
+        private static string PrintA(IEnumerable<List<int>> m)
         {
             var result = "";
             foreach (var t in m)
@@ -314,25 +289,23 @@ namespace newAlgorithm
         /// Проверка на достижение максимально возможного решения по составам типов
         /// </summary>
         /// <param name="inMatrix">Матрица текущих составов</param>
-        private void CheckSolution(List<List<int>> inMatrix)
+        private void CheckSolution(IReadOnlyList<List<int>> inMatrix)
         {
             for (var i = 0; i < inMatrix.Count; i++)
             {
                 var elem = inMatrix[i][0];
-                if (elem == 2)
+                if (elem != 2) continue;
+                var count = 1;
+                for (var j = 1; j < inMatrix[i].Count; j++)
                 {
-                    var count = 1;
-                    for (var j = 1; j < inMatrix[i].Count; j++)
+                    if (inMatrix[i][j] == elem)
                     {
-                        if (inMatrix[i][j] == elem)
-                        {
-                            count++;
-                        }
+                        count++;
                     }
-                    if (count == inMatrix[i].Count)
-                    {
-                        _i[i] = 0;
-                    }
+                }
+                if (count == inMatrix[i].Count)
+                {
+                    _i[i] = 0;
                 }
             }
         }
@@ -384,68 +357,61 @@ namespace newAlgorithm
                         for (var i = 0; i < _countType; i++)
                         {
                             _a2.Add(new List<List<int>>());
-                            if (_i[i] > 0)
+                            if (_i[i] <= 0) continue;
+                            _a2[i] = NewData(i);
+                            for (var j = 0; j < _a2[i].Count; j++)
                             {
-                                _a2[i] = NewData(i);
-                                for (var j = 0; j < _a2[i].Count; j++)
+                                tempA = SetTempAFromA2(i, j);
+                                r = GenerateR(tempA);
+                                shedule = new Shedule(r);
+                                shedule.ConstructShedule();
+                                var fBuf = shedule.GetTime();
+                                s = PrintA(tempA);
+                                file.Write(s + " " + fBuf);
+                                //MessageBox.Show(s + " Время обработки " + fBuf);                                    
+                                if (fBuf < _f1Buf)
                                 {
-                                    tempA = SetTempAFromA2(i, j);
-                                    r = GenerateR(tempA);
-                                    shedule = new Shedule(r);
-                                    shedule.ConstructShedule();
-                                    int fBuf = shedule.GetTime();
-                                    s = PrintA(tempA);
-                                    file.Write(s + " " + fBuf);
-                                    //MessageBox.Show(s + " Время обработки " + fBuf);                                    
-                                    if (fBuf < _f1Buf)
-                                    {
-                                        abuf = CopyMatrix(tempA);
-                                        typeSolutionFlag = true;
-                                        _f1Buf = fBuf;
-                                        file.Write(" +");
-                                    }
-                                    file.WriteLine();
+                                    abuf = CopyMatrix(tempA);
+                                    typeSolutionFlag = true;
+                                    _f1Buf = fBuf;
+                                    file.Write(" +");
                                 }
+                                file.WriteLine();
                             }
-
                         }
                         if (!typeSolutionFlag)
                         {
                             file.WriteLine("комбинации типов");
                             for (var i = 0; i < _countType - 1; i++)
                             {
-                                if (_i[i] > 0)
+                                if (_i[i] <= 0) continue;
+                                for (var j = i + 1; j < _countType; j++)
                                 {
-                                    for (var j = i + 1; j < _countType; j++)
+                                    if (_i[j] <= 0) continue;
+                                    _a2[i] = NewData(i);
+                                    _a2[j] = NewData(j);
+                                    for (var ii = 0; ii < _a2[i].Count; ii++)
                                     {
-                                        if (_i[j] > 0)
+                                        for (var jj = 0; jj < _a2[j].Count; jj++)
                                         {
-                                            _a2[i] = NewData(i);
-                                            _a2[j] = NewData(j);
-                                            for (var ii = 0; ii < _a2[i].Count; ii++)
                                             {
-                                                for (var jj = 0; jj < _a2[j].Count; jj++)
+                                                tempA = SetTempAFromA2(i, ii);
+                                                tempA[j] = CopyVector(SetTempAFromA2(j, jj)[j]);
+                                                r = GenerateR(tempA);
+                                                shedule = new Shedule(r);
+                                                shedule.ConstructShedule();
+                                                var fBuf = shedule.GetTime();
+                                                s = PrintA(tempA);
+                                                file.Write(s + " " + fBuf);
+                                                //MessageBox.Show(s + " Время обработки " + fBuf);
+                                                if (fBuf < _f1Buf)
                                                 {
-                                                    {
-                                                        tempA = SetTempAFromA2(i, ii);
-                                                        tempA[j] = CopyVector(SetTempAFromA2(j, jj)[j]);
-                                                        r = GenerateR(tempA);
-                                                        shedule = new Shedule(r);
-                                                        shedule.ConstructShedule();
-                                                        var fBuf = shedule.GetTime();
-                                                        s = PrintA(tempA);
-                                                        file.Write(s + " " + fBuf);
-                                                        //MessageBox.Show(s + " Время обработки " + fBuf);
-                                                        if (fBuf < _f1Buf)
-                                                        {
-                                                            abuf = CopyMatrix(tempA);
-                                                            typeSolutionFlag = true;
-                                                            _f1Buf = fBuf;
-                                                            file.Write(" +");
-                                                        }
-                                                        file.WriteLine();
-                                                    }
+                                                    abuf = CopyMatrix(tempA);
+                                                    typeSolutionFlag = true;
+                                                    _f1Buf = fBuf;
+                                                    file.Write(" +");
                                                 }
+                                                file.WriteLine();
                                             }
                                         }
                                     }
@@ -481,7 +447,7 @@ namespace newAlgorithm
         /// Формирование матрици перебора для всех возможных решений из А2
         /// </summary>
         /// <returns>Матрица номеров решений из А2</returns>
-        private List<List<int>> GenerateMatrix()
+        private IEnumerable<List<int>> GenerateMatrix()
         {
             var ret = new List<List<int>>();
             var n = new List<int>();
@@ -605,30 +571,27 @@ namespace newAlgorithm
                         for (var i = 0; i < _countType; i++)
                         {
                             _a2.Add(new List<List<int>>());
-                            if (_i[i] > 0)
+                            if (_i[i] <= 0) continue;
+                            _a2[i] = NewData(i);
+                            for (var j = 0; j < _a2[i].Count; j++)
                             {
-                                _a2[i] = NewData(i);
-                                for (var j = 0; j < _a2[i].Count; j++)
+                                tempA = SetTempAFromA2(i, j);
+                                r = GenerateR(tempA);
+                                shedule = new Shedule(r);
+                                shedule.ConstructShedule();
+                                var fBuf = shedule.GetTime();
+                                s = PrintA(tempA);
+                                file.Write(s + " " + fBuf);
+                                //MessageBox.Show(s + " Время обработки " + fBuf);                                    
+                                if (fBuf < _f1Buf)
                                 {
-                                    tempA = SetTempAFromA2(i, j);
-                                    r = GenerateR(tempA);
-                                    shedule = new Shedule(r);
-                                    shedule.ConstructShedule();
-                                    int fBuf = shedule.GetTime();
-                                    s = PrintA(tempA);
-                                    file.Write(s + " " + fBuf);
-                                    //MessageBox.Show(s + " Время обработки " + fBuf);                                    
-                                    if (fBuf < _f1Buf)
-                                    {
-                                        abuf = CopyMatrix(tempA);
-                                        typeSolutionFlag = true;
-                                        _f1Buf = fBuf;
-                                        file.Write(" +");
-                                    }
-                                    file.WriteLine();
+                                    abuf = CopyMatrix(tempA);
+                                    typeSolutionFlag = true;
+                                    _f1Buf = fBuf;
+                                    file.Write(" +");
                                 }
+                                file.WriteLine();
                             }
-
                         }
                         if (!typeSolutionFlag)
                         {

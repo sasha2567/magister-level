@@ -85,7 +85,7 @@ namespace newAlgorithm
             return -1;
         }
 
-        private List<List<int>> CopyMatrix(List<List<int>> inMatrix)
+        private static List<List<int>> CopyMatrix(IReadOnlyList<List<int>> inMatrix)
         {
             var ret = new List<List<int>>();
             for (var i = 0; i < inMatrix.Count; i++)
@@ -121,47 +121,24 @@ namespace newAlgorithm
             _r[indd1][ind2] = temp;
         }
 
-        private List<int> CopyList(List<int> inList)
+        private List<int> CopyList(IEnumerable<int> inList)
         {
             return inList.ToList();
         }
 
         public List<List<int>> ConstructShedule()
         {
-            var tempR = new List<List<int>>();
             var tempTime = 9999999;
-            switch (_r[0].Count)
+            CalculateShedule();
+            var tempR = CopyMatrix(_r);
+            tempTime = _timeConstructShedule;
+            for (var i = _r[0].Count - 1; i > 0; i--)
             {
-                case 1:
-                    CalculateShedule();
-                    break;
-                case 2:
-                    CalculateShedule();
-                    tempR = CopyMatrix(_r);
-                    tempTime = _timeConstructShedule;
-                    ChangeColum(0, 1);
-                    CalculateShedule();
-                    if (tempTime < _timeConstructShedule)
-                    {
-                        _r = tempR;
-                        _timeConstructShedule = tempTime;
-                    }
-                    break;
-                default:
-                    CalculateShedule();
-                    tempR = CopyMatrix(_r);
-                    tempTime = _timeConstructShedule;
-                    for (var i = _r[0].Count - 1; i > 0; i--)
-                    {
-                        ChangeColum(i - 1, i);
-                        CalculateShedule();
-                        if (tempTime < _timeConstructShedule)
-                        {
-                            _r = tempR;
-                            _timeConstructShedule = tempTime;
-                        }
-                    }
-                    break;
+                ChangeColum(i - 1, i);
+                CalculateShedule();
+                if (tempTime >= _timeConstructShedule) continue;
+                _r = tempR;
+                _timeConstructShedule = tempTime;
             }
             return _r;
         }

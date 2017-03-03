@@ -24,10 +24,10 @@ namespace newAlgorithm
         /// </summary>
         /// <param name="countType">количество типов рассматриваемых данных</param>
         /// <param name="count_claims">количество требований всех типов данных</param>
-        public FirstLevel(int countType, List<int> count_claims, bool stat)
+        public FirstLevel(int countType, List<int> countClaims, bool stat)
         {
             _countType = countType;
-            _countClaims = count_claims;
+            _countClaims = countClaims;
             _staticSolution = stat;
             _i = new List<int>(_countType);
         }
@@ -484,19 +484,19 @@ namespace newAlgorithm
         private List<List<int>> GenerateMatrix()
         {
             var ret = new List<List<int>>();
-            var _n = new List<int>();
+            var n = new List<int>();
             var summ = 1;
             for (var i = 0; i < _countType; i++)
             {
-                _n.Add(0);
+                n.Add(0);
                 if (_i[i] > 0)
                 {
-                    _n[i] = _a2[i].Count;
+                    n[i] = _a2[i].Count;
                     summ *= _a2[i].Count;
                 }
                 else
                 {
-                    _n[i] = 1;
+                    n[i] = 1;
                 }
             }
             for (var i = 0; i < summ; i++)
@@ -508,9 +508,9 @@ namespace newAlgorithm
                 }
             }
             //заполнение первого столбца
-            for (int i = 0, l = 0; i < summ; i += summ / _n[0], l++)
+            for (int i = 0, l = 0; i < summ; i += summ / n[0], l++)
             {
-                for (var j = 0; j < summ / _n[0]; j++)
+                for (var j = 0; j < summ / n[0]; j++)
                 {
                     ret[i + j][0] = l;
                 }
@@ -523,7 +523,7 @@ namespace newAlgorithm
                 var index = 1;
                 for (var j = i; j < _countType; j++)
                 {
-                    index *= _n[j];
+                    index *= n[j];
                 }
                 
                 
@@ -533,7 +533,7 @@ namespace newAlgorithm
                     var index2 = 1;
                     for (var k = i + 1; k < _countType; k++)
                     {
-                        index2 *= _n[k];
+                        index2 *= n[k];
                     }
 
 
@@ -547,9 +547,9 @@ namespace newAlgorithm
                 }
             }
             //заполнение последнего столбца
-            for (var i = 0; i < summ; i += _n[_countType - 1])
+            for (var i = 0; i < summ; i += n[_countType - 1])
             {
-                for (var j = 0; j < _n[_countType - 1]; j++)
+                for (var j = 0; j < n[_countType - 1]; j++)
                 {
                     ret[i + j][_countType - 1] = j;
                 }

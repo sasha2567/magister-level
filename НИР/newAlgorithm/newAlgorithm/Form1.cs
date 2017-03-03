@@ -12,10 +12,10 @@ namespace newAlgorithm
 {
     public partial class Form1 : Form
     {
-        int l, maxS, maxT;
-        int countType, countBatches;
-        List<List<List<int>>> temptS = new List<List<List<int>>>();
-        List<List<int>> temptT = new List<List<int>>();
+        int _l, _maxS, _maxT;
+        int _countType, _countBatches;
+        List<List<List<int>>> _temptS = new List<List<List<int>>>();
+        List<List<int>> _temptT = new List<List<int>>();
 
         public Form1()
         {
@@ -25,74 +25,69 @@ namespace newAlgorithm
 
         private void InitializeForm()
         {
-            countType = (int)numericUpDown1.Value;
-            countBatches = Convert.ToInt32(countBatchesTB.Text);
-            List<int> listCountButches = new List<int>();
-            for (int ii = 0; ii < countType; ii++)
+            _countType = (int)numericUpDown1.Value;
+            _countBatches = Convert.ToInt32(countBatchesTB.Text);
+            var listCountButches = new List<int>();
+            for (var ii = 0; ii < _countType; ii++)
             {
-                listCountButches.Add(countBatches);
+                listCountButches.Add(_countBatches);
             }
 
-            l = Convert.ToInt32(LTB.Text);
-            maxS = Convert.ToInt32(timeSwitchingTB.Text);
-            maxT = Convert.ToInt32(timeTreatmentingTB.Text);
-            temptS = new List<List<List<int>>>();
-            temptT = new List<List<int>>();
+            _l = Convert.ToInt32(LTB.Text);
+            _maxS = Convert.ToInt32(timeSwitchingTB.Text);
+            _maxT = Convert.ToInt32(timeTreatmentingTB.Text);
+            _temptS = new List<List<List<int>>>();
+            _temptT = new List<List<int>>();
             RandomTime();
             PrintTime();
         }
 
-        private List<int> copy(List<int> _in)
+        private List<int> Copy(List<int> _in)
         {
-            List<int> result = new List<int>();
-            foreach (int elem in _in)
-            {
-                result.Add(elem);
-            }
-            return result;
+            return _in.ToList();
         }
 
-        private List<List<int>> составыПартий(List<List<int>> _in)
+        private List<List<int>> СоставыПартий(List<List<int>> _in)
         {
-            List<List<int>> A = new List<List<int>>();
-            int count = 0;
-            A.Add(new List<int>());
-            A[count] = copy(_in[0]);
+            var a = new List<List<int>>();
+            var count = 0;
+            a.Add(new List<int>());
+            a[count] = Copy(_in[0]);
             count++;
-            for (int i = 0; i < _in.Count; i++)
+            foreach (var t in _in)
             {
-                for (int j = 1; j < _in[i].Count; j++)
+                for (var j = 1; j < t.Count; j++)
                 {
                     do
                     {
-                        A.Add(new List<int>());
-                        A[count] = copy(A[count - 1]);
-                        A[count][0]--;
-                        A[count][j]++;
+                        a.Add(new List<int>());
+                        a[count] = Copy(a[count - 1]);
+                        a[count][0]--;
+                        a[count][j]++;
                         count++;
                     }
-                    while (A[count - 1][0] > A[count - 1][j]);
+                    while (a[count - 1][0] > a[count - 1][j]);
                 }
             }
-            return A;
+            return a;
         }
 
         private void RandomTime()
         {
-            int count = 0;
-            for (int i = 0; i < l; i++)
+            var count = 0;
+            for (var i = 0; i < _l; i++)
             {
-                temptT.Add(new List<int>());
-                temptS.Add(new List<List<int>>());
-                for (int j = 0; j < countType; j++)
+                _temptT.Add(new List<int>());
+                _temptS.Add(new List<List<int>>());
+                for (var j = 0; j < _countType; j++)
                 {
-                    int temp = (count % 2 == 0) ? 2 : maxT;
-                    temptT[i].Add(temp);
-                    temptS[i].Add(new List<int>());
-                    for (int k = 0; k < countType; k++)
+                    var temp = (count % 2 == 0) ? 2 : _maxT;
+                    _temptT[i].Add(temp);
+                    _temptS[i].Add(new List<int>());
+                    for (var k = 0; k < _countType; k++)
                     {
-                        temp = (count % 2 == 0) ? 2 : maxS;
-                        temptS[i][j].Add(temp);
+                        temp = (count % 2 == 0) ? 2 : _maxS;
+                        _temptS[i][j].Add(temp);
                     }
                     count++;
                 }
@@ -103,66 +98,64 @@ namespace newAlgorithm
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
-            dataGridView1.RowCount = temptT.Count;
-            dataGridView1.ColumnCount = temptT[0].Count;
-            for (int i = 0; i < temptT.Count; i++)
+            dataGridView1.RowCount = _temptT.Count;
+            dataGridView1.ColumnCount = _temptT[0].Count;
+            for (var i = 0; i < _temptT.Count; i++)
             {
-                for (int j = 0; j < countType; j++)
+                for (var j = 0; j < _countType; j++)
                 {
-                    dataGridView1[j, i].Value = temptT[i][j];
+                    dataGridView1[j, i].Value = _temptT[i][j];
                 }
             }
             dataGridView2.Rows.Clear();
             dataGridView2.Columns.Clear();
-            dataGridView2.RowCount = temptS.Count * temptS[0].Count;
-            dataGridView2.ColumnCount = temptS[0].Count;
-            for (int k = 0; k < temptS.Count; k++)
-                for (int i = 0; i < countType; i++)
-                    for (int j = 0; j < countType; j++)
+            dataGridView2.RowCount = _temptS.Count * _temptS[0].Count;
+            dataGridView2.ColumnCount = _temptS[0].Count;
+            for (var k = 0; k < _temptS.Count; k++)
+                for (var i = 0; i < _countType; i++)
+                    for (var j = 0; j < _countType; j++)
                     {
-                        int str = k * temptS[0].Count + i;
-                        dataGridView2[j, str].Value = temptS[k][i][j];
+                        var str = k * _temptS[0].Count + i;
+                        dataGridView2[j, str].Value = _temptS[k][i][j];
                     }
         }
 
         private void GetTime()
         {
-            for (int i = 0; i < temptT.Count; i++)
+            for (var i = 0; i < _temptT.Count; i++)
             {
-                for (int j = 0; j < countType; j++)
+                for (var j = 0; j < _countType; j++)
                 {
-                    temptT[i][j] = Convert.ToInt32(dataGridView1[j, i].Value);
+                    _temptT[i][j] = Convert.ToInt32(dataGridView1[j, i].Value);
                 }
             }
-            for (int k = 0; k < temptS.Count; k++)
-                for (int i = 0; i < countType; i++)
-                    for (int j = 0; j < countType; j++)
+            for (var k = 0; k < _temptS.Count; k++)
+                for (var i = 0; i < _countType; i++)
+                    for (var j = 0; j < _countType; j++)
                     {
-                        int str = k * temptS[0].Count + i;
-                        temptS[k][i][j] = Convert.ToInt32(dataGridView2[j, str].Value);
+                        var str = k * _temptS[0].Count + i;
+                        _temptS[k][i][j] = Convert.ToInt32(dataGridView2[j, str].Value);
                     }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            countType = (int)numericUpDown1.Value;
-            countBatches = Convert.ToInt32(countBatchesTB.Text);
-            List<int> listCountButches = new List<int>();
-            for (int ii = 0; ii < countType; ii++)
+            _countType = (int)numericUpDown1.Value;
+            _countBatches = Convert.ToInt32(countBatchesTB.Text);
+            var listCountButches = new List<int>();
+            for (var ii = 0; ii < _countType; ii++)
             {
-                listCountButches.Add(countBatches);
+                listCountButches.Add(_countBatches);
             }
 
-            l = Convert.ToInt32(LTB.Text);
-            maxS = Convert.ToInt32(timeSwitchingTB.Text);
-            maxT = Convert.ToInt32(timeTreatmentingTB.Text);
+            _l = Convert.ToInt32(LTB.Text);
+            _maxS = Convert.ToInt32(timeSwitchingTB.Text);
+            _maxT = Convert.ToInt32(timeTreatmentingTB.Text);
             GetTime();            
-            Shedule.L = l;
-            Shedule.maxTimeSwitching = maxS;
-            Shedule.maxTimeTreatment = maxT;
-            Shedule.TSwitching = temptS;
-            Shedule.TTreatment = temptT;
-            FirstLevel firstLevel = new FirstLevel(countType, listCountButches, checkBox1.Checked);
+            Shedule.L = _l;
+            Shedule.Switching = _temptS;
+            Shedule.Treatment = _temptT;
+            var firstLevel = new FirstLevel(_countType, listCountButches, checkBox1.Checked);
             firstLevel.GenetateSolutionForAllTypes();
 
         }
@@ -171,10 +164,10 @@ namespace newAlgorithm
         {
             var gaa = new GAA();
             gaa.SetXrom(1);
-            var S = gaa.ToArray();
-            var shedule = new Shedule(S);
-            shedule.ConstructShedule();
-            var s = shedule.GetTime();
+            var s = gaa.ToArray();
+            var shedule = new Shedule(s);
+            s = shedule.ConstructShedule();
+            var time = shedule.GetTime();
 
         }
 
@@ -182,12 +175,12 @@ namespace newAlgorithm
         {
             try
             {
-                countType = (int)numericUpDown1.Value;
-                l = Convert.ToInt32(LTB.Text);
-                maxS = Convert.ToInt32(timeSwitchingTB.Text);
-                maxT = Convert.ToInt32(timeTreatmentingTB.Text);
-                temptS = new List<List<List<int>>>();
-                temptT = new List<List<int>>();
+                _countType = (int)numericUpDown1.Value;
+                _l = Convert.ToInt32(LTB.Text);
+                _maxS = Convert.ToInt32(timeSwitchingTB.Text);
+                _maxT = Convert.ToInt32(timeTreatmentingTB.Text);
+                _temptS = new List<List<List<int>>>();
+                _temptT = new List<List<int>>();
                 RandomTime();
                 PrintTime();
             }
@@ -224,24 +217,20 @@ namespace newAlgorithm
 
         private void button3_Click(object sender, EventArgs e)
         {
-            countType = (int)numericUpDown1.Value;
-            countBatches = Convert.ToInt32(countBatchesTB.Text);
-            List<int> listCountButches = new List<int>();
-            for (int ii = 0; ii < countType; ii++)
+            _countType = (int)numericUpDown1.Value;
+            _countBatches = Convert.ToInt32(countBatchesTB.Text);
+            var listCountButches = new List<int>();
+            for (var ii = 0; ii < _countType; ii++)
             {
-                listCountButches.Add(countBatches);
+                listCountButches.Add(_countBatches);
             }
 
-            l = Convert.ToInt32(LTB.Text);
-            maxS = Convert.ToInt32(timeSwitchingTB.Text);
-            maxT = Convert.ToInt32(timeTreatmentingTB.Text);
+            _l = Convert.ToInt32(LTB.Text);
             GetTime();
-            Shedule.L = l;
-            Shedule.maxTimeSwitching = maxS;
-            Shedule.maxTimeTreatment = maxT;
-            Shedule.TSwitching = temptS;
-            Shedule.TTreatment = temptT;
-            FirstLevel firstLevel = new FirstLevel(countType, listCountButches, checkBox1.Checked);
+            Shedule.L = _l;
+            Shedule.Switching = _temptS;
+            Shedule.Treatment = _temptT;
+            var firstLevel = new FirstLevel(_countType, listCountButches, checkBox1.Checked);
             firstLevel.GenetateSolutionForAllTypesSecondAlgorithm();
         }
     }

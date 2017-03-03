@@ -8,99 +8,68 @@ namespace newAlgorithm
 {
     class Shedule
     {
-        private List<List<int>> R = new List<List<int>>();
-        public static List<List<int>> TTreatment;
-        public static List<List<List<int>>> TSwitching;
-        private int timeConstructShedule;
+        private List<List<int>> _r;
+        public static List<List<int>> Treatment;
+        public static List<List<List<int>>> Switching;
+        private int _timeConstructShedule;
         public static int L;
-        private List<List<List<int>>> StartProcessing;
-        private List<List<List<int>>> EndProcessing;
-        public static int maxTimeSwitching = 4;
-        public static int maxTimeTreatment = 4;
-        
-
+        private List<List<List<int>>> _startProcessing;
+        private List<List<List<int>>> _endProcessing;
 
         public Shedule(List<List<int>> r)
         {
-            R = r;
-        }
-
-        private void SetTime()
-        {
-            TSwitching = new List<List<List<int>>>();
-            TTreatment = new List<List<int>>();
-            Random rand = new Random();
-            for (int i = 0; i < L; i++)
-            {
-                TTreatment.Add(new List<int>());
-                TSwitching.Add(new List<List<int>>());
-                for (int j = 0; j < R.Count; j++)
-                {
-                    //int otnosh = 2;
-                    TTreatment[i].Add(rand.Next(2, maxTimeTreatment));
-                    TSwitching[i].Add(new List<int>());
-                    for (int k = 0; k < R.Count; k++)
-                    {
-                        TSwitching[i][j].Add(rand.Next(2, maxTimeSwitching));
-                    }
-                }
-            }
+            _r = r;
         }
 
         private void CalculateShedule()
         {
-            StartProcessing = new List<List<List<int>>>();
-            EndProcessing = new List<List<List<int>>>();
-            for (int i = 0; i < L; i++)//количество приборов
+            _startProcessing = new List<List<List<int>>>();
+            _endProcessing = new List<List<List<int>>>();
+            for (var i = 0; i < L; i++)//количество приборов
             {
-                StartProcessing.Add(new List<List<int>>());
-                EndProcessing.Add(new List<List<int>>());
-                for (int k = 0; k < R[0].Count; k++)
+                _startProcessing.Add(new List<List<int>>());
+                _endProcessing.Add(new List<List<int>>());
+                for (var k = 0; k < _r[0].Count; k++)
                 {
-                    int ind = ReturnRIndex(k);
-                    if (ind >= 0)
+                    var ind = ReturnRIndex(k);
+                    if (ind < 0) continue;
+                    _startProcessing[i].Add(new List<int>());
+                    _endProcessing[i].Add(new List<int>());
+                    for (var p = 0; p < _r[ind][k]; p++)//количество требований
                     {
-                        StartProcessing[i].Add(new List<int>());
-                        EndProcessing[i].Add(new List<int>());
-                        for (int p = 0; p < R[ind][k]; p++)//количество требований
-                        {
-                            StartProcessing[i][k].Add(0);
-                            EndProcessing[i][k].Add(0);
+                        _startProcessing[i][k].Add(0);
+                        _endProcessing[i][k].Add(0);
 
-                        }
                     }
                 }
             } 
-            int yy, zz, xx;
-            for (int i = 0; i < L; i++)
+            for (var i = 0; i < L; i++)
             {
-                yy = 0;
-                zz = 0;
-                xx = 0;
-                for (int j = 0; j < R[0].Count; j++)
+                var yy = 0;
+                var zz = 0;
+                var xx = 0;
+                for (var j = 0; j < _r[0].Count; j++)
                 {
-                    int index = ReturnRIndex(j);
-                    if (index >= 0)
+                    var index = ReturnRIndex(j);
+                    if (index < 0) continue;
+                    for (var k = 0; k < _r[index][j]; k++)
                     {
-                        for (int k = 0; k < R[index][j]; k++)
+                        var timeToSwitch = Switching[i][xx][index];
+                        if (index == xx && j != 0)
+                            timeToSwitch = 0;
+                        if (i > 0)
                         {
-                            int timeToSwitch = TSwitching[i][xx][index];
-                            if (index == xx && j != 0)
-                                timeToSwitch = 0;
-                            if (i > 0)
-                            {
-                                StartProcessing[i][j][k] = Math.Max(EndProcessing[i][yy][zz] + timeToSwitch, EndProcessing[i - 1][j][k]);
-                            }
-                            else 
-                            { 
-                                StartProcessing[i][j][k] = EndProcessing[i][yy][zz] + timeToSwitch; 
-                            }
-                            EndProcessing[i][j][k] = StartProcessing[i][j][k] + TTreatment[i][index];
-                            timeConstructShedule = EndProcessing[i][j][k];
-                            yy = j;
-                            zz = k;
-                            xx = index;
+                            _startProcessing[i][j][k] = Math.Max(_endProcessing[i][yy][zz] + timeToSwitch, _endProcessing[i - 1][j][k]);
                         }
+                        else 
+                        { 
+                            _startProcessing[i][j][k] = _endProcessing[i][yy][zz] + timeToSwitch; 
+                        }
+                        _endProcessing[i][j][k] = _startProcessing[i][j][k] + Treatment[i][index];
+                        _timeConstructShedule = _endProcessing[i][j][k];
+                        yy = j;
+                        zz = k;
+                        xx = index;
                     }
                 }
             }
@@ -108,9 +77,9 @@ namespace newAlgorithm
 
         private int ReturnRIndex(int j)
         {
-            for (int i = 0; i < R.Count; i++)
+            for (var i = 0; i < _r.Count; i++)
             {
-                if (R[i][j] > 0)
+                if (_r[i][j] > 0)
                     return i;
             }
             return -1;
@@ -118,11 +87,11 @@ namespace newAlgorithm
 
         private List<List<int>> CopyMatrix(List<List<int>> inMatrix)
         {
-            List<List<int>> ret = new List<List<int>>();
-            for (int i = 0; i < inMatrix.Count; i++)
+            var ret = new List<List<int>>();
+            for (var i = 0; i < inMatrix.Count; i++)
             {
                 ret.Add(new List<int>());
-                for (int j = 0; j < inMatrix[i].Count; j++)
+                for (var j = 0; j < inMatrix[i].Count; j++)
                 {
                     ret[i].Add(inMatrix[i][j]);
                 }
@@ -132,78 +101,74 @@ namespace newAlgorithm
 
         private void ChangeColum(int ind1, int ind2)
         {
-            int indd1 = 0, indd2 = 0, temp;
-            for (int i = 0; i < R.Count; i++)
+            var indd1 = 0;
+            var indd2 = 0;
+            for (var i = 0; i < _r.Count; i++)
             {
-                if (R[i][ind1] > 0)
+                if (_r[i][ind1] > 0)
                 {
                     indd1 = i;
                 }
-                if (R[i][ind2] > 0)
+                if (_r[i][ind2] > 0)
                 {
                     indd2 = i;
                 }
             }
-            temp = R[indd1][ind1];
-            R[indd1][ind1] = 0;
-            R[indd2][ind1] = R[indd2][ind2];
-            R[indd2][ind2] = 0;
-            R[indd1][ind2] = temp;
+            var temp = _r[indd1][ind1];
+            _r[indd1][ind1] = 0;
+            _r[indd2][ind1] = _r[indd2][ind2];
+            _r[indd2][ind2] = 0;
+            _r[indd1][ind2] = temp;
         }
 
         private List<int> CopyList(List<int> inList)
         {
-            List<int> ret = new List<int>();
-            for (int i = 0; i < inList.Count; i++)
-            {
-                ret.Add(inList[i]);
-            }
-            return ret;
+            return inList.ToList();
         }
 
         public List<List<int>> ConstructShedule()
         {
-            List<List<int>> tempR = new List<List<int>>();
-            int tempTime = 9999999;
-            switch (R[0].Count)
+            var tempR = new List<List<int>>();
+            var tempTime = 9999999;
+            switch (_r[0].Count)
             {
                 case 1:
                     CalculateShedule();
                     break;
                 case 2:
                     CalculateShedule();
-                    tempR = CopyMatrix(R);
-                    tempTime = timeConstructShedule;
+                    tempR = CopyMatrix(_r);
+                    tempTime = _timeConstructShedule;
                     ChangeColum(0, 1);
                     CalculateShedule();
-                    if (tempTime < timeConstructShedule)
+                    if (tempTime < _timeConstructShedule)
                     {
-                        R = tempR;
-                        timeConstructShedule = tempTime;
+                        _r = tempR;
+                        _timeConstructShedule = tempTime;
                     }
                     break;
                 default:
                     CalculateShedule();
-                    tempR = CopyMatrix(R);
-                    tempTime = timeConstructShedule;
-                    for (int i = R[0].Count - 1; i > 0; i--)
+                    tempR = CopyMatrix(_r);
+                    tempTime = _timeConstructShedule;
+                    for (var i = _r[0].Count - 1; i > 0; i--)
                     {
                         ChangeColum(i - 1, i);
                         CalculateShedule();
-                        if (tempTime < timeConstructShedule)
+                        if (tempTime < _timeConstructShedule)
                         {
-                            R = tempR;
-                            timeConstructShedule = tempTime;
+                            _r = tempR;
+                            _timeConstructShedule = tempTime;
                         }
                     }
                     break;
             }
-            return R;
+            return _r;
         }
 
         public int GetTime()
         {
-            return timeConstructShedule;
+            return _timeConstructShedule;
         }
     }
 }

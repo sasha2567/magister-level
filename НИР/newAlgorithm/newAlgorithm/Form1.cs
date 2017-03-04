@@ -42,12 +42,12 @@ namespace newAlgorithm
             PrintTime();
         }
 
-        private List<int> Copy(List<int> _in)
+        private List<int> Copy(IEnumerable<int> _in)
         {
             return _in.ToList();
         }
 
-        private List<List<int>> СоставыПартий(List<List<int>> _in)
+        private List<List<int>> СоставыПартий(IReadOnlyList<List<int>> _in)
         {
             var a = new List<List<int>>();
             var count = 0;
@@ -208,11 +208,6 @@ namespace newAlgorithm
         private void timeTreatmentingTB_TextChanged(object sender, EventArgs e)
         {
             Change();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button3_Click(object sender, EventArgs e)

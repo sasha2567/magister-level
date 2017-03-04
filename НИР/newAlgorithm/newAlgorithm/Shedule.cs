@@ -29,29 +29,28 @@ namespace newAlgorithm
             {
                 _startProcessing.Add(new List<List<int>>());
                 _endProcessing.Add(new List<List<int>>());
-                for (var k = 0; k < _r[0].Count; k++)
+                for (var k = 0; k < _r[0].Count; k++)//количество партий
                 {
                     var ind = ReturnRIndex(k);
-                    if (ind < 0) continue;
                     _startProcessing[i].Add(new List<int>());
                     _endProcessing[i].Add(new List<int>());
                     for (var p = 0; p < _r[ind][k]; p++)//количество требований
                     {
                         _startProcessing[i][k].Add(0);
                         _endProcessing[i][k].Add(0);
-
                     }
                 }
-            } 
+            }
+            var yy = 0;
+            var zz = 0;
+            var xx = 0;
             for (var i = 0; i < L; i++)
             {
-                var yy = 0;
-                var zz = 0;
-                var xx = 0;
                 for (var j = 0; j < _r[0].Count; j++)
                 {
                     var index = ReturnRIndex(j);
-                    if (index < 0) continue;
+                    
+
                     for (var k = 0; k < _r[index][j]; k++)
                     {
                         var timeToSwitch = Switching[i][xx][index];
@@ -72,6 +71,9 @@ namespace newAlgorithm
                         xx = index;
                     }
                 }
+                yy = 0;
+                zz = 0;
+                xx = 0;
             }
         }
 

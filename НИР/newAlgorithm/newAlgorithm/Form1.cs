@@ -162,11 +162,20 @@ namespace newAlgorithm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var gaa = new GAA();
-            gaa.SetXrom(2);
+            Shedule.L = _l;
+            Shedule.Switching = _temptS;
+            Shedule.Treatment = _temptT;
+            _countType = (int)numericUpDown1.Value;
+            _countBatches = Convert.ToInt32(countBatchesTB.Text);
+            var listCountButches = new List<int>();
+            for (var ii = 0; ii < _countType; ii++)
+            {
+                listCountButches.Add(_countBatches);
+            }
+            var gaa = new GAA(_countType, listCountButches, checkBox1.Checked); gaa.SetXrom(2);
 
-            var r = gaa.ToArray();
-            var S = gaa.GenerateR(r, (int)numericUpDown1.Value);
+            var r = gaa.TestArray();
+            var S = gaa.GenerateR(r);
             var shedule = new Shedule(S);
             shedule.ConstructShedule();
             var s = shedule.GetTime();

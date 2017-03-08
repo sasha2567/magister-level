@@ -8,9 +8,31 @@ namespace newAlgorithm
 {
     public class GAA
     {
+        private readonly List<int> _i;                  // Вектор интерпритируемых типов данных
+        private List<List<int>> _ai;                    // Буферизированная матрица составов партий требований на k+1 шаге 
+        private List<List<List<int>>> _a1;              // Матрица составов партий требований на k+1 шаге 
+        private List<List<List<int>>> _a2;              // Матрица составов партий требований фиксированного типа
+        private List<List<int>> _a;                     // Матрица составов партий требований на k шаге
+        private readonly int _countType;                // Количество типов
+        private readonly List<int> _countClaims;        // Начальное количество требований для каждого типа данных
+        private int _f1;                                // Критерий текущего решения для всех типов
+        private int _f1Buf;                             // Критерий текущего решения для всех типов
+        private readonly bool _staticSolution;          // Признак фиксированных партий
+
         Random rand = new Random();
         int N = 10;
         List<Xromossomi> nabor = new List<Xromossomi>();
+
+        public GAA(int countType, List<int> countClaims, bool stat)
+        {
+            _countType = countType;
+            _countClaims = countClaims;
+            _staticSolution = stat;
+            _i = new List<int>(_countType);
+        }
+
+        public GAA() { }
+
         public class Xromossomi
         {
             Random rand = new Random();
@@ -183,10 +205,27 @@ namespace newAlgorithm
             nabor = nabor1;
         }
 
-        public List<List<int>> GenerateR(List<List<int>> m, int _countType)
+        public List<List<int>> TestArray()
         {
-            if (m == null)
-                m = this.ToArray();
+            List<List<int>> a1 = new List<List<int>>();
+            List<int> a = new List<int>();
+            a.Add(10);
+            a.Add(2);
+            List<int> b = new List<int>();
+            b.Add(10);
+            b.Add(2);
+            List<int> c = new List<int>();
+            c.Add(10);
+            c.Add(2);
+
+            a1.Add(a);
+            a1.Add(b);
+            a1.Add(c);
+            return a1;
+        }
+
+        public List<List<int>> GenerateR(IReadOnlyList<List<int>> m)
+        {
             var result = new List<List<int>>();
             var summ = m.Sum(t => t.Count);
             for (var i = 0; i < _countType; i++)

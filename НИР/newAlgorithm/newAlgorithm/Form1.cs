@@ -172,14 +172,16 @@ namespace newAlgorithm
             {
                 listCountButches.Add(_countBatches);
             }
-            var gaa = new GAA(_countType, listCountButches, checkBox1.Checked); gaa.SetXrom(2);
-
-            var r = gaa.TestArray();
-            var S = gaa.GenerateR(r);
-            var shedule = new Shedule(S);
-            shedule.ConstructShedule();
-            var s = shedule.GetTime();
-
+            var gaa = new GAA(_countType, listCountButches, checkBox1.Checked); 
+            gaa.SetXrom(50);
+            var timeList = new List<int>();
+            var r = gaa.ToArray();
+            foreach (var elem in r)
+            {
+                var shedule = new Shedule(gaa.GenerateR(elem));
+                shedule.ConstructShedule();
+                timeList.Add(shedule.GetTime());
+            }    
         }
 
         private void Change()

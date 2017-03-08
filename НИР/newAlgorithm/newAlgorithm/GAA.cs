@@ -220,7 +220,7 @@ namespace newAlgorithm
 
             a1.Add(a);
             a1.Add(b);
-            a1.Add(c);
+            a1.Add(c);  
             return a1;
         }
 
@@ -247,14 +247,15 @@ namespace newAlgorithm
             }
             return result;
         }
-        public List<List<int>> ToArray()
+        public List<List<List<int>>> ToArray()
         {
-            List<List<int>> arr = new List<List<int>>();
-            int index = -1;
+            List<List<List<int>>> arrResult = new List<List<List<int>>>();
+            
 
             foreach (var hromosoma in nabor)
             {
-                index++;
+                List<List<int>> arr = new List<List<int>>();
+                int index = 0;
                 arr.Add(new List<int>());
                 for (int i = 0; i < hromosoma.GenA.Count; i++)
                 {
@@ -277,13 +278,16 @@ namespace newAlgorithm
                     if (hromosoma.GenC[i] > 0)
                         arr[index].Add(hromosoma.GenC[i]);
                 }
+
+                foreach (var elem in arr)
+                {
+                    elem.Sort();
+                    elem.Reverse();
+                }
+                arrResult.Add(new  List<List<int>>(arr));
             }
-            foreach (var elem in arr)
-            {
-                elem.Sort();
-                elem.Reverse();
-            }
-            return arr;
+            
+            return arrResult;
 
         }
         void mutation()

@@ -183,32 +183,66 @@ namespace newAlgorithm
             nabor = nabor1;
         }
 
+        public List<List<int>> GenerateR(List<List<int>> m, int _countType)
+        {
+            if (m == null)
+                m = this.ToArray();
+            var result = new List<List<int>>();
+            var summ = m.Sum(t => t.Count);
+            for (var i = 0; i < _countType; i++)
+            {
+                result.Add(new List<int>());
+                for (var j = 0; j < summ; j++)
+                {
+                    result[i].Add(0);
+                }
+            }
+            var ind = 0;
+            for (var i = 0; i < m.Count; i++)
+            {
+                for (var j = 0; j < m[i].Count; j++)
+                {
+                    result[i][ind] = m[i][j];
+                    ind++;
+                }
+            }
+            return result;
+        }
         public List<List<int>> ToArray()
         {
-            List<List<int>> arr= new List<List<int>>();
-            int index=-1;
-           
-            foreach(var hromosoma in nabor){
+            List<List<int>> arr = new List<List<int>>();
+            int index = -1;
+
+            foreach (var hromosoma in nabor)
+            {
                 index++;
                 arr.Add(new List<int>());
                 for (int i = 0; i < hromosoma.GenA.Count; i++)
-                {                   
-                    arr[index].Add(hromosoma.GenA[i]);                
+                {
+                    if (hromosoma.GenA[i] > 0)
+                        arr[index].Add(hromosoma.GenA[i]);
                 }
                 index++;
                 arr.Add(new List<int>());
                 //2 строка
                 for (int i = 0; i < hromosoma.GenB.Count; i++)
-                {                   
-                    arr[index].Add(hromosoma.GenB[i]);                   
+                {
+                    if (hromosoma.GenB[i] > 0)
+                        arr[index].Add(hromosoma.GenB[i]);
                 }
                 index++;
                 arr.Add(new List<int>());
                 //3 строка
                 for (int i = 0; i < hromosoma.GenC.Count; i++)
                 {
-                    arr[index].Add(hromosoma.GenC[i]);
+                    if (hromosoma.GenC[i] > 0)
+                        arr[index].Add(hromosoma.GenC[i]);
                 }
+            }
+            foreach (var elem in arr)
+            {
+                elem.Sort();
+                elem.Reverse();
             }
             return arr;
 

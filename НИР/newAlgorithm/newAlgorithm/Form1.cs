@@ -163,11 +163,13 @@ namespace newAlgorithm
         private void button2_Click(object sender, EventArgs e)
         {
             var gaa = new GAA();
-            gaa.SetXrom(1);
-            var s = gaa.ToArray();
-            var shedule = new Shedule(s);
-            s = shedule.ConstructShedule();
-            var time = shedule.GetTime();
+            gaa.SetXrom(2);
+
+            var r = gaa.ToArray();
+            var S = gaa.GenerateR(r, (int)numericUpDown1.Value);
+            var shedule = new Shedule(S);
+            shedule.ConstructShedule();
+            var s = shedule.GetTime();
 
         }
 

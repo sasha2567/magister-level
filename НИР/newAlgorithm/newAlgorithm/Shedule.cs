@@ -41,39 +41,63 @@ namespace newAlgorithm
                     }
                 }
             }
-            var yy = 0;
-            var zz = 0;
-            var xx = 0;
-            for (var i = 0; i < L; i++)
+            for (var j = 0; j < _r[0].Count; j++)
+            {
+                var index = ReturnRIndex(j);
+                var type = j == 0 ? index : ReturnRIndex(j - 1);
+                var timeToSwitch = (type == index && j != 0) ? 0 : Switching[0][type][index];
+                var timeToTreament = Treatment[0][index];
+                if (j > 0)
+                {
+                    var last = _r[type][j - 1] - 1;
+                    _startProcessing[0][j][0] = _endProcessing[0][j - 1][last];
+                }
+                for (var k = 0; k < _r[index][j]; k++)
+                {
+                    if (k == 0)
+                    {
+                        _startProcessing[0][j][k] += timeToSwitch;
+                    }
+                    else
+                    {
+                        _startProcessing[0][j][k] += _endProcessing[0][j][k - 1];
+                    }
+                    _endProcessing[0][j][k] = _startProcessing[0][j][k] + timeToTreament;
+                    _timeConstructShedule = _endProcessing[0][j][k];
+                }
+            }
+            for (var i = 1; i < L; i++)
             {
                 for (var j = 0; j < _r[0].Count; j++)
                 {
                     var index = ReturnRIndex(j);
-                    
-
+                    var type = j == 0 ? index : ReturnRIndex(j - 1);
+                    var timeToSwitch = (type == index && j != 0) ? 0 : Switching[0][type][index];
+                    var timeToTreament = Treatment[i][index];
                     for (var k = 0; k < _r[index][j]; k++)
                     {
-                        var timeToSwitch = Switching[i][xx][index];
-                        if (index == xx && j != 0)
-                            timeToSwitch = 0;
-                        if (i > 0)
+                        if (k == 0)
                         {
-                            _startProcessing[i][j][k] = Math.Max(_endProcessing[i][yy][zz] + timeToSwitch, _endProcessing[i - 1][j][k]);
+                            if (j > 0)
+                            {
+                                var last = _r[type][j - 1] - 1;
+                                _startProcessing[i][j][k] += Math.Max(_endProcessing[i][j - 1][last] + timeToSwitch,
+                                    _endProcessing[i - 1][j][k]);
+                            }
+                            else
+                            {
+                                _startProcessing[i][j][k] += _endProcessing[i - 1][j][k] + timeToSwitch;
+                            }
+                            
                         }
-                        else 
-                        { 
-                            _startProcessing[i][j][k] = _endProcessing[i][yy][zz] + timeToSwitch; 
+                        else
+                        {
+                            _startProcessing[i][j][k] += _endProcessing[i][j][k - 1];
                         }
-                        _endProcessing[i][j][k] = _startProcessing[i][j][k] + Treatment[i][index];
-                        _timeConstructShedule = _endProcessing[i][j][k];
-                        yy = j;
-                        zz = k;
-                        xx = index;
+                        _endProcessing[i][j][k] = _startProcessing[i][j][k] + timeToTreament;
+                        _timeConstructShedule = _endProcessing[0][j][k];
                     }
                 }
-                yy = 0;
-                zz = 0;
-                xx = 0;
             }
         }
 

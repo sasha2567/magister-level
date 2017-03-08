@@ -18,9 +18,10 @@ namespace newAlgorithm
         private int _f1;                                // Критерий текущего решения для всех типов
         private int _f1Buf;                             // Критерий текущего решения для всех типов
         private readonly bool _staticSolution;          // Признак фиксированных партий
-
+        private List<List<List<int>>> Array;            // Состав пратий в виде массива
         Random rand = new Random();
         int N = 10;
+        List<int> _fitnesslist = new List<int>();
         List<Xromossomi> nabor = new List<Xromossomi>();
 
         public GAA(int countType, List<int> countClaims, bool stat)
@@ -155,13 +156,29 @@ namespace newAlgorithm
             {
                 nabor.Add(nach());
             }
-            xor(size);
+            //xor(size);
 
             return nabor;
         }
-
-        void xor(int size)
+        public int getSelectionPopulation(int selection)
         {
+            List<int> SortFitnessList = new List<int>(_fitnesslist);
+            SortFitnessList.Sort();
+            var s = _fitnesslist.IndexOf(SortFitnessList[0]);
+            return SortFitnessList[0];
+        }
+
+
+
+        void xor(int size , List<Xromossomi> nabr=null)
+        {
+            List<Xromossomi> naborInternal = new List<Xromossomi>(nabor);
+            if (nabr != null)
+            {
+                naborInternal = new List<Xromossomi>(nabr);
+            }
+
+
             int[] massA = new int[size];
             int[] massB = new int[size];
             int[] massC = new int[size];
@@ -198,11 +215,11 @@ namespace newAlgorithm
 
             for (int i = 0; i < size; i++)
             {
-                nabor1[i].GenA = nabor[massA[i]].GenA;
-                nabor1[i].GenB = nabor[massA[i]].GenB;
-                nabor1[i].GenC = nabor[massA[i]].GenC;
+                nabor1[i].GenA = naborInternal[massA[i]].GenA;
+                nabor1[i].GenB = naborInternal[massA[i]].GenB;
+                nabor1[i].GenC = naborInternal[massA[i]].GenC;
             }
-            nabor = nabor1;
+            naborInternal = nabor1;
         }
 
         public List<List<int>> TestArray()
@@ -246,6 +263,18 @@ namespace newAlgorithm
                 }
             }
             return result;
+        }
+
+        public void calcFitnessList() {
+            List<int> FitnessList = new List<int>();
+            var r = this.ToArray();
+            foreach (var elem in r)
+            {
+                var shedule = new Shedule(this.GenerateR(elem));
+                shedule.ConstructShedule();
+                FitnessList.Add(shedule.GetTime());
+            }
+            _fitnesslist = FitnessList;
         }
         public List<List<List<int>>> ToArray()
         {

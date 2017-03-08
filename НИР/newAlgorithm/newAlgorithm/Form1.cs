@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace newAlgorithm
 {
     public partial class Form1 : Form
     {
+        int _selectionType = 2;
         int _l, _maxS, _maxT;
         int _countType, _countBatches;
         List<List<List<int>>> _temptS = new List<List<List<int>>>();
@@ -174,16 +176,16 @@ namespace newAlgorithm
             }
             var gaa = new GAA(_countType, listCountButches, checkBox1.Checked); 
             gaa.SetXrom(50);
-            var timeList = new List<int>();
-            var r = gaa.ToArray();
-            foreach (var elem in r)
-            {
-                var shedule = new Shedule(gaa.GenerateR(elem));
-                shedule.ConstructShedule();
-                timeList.Add(shedule.GetTime());
-            }    
-        }
+            gaa.calcFitnessList();
+           var result= gaa.getSelectionPopulation(_selectionType);
 
+            using (var file = new StreamWriter("outputGAA.txt",true))
+            {
+                file.WriteLine(result);
+
+            }
+        }
+            
         private void Change()
         {
             try
@@ -241,5 +243,27 @@ namespace newAlgorithm
             var firstLevel = new FirstLevel(_countType, listCountButches, checkBox1.Checked);
             firstLevel.GenetateSolutionForAllTypesSecondAlgorithm();
         }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            _selectionType = 2;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            _selectionType = 0;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            _selectionType = 1;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            _selectionType = 3;
+        }
+
+
     }
 }

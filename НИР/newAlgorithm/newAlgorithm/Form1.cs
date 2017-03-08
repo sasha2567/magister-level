@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace newAlgorithm
 {
     public partial class Form1 : Form
     {
+        int _selectionType = 2;
         int _l, _maxS, _maxT;
         int _countType, _countBatches;
         List<List<List<int>>> _temptS = new List<List<List<int>>>();
@@ -162,15 +164,28 @@ namespace newAlgorithm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var gaa = new GAA();
-            gaa.SetXrom(1);
-            var s = gaa.ToArray();
-            var shedule = new Shedule(s);
-            s = shedule.ConstructShedule();
-            var time = shedule.GetTime();
+            Shedule.L = _l;
+            Shedule.Switching = _temptS;
+            Shedule.Treatment = _temptT;
+            _countType = (int)numericUpDown1.Value;
+            _countBatches = Convert.ToInt32(countBatchesTB.Text);
+            var listCountButches = new List<int>();
+            for (var ii = 0; ii < _countType; ii++)
+            {
+                listCountButches.Add(_countBatches);
+            }
+            var gaa = new GAA(_countType, listCountButches, checkBox1.Checked); 
+            gaa.SetXrom(50);
+            gaa.calcFitnessList();
+           var result= gaa.getSelectionPopulation(_selectionType);
 
+            using (var file = new StreamWriter("outputGAA.txt",true))
+            {
+                file.WriteLine(result);
+
+            }
         }
-
+            
         private void Change()
         {
             try
@@ -228,5 +243,27 @@ namespace newAlgorithm
             var firstLevel = new FirstLevel(_countType, listCountButches, checkBox1.Checked);
             firstLevel.GenetateSolutionForAllTypesSecondAlgorithm();
         }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            _selectionType = 2;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            _selectionType = 0;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            _selectionType = 1;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            _selectionType = 3;
+        }
+
+
     }
 }

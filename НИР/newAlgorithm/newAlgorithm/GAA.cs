@@ -8,9 +8,32 @@ namespace newAlgorithm
 {
     public class GAA
     {
+        private readonly List<int> _i;                  // Вектор интерпритируемых типов данных
+        private List<List<int>> _ai;                    // Буферизированная матрица составов партий требований на k+1 шаге 
+        private List<List<List<int>>> _a1;              // Матрица составов партий требований на k+1 шаге 
+        private List<List<List<int>>> _a2;              // Матрица составов партий требований фиксированного типа
+        private List<List<int>> _a;                     // Матрица составов партий требований на k шаге
+        private readonly int _countType;                // Количество типов
+        private readonly List<int> _countClaims;        // Начальное количество требований для каждого типа данных
+        private int _f1;                                // Критерий текущего решения для всех типов
+        private int _f1Buf;                             // Критерий текущего решения для всех типов
+        private readonly bool _staticSolution;          // Признак фиксированных партий
+        private List<List<List<int>>> Array;            // Состав пратий в виде массива
         Random rand = new Random();
         int N = 10;
+        List<int> _fitnesslist = new List<int>();
         List<Xromossomi> nabor = new List<Xromossomi>();
+
+        public GAA(int countType, List<int> countClaims, bool stat)
+        {
+            _countType = countType;
+            _countClaims = countClaims;
+            _staticSolution = stat;
+            _i = new List<int>(_countType);
+        }
+
+        public GAA() { }
+
         public class Xromossomi
         {
             Random rand = new Random();
@@ -133,13 +156,29 @@ namespace newAlgorithm
             {
                 nabor.Add(nach());
             }
-            xor(size);
+            //xor(size);
 
             return nabor;
         }
-
-        void xor(int size)
+        public int getSelectionPopulation(int selection)
         {
+            List<int> SortFitnessList = new List<int>(_fitnesslist);
+            SortFitnessList.Sort();
+            var s = _fitnesslist.IndexOf(SortFitnessList[0]);
+            return SortFitnessList[0];
+        }
+
+
+
+        void xor(int size , List<Xromossomi> nabr=null)
+        {
+            List<Xromossomi> naborInternal = new List<Xromossomi>(nabor);
+            if (nabr != null)
+            {
+                naborInternal = new List<Xromossomi>(nabr);
+            }
+
+
             int[] massA = new int[size];
             int[] massB = new int[size];
             int[] massC = new int[size];
@@ -176,41 +215,108 @@ namespace newAlgorithm
 
             for (int i = 0; i < size; i++)
             {
-                nabor1[i].GenA = nabor[massA[i]].GenA;
-                nabor1[i].GenB = nabor[massA[i]].GenB;
-                nabor1[i].GenC = nabor[massA[i]].GenC;
+                nabor1[i].GenA = naborInternal[massA[i]].GenA;
+                nabor1[i].GenB = naborInternal[massA[i]].GenB;
+                nabor1[i].GenC = naborInternal[massA[i]].GenC;
             }
-            nabor = nabor1;
+            naborInternal = nabor1;
         }
 
-        public List<List<int>> ToArray()
+        public List<List<int>> TestArray()
         {
-            List<List<int>> arr= new List<List<int>>();
-            int index=-1;
-           
-            foreach(var hromosoma in nabor){
-                index++;
+            List<List<int>> a1 = new List<List<int>>();
+            List<int> a = new List<int>();
+            a.Add(10);
+            a.Add(2);
+            List<int> b = new List<int>();
+            b.Add(10);
+            b.Add(2);
+            List<int> c = new List<int>();
+            c.Add(10);
+            c.Add(2);
+
+            a1.Add(a);
+            a1.Add(b);
+            a1.Add(c);  
+            return a1;
+        }
+
+        public List<List<int>> GenerateR(IReadOnlyList<List<int>> m)
+        {
+            var result = new List<List<int>>();
+            var summ = m.Sum(t => t.Count);
+            for (var i = 0; i < _countType; i++)
+            {
+                result.Add(new List<int>());
+                for (var j = 0; j < summ; j++)
+                {
+                    result[i].Add(0);
+                }
+            }
+            var ind = 0;
+            for (var i = 0; i < m.Count; i++)
+            {
+                for (var j = 0; j < m[i].Count; j++)
+                {
+                    result[i][ind] = m[i][j];
+                    ind++;
+                }
+            }
+            return result;
+        }
+
+        public void calcFitnessList() {
+            List<int> FitnessList = new List<int>();
+            var r = this.ToArray();
+            foreach (var elem in r)
+            {
+                var shedule = new Shedule(this.GenerateR(elem));
+                shedule.ConstructShedule();
+                FitnessList.Add(shedule.GetTime());
+            }
+            _fitnesslist = FitnessList;
+        }
+        public List<List<List<int>>> ToArray()
+        {
+            List<List<List<int>>> arrResult = new List<List<List<int>>>();
+            
+
+            foreach (var hromosoma in nabor)
+            {
+                List<List<int>> arr = new List<List<int>>();
+                int index = 0;
                 arr.Add(new List<int>());
                 for (int i = 0; i < hromosoma.GenA.Count; i++)
-                {                   
-                    arr[index].Add(hromosoma.GenA[i]);                
+                {
+                    if (hromosoma.GenA[i] > 0)
+                        arr[index].Add(hromosoma.GenA[i]);
                 }
                 index++;
                 arr.Add(new List<int>());
                 //2 строка
                 for (int i = 0; i < hromosoma.GenB.Count; i++)
-                {                   
-                    arr[index].Add(hromosoma.GenB[i]);                   
+                {
+                    if (hromosoma.GenB[i] > 0)
+                        arr[index].Add(hromosoma.GenB[i]);
                 }
                 index++;
                 arr.Add(new List<int>());
                 //3 строка
                 for (int i = 0; i < hromosoma.GenC.Count; i++)
                 {
-                    arr[index].Add(hromosoma.GenC[i]);
+                    if (hromosoma.GenC[i] > 0)
+                        arr[index].Add(hromosoma.GenC[i]);
                 }
+
+                foreach (var elem in arr)
+                {
+                    elem.Sort();
+                    elem.Reverse();
+                }
+                arrResult.Add(new  List<List<int>>(arr));
             }
-            return arr;
+            
+            return arrResult;
 
         }
         void mutation()

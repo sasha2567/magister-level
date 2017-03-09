@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,7 +40,41 @@ namespace newAlgorithm
                     }
                 }
             }
-            for (var j = 0; j < _r[0].Count; j++)
+            var yy = 0;
+            var zz = 0;
+            var xx = 0;
+            for (var i = 0; i < L; i++)
+            {
+                for (var j = 0; j < _r[0].Count; j++)
+                {
+                    var index = ReturnRIndex(j);
+
+
+                    for (var k = 0; k < _r[index][j]; k++)
+                    {
+                        var timeToSwitch = Switching[i][xx][index];
+                        if (index == xx && j != 0)
+                            timeToSwitch = 0;
+                        if (i > 0)
+                        {
+                            _startProcessing[i][j][k] = Math.Max(_endProcessing[i][yy][zz] + timeToSwitch, _endProcessing[i - 1][j][k]);
+                        }
+                        else
+                        {
+                            _startProcessing[i][j][k] = _endProcessing[i][yy][zz] + timeToSwitch;
+                        }
+                        _endProcessing[i][j][k] = _startProcessing[i][j][k] + Treatment[i][index];
+                        _timeConstructShedule = _endProcessing[i][j][k];
+                        yy = j;
+                        zz = k;
+                        xx = index;
+                    }
+                }
+                yy = 0;
+                zz = 0;
+                xx = 0;
+            }
+            /*for (var j = 0; j < _r[0].Count; j++)
             {
                 var index = ReturnRIndex(j);
                 var type = j == 0 ? index : ReturnRIndex(j - 1);
@@ -63,7 +96,6 @@ namespace newAlgorithm
                         _startProcessing[0][j][k] += _endProcessing[0][j][k - 1];
                     }
                     _endProcessing[0][j][k] = _startProcessing[0][j][k] + timeToTreament;
-                    _timeConstructShedule = _endProcessing[0][j][k];
                 }
             }
             for (var i = 1; i < L; i++)
@@ -72,7 +104,7 @@ namespace newAlgorithm
                 {
                     var index = ReturnRIndex(j);
                     var type = j == 0 ? index : ReturnRIndex(j - 1);
-                    var timeToSwitch = (type == index && j != 0) ? 0 : Switching[0][type][index];
+                    var timeToSwitch = (type == index && j != 0) ? 0 : Switching[i][type][index];
                     var timeToTreament = Treatment[i][index];
                     for (var k = 0; k < _r[index][j]; k++)
                     {
@@ -98,7 +130,7 @@ namespace newAlgorithm
                         _timeConstructShedule = _endProcessing[0][j][k];
                     }
                 }
-            }
+            }*/
         }
 
         private int ReturnRIndex(int j)
@@ -145,11 +177,6 @@ namespace newAlgorithm
             _r[indd2][ind1] = _r[indd2][ind2];
             _r[indd2][ind2] = 0;
             _r[indd1][ind2] = temp;
-        }
-
-        private List<int> CopyList(IEnumerable<int> inList)
-        {
-            return inList.ToList();
         }
 
         public List<List<int>> ConstructShedule()

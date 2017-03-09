@@ -158,7 +158,7 @@ namespace newAlgorithm
             Shedule.Switching = _temptS;
             Shedule.Treatment = _temptT;
             var firstLevel = new FirstLevel(_countType, listCountButches, checkBox1.Checked);
-            firstLevel.GenetateSolutionForAllTypes();
+            firstLevel.GenetateSolutionForAllTypes("outputFirstAlgorithm.txt");
 
         }
 
@@ -241,7 +241,7 @@ namespace newAlgorithm
             Shedule.Switching = _temptS;
             Shedule.Treatment = _temptT;
             var firstLevel = new FirstLevel(_countType, listCountButches, checkBox1.Checked);
-            firstLevel.GenetateSolutionForAllTypesSecondAlgorithm();
+            firstLevel.GenetateSolutionForAllTypesSecondAlgorithm("outputSecondAlgorithm.txt");
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
@@ -262,6 +262,55 @@ namespace newAlgorithm
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             _selectionType = 3;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int[] ni = { 8, 12, 16, 24, 32 };
+            int[] time = { 2, 4, 8, 16, 32 };
+            int[] l = { 5, 10 };
+            int[] n = { 5, 10 };
+            const string file = "testFile";
+            const string s = ".txt";
+            string count = "";
+            for (var i = 3; i < ni.Length; i++)
+            {
+                foreach (var t in n)
+                {
+                    foreach (var t1 in l)
+                    {
+                        for (var m = 0; m < time.Length; m++)
+                        {
+                            for (var p = 0; p < time.Length; p++)
+                            {
+                                _countType = t;
+                                _l = t1;
+                                _maxS = time[p];
+                                _maxT = time[m];
+                                _temptS = new List<List<List<int>>>();
+                                _temptT = new List<List<int>>();
+                                RandomTime();
+                                PrintTime();
+                                _countBatches = ni[i];
+                                var listCountButches = new List<int>();
+                                for (var ii = 0; ii < _countType; ii++)
+                                {
+                                    listCountButches.Add(_countBatches);
+                                }
+
+                                GetTime();
+                                Shedule.L = _l;
+                                Shedule.Switching = _temptS;
+                                Shedule.Treatment = _temptT;
+                                var firstLevel = new FirstLevel(_countType, listCountButches, false);
+                                count = _countBatches + "_" + _countType + "_" + _l + "_" + _maxS + "_" + _maxT;
+                                firstLevel.GenetateSolutionForAllTypesSecondAlgorithm(file + count + s);
+                            }
+                        }
+                    }
+                    var tt = 0;
+                }
+            }
         }
 
 

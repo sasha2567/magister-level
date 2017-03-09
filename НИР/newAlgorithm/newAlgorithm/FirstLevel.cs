@@ -314,9 +314,9 @@ namespace newAlgorithm
         /// <summary>
         /// Алгоритм формирования решения по составам паритй всех типов данных
         /// </summary>
-        public void GenetateSolutionForAllTypes()
+        public void GenetateSolutionForAllTypes(string fileName)
         {
-            using (var file = new StreamWriter("output.txt"))
+            using (var file = new StreamWriter(fileName))
             {
                 GenerateStartSolution();
                 var r = GenerateR(_a);
@@ -528,9 +528,9 @@ namespace newAlgorithm
         /// <summary>
         /// Алгоритм формирования решения по составам паритй всех типов данных
         /// </summary>
-        public void GenetateSolutionForAllTypesSecondAlgorithm()
+        public void GenetateSolutionForAllTypesSecondAlgorithm(string fileName)
         {
-            using (var file = new StreamWriter("output.txt"))
+            using (var file = new StreamWriter(fileName))
             {
                 GenerateStartSolution();
                 var r = GenerateR(_a);
@@ -643,7 +643,7 @@ namespace newAlgorithm
                     }
                 }
                 file.Close();
-                MessageBox.Show("Решения найдены");
+                //MessageBox.Show("Решения найдены");
             }
             
         }

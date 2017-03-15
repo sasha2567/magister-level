@@ -11,9 +11,9 @@ namespace newAlgorithm
         private readonly List<int> _i;                  // Вектор интерпритируемых типов данных
         private List<List<int>> _ai;                    // Буферизированная матрица составов партий требований на k+1 шаге 
         private List<List<List<int>>> _a1;              // Матрица составов партий требований на k+1 шаге 
-        private List<List<List<int>>> _a2;              // Матрица составов партий требований фиксированного типа
+        private List<List<List<int>>> _a2;              //false global fvg// Матрица составов партий требований фиксированного типа
         private List<List<int>> _a;                     // Матрица составов партий требований на k шаге
-        private readonly int _countType;                // Количество типов
+        protected readonly int _countType;              // Количество типов
         private readonly List<int> _countClaims;        // Начальное количество требований для каждого типа данных
         private int _f1;                                // Критерий текущего решения для всех типов
         private int _f1Buf;                             // Критерий текущего решения для всех типов
@@ -39,6 +39,8 @@ namespace newAlgorithm
             Random rand = new Random();
             int N = 10;
             static int size = 10;
+            public List<List<int>> GenList = new List<List<int>>();
+            public List<int> GenListOst = new List<int>();
             public List<int> GenA = new List<int>();
             public List<int> GenC = new List<int>();
             public List<int> GenB = new List<int>();
@@ -52,6 +54,47 @@ namespace newAlgorithm
                 ostC = i;
             }
             public Xromossomi() { }
+        }
+
+
+
+        public Xromossomi nachlist()
+        {
+            Xromossomi xrom = new Xromossomi();
+
+            for (int i = 0; i < _countType; i++)
+            {
+                xrom.GenList.Add(new List<int>());
+            }
+            xrom.GenListOst.AddRange(_countClaims);
+
+            for (int j = 0; j < xrom.GenList.Count;j++ )
+            {
+                int buff = 0;
+                for (int i = 0; i < N / 2 - 1; i++)
+                {
+                    if (xrom.GenListOst[j] == 2)
+                    {
+                        buff = 2;
+                        xrom.GenListOst[j] = 0;
+                    }
+                    else
+                        if (xrom.GenListOst[j] == 1)
+                        {
+                            xrom.GenList[j][xrom.GenList[j].Count - 1]++;
+                            xrom.GenListOst[j] = 0;
+                            buff = 0;
+                        }
+                        else
+                            if (xrom.GenListOst[j] == 0)
+                                buff = 0;
+                            else
+                                xrom.GenListOst[j] -= buff = rand.Next(2, xrom.GenListOst[j]);
+                    xrom.GenList[j].Add(buff);
+                }
+                xrom.GenList[j].Add(xrom.GenListOst[j]);
+            }
+            return xrom;
         }
 
         Xromossomi nach()
@@ -154,7 +197,7 @@ namespace newAlgorithm
         {
             for (int i = 0; i < size; i++)
             {
-                nabor.Add(nach());
+                nabor.Add(nachlist());
             }
             //xor(size);
 
@@ -267,7 +310,7 @@ namespace newAlgorithm
 
         public void calcFitnessList() {
             List<int> FitnessList = new List<int>();
-            var r = this.ToArray();
+            var r = this.ToArrayList();
             foreach (var elem in r)
             {
                 var shedule = new Shedule(this.GenerateR(elem));
@@ -276,11 +319,26 @@ namespace newAlgorithm
             }
             _fitnesslist = FitnessList;
         }
+
+        public List<List<List<int>>> ToArrayList()
+        {
+            List<List<List<int>>> r = new List<List<List<int>>>();
+            foreach (var elem in nabor)
+            {
+                foreach (var elem2 in elem.GenList)
+                {
+                    elem2.Sort();
+                    elem2.Reverse();
+                    elem2.RemoveAll(e => e == 0);
+                }
+
+                r.Add(elem.GenList);
+            }
+            return r;
+        }
         public List<List<List<int>>> ToArray()
         {
             List<List<List<int>>> arrResult = new List<List<List<int>>>();
-            
-
             foreach (var hromosoma in nabor)
             {
                 List<List<int>> arr = new List<List<int>>();

@@ -174,7 +174,7 @@ namespace newAlgorithm
             {
                 listCountButches.Add(_countBatches);
             }
-            var gaa = new GAA(_countType, listCountButches, checkBox1.Checked); 
+            var gaa = new GAA(_countType, listCountButches, checkBox1.Checked);
             gaa.SetXrom(50);
             gaa.calcFitnessList();
            var result= gaa.getSelectionPopulation(_selectionType);

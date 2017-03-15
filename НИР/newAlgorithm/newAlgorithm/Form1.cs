@@ -204,6 +204,7 @@ namespace newAlgorithm
                 file.WriteLine(result);
 
             }
+            MessageBox.Show("Данные успешно записаны", "Учпешное завершение", MessageBoxButtons.OK);
         }
             
         private void Change()

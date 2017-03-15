@@ -21,8 +21,8 @@ namespace newAlgorithm
         private List<List<List<int>>> Array;            // Состав пратий в виде массива
         Random rand = new Random();
         int N = 10;
-        List<int> _fitnesslist = new List<int>();
-        List<Xromossomi> nabor = new List<Xromossomi>();
+        public List<int> _fitnesslist = new List<int>();
+        public List<Xromossomi> nabor = new List<Xromossomi>();
 
         public GAA(int countType, List<int> countClaims, bool stat)
         {
@@ -203,11 +203,11 @@ namespace newAlgorithm
 
             return nabor;
         }
-        public int getSelectionPopulation(int selection)
+        public int getSelectionPopulation(int selection,out int s)
         {
             List<int> SortFitnessList = new List<int>(_fitnesslist);
             SortFitnessList.Sort();
-            var s = _fitnesslist.IndexOf(SortFitnessList[0]);
+             s = _fitnesslist.IndexOf(SortFitnessList[0]);
             return SortFitnessList[0];
         }
 

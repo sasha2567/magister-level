@@ -42,6 +42,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -54,13 +55,14 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // numericUpDown1
@@ -198,6 +200,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.numericUpDown2);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.radioButton4);
             this.tabPage1.Controls.Add(this.radioButton3);
@@ -226,10 +229,20 @@
             this.tabPage1.Text = "Установка параметров";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(424, 43);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(98, 50);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "Тестовый прогон";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(163, 243);
+            this.radioButton4.Location = new System.Drawing.Point(163, 273);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(171, 17);
             this.radioButton4.TabIndex = 18;
@@ -241,7 +254,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(163, 266);
+            this.radioButton3.Location = new System.Drawing.Point(163, 296);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(234, 17);
             this.radioButton3.TabIndex = 17;
@@ -253,7 +266,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(163, 220);
+            this.radioButton2.Location = new System.Drawing.Point(163, 250);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(100, 17);
             this.radioButton2.TabIndex = 16;
@@ -265,7 +278,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(163, 197);
+            this.radioButton1.Location = new System.Drawing.Point(163, 227);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(133, 17);
             this.radioButton1.TabIndex = 15;
@@ -353,15 +366,27 @@
             this.dataGridView1.Size = new System.Drawing.Size(280, 288);
             this.dataGridView1.TabIndex = 17;
             // 
-            // button4
+            // numericUpDown2
             // 
-            this.button4.Location = new System.Drawing.Point(424, 43);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(98, 50);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Тестовый прогон";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.numericUpDown2.Location = new System.Drawing.Point(161, 188);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown2.TabIndex = 20;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             // 
             // Form1
             // 
@@ -379,6 +404,7 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,6 +438,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
     }
 }
 

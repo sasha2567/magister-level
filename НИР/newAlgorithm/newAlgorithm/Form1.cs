@@ -174,16 +174,37 @@ namespace newAlgorithm
             {
                 listCountButches.Add(_countBatches);
             }
-            var gaa = new GAA(_countType, listCountButches, checkBox1.Checked); 
-            gaa.SetXrom(50);
+            var gaa = new GAA(_countType, listCountButches, checkBox1.Checked);
+            gaa.SetXrom((int)numericUpDown2.Value);
             gaa.calcFitnessList();
-           var result= gaa.getSelectionPopulation(_selectionType);
+            int s;
+           var result= gaa.getSelectionPopulation(_selectionType,out s);
 
-            using (var file = new StreamWriter("outputGAA.txt",true))
+            using (var file = new StreamWriter("outputGAA.txt"))
             {
+                int i = 0;
+                foreach (var elem in gaa.nabor)
+                {
+                   
+                    foreach (var elem2 in elem.GenList)
+                    {
+                        foreach (var elem3 in elem2)
+                        {
+                            file.Write(elem3+" ");
+                        }
+                        file.WriteLine();
+                    }
+                    file.WriteLine("*******************");
+                    file.WriteLine(gaa._fitnesslist[i]);
+                    file.WriteLine("*******************");
+                    i++;
+                }
+
+                file.WriteLine();
                 file.WriteLine(result);
 
             }
+            MessageBox.Show("Данные успешно записаны", "Учпешное завершение", MessageBoxButtons.OK);
         }
             
         private void Change()

@@ -124,7 +124,7 @@ namespace newAlgorithm
                         }
                         else
                         {
-                            _startProcessing[i][j][k] += _endProcessing[i][j][k - 1];
+                            _startProcessing[i][j][k] += Math.Max(_endProcessing[i][j][k - 1], _endProcessing[i - 1][j][k]);
                         }
                         _endProcessing[i][j][k] = _startProcessing[i][j][k] + timeToTreament;
                         _timeConstructShedule = _endProcessing[0][j][k];
@@ -185,9 +185,10 @@ namespace newAlgorithm
             CalculateShedule();
             var tempR = CopyMatrix(_r);
             tempTime = _timeConstructShedule;
-            for (var i = _r[0].Count - 1; i > 0; i--)
+            for (var i = 0; i < _r[0].Count - 1; i++)
             {
-                ChangeColum(i - 1, i);
+                for (var j = i + 1; j < _r[0].Count; j++)
+                ChangeColum(i, j);
                 CalculateShedule();
                 if (tempTime >= _timeConstructShedule) continue;
                 _r = tempR;

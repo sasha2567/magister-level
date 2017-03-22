@@ -180,7 +180,7 @@ namespace newAlgorithm
             int s;
            var result= gaa.getSelectionPopulation(_selectionType,out s);
 
-            using (var file = new StreamWriter("outputGAA.txt"))
+            using (var file = new StreamWriter("outputGAA.txt",true))
             {
                 int i = 0;
                 foreach (var elem in gaa.nabor)
@@ -194,14 +194,15 @@ namespace newAlgorithm
                         }
                         file.WriteLine();
                     }
-                    file.WriteLine("*******************");
+                    file.WriteLine("_________________________");
                     file.WriteLine(gaa._fitnesslist[i]);
-                    file.WriteLine("*******************");
+                    file.WriteLine("_________________________");
                     i++;
                 }
 
-                file.WriteLine();
+                file.WriteLine("***************************");
                 file.WriteLine(result);
+                file.WriteLine("***************************");
 
             }
             MessageBox.Show("Данные успешно записаны", "Учпешное завершение", MessageBoxButtons.OK);
@@ -332,6 +333,70 @@ namespace newAlgorithm
                     var tt = 0;
                 }
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+           
+            for (int p = 2; p <= 32; p *= 2)
+            {
+                timeTreatmentingTB.Text = Convert.ToString(p);
+                for (int i = 2; i <= 32; i *= 2)
+                {
+                    timeSwitchingTB.Text = Convert.ToString(i);
+
+                    Shedule.L = _l;
+                    Shedule.Switching = _temptS;
+                    Shedule.Treatment = _temptT;
+                    _countType = (int)numericUpDown1.Value;
+                    _countBatches = Convert.ToInt32(countBatchesTB.Text);
+                    var listCountButches = new List<int>();
+                    for (var ii = 0; ii < _countType; ii++)
+                    {
+                        listCountButches.Add(_countBatches);
+                    }
+                    var gaa = new GAA(_countType, listCountButches, checkBox1.Checked);
+                    gaa.SetXrom((int)numericUpDown2.Value);
+                    gaa.calcFitnessList();
+                    int s;
+                    var result = gaa.getSelectionPopulation(_selectionType, out s);
+
+                    using (var file = new StreamWriter("outputGAA.txt", true))
+                    {
+                        int k = 0;
+                        foreach (var elem in gaa.nabor)
+                        {
+
+                            foreach (var elem2 in elem.GenList)
+                            {
+                                foreach (var elem3 in elem2)
+                                {
+                                    file.Write(elem3 + " ");
+                                }
+                                file.WriteLine();
+                            }
+                            file.WriteLine("_________________________");
+                            file.WriteLine(gaa._fitnesslist[i]);
+                            file.WriteLine("_________________________");
+                            k++;
+                        }
+
+                        file.WriteLine("***************************");
+                        file.WriteLine(result);
+                        file.WriteLine("***************************");
+
+                    }
+                    using (var file = new StreamWriter("outputGAASimpleResult.txt", true))
+                    {
+                        file.WriteLine(result);
+                    }
+                }
+                using (var file = new StreamWriter("outputGAASimpleResult.txt", true))
+                {
+                    file.WriteLine("_____________________");
+                }
+            }
+            MessageBox.Show("Данные успешно записаны", "Учпешное завершение", MessageBoxButtons.OK);
         }
 
 

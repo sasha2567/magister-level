@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.15"
+    ComputedModelVersion    "1.17"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -110,9 +110,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "irina"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 21 19:37:43 2017"
-  RTWModifiedTimeStamp	  409610177
-  ModelVersionFormat	  "1.%<AutoIncrement:15>"
+  LastModifiedDate	  "Wed Mar 22 11:17:42 2017"
+  RTWModifiedTimeStamp	  412085859
+  ModelVersionFormat	  "1.%<AutoIncrement:17>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1379,7 +1379,7 @@ Model {
       Ports		      [1]
       Position		      [435, 85, 495, 115]
       ZOrder		      -7
-      VariableName	      "simout"
+      VariableName	      "errors"
       MaxDataPoints	      "inf"
       SaveFormat	      "Structure"
       SampleTime	      "-1"
@@ -1493,9 +1493,6 @@ Stateflow {
     screen		    [1 1 1366 768 1.333333333333333]
     treeNode		    [0 3 0 0]
     viewObj		    2
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    5
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -1619,9 +1616,6 @@ Stateflow {
     screen		    [1 1 1366 768 1.333333333333333]
     treeNode		    [0 10 0 0]
     viewObj		    9
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    5
     decomposition	    CLUSTER_CHART
     type		    EML_CHART

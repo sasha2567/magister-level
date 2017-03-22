@@ -53,9 +53,7 @@ namespace newAlgorithm
 
                     for (var k = 0; k < _r[index][j]; k++)
                     {
-                        var timeToSwitch = Switching[i][xx][index];
-                        if (index == xx && j != 0)
-                            timeToSwitch = 0;
+                        var timeToSwitch = (index == xx && j != 0) ? 0 : Switching[0][xx][index];
                         if (i > 0)
                         {
                             _startProcessing[i][j][k] = Math.Max(_endProcessing[i][yy][zz] + timeToSwitch, _endProcessing[i - 1][j][k]);

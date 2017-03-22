@@ -40,6 +40,7 @@ namespace newAlgorithm
                     }
                 }
             }
+            /**/
             var yy = 0;
             var zz = 0;
             var xx = 0;
@@ -74,7 +75,9 @@ namespace newAlgorithm
                 zz = 0;
                 xx = 0;
             }
-            /*for (var j = 0; j < _r[0].Count; j++)
+            /**/
+            /*
+            for (var j = 0; j < _r[0].Count; j++)
             {
                 var index = ReturnRIndex(j);
                 var type = j == 0 ? index : ReturnRIndex(j - 1);
@@ -104,7 +107,7 @@ namespace newAlgorithm
                 {
                     var index = ReturnRIndex(j);
                     var type = j == 0 ? index : ReturnRIndex(j - 1);
-                    var timeToSwitch = (type == index && j != 0) ? 0 : Switching[i][type][index];
+                    var timeToSwitch = (type == index && j > 0) ? 0 : Switching[i][type][index];
                     var timeToTreament = Treatment[i][index];
                     for (var k = 0; k < _r[index][j]; k++)
                     {

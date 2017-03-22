@@ -292,28 +292,28 @@ namespace newAlgorithm
             int[] time = { 2, 4, 8, 16, 32 };
             int[] l = { 5, 10 };
             int[] n = { 5, 10 };
-            const string file = "testFile";
+            const string file = "test/testFile";
             const string s = ".txt";
             string count = "";
-            for (var i = 3; i < ni.Length; i++)
+            foreach (var t4 in ni)
             {
                 foreach (var t in n)
                 {
                     foreach (var t1 in l)
                     {
-                        for (var m = 0; m < time.Length; m++)
+                        foreach (var t2 in time)
                         {
-                            for (var p = 0; p < time.Length; p++)
+                            foreach (var t3 in time)
                             {
                                 _countType = t;
                                 _l = t1;
-                                _maxS = time[p];
-                                _maxT = time[m];
+                                _maxS = t3;
+                                _maxT = t2;
                                 _temptS = new List<List<List<int>>>();
                                 _temptT = new List<List<int>>();
                                 RandomTime();
                                 PrintTime();
-                                _countBatches = ni[i];
+                                _countBatches = t4;
                                 var listCountButches = new List<int>();
                                 for (var ii = 0; ii < _countType; ii++)
                                 {
@@ -325,7 +325,7 @@ namespace newAlgorithm
                                 Shedule.Switching = _temptS;
                                 Shedule.Treatment = _temptT;
                                 var firstLevel = new FirstLevel(_countType, listCountButches, false);
-                                count = _countBatches + "_" + _countType + "_" + _l + "_" + _maxS + "_" + _maxT;
+                                count = "_" + _countBatches + "_" + _countType + "_" + _l + "_" + _maxT + "_" + _maxS;
                                 firstLevel.GenetateSolutionForAllTypesSecondAlgorithm(file + count + s);
                             }
                         }

@@ -40,6 +40,7 @@ namespace newAlgorithm
                     }
                 }
             }
+            /**/
             var yy = 0;
             var zz = 0;
             var xx = 0;
@@ -74,7 +75,9 @@ namespace newAlgorithm
                 zz = 0;
                 xx = 0;
             }
-            /*for (var j = 0; j < _r[0].Count; j++)
+            /**/
+            /*
+            for (var j = 0; j < _r[0].Count; j++)
             {
                 var index = ReturnRIndex(j);
                 var type = j == 0 ? index : ReturnRIndex(j - 1);
@@ -104,7 +107,7 @@ namespace newAlgorithm
                 {
                     var index = ReturnRIndex(j);
                     var type = j == 0 ? index : ReturnRIndex(j - 1);
-                    var timeToSwitch = (type == index && j != 0) ? 0 : Switching[i][type][index];
+                    var timeToSwitch = (type == index && j > 0) ? 0 : Switching[i][type][index];
                     var timeToTreament = Treatment[i][index];
                     for (var k = 0; k < _r[index][j]; k++)
                     {
@@ -124,7 +127,7 @@ namespace newAlgorithm
                         }
                         else
                         {
-                            _startProcessing[i][j][k] += _endProcessing[i][j][k - 1];
+                            _startProcessing[i][j][k] += Math.Max(_endProcessing[i][j][k - 1], _endProcessing[i - 1][j][k]);
                         }
                         _endProcessing[i][j][k] = _startProcessing[i][j][k] + timeToTreament;
                         _timeConstructShedule = _endProcessing[0][j][k];
@@ -185,9 +188,10 @@ namespace newAlgorithm
             CalculateShedule();
             var tempR = CopyMatrix(_r);
             tempTime = _timeConstructShedule;
-            for (var i = _r[0].Count - 1; i > 0; i--)
+            for (var i = 0; i < _r[0].Count - 1; i++)
             {
-                ChangeColum(i - 1, i);
+                for (var j = i + 1; j < _r[0].Count; j++)
+                ChangeColum(i, j);
                 CalculateShedule();
                 if (tempTime >= _timeConstructShedule) continue;
                 _r = tempR;

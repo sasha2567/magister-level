@@ -539,7 +539,7 @@ namespace newAlgorithm
                 _f1 = shedule.GetTime();
                 //MessageBox.Show(PrintA(A) + " Время обработки " + f1);
                 _f1Buf = _f1;
-                file.WriteLine(PrintA(_a) + " " + _f1Buf + " Начальное решение");
+                file.WriteLine(_f1Buf);
                 var maxA = CopyMatrix(_a);
                 var typeSolutionFlag = true;
                 if (!_staticSolution)
@@ -567,7 +567,7 @@ namespace newAlgorithm
                         // Для каждого типа и каждого решения в типе строим новое решение и проверяем его на критерий
                         _a2 = new List<List<List<int>>>();
                         string s;
-                        file.WriteLine("окрестность 1 вида");
+                        //file.WriteLine("окрестность 1 вида");
                         for (var i = 0; i < _countType; i++)
                         {
                             _a2.Add(new List<List<int>>());
@@ -581,21 +581,21 @@ namespace newAlgorithm
                                 shedule.ConstructShedule();
                                 var fBuf = shedule.GetTime();
                                 s = PrintA(tempA);
-                                file.Write(s + " " + fBuf);
+                                //file.Write(s + " " + fBuf);
                                 //MessageBox.Show(s + " Время обработки " + fBuf);                                    
                                 if (fBuf < _f1Buf)
                                 {
                                     abuf = CopyMatrix(tempA);
                                     typeSolutionFlag = true;
                                     _f1Buf = fBuf;
-                                    file.Write(" +");
+                                    //file.Write(" +");
                                 }
-                                file.WriteLine();
+                                //file.WriteLine();
                             }
                         }
                         if (!typeSolutionFlag)
                         {
-                            file.WriteLine("комбинации типов");
+                            //file.WriteLine("комбинации типов");
                             var matrix = GenerateMatrix();
                             foreach (var row in matrix)
                             {
@@ -612,16 +612,16 @@ namespace newAlgorithm
                             shedule.ConstructShedule();
                             var fBuf = shedule.GetTime();
                             s = PrintA(tempA);
-                            file.Write(s + " " + fBuf);
+                            //file.Write(s + " " + fBuf);
                             //MessageBox.Show(s + " Время обработки " + fBuf);
                             if (fBuf < _f1Buf)
                             {
                                 abuf = CopyMatrix(tempA);
                                 typeSolutionFlag = true;
                                 _f1Buf = fBuf;
-                                file.Write(" +");
+                                //file.Write(" +");
                             }
-                            file.WriteLine();
+                            //file.WriteLine();
                         }
                         if (typeSolutionFlag)
                         {
@@ -642,6 +642,7 @@ namespace newAlgorithm
                         }
                     }
                 }
+                file.WriteLine(_f1);
                 file.Close();
                 //MessageBox.Show("Решения найдены");
             }

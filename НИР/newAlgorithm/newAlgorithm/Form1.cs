@@ -288,49 +288,62 @@ namespace newAlgorithm
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int[] ni = { 8, 12, 16, 24, 32 };
+            int[] ni = { /*8, 12,*/ 16, /*24, 32*/ };
             int[] time = { 2, 4, 8, 16, 32 };
             int[] l = { 5, 10 };
             int[] n = { 5, 10 };
-            const string file = "test/testFile";
+            
             const string s = ".txt";
             string count = "";
+            
             foreach (var t4 in ni)
             {
-                foreach (var t in n)
+                string file = "test/" + t4 + "/testFile";
+                using (var fileOut = new StreamWriter(file + "All.txt"))
                 {
-                    foreach (var t1 in l)
+                    foreach (var t in n)
                     {
-                        foreach (var t2 in time)
+                        foreach (var t1 in l)
                         {
-                            foreach (var t3 in time)
+                            foreach (var t2 in time)
                             {
-                                _countType = t;
-                                _l = t1;
-                                _maxS = t3;
-                                _maxT = t2;
-                                _temptS = new List<List<List<int>>>();
-                                _temptT = new List<List<int>>();
-                                RandomTime();
-                                PrintTime();
-                                _countBatches = t4;
-                                var listCountButches = new List<int>();
-                                for (var ii = 0; ii < _countType; ii++)
+                                foreach (var t3 in time)
                                 {
-                                    listCountButches.Add(_countBatches);
+                                    _countType = t;
+                                    _l = t1;
+                                    _maxS = t3;
+                                    _maxT = t2;
+                                    _temptS = new List<List<List<int>>>();
+                                    _temptT = new List<List<int>>();
+                                    RandomTime();
+                                    PrintTime();
+                                    _countBatches = t4;
+                                    var listCountButches = new List<int>();
+                                    for (var ii = 0; ii < _countType; ii++)
+                                    {
+                                        listCountButches.Add(_countBatches);
+                                    }
+                                    GetTime();
+                                    Shedule.L = _l;
+                                    Shedule.Switching = _temptS;
+                                    Shedule.Treatment = _temptT;
+                                    var firstLevel = new FirstLevel(_countType, listCountButches, false);
+                                    count = "_" + _countBatches + "_" + _countType + "_" + _l + "_" + _maxT + "_" + _maxS;
+                                    firstLevel.GenetateSolutionForAllTypesSecondAlgorithm(file + count + s);
+                                
+                                    using (var fileIn = new StreamReader(file + count + s))
+                                    {
+                                        var first  = Convert.ToInt32(fileIn.ReadLine());
+                                        var top  = Convert.ToInt32(fileIn.ReadLine());
+                                        fileIn.Close();
+                                        fileOut.WriteLine(first + "\t" + top);
+                                    }
                                 }
-
-                                GetTime();
-                                Shedule.L = _l;
-                                Shedule.Switching = _temptS;
-                                Shedule.Treatment = _temptT;
-                                var firstLevel = new FirstLevel(_countType, listCountButches, false);
-                                count = "_" + _countBatches + "_" + _countType + "_" + _l + "_" + _maxT + "_" + _maxS;
-                                firstLevel.GenetateSolutionForAllTypesSecondAlgorithm(file + count + s);
                             }
+                            fileOut.WriteLine();
                         }
                     }
-                    var tt = 0;
+                    fileOut.Close();
                 }
             }
         }

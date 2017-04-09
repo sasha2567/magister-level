@@ -409,6 +409,10 @@ namespace newAlgorithm
                     file.WriteLine("_____________________");
                 }
             }
+            using (var file = new StreamWriter("outputGAASimpleResult.txt", true))
+            {
+                file.WriteLine("_____________________()()_____");
+            }
             MessageBox.Show("Данные успешно записаны", "Учпешное завершение", MessageBoxButtons.OK);
         }
 

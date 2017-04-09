@@ -288,7 +288,7 @@ namespace newAlgorithm
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int[] ni = { 8, 12, 16, /*24, 32*/ };
+            int[] ni = { /*8, 12, 16,*/ 24, 32 };
             int[] time = { 2, 4, 8, 16, 32 };
             int[] l = { 5, 10 };
             int[] n = { 5, 10 };

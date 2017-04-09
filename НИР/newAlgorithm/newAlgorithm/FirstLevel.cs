@@ -121,7 +121,8 @@ namespace newAlgorithm
         private List<List<int>> SetTempAFromA2(int type, int ind2)
         {
             var result = CopyMatrix(_a);
-            result[type] = CopyVector(_a2[type][ind2]);
+            if (ind2 < _a2[type].Count)
+                result[type] = CopyVector(_a2[type][ind2]);
             return result;
         }
 
@@ -531,6 +532,7 @@ namespace newAlgorithm
                             {
                                 _nTemp.Add(0);
                                 _n.Add(_a2[i].Count);
+                                if (_n[i] == 0) _n[i] = -1;
                             }
                             GenerateCombination(0, _n);
                         }

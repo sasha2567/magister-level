@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,9 +16,38 @@ namespace newAlgorithm
         private List<List<List<int>>> _startProcessing;
         private List<List<List<int>>> _endProcessing;
 
+        /// <summary>
+        /// Формирование матрицы для передачи её в модуль расписания
+        /// </summary>
+        /// <param name="m">входная матрица А</param>
+        /// <returns>сформированная матрица для уровня расписания</returns>
+        private List<List<int>> GenerateR(IReadOnlyList<List<int>> m)
+        {
+            var result = new List<List<int>>();
+            var summ = m.Sum(t => t.Count);
+            for (var j = 0; j < summ; j++)
+            {
+                result.Add(new List<int>());
+                for (var i = 0; i < m.Count; i++)
+                {
+                    result[j].Add(0);
+                }
+            }
+            var ind = 0;
+            for (var i = 0; i < m.Count; i++)
+            {
+                for (var j = 0; j < m[i].Count; j++)
+                {
+                    result[ind][i] = m[i][j];
+                    ind++;
+                }
+            }
+            return result;
+        }
+        
         public Shedule(List<List<int>> r)
         {
-            _r = r;
+            _r = GenerateR(r);
         }
 
         private void CalculateShedule()
@@ -28,12 +58,12 @@ namespace newAlgorithm
             {
                 _startProcessing.Add(new List<List<int>>());
                 _endProcessing.Add(new List<List<int>>());
-                for (var k = 0; k < _r[0].Count; k++)//количество партий
+                for (var k = 0; k < _r.Count; k++)//количество партий
                 {
                     var ind = ReturnRIndex(k);
                     _startProcessing[i].Add(new List<int>());
                     _endProcessing[i].Add(new List<int>());
-                    for (var p = 0; p < _r[ind][k]; p++)//количество требований
+                    for (var p = 0; p < _r[k][ind]; p++)//количество требований
                     {
                         _startProcessing[i][k].Add(0);
                         _endProcessing[i][k].Add(0);
@@ -46,12 +76,12 @@ namespace newAlgorithm
             var xx = 0;
             for (var i = 0; i < L; i++)
             {
-                for (var j = 0; j < _r[0].Count; j++)
+                for (var j = 0; j < _r.Count; j++)
                 {
                     var index = ReturnRIndex(j);
 
 
-                    for (var k = 0; k < _r[index][j]; k++)
+                    for (var k = 0; k < _r[j][index]; k++)
                     {
                         var timeToSwitch = (index == xx && j != 0) ? 0 : Switching[0][xx][index];
                         if (i > 0)
@@ -136,9 +166,9 @@ namespace newAlgorithm
 
         private int ReturnRIndex(int j)
         {
-            for (var i = 0; i < _r.Count; i++)
+            for (var i = 0; i < _r[j].Count; i++)
             {
-                if (_r[i][j] > 0)
+                if (_r[j][i] > 0)
                     return i;
             }
             return -1;

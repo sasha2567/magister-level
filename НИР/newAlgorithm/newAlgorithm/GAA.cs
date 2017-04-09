@@ -313,7 +313,7 @@ namespace newAlgorithm
             var r = this.ToArrayList();
             foreach (var elem in r)
             {
-                var shedule = new Shedule(this.GenerateR(elem));
+                var shedule = new Shedule(elem);
                 shedule.ConstructShedule();
                 FitnessList.Add(shedule.GetTime());
             }

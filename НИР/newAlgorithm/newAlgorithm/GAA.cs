@@ -199,7 +199,7 @@ namespace newAlgorithm
             {
                 nabor.Add(nachlist());
             }
-            //xor(size);
+            xor(size);
 
             return nabor;
         }

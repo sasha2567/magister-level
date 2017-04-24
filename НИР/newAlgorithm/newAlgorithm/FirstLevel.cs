@@ -258,6 +258,22 @@ namespace newAlgorithm
             return result;
         }
 
+        
+        /// <summary>
+        /// НУжна для отладки вывода массива 
+        /// </summary>
+        /// <param name="m">входной лист</param>
+        /// <returns>лист в виде строки</returns>
+        private static string PrintList(List<int> m)
+        {
+            var result = "";
+            foreach (var t in m)
+            {
+                result += t + ", ";
+            }
+            return result;
+        }
+
 
         /// <summary>
         /// Проверка на достижение максимально возможного решения по составам типов
@@ -418,37 +434,42 @@ namespace newAlgorithm
         /// <summary>
         /// Формирование перебора для всех возможных решений из А2
         /// </summary>
-        /// <returns>Матрица номеров решений из А2</returns>
+        /// <param name="ind">текущий индекс изменяемого решения</param>
+        /// <param name="_n">Матрица номеров решений из А2</param>
+        /// <param name="f">Файл для записей логов</param>
         private void GenerateCombination(int ind, List<int> _n, StreamWriter f)
         {
-            if (ind == _countType) return;
+            if (ind >= _countType) return;
             for (int i = 0; i < _n[ind]; i++)
             {
                 _nTemp[ind] = i;
                 GenerateCombination(ind + 1, _n, f);
+                f.WriteLine(PrintList(_nTemp));
                 GetSolution(_nTemp, f);
             }
+            return;
         }
-        
+
         /// <summary>
         /// Подстановка данных из перебора и вычисление решения
         /// </summary>
         /// <param name="_n">Массив индексов решений из А2</param>
+        /// <param name="f">Файл для записей логов</param>
         private void GetSolution(List<int> _n, StreamWriter f)
         {
             var tempA = CopyMatrix(_a);
             for (var j = 0; j < _countType; j++)
             {
-                if (_i[j] > 0)
+                if (_nTemp[j] >= 0)
                 {
-                    tempA[j] = CopyVector(SetTempAFromA2(j, _n[j])[j]);
+                    tempA[j] = CopyVector(SetTempAFromA2(j, _nTemp[j])[j]);
                 }
             }
             var shedule = new Shedule(tempA);
             shedule.ConstructShedule();
             var fBuf = shedule.GetTime();
             var s = PrintA(tempA);
-            f.Write(s + " - " + fBuf);
+            //f.Write(s + " - " + fBuf);
             //MessageBox.Show(s + " Время обработки " + fBuf);
             if (fBuf < _f1Buf)
             {
@@ -457,7 +478,7 @@ namespace newAlgorithm
                 _f1Buf = fBuf;
                 //file.Write(" +");
             }
-            f.WriteLine();
+            //f.WriteLine();
         }
 
 

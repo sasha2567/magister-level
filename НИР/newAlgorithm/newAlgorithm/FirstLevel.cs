@@ -440,12 +440,12 @@ namespace newAlgorithm
         private void GenerateCombination(int ind, List<int> _n, StreamWriter f)
         {
             if (ind >= _countType) return;
-            for (int i = 0; i < _n[ind]; i++)
+            for (int i = 0; i < _a2[ind].Count; i++)
             {
-                _nTemp[ind] = i;
+                _n[ind] = i;
                 GenerateCombination(ind + 1, _n, f);
-                f.WriteLine(PrintList(_nTemp));
-                GetSolution(_nTemp, f);
+                f.WriteLine(PrintList(_n));
+                GetSolution(_n, f);
             }
             return;
         }
@@ -460,9 +460,9 @@ namespace newAlgorithm
             var tempA = CopyMatrix(_a);
             for (var j = 0; j < _countType; j++)
             {
-                if (_nTemp[j] >= 0)
+                if (_n[j] >= 0)
                 {
-                    tempA[j] = CopyVector(SetTempAFromA2(j, _nTemp[j])[j]);
+                    tempA[j] = CopyVector(SetTempAFromA2(j, _n[j])[j]);
                 }
             }
             var shedule = new Shedule(tempA);
@@ -561,7 +561,7 @@ namespace newAlgorithm
                                     _n.Add(_a2[i].Count);
                                     if (_n[i] == 0) _n[i] = -1;
                                 }
-                                GenerateCombination(0, _n, f);
+                                GenerateCombination(0, _nTemp, f);
                             }
                             if (_typeSolutionFlag)
                             {

@@ -197,10 +197,18 @@ namespace newAlgorithm
         {
             for (int i = 0; i < size; i++)
             {
-                nabor.Add(nachlist());
+                var s = nachlist();
+                if (!nabor.Contains(s))
+                {
+                    nabor.Add(nachlist());
+                }
+                else
+                {
+                    i--;
+                }
             }
-            xor(size);
-
+            //xor(size);
+            
             return nabor;
         }
         public int getSelectionPopulation(int selection,out int s)

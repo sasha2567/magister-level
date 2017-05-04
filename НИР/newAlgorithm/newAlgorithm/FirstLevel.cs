@@ -439,15 +439,24 @@ namespace newAlgorithm
         /// <param name="f">Файл для записей логов</param>
         private void GenerateCombination(int ind, List<int> _n, StreamWriter f)
         {
-            if (ind >= _countType) return;
-            for (int i = 0; i < _a2[ind].Count; i++)
+            for (int i = _a2.Count-1; i >=0 ; i--)
             {
-                _n[ind] = i;
-                GenerateCombination(ind + 1, _n, f);
-                f.WriteLine(PrintList(_n));
-                GetSolution(_n, f);
+                for (int j = 0;j <_a2[i].Count; j++)
+                {
+                    _n[i]=j;
+                    f.WriteLine(PrintList(_n));
+                        GetSolution(_n, f);
+                }        
             }
-            return;
+            //if (ind >= _countType) return;
+            //for (int i = 0; i < _a2[ind].Count; i++)
+            //{
+            //    _n[ind] = i;
+            //    GenerateCombination(ind + 1, _n, f);
+            //    f.WriteLine(PrintList(_n));
+            //    GetSolution(_n, f);
+            //}
+            //return;
         }
 
         /// <summary>

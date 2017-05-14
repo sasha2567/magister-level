@@ -442,8 +442,15 @@ namespace newAlgorithm
         {
             //foreach()
 
-
-
+            for (int i = _a2.Count-1; i >=0 ; i--)
+            {
+                for (int j = 0;j <_a2[i].Count; j++)
+                {
+                    _n[i]=j;
+                    f.WriteLine(PrintList(_n));
+                        GetSolution(_n, f);
+                }        
+            }
             //if (ind >= _countType) return;
             //for (int i = 0; i < _a2[ind].Count; i++)
             //{

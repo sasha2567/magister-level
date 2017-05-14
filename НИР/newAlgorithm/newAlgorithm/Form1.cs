@@ -309,6 +309,11 @@ namespace newAlgorithm
                             {
                                 foreach (var t3 in time)
                                 {
+                                    //if (t == 10 && t1 == 5 && (t2 == 4 || t2 == 8) && t3 == 2)
+                                    //{
+                                    //    fileOut.WriteLine("---" + "\t" + "---");
+                                    //    continue;
+                                    //}
                                     _countType = t;
                                     _l = t1;
                                     _maxS = t3;
@@ -327,7 +332,7 @@ namespace newAlgorithm
                                     Shedule.L = _l;
                                     Shedule.Switching = _temptS;
                                     Shedule.Treatment = _temptT;
-                                    var firstLevel = new FirstLevel(_countType, listCountButches, false);
+                                    var firstLevel = new FirstLevel(_countType, listCountButches, checkBox1.Checked);
                                     count = "_" + _countBatches + "_" + _countType + "_" + _l + "_" + _maxT + "_" + _maxS;
                                     firstLevel.GenetateSolutionForAllTypesSecondAlgorithm(file + count + s);
                                 

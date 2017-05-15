@@ -440,9 +440,7 @@ namespace newAlgorithm
         ///Менят здесь для _\*РУСЛАН*/_
         private void GenerateCombination(int ind, List<int> _n, StreamWriter f)
         {
-            //foreach()
-
-            for (int i = _a2.Count-1; i >=0 ; i--)
+            for (int i = _countType - 1; i >= 0; i--)
             {
                 for (int j = 0;j <_a2[i].Count; j++)
                 {

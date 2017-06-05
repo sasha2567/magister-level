@@ -417,6 +417,27 @@ namespace newAlgorithm
             MessageBox.Show("Данные успешно записаны", "Учпешное завершение", MessageBoxButtons.OK);
         }
 
-
+        private void setsBtn_Click(object sender, EventArgs e)
+        {
+            var firstType = new List<int>();
+            var secondType = new List<int>();
+            var testTime = new List<int>();
+            testTime.Add(15);
+            testTime.Add(18);
+            firstType.Add(3);
+            firstType.Add(3);
+            firstType.Add(3);
+            secondType.Add(2);
+            secondType.Add(3);
+            secondType.Add(4);
+            var testType = new List<List<int>>();
+            testType.Add(firstType);
+            testType.Add(secondType);
+            var test = new Sets(2, testType, testTime);
+            test.AddKit(0);
+            test.AddKit(1);
+            var res = test.AddBatches(10, 0);
+            MessageBox.Show(res + "");
+        }
     }
 }

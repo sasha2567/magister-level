@@ -54,10 +54,15 @@
     </Compile>
     <Compile Include="GAA.cs" />
     <Compile Include="Groups.cs" />
+<<<<<<< HEAD
     <Compile Include="OldFirstLevel.cs" />
     <Compile Include="OldSecondLevel.cs" />
+=======
+    <Compile Include="Kit.cs" />
+>>>>>>> 47e52c136a97bb3fd21adebee64e48baff8d639e
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sets.cs" />
     <Compile Include="Shedule.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

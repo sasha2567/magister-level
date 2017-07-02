@@ -42,6 +42,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.setsBtn = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.button4 = new System.Windows.Forms.Button();
@@ -201,6 +202,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.setsBtn);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.numericUpDown2);
             this.tabPage1.Controls.Add(this.button4);
@@ -230,6 +232,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Установка параметров";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // setsBtn
+            // 
+            this.setsBtn.Location = new System.Drawing.Point(441, 250);
+            this.setsBtn.Name = "setsBtn";
+            this.setsBtn.Size = new System.Drawing.Size(81, 49);
+            this.setsBtn.TabIndex = 22;
+            this.setsBtn.Text = "Тест комплектов";
+            this.setsBtn.UseVisualStyleBackColor = true;
+            this.setsBtn.Click += new System.EventHandler(this.setsBtn_Click);
             // 
             // button5
             // 
@@ -452,6 +464,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button setsBtn;
     }
 }
 

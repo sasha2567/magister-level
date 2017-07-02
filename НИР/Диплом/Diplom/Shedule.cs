@@ -24,7 +24,7 @@ namespace Diplom
         {
             this.R = r;
             L = l;
-            //this.SetTime();
+            SetTime();
         }
 
         private void SetTime()

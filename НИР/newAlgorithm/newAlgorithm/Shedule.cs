@@ -16,6 +16,12 @@ namespace newAlgorithm
         private List<List<List<int>>> _startProcessing;
         private List<List<List<int>>> _endProcessing;
 
+        public Shedule(List<List<int>> r, int l)
+        {
+            this._r = r;
+            L = l;
+        }
+
         /// <summary>
         /// Формирование матрицы для передачи её в модуль расписания
         /// </summary>

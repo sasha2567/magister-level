@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Diplom;
 
-namespace Diplom
+namespace newAlgorithm
 {
-    class FirstLevel
+    class OldFirstLevel
     {
         public static bool flag;
         private List<int> I;//Вектор интерпритируемых типов данных
@@ -39,7 +40,7 @@ namespace Diplom
          * count_claims - количество требований всех типов данных
          * 
          */
-        public FirstLevel(int count_type, List<int> count_claims)
+        public OldFirstLevel(int count_type, List<int> count_claims)
         {
             this.countType = count_type;
             this.countClaims = count_claims;
@@ -199,7 +200,7 @@ namespace Diplom
         public void GenerateSolution()
         {
             this.GenerateStartSolution();
-            SecondLevel secondLevel = new SecondLevel();
+            OldSecondLevel secondLevel = new OldSecondLevel();
             List<List<int>> temp = this.CopyMatrix(this.A);
             secondLevel.GenerateSolution(temp);
             List<List<int>> tmpMatrixA = secondLevel.ReturnAMatrix();
@@ -292,7 +293,7 @@ namespace Diplom
                                 {
                                     this.A1i[this.i + 1] = this.A2[this.q2];
                                     int f1g = 0;
-                                    secondLevel = new SecondLevel();
+                                    secondLevel = new OldSecondLevel();
                                     List<List<int>> tempA = CopyMatrix(this.A1i);
                                     secondLevel.GenerateSolution(tempA);
                                     List<List<int>> tempMatrixA = secondLevel.ReturnAMatrix();

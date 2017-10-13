@@ -25,3 +25,4 @@ D:\!УЧЕБА\repa\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.cspr
 D:\!УЧЕБА\repa\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.exe
 D:\!УЧЕБА\repa\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.pdb
 D:\!УЧЕБА\repa\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.csprojResolveAssemblyReference.cache
+D:\Универ\Магистратура\НИР\newAlgorithm\newAlgorithm\bin\Debug\newAlgorithm.exe.config

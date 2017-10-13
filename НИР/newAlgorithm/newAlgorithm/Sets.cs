@@ -45,13 +45,13 @@ namespace newAlgorithm
 
         public int AddBatches(int batch, int type)
         {
-            for (int i = 0; i < _types; i++)
+            foreach (var row in _readySets)
             {
-                for (int j = 0; j < _readySets[i].Count; j++)
+                foreach(var elem in row)
                 {
-                    if (batch > 0 && !_readySets[i][j].IsSetAllComposition())
+                    if (batch > 0 && !elem.IsSetAllComposition())
                     {
-                        batch = _readySets[i][j].AddBatch(batch, type);
+                        batch = elem.AddBatch(batch, type);
                     }
                 }
             }
@@ -72,24 +72,41 @@ namespace newAlgorithm
                     if (!_readySets[i][j].IsSetAllComposition())
                     {
                         res[i] = j;
+                        break;
                     }
                 }
             }
             return res;
         }
 
+        private int[] GetBatch(List<List<int>> shedule, int index)
+        {
+            var value = 0;
+            var ind = 0;
+            for(int i = 0; i < shedule.Count; i++)
+            {
+                if (shedule[i][index] != 0)
+                {
+                    value = shedule[i][index];
+                    ind = i;
+                    break;
+                }
+            }
+            return new int[] {value, ind};
+        }
+
         public void GetSolution(List<List<int>> shedule)
         {
-            foreach (var row in shedule)
+            for (int i = 0; i < shedule[0].Count; i++)
             {
-                foreach (var elem in row)
+                var result = GetBatch(shedule, i);
+                var value = result[0];
+                var type = result[1];
+                if (value != 0)
                 {
-                    if (elem != 0)
+                    if (!CountReadySets())
                     {
-                        if (!CountReadySets())
-                        {
-
-                        }
+                        AddBatches(value, type);
                     }
                 }
             }

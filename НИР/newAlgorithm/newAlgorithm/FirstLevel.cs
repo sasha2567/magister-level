@@ -353,6 +353,8 @@ namespace newAlgorithm
                                 tempA = SetTempAFromA2(i, j);
                                 shedule = new Shedule(tempA);
                                 shedule.ConstructShedule();
+                                var sets = new Sets(_countType, new List<List<int>>(), new List<int>());
+                                sets.GetSolution(new List<List<int>>());
                                 var fBuf = shedule.GetTime();
                                 s = PrintA(tempA);
                                 //file.Write(s + " " + fBuf);
@@ -387,6 +389,8 @@ namespace newAlgorithm
                                                 tempA[j] = CopyVector(SetTempAFromA2(j, jj)[j]);
                                                 shedule = new Shedule(tempA);
                                                 shedule.ConstructShedule();
+                                                var sets = new Sets(_countType, new List<List<int>>(), new List<int>());
+                                                sets.GetSolution(new List<List<int>>());
                                                 var fBuf = shedule.GetTime();
                                                 s = PrintA(tempA);
                                                 //file.Write(s + " " + fBuf);

@@ -436,7 +436,7 @@ namespace newAlgorithm
             var test = new Sets(2, testType, testTime);
             test.AddKit(0);
             test.AddKit(1);
-            var res = test.AddBatches(10, 0);
+            var res = test.AddBatches(10, 0, 20);
             MessageBox.Show(res + "");
         }
     }

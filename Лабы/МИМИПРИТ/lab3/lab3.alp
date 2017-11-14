@@ -131,7 +131,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1510004982368</Id>
 					<Name><![CDATA[errorMessage]]></Name>
-					<X>360</X><Y>410</Y>
+					<X>260</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1064,12 +1064,12 @@
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[8]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maximumCapacity]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[true]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[entityLocation]]></Name>
@@ -1780,7 +1780,12 @@
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[error = 1;]]></Code>
+								<Code><![CDATA[if (mainProcess.size() > 0) {
+    errorMessage += mainProcess.size();
+    mainProcess.remove(mainProcess.get(0));
+} else {
+    errorMessage++;
+}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -1789,9 +1794,7 @@
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[stream = 2;
-error = 0;
-errorMessage += mainProcess.size();]]></Code>
+								<Code><![CDATA[stream = 2;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>

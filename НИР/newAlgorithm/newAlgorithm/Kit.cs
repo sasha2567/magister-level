@@ -10,7 +10,12 @@ namespace newAlgorithm
     {
         private readonly List<int> _composition;
         private List<int> _readyComposition;
+        private int _time;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="composition"></param>
         public Kit(List<int> composition)
         {
             _composition = composition;
@@ -21,7 +26,14 @@ namespace newAlgorithm
             }
         }
 
-        public int AddBatch(int batch, int type)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="batch"></param>
+        /// <param name="type"></param>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        public int AddBatch(int batch, int type, int time)
         {
             _readyComposition[type] += batch;
             if (ChechCompositionType(type))
@@ -29,10 +41,15 @@ namespace newAlgorithm
                 var difference = _readyComposition[type] - _composition[type];
                 _readyComposition[type] = _composition[type];
                 return difference;
+                _time = difference * time / batch;
             }
             return 0;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public bool IsSetAllComposition()
         {
             for(int i = 0; i < _composition.Count; i++)
@@ -42,6 +59,11 @@ namespace newAlgorithm
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         private bool ChechCompositionType(int type)
         {
             return _readyComposition[type] > _composition[type] ? true : false;

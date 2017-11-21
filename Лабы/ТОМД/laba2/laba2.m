@@ -1,17 +1,18 @@
 clear;
 clc;
 close all;
-seconds=5;
-fsample=140;
+secs=5;
+fsample=300;%=140;
 f1=25;
 f2=35;
 f3=75;
-t=(0:1/fsample:seconds);
+t=(0:1/fsample:secs);
 N=length(t);
 a=sin(2*pi*f1*t);
 b=sin(2*pi*f2*t);
 c=sin(2*pi*f3*t);
 
+f = 0 : fsample/ N : fsample1;
 xa=abs(fft(a));
 xb=abs(fft(b));
 xc=abs(fft(c));

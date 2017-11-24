@@ -386,7 +386,7 @@ namespace newAlgorithm
                                 }
                                 var gaa = new GAA(_countType, listCountButches, checkBox1.Checked);
                                 gaa.SetXrom((int)numericUpDown2.Value);
-                                gaa.calcFitnessList();
+                                var CountSourceKit = gaa.calcFitnessList();
                                 int s;
                                 var result = gaa.getSelectionPopulation(_selectionType, out s);
 
@@ -406,6 +406,9 @@ namespace newAlgorithm
                                         }
                                         file.WriteLine("_________________________");
                                         file.WriteLine(gaa._fitnesslist[i]);
+                                        file.WriteLine("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=");
+                                        file.WriteLine("Kit" + CountSourceKit[i]);
+                                        file.WriteLine("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=");
                                         file.WriteLine("_________________________");
                                         k++;
                                     }
@@ -422,7 +425,7 @@ namespace newAlgorithm
                             }
                             using (var file = new StreamWriter("outputGAASimpleResult.txt", true))
                             {
-                                file.WriteLine("_____________________");
+                                file.WriteLine("_____________________");   
                             }
                         }
                     }

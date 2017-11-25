@@ -68,7 +68,7 @@ namespace newAlgorithm
             }
             xrom.GenListOst.AddRange(_countClaims);
 
-            for (int j = 0; j < xrom.GenList.Count;j++ )
+            for (int j = 0; j < xrom.GenList.Count; j++)
             {
                 int buff = 0;
                 for (int i = 0; i < N / 2 - 1; i++)
@@ -80,16 +80,16 @@ namespace newAlgorithm
                     }
                     else
                         if (xrom.GenListOst[j] == 1)
-                        {
-                            xrom.GenList[j][xrom.GenList[j].Count - 1]++;
-                            xrom.GenListOst[j] = 0;
-                            buff = 0;
-                        }
-                        else
+                    {
+                        xrom.GenList[j][xrom.GenList[j].Count - 1]++;
+                        xrom.GenListOst[j] = 0;
+                        buff = 0;
+                    }
+                    else
                             if (xrom.GenListOst[j] == 0)
-                                buff = 0;
-                            else
-                                xrom.GenListOst[j] -= buff = rand.Next(2, xrom.GenListOst[j]);
+                        buff = 0;
+                    else
+                        xrom.GenListOst[j] -= buff = rand.Next(2, xrom.GenListOst[j]);
                     xrom.GenList[j].Add(buff);
                 }
                 xrom.GenList[j].Add(xrom.GenListOst[j]);
@@ -113,16 +113,16 @@ namespace newAlgorithm
                 }
                 else
                     if (xrom.ostA == 1)
-                    {
-                        xrom.GenA[xrom.GenA.Count - 1]++;
-                        xrom.ostA = 0;
-                        buff = 0;
-                    }
-                    else
+                {
+                    xrom.GenA[xrom.GenA.Count - 1]++;
+                    xrom.ostA = 0;
+                    buff = 0;
+                }
+                else
                         if (xrom.ostA == 0)
-                            buff = 0;
-                        else
-                            xrom.ostA -= buff = rand.Next(2, xrom.ostA);
+                    buff = 0;
+                else
+                    xrom.ostA -= buff = rand.Next(2, xrom.ostA);
                 xrom.GenA.Add(buff);
             }
             xrom.GenA.Add(xrom.ostA);
@@ -144,18 +144,18 @@ namespace newAlgorithm
                 }
                 else
                     if (xrom.ostB == 1)
-                    {
-                        if (xrom.GenB.Count == 0)
-                            xrom.GenA[(N / 3) - 1]++;
-                        else
-                            xrom.GenB[xrom.GenB.Count - 1]++;
-                        xrom.ostB = 0;
-                    }
+                {
+                    if (xrom.GenB.Count == 0)
+                        xrom.GenA[(N / 3) - 1]++;
                     else
+                        xrom.GenB[xrom.GenB.Count - 1]++;
+                    xrom.ostB = 0;
+                }
+                else
                         if (xrom.ostB == 0)
-                            buff = 0;
-                        else
-                            xrom.ostB -= buff = rand.Next(2, xrom.ostB);
+                    buff = 0;
+                else
+                    xrom.ostB -= buff = rand.Next(2, xrom.ostB);
                 xrom.GenB.Add(buff);
             }
             xrom.GenB.Add(xrom.ostB);
@@ -170,15 +170,15 @@ namespace newAlgorithm
                 }
                 else
                     if (xrom.ostC == 1)
-                    {
-                        xrom.GenC[xrom.GenC.Count - 1]++;
-                        xrom.ostC = 0;
-                    }
-                    else
+                {
+                    xrom.GenC[xrom.GenC.Count - 1]++;
+                    xrom.ostC = 0;
+                }
+                else
                         if (xrom.ostC == 0)
-                            buff = 0;
-                        else
-                            xrom.ostC -= buff = rand.Next(2, xrom.ostC);
+                    buff = 0;
+                else
+                    xrom.ostC -= buff = rand.Next(2, xrom.ostC);
                 xrom.GenC.Add(buff);
             }
 
@@ -208,20 +208,20 @@ namespace newAlgorithm
                 }
             }
             //xor(size);
-            
+
             return nabor;
         }
-        public int getSelectionPopulation(int selection,out int s)
+        public int getSelectionPopulation(int selection, out int s)
         {
             List<int> SortFitnessList = new List<int>(_fitnesslist);
             SortFitnessList.Sort();
-             s = _fitnesslist.IndexOf(SortFitnessList[0]);
+            s = _fitnesslist.IndexOf(SortFitnessList[0]);
             return SortFitnessList[0];
         }
 
 
 
-        void xor(int size , List<Xromossomi> nabr=null)
+        void xor(int size, List<Xromossomi> nabr = null)
         {
             List<Xromossomi> naborInternal = new List<Xromossomi>(nabor);
             if (nabr != null)
@@ -288,7 +288,7 @@ namespace newAlgorithm
 
             a1.Add(a);
             a1.Add(b);
-            a1.Add(c);  
+            a1.Add(c);
             return a1;
         }
 
@@ -316,16 +316,39 @@ namespace newAlgorithm
             return result;
         }
 
-        public void calcFitnessList() {
+        public int[] calcFitnessList() {
             List<int> FitnessList = new List<int>();
             var r = this.ToArrayList();
+            var composition = new List<List<int>>();
+            var time = new List<int>();
+            time.Add(25);
+            time.Add(30);
+            time.Add(35);
+            composition.Add(new List<int>());
+            composition[0].Add(2);
+            composition[0].Add(2);
+            composition[0].Add(3);
+            composition.Add(new List<int>());
+            composition[1].Add(3);
+            composition[1].Add(2);
+            composition[1].Add(2);
+            composition.Add(new List<int>());
+            composition[2].Add(2);
+            composition[2].Add(3);
+            composition[2].Add(2);
+            var test = new Sets(2, composition, time);
+            List<int> CountKit = new List<int>();
+
             foreach (var elem in r)
             {
                 var shedule = new Shedule(elem);
                 shedule.ConstructShedule();
                 FitnessList.Add(shedule.GetTime());
+                test.GetSolution(shedule.RetyrnR());
+                CountKit.Add(test.CountReadySets());
             }
             _fitnesslist = FitnessList;
+            return CountKit.ToArray();
         }
 
         public List<List<List<int>>> ToArrayList()

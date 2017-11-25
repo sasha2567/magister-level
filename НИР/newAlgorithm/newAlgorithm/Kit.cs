@@ -33,17 +33,29 @@ namespace newAlgorithm
         /// <param name="type"></param>
         /// <param name="time"></param>
         /// <returns></returns>
-        public int AddBatch(int batch, int type, int time)
+        public SheduleElement AddBatch(int batch, int type, List<int> time)
         {
-            _readyComposition[type] += batch;
-            if (ChechCompositionType(type))
+            var difference = 0;
+            if (batch > _composition[type])
             {
-                var difference = _readyComposition[type] - _composition[type];
+                difference = batch - _composition[type];
                 _readyComposition[type] = _composition[type];
-                return difference;
-                _time = difference * time / batch;
+                _time = time[_composition[type] - 1];
+                for (int i = 0; i < _composition[type]; i++)
+                {
+                    time.RemoveAt(0);
+                }
             }
-            return 0;
+            else
+            {
+                _readyComposition[type] += batch;
+                _time = time[batch - 1];
+                for (int i = 0; i < batch; i++)
+                {
+                    time.RemoveAt(0);
+                }
+            }
+            return new SheduleElement(difference, type, time);
         }
 
         /// <summary>
@@ -57,16 +69,6 @@ namespace newAlgorithm
                 if (_readyComposition[i] != _composition[i]) return false;
             }
             return true;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        private bool ChechCompositionType(int type)
-        {
-            return _readyComposition[type] > _composition[type] ? true : false;
         }
     }
 }

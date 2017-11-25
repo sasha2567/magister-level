@@ -15,7 +15,7 @@ namespace newAlgorithm
         public static int L;
         private List<List<List<int>>> _startProcessing;
         private List<List<List<int>>> _endProcessing;
-        private List<List<List<int>>> _rWithTime;
+        private List<SheduleElement> _rWithTime;
 
         public Shedule(List<List<int>> r, int l)
         {
@@ -52,23 +52,13 @@ namespace newAlgorithm
             return result;
         }
 
-        public List<List<List<int>>> RetyrnR()
+        public List<SheduleElement> RetyrnR()
         {
-            _rWithTime = new List<List<List<int>>>();
-            foreach (var row in _r)
-            {
-                _rWithTime.Add(new List<List<int>>());
-                foreach (var elem in row)
-                {
-                    _rWithTime[_rWithTime.Count - 1].Add(new List<int>());
-                }
-            }
-            for (int i = 0; i < _endProcessing.Count - 1; i++)
+            _rWithTime = new List<SheduleElement>();
+            for (int i = 0; i < _endProcessing[_endProcessing.Count - 1].Count; i++)
             {
                 var ind = ReturnRIndex(i);
-                _rWithTime[i][ind].Add(_r[i][ind]);
-                var value = _endProcessing[_endProcessing.Count - 1][i][_endProcessing[_endProcessing.Count - 1][i].Count - 1];
-                _rWithTime[i][ind].Add(value);
+                _rWithTime.Add(new SheduleElement(_r[i][ind], ind, _endProcessing[_endProcessing.Count - 1][i]));
             }
             return _rWithTime;
         }

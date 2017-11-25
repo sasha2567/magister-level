@@ -306,23 +306,6 @@ namespace newAlgorithm
         /// </summary>
         public void GenetateSolutionForAllTypes(string fileName)
         {
-            var composition = new List<List<int>>();
-            var time = new List<int>();
-            time.Add(25);
-            time.Add(30);
-            time.Add(35);
-            composition.Add(new List<int>());
-            composition[0].Add(2);
-            composition[0].Add(2);
-            composition[0].Add(3);
-            composition.Add(new List<int>());
-            composition[1].Add(3);
-            composition[1].Add(2);
-            composition[1].Add(2);
-            composition.Add(new List<int>());
-            composition[2].Add(2);
-            composition[2].Add(3);
-            composition[2].Add(2);
             using (var file = new StreamWriter(fileName))
             {
                 GenerateStartSolution();
@@ -370,9 +353,6 @@ namespace newAlgorithm
                                 tempA = SetTempAFromA2(i, j);
                                 shedule = new Shedule(tempA);
                                 shedule.ConstructShedule();
-                                var sets = new Sets(_countType, composition, time);
-                                sets.GetSolution(shedule.RetyrnR());
-                                var setsList = sets.ReadySets();
                                 var fBuf = shedule.GetTime();
                                 s = PrintA(tempA);
                                 //file.Write(s + " " + fBuf);
@@ -407,9 +387,6 @@ namespace newAlgorithm
                                                 tempA[j] = CopyVector(SetTempAFromA2(j, jj)[j]);
                                                 shedule = new Shedule(tempA);
                                                 shedule.ConstructShedule();
-                                                var sets = new Sets(_countType, composition, time);
-                                                sets.GetSolution(shedule.RetyrnR());
-                                                var setsList = sets.ReadySets();
                                                 var fBuf = shedule.GetTime();
                                                 s = PrintA(tempA);
                                                 //file.Write(s + " " + fBuf);
@@ -472,15 +449,6 @@ namespace newAlgorithm
                         GetSolution(_n, f);
                 }        
             }
-            //if (ind >= _countType) return;
-            //for (int i = 0; i < _a2[ind].Count; i++)
-            //{
-            //    _n[ind] = i;
-            //    GenerateCombination(ind + 1, _n, f);
-            //    f.WriteLine(PrintList(_n));
-            //    GetSolution(_n, f);
-            //}
-            //return;
         }
 
         /// <summary>
@@ -520,6 +488,23 @@ namespace newAlgorithm
         /// </summary>
         public void GenetateSolutionForAllTypesSecondAlgorithm(string fileName)
         {
+            var composition = new List<List<int>>();
+            var time = new List<int>();
+            time.Add(25);
+            time.Add(30);
+            time.Add(35);
+            composition.Add(new List<int>());
+            composition[0].Add(2);
+            composition[0].Add(2);
+            composition[0].Add(3);
+            composition.Add(new List<int>());
+            composition[1].Add(3);
+            composition[1].Add(2);
+            composition[1].Add(2);
+            composition.Add(new List<int>());
+            composition[2].Add(2);
+            composition[2].Add(3);
+            composition[2].Add(2);
             using (var f = new StreamWriter("standartOutData.txt", true))
             {
                 using (var file = new StreamWriter(fileName))
@@ -569,6 +554,10 @@ namespace newAlgorithm
                                     tempA = SetTempAFromA2(i, j);
                                     shedule = new Shedule(tempA);
                                     shedule.ConstructShedule();
+                                    var sets = new Sets(composition, time);
+                                    var r = shedule.RetyrnR();
+                                    sets.GetSolution(r);
+                                    var setsCount = sets.CountReadySets();
                                     var fBuf = shedule.GetTime();
                                     s = PrintA(tempA);
                                     f.Write(s + " - " + fBuf);

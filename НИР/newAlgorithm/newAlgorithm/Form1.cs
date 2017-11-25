@@ -448,11 +448,6 @@ namespace newAlgorithm
             var testType = new List<List<int>>();
             testType.Add(firstType);
             testType.Add(secondType);
-            var test = new Sets(2, testType, testTime);
-            test.AddKit(0);
-            test.AddKit(1);
-            var res = test.AddBatches(10, 0, 20);
-            MessageBox.Show(res + "");
         }
     }
 }

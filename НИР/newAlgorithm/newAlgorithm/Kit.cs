@@ -11,14 +11,16 @@ namespace newAlgorithm
         private readonly List<int> _composition;
         private List<int> _readyComposition;
         private int _time;
+        private int _compositionTime;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="composition"></param>
-        public Kit(List<int> composition)
+        public Kit(List<int> composition, int compositionTime)
         {
             _composition = composition;
+            _compositionTime = compositionTime;
             _readyComposition = new List<int>();
             for (int i = 0; i < composition.Count; i++)
             {
@@ -35,6 +37,9 @@ namespace newAlgorithm
         /// <returns></returns>
         public SheduleElement AddBatch(int batch, int type, List<int> time)
         {
+            if (_composition[type] == _readyComposition[type]) {
+                return new SheduleElement(batch, type, time);
+            }
             var difference = 0;
             if (batch > _composition[type])
             {
@@ -64,6 +69,10 @@ namespace newAlgorithm
         /// <returns></returns>
         public bool IsSetAllComposition()
         {
+            if (_time > _compositionTime)
+            {
+                return false;
+            }
             for(int i = 0; i < _composition.Count; i++)
             {
                 if (_readyComposition[i] != _composition[i]) return false;

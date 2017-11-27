@@ -336,7 +336,7 @@ namespace newAlgorithm
             composition[2].Add(2);
             composition[2].Add(3);
             composition[2].Add(2);
-            var test = new Sets(2, composition, time);
+            var test = new Sets(composition, time);
             List<int> CountKit = new List<int>();
 
             foreach (var elem in r)

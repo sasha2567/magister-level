@@ -490,9 +490,9 @@ namespace newAlgorithm
         {
             var composition = new List<List<int>>();
             var time = new List<int>();
-            time.Add(25);
-            time.Add(30);
-            time.Add(35);
+            time.Add(75);
+            time.Add(80);
+            time.Add(95);
             composition.Add(new List<int>());
             composition[0].Add(2);
             composition[0].Add(2);

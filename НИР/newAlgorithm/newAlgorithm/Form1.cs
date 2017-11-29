@@ -19,6 +19,9 @@ namespace newAlgorithm
         List<List<List<int>>> _temptS = new List<List<List<int>>>();
         List<List<int>> _temptT = new List<List<int>>();
 
+        public static List<List<int>> compositionSets;
+        public static List<int> timeSets;
+
         public Form1()
         {
             InitializeComponent();
@@ -288,10 +291,33 @@ namespace newAlgorithm
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int[] ni = { 8, 12, 16, /*24, 32*/ };
+            int[] ni = { 8, 12, 16/*, 24, 32*/ };
             int[] time = { 2, 4, 8, 16, 32 };
             int[] l = { 5, 10 };
             int[] n = { 5, 10 };
+            int[,] compositionSetsForType = {
+                {2, 4, 2, 2, 4, 2, 2, 4, 2, 2},
+                {2, 4, 2, 4, 2, 2, 2, 4, 2, 2},
+                {2, 2, 2, 4, 2, 2, 4, 4, 2, 2},
+                {2, 2, 4, 2, 2, 4, 2, 2, 4, 2},
+                {4, 2, 2, 2, 4, 2, 2, 2, 2, 4}
+            };
+
+            compositionSets = new List<List<int>>();
+            timeSets = new List<int>();
+            timeSets.Add(75);
+            timeSets.Add(80);
+            timeSets.Add(85);
+            timeSets.Add(90);
+            timeSets.Add(95);
+            for (int i = 0; i < 5; i++)
+            {
+                compositionSets.Add(new List<int>());
+                for (int j = 0; j < 10; j++)
+                {
+                    compositionSets[i].Add(compositionSetsForType[i, j]);
+                }
+            }
             
             const string s = ".txt";
             string count = "";

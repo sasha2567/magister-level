@@ -488,23 +488,7 @@ namespace newAlgorithm
         /// </summary>
         public void GenetateSolutionForAllTypesSecondAlgorithm(string fileName)
         {
-            var composition = new List<List<int>>();
-            var time = new List<int>();
-            time.Add(75);
-            time.Add(80);
-            time.Add(95);
-            composition.Add(new List<int>());
-            composition[0].Add(2);
-            composition[0].Add(2);
-            composition[0].Add(3);
-            composition.Add(new List<int>());
-            composition[1].Add(3);
-            composition[1].Add(2);
-            composition[1].Add(2);
-            composition.Add(new List<int>());
-            composition[2].Add(2);
-            composition[2].Add(3);
-            composition[2].Add(2);
+            var sets = new Sets(Form1.compositionSets, Form1.timeSets);
             using (var f = new StreamWriter("standartOutData.txt", true))
             {
                 using (var file = new StreamWriter(fileName))
@@ -512,7 +496,10 @@ namespace newAlgorithm
                     GenerateStartSolution();
                     var shedule = new Shedule(_a);
                     shedule.ConstructShedule();
-                    _f1 = shedule.GetTime();
+                    var r = shedule.RetyrnR();
+                    sets.GetSolution(r);
+                    var setsCount = sets.CountReadySets();
+                    var _f1 = setsCount;// shedule.GetTime();
                     //MessageBox.Show(PrintA(A) + " Время обработки " + f1);
                     _f1Buf = _f1;
                     file.WriteLine(_f1Buf);
@@ -554,15 +541,14 @@ namespace newAlgorithm
                                     tempA = SetTempAFromA2(i, j);
                                     shedule = new Shedule(tempA);
                                     shedule.ConstructShedule();
-                                    var sets = new Sets(composition, time);
-                                    var r = shedule.RetyrnR();
+                                    r = shedule.RetyrnR();
                                     sets.GetSolution(r);
-                                    var setsCount = sets.CountReadySets();
-                                    var fBuf = shedule.GetTime();
+                                    setsCount = sets.CountReadySets();
+                                    var fBuf = setsCount;// shedule.GetTime();
                                     s = PrintA(tempA);
                                     f.Write(s + " - " + fBuf);
                                     //MessageBox.Show(s + " Время обработки " + fBuf);                                    
-                                    if (fBuf < _f1Buf)
+                                    if (fBuf > _f1Buf)
                                     {
                                         _abuf = CopyMatrix(tempA);
                                         _typeSolutionFlag = true;

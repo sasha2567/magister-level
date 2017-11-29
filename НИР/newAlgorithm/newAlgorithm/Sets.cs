@@ -10,8 +10,8 @@ namespace newAlgorithm
     {
         private readonly int _types;
         private readonly List<List<int>> _composition;
-        private List<List<Kit>> _readySets;
         private readonly List<int> _time;
+        private List<List<Kit>> _readySets;
         private int _newIndexForAddKit;
 
         /// <summary>
@@ -88,11 +88,11 @@ namespace newAlgorithm
             }
             if (sheduleElement.getValue() > 0)
             {
-                AddKit(_newIndexForAddKit++);
-                if (_newIndexForAddKit >= _types)
+                for (int i = 0; i < _types;i++)
                 {
-                    _newIndexForAddKit = 0;
+                    AddKit(i);
                 }
+                AddBatches(sheduleElement);
             }
         }
 
@@ -102,31 +102,9 @@ namespace newAlgorithm
         /// <param name="shedule"></param>
         public void GetSolution(List<SheduleElement> shedule)
         {
-            SheduleElement tempElement;
             foreach (var element in shedule)
             {
-                foreach (var row in _readySets)
-                {
-                    foreach (var elem in row)
-                    {
-                        if (!elem.IsSetAllComposition())
-                        {
-                            tempElement = elem.AddBatch(element.getValue(), element.getType(), element.getTime());
-                            if (tempElement.getValue() == 0)
-                            {
-                                return;
-                            }
-                        }
-                    }
-                }
-                if (element.getValue() > 0)
-                {
-                    AddKit(_newIndexForAddKit++);
-                    if (_newIndexForAddKit >= _types)
-                    {
-                        _newIndexForAddKit = 0;
-                    }
-                }
+                AddBatches(element);
             }
         }
     }

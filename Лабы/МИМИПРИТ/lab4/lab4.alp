@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.1.0.201706091042" AlpVersion="8.0.4">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.2.2.201711021640" AlpVersion="8.0.4">
 <Model>
 	<Id>1511197211629</Id>
 	<Name><![CDATA[lab4]]></Name>
@@ -187,6 +187,54 @@
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1511816410514</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1511862542280</Id>
+					<Name><![CDATA[difficultType1]]></Name>
+					<X>30</X><Y>510</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[53000]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1511862542278</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1511862662894</Id>
+					<Name><![CDATA[difficultType2]]></Name>
+					<X>30</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[66000]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1511862662892</Id>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -865,6 +913,42 @@
 					</Points>
 				</Connector>
 			</Connectors>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1511862312569</Id>
+					<Name><![CDATA[generateMessage]]></Name>
+					<X>200</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[agent]]></Name>
+						<Type><![CDATA[Message]]></Type>
+					</Parameter>
+					<Body><![CDATA[double temp = rayleigh(messageTypes * sigma);
+agent.type = messageTypes;
+agent.difficultCalculation = difficultType1;
+if (temp < 0.3) agent.type = 1;
+if (temp < 0.5) {
+    agent.type = 2;
+    agent.difficultCalculation = difficultType2;
+}
+if (temp < 0.7) {
+    agent.type = 3;
+    agent.difficultCalculation = difficultType2;
+}
+temp = uniform(clientCount);
+agent.clientId = clientCount;
+if (temp < 1) agent.clientId = 1;
+if (temp < 2) agent.clientId = 2;
+if (temp < 3) agent.clientId = 3;
+if (temp < 4) agent.clientId = 4;
+if (temp < 5) agent.clientId = 5;]]></Body>
+				</Function>
+			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1511197211630</Id>
@@ -1247,7 +1331,10 @@
 							</Value>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[routerDelay]]></Name>
+							<Name><![CDATA[routerCalculationPerformance]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[40000]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[routerRenouncementDelay]]></Name>
@@ -1919,7 +2006,10 @@
 							</Value>
 						</Parameter>
 						<Parameter>
-							<Name><![CDATA[routerDelay]]></Name>
+							<Name><![CDATA[routerCalculationPerformance]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[40000]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[routerRenouncementDelay]]></Name>
@@ -2063,6 +2153,9 @@
 										<Parameter>
 											<Name><![CDATA[clientId]]></Name>
 										</Parameter>
+										<Parameter>
+											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -2172,18 +2265,7 @@
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[double temp = rayleigh(messageTypes * sigma);
-agent.type = messageTypes;
-if (temp < 0.3) agent.type = 1;
-if (temp < 0.5) agent.type = 2;
-if (temp < 0.7) agent.type = 3;
-temp = rayleigh(clientCount * sigma);
-agent.clientId = clientCount;
-if (temp < 2) agent.clientId = 1;
-if (temp < 4) agent.clientId = 2;
-if (temp < 6) agent.clientId = 3;
-if (temp < 8) agent.clientId = 4;
-if (temp < 10) agent.clientId = 5;]]></Code>
+								<Code><![CDATA[generateMessage(agent);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2324,6 +2406,9 @@ if (temp < 10) agent.clientId = 5;]]></Code>
 										<Parameter>
 											<Name><![CDATA[clientId]]></Name>
 										</Parameter>
+										<Parameter>
+											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -2433,18 +2518,7 @@ if (temp < 10) agent.clientId = 5;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[double temp = rayleigh(messageTypes * sigma);
-agent.type = messageTypes;
-if (temp < 0.3) agent.type = 1;
-if (temp < 0.5) agent.type = 2;
-if (temp < 0.7) agent.type = 3;
-temp = rayleigh(clientCount * sigma);
-agent.clientId = clientCount;
-if (temp < 1) agent.clientId = 1;
-if (temp < 2) agent.clientId = 2;
-if (temp < 3) agent.clientId = 3;
-if (temp < 4) agent.clientId = 4;
-if (temp < 5) agent.clientId = 5;]]></Code>
+								<Code><![CDATA[generateMessage(agent);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2585,6 +2659,9 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 										<Parameter>
 											<Name><![CDATA[clientId]]></Name>
 										</Parameter>
+										<Parameter>
+											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -2694,18 +2771,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[double temp = rayleigh(messageTypes * sigma);
-agent.type = messageTypes;
-if (temp < 0.3) agent.type = 1;
-if (temp < 0.5) agent.type = 2;
-if (temp < 0.7) agent.type = 3;
-temp = rayleigh(clientCount * sigma);
-agent.clientId = clientCount;
-if (temp < 1) agent.clientId = 1;
-if (temp < 2) agent.clientId = 2;
-if (temp < 3) agent.clientId = 3;
-if (temp < 4) agent.clientId = 4;
-if (temp < 5) agent.clientId = 5;]]></Code>
+								<Code><![CDATA[generateMessage(agent);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2846,6 +2912,9 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 										<Parameter>
 											<Name><![CDATA[clientId]]></Name>
 										</Parameter>
+										<Parameter>
+											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -2955,18 +3024,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[double temp = rayleigh(messageTypes * sigma);
-agent.type = messageTypes;
-if (temp < 0.3) agent.type = 1;
-if (temp < 0.5) agent.type = 2;
-if (temp < 0.7) agent.type = 3;
-temp = rayleigh(clientCount * sigma);
-agent.clientId = clientCount;
-if (temp < 1) agent.clientId = 1;
-if (temp < 2) agent.clientId = 2;
-if (temp < 3) agent.clientId = 3;
-if (temp < 4) agent.clientId = 4;
-if (temp < 5) agent.clientId = 5;]]></Code>
+								<Code><![CDATA[generateMessage(agent);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3107,6 +3165,9 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 										<Parameter>
 											<Name><![CDATA[clientId]]></Name>
 										</Parameter>
+										<Parameter>
+											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -3216,18 +3277,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[double temp = rayleigh(messageTypes * sigma);
-agent.type = messageTypes;
-if (temp < 0.3) agent.type = 1;
-if (temp < 0.5) agent.type = 2;
-if (temp < 0.7) agent.type = 3;
-temp = rayleigh(clientCount * sigma);
-agent.clientId = clientCount;
-if (temp < 1) agent.clientId = 1;
-if (temp < 2) agent.clientId = 2;
-if (temp < 3) agent.clientId = 3;
-if (temp < 4) agent.clientId = 4;
-if (temp < 5) agent.clientId = 5;]]></Code>
+								<Code><![CDATA[generateMessage(agent);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3368,6 +3418,9 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 										<Parameter>
 											<Name><![CDATA[clientId]]></Name>
 										</Parameter>
+										<Parameter>
+											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
 									<Replication Class="CodeValue">
@@ -3477,18 +3530,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[double temp = rayleigh(messageTypes * sigma);
-agent.type = messageTypes;
-if (temp < 0.3) agent.type = 1;
-if (temp < 0.5) agent.type = 2;
-if (temp < 0.7) agent.type = 3;
-temp = rayleigh(clientCount * sigma);
-agent.clientId = clientCount;
-if (temp < 1) agent.clientId = 1;
-if (temp < 2) agent.clientId = 2;
-if (temp < 3) agent.clientId = 3;
-if (temp < 4) agent.clientId = 4;
-if (temp < 5) agent.clientId = 5;]]></Code>
+								<Code><![CDATA[generateMessage(agent);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4811,8 +4853,6 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 								<Code><![CDATA[if (mainProcess.size() > 0) {
     errorMessage += mainProcess.size();
     mainProcess.remove(mainProcess.get(0));
-} else {
-    errorMessage++;
 }]]></Code>
 							</Value>
 						</Parameter>
@@ -5148,7 +5188,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				<Variable Class="PlainVariable">
 					<Id>1511818304090</Id>
 					<Name><![CDATA[errorMessage]]></Name>
-					<X>420</X><Y>310</Y>
+					<X>450</X><Y>310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5163,7 +5203,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				<Variable Class="Parameter">
 					<Id>1511807776547</Id>
 					<Name><![CDATA[inOutPort1]]></Name>
-					<X>530</X><Y>360</Y>
+					<X>450</X><Y>390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5184,7 +5224,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				<Variable Class="Parameter">
 					<Id>1511810242644</Id>
 					<Name><![CDATA[inOutPort2]]></Name>
-					<X>530</X><Y>390</Y>
+					<X>450</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5205,7 +5245,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				<Variable Class="Parameter">
 					<Id>1511810247155</Id>
 					<Name><![CDATA[inOutPort3]]></Name>
-					<X>530</X><Y>420</Y>
+					<X>450</X><Y>450</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5225,8 +5265,8 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1511814162593</Id>
-					<Name><![CDATA[routerDelay]]></Name>
-					<X>420</X><Y>360</Y>
+					<Name><![CDATA[routerCalculationPerformance]]></Name>
+					<X>450</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5250,7 +5290,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				<Variable Class="Parameter">
 					<Id>1511818337193</Id>
 					<Name><![CDATA[routerRenouncementDelay]]></Name>
-					<X>420</X><Y>250</Y>
+					<X>450</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5274,7 +5314,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				<Variable Class="Parameter">
 					<Id>1511818369636</Id>
 					<Name><![CDATA[routerRecoveryDelay]]></Name>
-					<X>420</X><Y>280</Y>
+					<X>450</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5502,7 +5542,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				<Connector>
 					<Id>1511202790180</Id>
 					<Name><![CDATA[connector5]]></Name>
-					<X>290</X><Y>300</Y>
+					<X>300</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5510,7 +5550,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[lab4]]></PackageName>
 						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[selectOutput5]]></ItemName>
+						<ItemName><![CDATA[selectOutput]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -5520,7 +5560,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[lab4]]></PackageName>
 						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[delayType1]]></ItemName>
+						<ItemName><![CDATA[delayByType]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -5529,7 +5569,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-60</X><Y>0</Y></Point>
+						<Point><X>-80</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -5544,7 +5584,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[lab4]]></PackageName>
 						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[selectOutput5]]></ItemName>
+						<ItemName><![CDATA[selectOutput]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -5553,15 +5593,16 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>210</X><Y>0</Y></Point>
+						<Point><X>240</X><Y>0</Y></Point>
+						<Point><X>240</X><Y>180</Y></Point>
 						<Point><X>210</X><Y>180</Y></Point>
-						<Point><X>180</X><Y>180</Y></Point>
+						<Point><X>190</X><Y>180</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511202896616</Id>
 					<Name><![CDATA[connector8]]></Name>
-					<X>310</X><Y>320</Y>
+					<X>320</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5569,7 +5610,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[lab4]]></PackageName>
 						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[selectOutput5]]></ItemName>
+						<ItemName><![CDATA[selectOutput]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -5579,15 +5620,15 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 					<TargetId>1511201735059</TargetId>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>20</X><Y>0</Y></Point>
-						<Point><X>20</X><Y>-130</Y></Point>
-						<Point><X>-180</X><Y>-129</Y></Point>
+						<Point><X>40</X><Y>0</Y></Point>
+						<Point><X>40</X><Y>-130</Y></Point>
+						<Point><X>-190</X><Y>-129</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511202899485</Id>
 					<Name><![CDATA[connector9]]></Name>
-					<X>310</X><Y>300</Y>
+					<X>320</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5595,7 +5636,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[lab4]]></PackageName>
 						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[selectOutput5]]></ItemName>
+						<ItemName><![CDATA[selectOutput]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -5605,15 +5646,15 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 					<TargetId>1511201735061</TargetId>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>10</X><Y>0</Y></Point>
-						<Point><X>10</X><Y>-80</Y></Point>
-						<Point><X>-180</X><Y>-80</Y></Point>
+						<Point><X>30</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>-80</Y></Point>
+						<Point><X>-190</X><Y>-80</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511809995761</Id>
 					<Name><![CDATA[connector6]]></Name>
-					<X>310</X><Y>360</Y>
+					<X>320</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5621,7 +5662,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[lab4]]></PackageName>
 						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[selectOutput5]]></ItemName>
+						<ItemName><![CDATA[selectOutput]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
@@ -5631,15 +5672,15 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 					<TargetId>1511201735055</TargetId>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>40</X><Y>0</Y></Point>
-						<Point><X>40</X><Y>-230</Y></Point>
-						<Point><X>-180</X><Y>-230</Y></Point>
+						<Point><X>60</X><Y>0</Y></Point>
+						<Point><X>60</X><Y>-230</Y></Point>
+						<Point><X>-190</X><Y>-230</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511818304115</Id>
 					<Name><![CDATA[connector10]]></Name>
-					<X>480</X><Y>200</Y>
+					<X>510</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5672,7 +5713,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				<Connector>
 					<Id>1511818304119</Id>
 					<Name><![CDATA[connector12]]></Name>
-					<X>580</X><Y>200</Y>
+					<X>610</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5703,9 +5744,9 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1511822039692</Id>
-					<Name><![CDATA[connector4]]></Name>
-					<X>0</X><Y>0</Y>
+					<Id>1511822039693</Id>
+					<Name><![CDATA[connector11]]></Name>
+					<X>180</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5713,44 +5754,11 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[lab4]]></PackageName>
 						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[delayType1]]></ItemName>
+						<ItemName><![CDATA[delayByType]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
 						<ClassName><![CDATA[Delay]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[selectOutput6]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput5]]></ClassName>
-						<ItemName><![CDATA[out1]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>190</X><Y>300</Y></Point>
-						<Point><X>150</X><Y>300</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1511822039693</Id>
-					<Name><![CDATA[connector11]]></Name>
-					<X>0</X><Y>0</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[selectOutput6]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput5]]></ClassName>
 						<ItemName><![CDATA[in]]></ItemName>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
@@ -5764,218 +5772,8 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 						<ItemName><![CDATA[out]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
-						<Point><X>130</X><Y>300</Y></Point>
-						<Point><X>100</X><Y>300</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1511822058230</Id>
-					<Name><![CDATA[connector13]]></Name>
-					<X>190</X><Y>360</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[delayType2]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[selectOutput6]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput5]]></ClassName>
-						<ItemName><![CDATA[out2]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-10</X><Y>0</Y></Point>
-						<Point><X>-10</X><Y>-40</Y></Point>
-						<Point><X>-40</X><Y>-40</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1511822065364</Id>
-					<Name><![CDATA[connector14]]></Name>
-					<X>190</X><Y>420</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[delayType3]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[selectOutput6]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput5]]></ClassName>
-						<ItemName><![CDATA[out3]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-20</X><Y>0</Y></Point>
-						<Point><X>-20</X><Y>-80</Y></Point>
-						<Point><X>-40</X><Y>-80</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1511822150590</Id>
-					<Name><![CDATA[connector15]]></Name>
-					<X>150</X><Y>360</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[selectOutput6]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput5]]></ClassName>
-						<ItemName><![CDATA[out4]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[delayType4]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>10</X><Y>0</Y></Point>
-						<Point><X>10</X><Y>120</Y></Point>
-						<Point><X>40</X><Y>120</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1511822159052</Id>
-					<Name><![CDATA[connector16]]></Name>
-					<X>230</X><Y>360</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[delayType2]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[selectOutput5]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput5]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>-60</Y></Point>
-						<Point><X>60</X><Y>-60</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1511822169246</Id>
-					<Name><![CDATA[connector17]]></Name>
-					<X>230</X><Y>420</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[delayType3]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[selectOutput5]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput5]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>-120</Y></Point>
-						<Point><X>60</X><Y>-120</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
-					<Id>1511822178712</Id>
-					<Name><![CDATA[connector18]]></Name>
-					<X>230</X><Y>480</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[delayType4]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[lab4]]></PackageName>
-						<ClassName><![CDATA[Router]]></ClassName>
-						<ItemName><![CDATA[selectOutput5]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput5]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>-180</Y></Point>
-						<Point><X>60</X><Y>-180</Y></Point>
+						<Point><X>-80</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -6140,9 +5938,9 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1511202761053</Id>
-					<Name><![CDATA[delayType1]]></Name>
-					<X>190</X><Y>280</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
+					<Name><![CDATA[delayByType]]></Name>
+					<X>180</X><Y>280</Y>
+					<Label><X>-15</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -6164,7 +5962,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[rayleigh(routerDelay * main.sigma)]]></Code>
+								<Code><![CDATA[agent.difficultCalculation * 1.0 / routerCalculationPerformance]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 							</Value>
 						</Parameter>
@@ -6244,8 +6042,8 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				</EmbeddedObject>
 				<EmbeddedObject>
 					<Id>1511809961208</Id>
-					<Name><![CDATA[selectOutput5]]></Name>
-					<X>280</X><Y>290</Y>
+					<Name><![CDATA[selectOutput]]></Name>
+					<X>290</X><Y>290</Y>
 					<Label><X>-25</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6378,7 +6176,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				<EmbeddedObject>
 					<Id>1511818304094</Id>
 					<Name><![CDATA[renouncement]]></Name>
-					<X>400</X><Y>190</Y>
+					<X>430</X><Y>190</Y>
 					<Label><X>-30</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6560,7 +6358,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				<EmbeddedObject>
 					<Id>1511818304098</Id>
 					<Name><![CDATA[recovery]]></Name>
-					<X>480</X><Y>180</Y>
+					<X>510</X><Y>180</Y>
 					<Label><X>-5</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6589,6 +6387,9 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[2]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[maximumCapacity]]></Name>
@@ -6611,9 +6412,9 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (delayType1.size() > 0) {
-    errorMessage += delayType1.size();
-    delayType1.remove(delayType1.get(0));
+								<Code><![CDATA[if (delayByType.size() > 0) {
+    errorMessage += delayByType.size();
+    delayByType.remove(delayByType.get(0));
 }]]></Code>
 							</Value>
 						</Parameter>
@@ -6673,7 +6474,7 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 				<EmbeddedObject>
 					<Id>1511818304104</Id>
 					<Name><![CDATA[sink2]]></Name>
-					<X>580</X><Y>190</Y>
+					<X>610</X><Y>190</Y>
 					<Label><X>-5</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6695,448 +6496,6 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destroyEntity]]></Name>
-						</Parameter>
-					</Parameters>
-					<ReplicationFlag>false</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InitialSpeedCode Class="CodeUnitValue">
-						<Code><![CDATA[10]]></Code>
-						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
-					</InitialSpeedCode>
-					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>SPECIFIED_NUMBER</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-				</EmbeddedObject>
-				<EmbeddedObject>
-					<Id>1511822038134</Id>
-					<Name><![CDATA[selectOutput6]]></Name>
-					<X>120</X><Y>290</Y>
-					<Label><X>-25</X><Y>-20</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput5]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-							<ClassName><![CDATA[SelectOutput5]]></ClassName>
-							<ItemName><![CDATA[1412336243132]]></ItemName>
-						</GenericParameterSubstituteReference>
-					</GenericParameterSubstitute>
-					<Parameters>
-						<Parameter>
-							<Name><![CDATA[type]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[self.TYPE_CONDITIONS]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[condition1]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[agent.type == 1]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[condition2]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[agent.type == 2]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[condition3]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[agent.type == 3]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[condition4]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[agent.type == 4]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability1]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability2]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability3]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability4]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability5]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[exitNumber]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onEnter]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit1]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit2]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit3]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit4]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit5]]></Name>
-						</Parameter>
-					</Parameters>
-					<ReplicationFlag>false</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InitialSpeedCode Class="CodeUnitValue">
-						<Code><![CDATA[10]]></Code>
-						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
-					</InitialSpeedCode>
-					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>SPECIFIED_NUMBER</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-				</EmbeddedObject>
-				<EmbeddedObject>
-					<Id>1511822042962</Id>
-					<Name><![CDATA[delayType2]]></Name>
-					<X>190</X><Y>340</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-							<ClassName><![CDATA[Delay]]></ClassName>
-							<ItemName><![CDATA[1412336242930]]></ItemName>
-						</GenericParameterSubstituteReference>
-					</GenericParameterSubstitute>
-					<Parameters>
-						<Parameter>
-							<Name><![CDATA[type]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[delayTime]]></Name>
-							<Value Class="CodeUnitValue">
-								<Code><![CDATA[rayleigh(routerDelay * main.sigma)]]></Code>
-								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[capacity]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[maximumCapacity]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[entityLocation]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[pushProtocol]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[forceStatisticsCollection]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onEnter]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onAtExit]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onRemove]]></Name>
-						</Parameter>
-					</Parameters>
-					<ReplicationFlag>false</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InitialSpeedCode Class="CodeUnitValue">
-						<Code><![CDATA[10]]></Code>
-						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
-					</InitialSpeedCode>
-					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>SPECIFIED_NUMBER</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-				</EmbeddedObject>
-				<EmbeddedObject>
-					<Id>1511822047929</Id>
-					<Name><![CDATA[delayType3]]></Name>
-					<X>190</X><Y>400</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-							<ClassName><![CDATA[Delay]]></ClassName>
-							<ItemName><![CDATA[1412336242930]]></ItemName>
-						</GenericParameterSubstituteReference>
-					</GenericParameterSubstitute>
-					<Parameters>
-						<Parameter>
-							<Name><![CDATA[type]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[delayTime]]></Name>
-							<Value Class="CodeUnitValue">
-								<Code><![CDATA[rayleigh(routerDelay * main.sigma)]]></Code>
-								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[capacity]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[maximumCapacity]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[entityLocation]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[pushProtocol]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[forceStatisticsCollection]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onEnter]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onAtExit]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onRemove]]></Name>
-						</Parameter>
-					</Parameters>
-					<ReplicationFlag>false</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InitialSpeedCode Class="CodeUnitValue">
-						<Code><![CDATA[10]]></Code>
-						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
-					</InitialSpeedCode>
-					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>SPECIFIED_NUMBER</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-				</EmbeddedObject>
-				<EmbeddedObject>
-					<Id>1511822139833</Id>
-					<Name><![CDATA[delayType4]]></Name>
-					<X>190</X><Y>460</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-							<ClassName><![CDATA[Delay]]></ClassName>
-							<ItemName><![CDATA[1412336242930]]></ItemName>
-						</GenericParameterSubstituteReference>
-					</GenericParameterSubstitute>
-					<Parameters>
-						<Parameter>
-							<Name><![CDATA[type]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[delayTime]]></Name>
-							<Value Class="CodeUnitValue">
-								<Code><![CDATA[rayleigh(routerDelay * main.sigma)]]></Code>
-								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[capacity]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[maximumCapacity]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[entityLocation]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[pushProtocol]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[forceStatisticsCollection]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onEnter]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onAtExit]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onRemove]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -7314,6 +6673,27 @@ if (temp < 5) agent.clientId = 5;]]></Code>
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1511861155727</Id>
+					<Name><![CDATA[difficultCalculation]]></Name>
+					<X>60</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1511861155725</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<AgentLinks>
 				<AgentLink>
@@ -7468,6 +6848,12 @@ getPresentation().setPresentable( getEngine().getRoot() );]]></ActionCode>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[clientCount]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[difficultType1]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[difficultType2]]></ParameterName>
 				</Parameter>
 			</Parameters>			
 			<PresentationProperties 

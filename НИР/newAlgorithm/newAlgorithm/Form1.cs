@@ -291,23 +291,23 @@ namespace newAlgorithm
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int[] ni = { 8, 12, 16/*, 24, 32*/ };
+            int[] ni = { 8, 12, 16, 24, 32 };
             int[] time = { 2, 4, 8, 16, 32 };
             int[] l = { 5, 10 };
             int[] n = { 5, 10 };
             int[,] compositionSetsForType = {
-                {2, 4, 2, 2, 4, 2, 2, 4, 2, 2},
-                {2, 4, 2, 4, 2, 2, 2, 4, 2, 2},
-                {2, 2, 2, 4, 2, 2, 4, 4, 2, 2},
-                {2, 2, 4, 2, 2, 4, 2, 2, 4, 2},
-                {4, 2, 2, 2, 4, 2, 2, 2, 2, 4}
+                {2, 2, 0, 2, 2, 2, 2, 4, 2, 0},
+                {2, 0, 2, 2, 2, 4, 0, 4, 2, 0},
+                {0, 2, 2, 2, 2, 0, 4, 0, 4, 0},
+                {2, 2, 2, 0, 2, 0, 2, 0, 0, 4},
+                {2, 2, 2, 2, 0, 2, 0, 0, 0, 4}
             };
 
             compositionSets = new List<List<int>>();
             timeSets = new List<int>();
-            timeSets.Add(75);
-            timeSets.Add(80);
-            timeSets.Add(85);
+            timeSets.Add(95);
+            timeSets.Add(90);
+            timeSets.Add(95);
             timeSets.Add(90);
             timeSets.Add(95);
             for (int i = 0; i < 5; i++)

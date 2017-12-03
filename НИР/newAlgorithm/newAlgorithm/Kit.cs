@@ -41,7 +41,7 @@ namespace newAlgorithm
                 return new SheduleElement(batch, type, time);
             }
             var difference = 0;
-            if (batch > _composition[type])
+            if (batch >= _composition[type])
             {
                 difference = batch - _composition[type];
                 _readyComposition[type] = _composition[type];

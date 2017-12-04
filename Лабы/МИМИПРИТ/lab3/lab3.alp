@@ -101,7 +101,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1509981621555</Id>
 					<Name><![CDATA[stream]]></Name>
-					<X>90</X><Y>230</Y>
+					<X>380</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -114,24 +114,9 @@
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1509982259904</Id>
-					<Name><![CDATA[error]]></Name>
-					<X>190</X><Y>230</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[int]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
 					<Id>1510004982368</Id>
 					<Name><![CDATA[errorMessage]]></Name>
-					<X>260</X><Y>230</Y>
+					<X>450</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -146,7 +131,7 @@
 				<Variable Class="Parameter">
 					<Id>1509982884178</Id>
 					<Name><![CDATA[mainIntensive]]></Name>
-					<X>60</X><Y>410</Y>
+					<X>110</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -170,7 +155,7 @@
 				<Variable Class="Parameter">
 					<Id>1509982898280</Id>
 					<Name><![CDATA[reserveIntensive]]></Name>
-					<X>60</X><Y>440</Y>
+					<X>110</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -194,7 +179,7 @@
 				<Variable Class="Parameter">
 					<Id>1509982993282</Id>
 					<Name><![CDATA[reserveTimeStart]]></Name>
-					<X>190</X><Y>480</Y>
+					<X>240</X><Y>360</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -218,7 +203,7 @@
 				<Variable Class="Parameter">
 					<Id>1509983109115</Id>
 					<Name><![CDATA[recoveryTime]]></Name>
-					<X>190</X><Y>510</Y>
+					<X>240</X><Y>390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -242,7 +227,7 @@
 				<Variable Class="Parameter">
 					<Id>1509983176399</Id>
 					<Name><![CDATA[mainProcessing]]></Name>
-					<X>190</X><Y>410</Y>
+					<X>240</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -266,7 +251,7 @@
 				<Variable Class="Parameter">
 					<Id>1509983216792</Id>
 					<Name><![CDATA[reserveProcessing]]></Name>
-					<X>190</X><Y>440</Y>
+					<X>240</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -290,7 +275,7 @@
 				<Variable Class="Parameter">
 					<Id>1509984028126</Id>
 					<Name><![CDATA[errorIntensive]]></Name>
-					<X>60</X><Y>470</Y>
+					<X>110</X><Y>350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -554,7 +539,7 @@
 				<Connector>
 					<Id>1509981808983</Id>
 					<Name><![CDATA[connector10]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>0</X><Y>-90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -587,7 +572,7 @@
 				<Connector>
 					<Id>1509982081456</Id>
 					<Name><![CDATA[connector11]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>400</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -613,14 +598,14 @@
 						<ItemName><![CDATA[out]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
-						<Point><X>400</X><Y>340</Y></Point>
-						<Point><X>350</X><Y>340</Y></Point>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-50</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1509982081457</Id>
 					<Name><![CDATA[connector12]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>310</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -646,8 +631,8 @@
 						<ItemName><![CDATA[out]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
-						<Point><X>310</X><Y>340</Y></Point>
-						<Point><X>220</X><Y>340</Y></Point>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-90</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -1547,7 +1532,7 @@
 				<EmbeddedObject>
 					<Id>1509981799300</Id>
 					<Name><![CDATA[renouncement]]></Name>
-					<X>90</X><Y>330</Y>
+					<X>90</X><Y>240</Y>
 					<Label><X>-5</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1729,7 +1714,7 @@
 				<EmbeddedObject>
 					<Id>1509981807664</Id>
 					<Name><![CDATA[recovery]]></Name>
-					<X>180</X><Y>320</Y>
+					<X>180</X><Y>230</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1783,8 +1768,6 @@
 								<Code><![CDATA[if (mainProcess.size() > 0) {
     errorMessage += mainProcess.size();
     mainProcess.remove(mainProcess.get(0));
-} else {
-    errorMessage++;
 }]]></Code>
 							</Value>
 						</Parameter>
@@ -1847,7 +1830,7 @@
 				<EmbeddedObject>
 					<Id>1509981810386</Id>
 					<Name><![CDATA[sink2]]></Name>
-					<X>400</X><Y>330</Y>
+					<X>400</X><Y>240</Y>
 					<Label><X>-5</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1917,8 +1900,8 @@
 				<EmbeddedObject>
 					<Id>1509982079839</Id>
 					<Name><![CDATA[secondChannel]]></Name>
-					<X>310</X><Y>320</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
+					<X>310</X><Y>230</Y>
+					<Label><X>-20</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>

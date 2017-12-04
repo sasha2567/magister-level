@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.2.2.201711021640" AlpVersion="8.0.4">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.1.0.201706091042" AlpVersion="8.0.4">
 <Model>
 	<Id>1511197211629</Id>
 	<Name><![CDATA[lab4]]></Name>
@@ -98,10 +98,1474 @@
 			</ScaleRuler>
 			<ConnectionsId>1511197211630</ConnectionsId>
 			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1512416460986</Id>
+					<Name><![CDATA[channel1ErrorMessage]]></Name>
+					<X>180</X><Y>370</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512416489155</Id>
+					<Name><![CDATA[channel2ErrorMessage]]></Name>
+					<X>180</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512416501697</Id>
+					<Name><![CDATA[channel3ErrorMessage]]></Name>
+					<X>180</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512416501699</Id>
+					<Name><![CDATA[channel4ErrorMessage]]></Name>
+					<X>180</X><Y>460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512416521271</Id>
+					<Name><![CDATA[channel5ErrorMessage]]></Name>
+					<X>180</X><Y>490</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512416521274</Id>
+					<Name><![CDATA[channel6ErrorMessage]]></Name>
+					<X>180</X><Y>520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417337724</Id>
+					<Name><![CDATA[router1ErrorMessage]]></Name>
+					<X>180</X><Y>550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417358785</Id>
+					<Name><![CDATA[router2ErrorMessage]]></Name>
+					<X>180</X><Y>580</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417595929</Id>
+					<Name><![CDATA[cl1_cl2]]></Name>
+					<X>350</X><Y>370</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417599714</Id>
+					<Name><![CDATA[cl1_cl3]]></Name>
+					<X>350</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417604354</Id>
+					<Name><![CDATA[cl1_cl4]]></Name>
+					<X>350</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417604356</Id>
+					<Name><![CDATA[cl1_cl5]]></Name>
+					<X>350</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417604358</Id>
+					<Name><![CDATA[cl1_cl6]]></Name>
+					<X>350</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417609506</Id>
+					<Name><![CDATA[cl2_cl1]]></Name>
+					<X>430</X><Y>370</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417609510</Id>
+					<Name><![CDATA[cl2_cl3]]></Name>
+					<X>430</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417609512</Id>
+					<Name><![CDATA[cl2_cl4]]></Name>
+					<X>430</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417609514</Id>
+					<Name><![CDATA[cl2_cl5]]></Name>
+					<X>430</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417609516</Id>
+					<Name><![CDATA[cl2_cl6]]></Name>
+					<X>430</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417646922</Id>
+					<Name><![CDATA[cl3_cl1]]></Name>
+					<X>510</X><Y>370</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417646924</Id>
+					<Name><![CDATA[cl3_cl2]]></Name>
+					<X>510</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417646928</Id>
+					<Name><![CDATA[cl3_cl4]]></Name>
+					<X>510</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417646930</Id>
+					<Name><![CDATA[cl3_cl5]]></Name>
+					<X>510</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417646932</Id>
+					<Name><![CDATA[cl3_cl6]]></Name>
+					<X>510</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417765970</Id>
+					<Name><![CDATA[cl4_cl1]]></Name>
+					<X>590</X><Y>370</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417765972</Id>
+					<Name><![CDATA[cl4_cl2]]></Name>
+					<X>590</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417765974</Id>
+					<Name><![CDATA[cl4_cl3]]></Name>
+					<X>590</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417765978</Id>
+					<Name><![CDATA[cl4_cl5]]></Name>
+					<X>590</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417765980</Id>
+					<Name><![CDATA[cl4_cl6]]></Name>
+					<X>590</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417765982</Id>
+					<Name><![CDATA[cl5_cl1]]></Name>
+					<X>670</X><Y>370</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417765984</Id>
+					<Name><![CDATA[cl5_cl2]]></Name>
+					<X>670</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417765986</Id>
+					<Name><![CDATA[cl5_cl3]]></Name>
+					<X>670</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417765988</Id>
+					<Name><![CDATA[cl5_cl4]]></Name>
+					<X>670</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417765992</Id>
+					<Name><![CDATA[cl5_cl6]]></Name>
+					<X>670</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417765994</Id>
+					<Name><![CDATA[cl6_cl1]]></Name>
+					<X>750</X><Y>370</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417765996</Id>
+					<Name><![CDATA[cl6_cl2]]></Name>
+					<X>750</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417765998</Id>
+					<Name><![CDATA[cl6_cl3]]></Name>
+					<X>750</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417766000</Id>
+					<Name><![CDATA[cl6_cl4]]></Name>
+					<X>750</X><Y>430</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512417766002</Id>
+					<Name><![CDATA[cl6_cl5]]></Name>
+					<X>750</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427802</Id>
+					<Name><![CDATA[cl1_cl2E]]></Name>
+					<X>350</X><Y>480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427804</Id>
+					<Name><![CDATA[cl1_cl3E]]></Name>
+					<X>350</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427806</Id>
+					<Name><![CDATA[cl1_cl4E]]></Name>
+					<X>350</X><Y>520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427808</Id>
+					<Name><![CDATA[cl1_cl5E]]></Name>
+					<X>350</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427810</Id>
+					<Name><![CDATA[cl1_cl6E]]></Name>
+					<X>350</X><Y>560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427812</Id>
+					<Name><![CDATA[cl2_cl1E]]></Name>
+					<X>430</X><Y>480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427814</Id>
+					<Name><![CDATA[cl2_cl3E]]></Name>
+					<X>430</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427816</Id>
+					<Name><![CDATA[cl2_cl4E]]></Name>
+					<X>430</X><Y>520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427818</Id>
+					<Name><![CDATA[cl2_cl5E]]></Name>
+					<X>430</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427820</Id>
+					<Name><![CDATA[cl2_cl6E]]></Name>
+					<X>430</X><Y>560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427822</Id>
+					<Name><![CDATA[cl3_cl1E]]></Name>
+					<X>510</X><Y>480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427824</Id>
+					<Name><![CDATA[cl3_cl2E]]></Name>
+					<X>510</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427826</Id>
+					<Name><![CDATA[cl3_cl4E]]></Name>
+					<X>510</X><Y>520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427828</Id>
+					<Name><![CDATA[cl3_cl5E]]></Name>
+					<X>510</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427830</Id>
+					<Name><![CDATA[cl3_cl6E]]></Name>
+					<X>510</X><Y>560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427832</Id>
+					<Name><![CDATA[cl4_cl1E]]></Name>
+					<X>590</X><Y>480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427834</Id>
+					<Name><![CDATA[cl4_cl2E]]></Name>
+					<X>590</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427836</Id>
+					<Name><![CDATA[cl4_cl3E]]></Name>
+					<X>590</X><Y>520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427838</Id>
+					<Name><![CDATA[cl4_cl5E]]></Name>
+					<X>590</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427840</Id>
+					<Name><![CDATA[cl4_cl6E]]></Name>
+					<X>590</X><Y>560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427842</Id>
+					<Name><![CDATA[cl5_cl1E]]></Name>
+					<X>670</X><Y>480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427844</Id>
+					<Name><![CDATA[cl5_cl2E]]></Name>
+					<X>670</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427846</Id>
+					<Name><![CDATA[cl5_cl3E]]></Name>
+					<X>670</X><Y>520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427848</Id>
+					<Name><![CDATA[cl5_cl4E]]></Name>
+					<X>670</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427850</Id>
+					<Name><![CDATA[cl5_cl6E]]></Name>
+					<X>670</X><Y>560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427852</Id>
+					<Name><![CDATA[cl6_cl1E]]></Name>
+					<X>750</X><Y>480</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427854</Id>
+					<Name><![CDATA[cl6_cl2E]]></Name>
+					<X>750</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427856</Id>
+					<Name><![CDATA[cl6_cl3E]]></Name>
+					<X>750</X><Y>520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427858</Id>
+					<Name><![CDATA[cl6_cl4E]]></Name>
+					<X>750</X><Y>540</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512418427860</Id>
+					<Name><![CDATA[cl6_cl5E]]></Name>
+					<X>750</X><Y>560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275696</Id>
+					<Name><![CDATA[cl1_cl2Er]]></Name>
+					<X>350</X><Y>590</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[cl1_cl2 - cl1_cl2E]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275699</Id>
+					<Name><![CDATA[cl1_cl3Er]]></Name>
+					<X>350</X><Y>610</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[cl1_cl3 - cl1_cl3E]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275701</Id>
+					<Name><![CDATA[cl1_cl4Er]]></Name>
+					<X>350</X><Y>630</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[cl1_cl4 - cl1_cl4E]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275703</Id>
+					<Name><![CDATA[cl1_cl5Er]]></Name>
+					<X>350</X><Y>650</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[cl1_cl5 - cl1_cl5E]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275705</Id>
+					<Name><![CDATA[cl1_cl6Er]]></Name>
+					<X>350</X><Y>670</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[cl1_cl6 - cl1_cl6E]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275707</Id>
+					<Name><![CDATA[cl2_cl1Er]]></Name>
+					<X>430</X><Y>590</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275709</Id>
+					<Name><![CDATA[cl2_cl3Er]]></Name>
+					<X>430</X><Y>610</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275711</Id>
+					<Name><![CDATA[cl2_cl4Er]]></Name>
+					<X>430</X><Y>630</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275713</Id>
+					<Name><![CDATA[cl2_cl5Er]]></Name>
+					<X>430</X><Y>650</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275715</Id>
+					<Name><![CDATA[cl2_cl6Er]]></Name>
+					<X>430</X><Y>670</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275717</Id>
+					<Name><![CDATA[cl3_cl1Er]]></Name>
+					<X>510</X><Y>590</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275719</Id>
+					<Name><![CDATA[cl3_cl2Er]]></Name>
+					<X>510</X><Y>610</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275721</Id>
+					<Name><![CDATA[cl3_cl4Er]]></Name>
+					<X>510</X><Y>630</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275723</Id>
+					<Name><![CDATA[cl3_cl5Er]]></Name>
+					<X>510</X><Y>650</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275725</Id>
+					<Name><![CDATA[cl3_cl6Er]]></Name>
+					<X>510</X><Y>670</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275727</Id>
+					<Name><![CDATA[cl4_cl1Er]]></Name>
+					<X>590</X><Y>590</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275729</Id>
+					<Name><![CDATA[cl4_cl2Er]]></Name>
+					<X>590</X><Y>610</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275731</Id>
+					<Name><![CDATA[cl4_cl3Er]]></Name>
+					<X>590</X><Y>630</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275733</Id>
+					<Name><![CDATA[cl4_cl5Er]]></Name>
+					<X>590</X><Y>650</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275735</Id>
+					<Name><![CDATA[cl4_cl6Er]]></Name>
+					<X>590</X><Y>670</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275737</Id>
+					<Name><![CDATA[cl5_cl1Er]]></Name>
+					<X>670</X><Y>590</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275739</Id>
+					<Name><![CDATA[cl5_cl2Er]]></Name>
+					<X>670</X><Y>610</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275741</Id>
+					<Name><![CDATA[cl5_cl3Er]]></Name>
+					<X>670</X><Y>630</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275743</Id>
+					<Name><![CDATA[cl5_cl4Er]]></Name>
+					<X>670</X><Y>650</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275745</Id>
+					<Name><![CDATA[cl5_cl6Er]]></Name>
+					<X>670</X><Y>670</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275747</Id>
+					<Name><![CDATA[cl6_cl1Er]]></Name>
+					<X>750</X><Y>590</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275749</Id>
+					<Name><![CDATA[cl6_cl2Er]]></Name>
+					<X>750</X><Y>610</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275751</Id>
+					<Name><![CDATA[cl6_cl3Er]]></Name>
+					<X>750</X><Y>630</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275753</Id>
+					<Name><![CDATA[cl6_cl4Er]]></Name>
+					<X>750</X><Y>650</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1512419275755</Id>
+					<Name><![CDATA[cl6_cl5Er]]></Name>
+					<X>750</X><Y>670</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1511217994267</Id>
 					<Name><![CDATA[sigma]]></Name>
-					<X>30</X><Y>450</Y>
+					<X>30</X><Y>430</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -125,7 +1589,7 @@
 				<Variable Class="Parameter">
 					<Id>1511815914358</Id>
 					<Name><![CDATA[clientDelay]]></Name>
-					<X>30</X><Y>480</Y>
+					<X>30</X><Y>460</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -149,7 +1613,7 @@
 				<Variable Class="Parameter">
 					<Id>1511816390932</Id>
 					<Name><![CDATA[messageTypes]]></Name>
-					<X>30</X><Y>390</Y>
+					<X>30</X><Y>370</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -173,7 +1637,7 @@
 				<Variable Class="Parameter">
 					<Id>1511816410516</Id>
 					<Name><![CDATA[clientCount]]></Name>
-					<X>30</X><Y>420</Y>
+					<X>30</X><Y>400</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -197,7 +1661,7 @@
 				<Variable Class="Parameter">
 					<Id>1511862542280</Id>
 					<Name><![CDATA[difficultType1]]></Name>
-					<X>30</X><Y>510</Y>
+					<X>30</X><Y>490</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -221,7 +1685,7 @@
 				<Variable Class="Parameter">
 					<Id>1511862662894</Id>
 					<Name><![CDATA[difficultType2]]></Name>
-					<X>30</X><Y>540</Y>
+					<X>30</X><Y>520</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -247,7 +1711,7 @@
 				<Connector>
 					<Id>1511215308323</Id>
 					<Name><![CDATA[connector]]></Name>
-					<X>290</X><Y>80</Y>
+					<X>300</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -274,13 +1738,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-80</X><Y>0</Y></Point>
+						<Point><X>-100</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511215349649</Id>
 					<Name><![CDATA[connector2]]></Name>
-					<X>390</X><Y>110</Y>
+					<X>400</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -307,13 +1771,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-180</X><Y>0</Y></Point>
+						<Point><X>-200</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511807874051</Id>
 					<Name><![CDATA[connector12]]></Name>
-					<X>210</X><Y>170</Y>
+					<X>220</X><Y>150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -339,18 +1803,18 @@
 						<ItemName><![CDATA[in4]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-20</X><Y>0</Y></Point>
 						<Point><X>20</X><Y>0</Y></Point>
-						<Point><X>20</X><Y>20</Y></Point>
-						<Point><X>-200</X><Y>20</Y></Point>
-						<Point><X>-200</X><Y>160</Y></Point>
-						<Point><X>-50</X><Y>160</Y></Point>
+						<Point><X>20</X><Y>60</Y></Point>
+						<Point><X>-200</X><Y>60</Y></Point>
+						<Point><X>-200</X><Y>170</Y></Point>
+						<Point><X>-50</X><Y>170</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511807888487</Id>
 					<Name><![CDATA[connector13]]></Name>
-					<X>210</X><Y>330</Y>
+					<X>200</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -377,17 +1841,17 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>470</X><Y>0</Y></Point>
-						<Point><X>470</X><Y>-320</Y></Point>
-						<Point><X>-200</X><Y>-320</Y></Point>
-						<Point><X>-200</X><Y>-160</Y></Point>
-						<Point><X>-50</X><Y>-160</Y></Point>
+						<Point><X>640</X><Y>0</Y></Point>
+						<Point><X>640</X><Y>-310</Y></Point>
+						<Point><X>-190</X><Y>-310</Y></Point>
+						<Point><X>-190</X><Y>-170</Y></Point>
+						<Point><X>-30</X><Y>-170</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511808097281</Id>
 					<Name><![CDATA[connector14]]></Name>
-					<X>80</X><Y>80</Y>
+					<X>90</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -420,7 +1884,7 @@
 				<Connector>
 					<Id>1511808107850</Id>
 					<Name><![CDATA[connector15]]></Name>
-					<X>80</X><Y>110</Y>
+					<X>90</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -453,7 +1917,7 @@
 				<Connector>
 					<Id>1511808119750</Id>
 					<Name><![CDATA[connector16]]></Name>
-					<X>80</X><Y>140</Y>
+					<X>90</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -486,7 +1950,7 @@
 				<Connector>
 					<Id>1511808207951</Id>
 					<Name><![CDATA[connector20]]></Name>
-					<X>580</X><Y>80</Y>
+					<X>590</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -513,13 +1977,15 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-270</X><Y>0</Y></Point>
+						<Point><X>-40</X><Y>0</Y></Point>
+						<Point><X>-40</X><Y>10</Y></Point>
+						<Point><X>-270</X><Y>10</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511808236377</Id>
 					<Name><![CDATA[connector21]]></Name>
-					<X>580</X><Y>110</Y>
+					<X>590</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -552,7 +2018,7 @@
 				<Connector>
 					<Id>1511808275072</Id>
 					<Name><![CDATA[connector23]]></Name>
-					<X>580</X><Y>240</Y>
+					<X>590</X><Y>220</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -579,13 +2045,15 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-270</X><Y>0</Y></Point>
+						<Point><X>-40</X><Y>0</Y></Point>
+						<Point><X>-40</X><Y>10</Y></Point>
+						<Point><X>-270</X><Y>10</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511808285558</Id>
 					<Name><![CDATA[connector24]]></Name>
-					<X>580</X><Y>270</Y>
+					<X>590</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -618,7 +2086,7 @@
 				<Connector>
 					<Id>1511808290067</Id>
 					<Name><![CDATA[connector25]]></Name>
-					<X>580</X><Y>301</Y>
+					<X>590</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -645,13 +2113,15 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-80</X><Y>0</Y></Point>
+						<Point><X>-40</X><Y>0</Y></Point>
+						<Point><X>-40</X><Y>-10</Y></Point>
+						<Point><X>-70</X><Y>-10</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511815145975</Id>
 					<Name><![CDATA[connector27]]></Name>
-					<X>80</X><Y>270</Y>
+					<X>90</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -684,7 +2154,7 @@
 				<Connector>
 					<Id>1511815159181</Id>
 					<Name><![CDATA[connector18]]></Name>
-					<X>80</X><Y>300</Y>
+					<X>90</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -717,7 +2187,7 @@
 				<Connector>
 					<Id>1511815575711</Id>
 					<Name><![CDATA[connector9]]></Name>
-					<X>210</X><Y>270</Y>
+					<X>200</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -744,13 +2214,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>180</X><Y>0</Y></Point>
+						<Point><X>200</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511815577859</Id>
 					<Name><![CDATA[connector11]]></Name>
-					<X>210</X><Y>240</Y>
+					<X>200</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -777,13 +2247,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>80</X><Y>0</Y></Point>
+						<Point><X>100</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511815580148</Id>
 					<Name><![CDATA[connector17]]></Name>
-					<X>160</X><Y>240</Y>
+					<X>170</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -816,7 +2286,7 @@
 				<Connector>
 					<Id>1511821834339</Id>
 					<Name><![CDATA[connector1]]></Name>
-					<X>210</X><Y>141</Y>
+					<X>200</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -843,13 +2313,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>293</X><Y>0</Y></Point>
+						<Point><X>300</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511821836815</Id>
 					<Name><![CDATA[connector3]]></Name>
-					<X>523</X><Y>141</Y>
+					<X>520</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -876,13 +2346,15 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>57</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>10</Y></Point>
+						<Point><X>70</X><Y>10</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511821943750</Id>
 					<Name><![CDATA[connector4]]></Name>
-					<X>210</X><Y>301</Y>
+					<X>200</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -909,7 +2381,297 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>270</X><Y>0</Y></Point>
+						<Point><X>300</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1512300880797</Id>
+					<Name><![CDATA[connector5]]></Name>
+					<X>190</X><Y>340</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[router2]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Router]]></ClassName>
+						<ItemName><![CDATA[error]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[ErrorMessage]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>-30</Y></Point>
+						<Point><X>550</X><Y>-30</Y></Point>
+						<Point><X>550</X><Y>-160</Y></Point>
+						<Point><X>590</X><Y>-160</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1512300890493</Id>
+					<Name><![CDATA[connector6]]></Name>
+					<X>190</X><Y>170</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[router1]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Router]]></ClassName>
+						<ItemName><![CDATA[error]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[ErrorMessage]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>-30</Y></Point>
+						<Point><X>-170</X><Y>-30</Y></Point>
+						<Point><X>-170</X><Y>-150</Y></Point>
+						<Point><X>560</X><Y>-150</Y></Point>
+						<Point><X>560</X><Y>10</Y></Point>
+						<Point><X>590</X><Y>10</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1512301535016</Id>
+					<Name><![CDATA[connector7]]></Name>
+					<X>350</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[channel1]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Channel]]></ClassName>
+						<ItemName><![CDATA[error]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[ErrorMessage]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>190</X><Y>0</Y></Point>
+						<Point><X>190</X><Y>-20</Y></Point>
+						<Point><X>380</X><Y>-20</Y></Point>
+						<Point><X>380</X><Y>130</Y></Point>
+						<Point><X>430</X><Y>130</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1512301552273</Id>
+					<Name><![CDATA[connector8]]></Name>
+					<X>450</X><Y>80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[channel2]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Channel]]></ClassName>
+						<ItemName><![CDATA[error]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[ErrorMessage]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>99</X><Y>0</Y></Point>
+						<Point><X>100</X><Y>-10</Y></Point>
+						<Point><X>260</X><Y>-10</Y></Point>
+						<Point><X>260</X><Y>100</Y></Point>
+						<Point><X>330</X><Y>100</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1512301564259</Id>
+					<Name><![CDATA[connector10]]></Name>
+					<X>550</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[channel3]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Channel]]></ClassName>
+						<ItemName><![CDATA[error]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[ErrorMessage]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>140</X><Y>0</Y></Point>
+						<Point><X>140</X><Y>70</Y></Point>
+						<Point><X>230</X><Y>70</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1512301584143</Id>
+					<Name><![CDATA[connector19]]></Name>
+					<X>350</X><Y>220</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[channel4]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Channel]]></ClassName>
+						<ItemName><![CDATA[error]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[ErrorMessage]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>190</X><Y>0</Y></Point>
+						<Point><X>190</X><Y>-40</Y></Point>
+						<Point><X>430</X><Y>-40</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1512301597265</Id>
+					<Name><![CDATA[connector22]]></Name>
+					<X>450</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[channel5]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Channel]]></ClassName>
+						<ItemName><![CDATA[error]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[ErrorMessage]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>100</X><Y>0</Y></Point>
+						<Point><X>100</X><Y>-10</Y></Point>
+						<Point><X>250</X><Y>-10</Y></Point>
+						<Point><X>250</X><Y>-70</Y></Point>
+						<Point><X>330</X><Y>-70</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1512301608197</Id>
+					<Name><![CDATA[connector26]]></Name>
+					<X>550</X><Y>280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[channel6]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Channel]]></ClassName>
+						<ItemName><![CDATA[error]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[ErrorMessage]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>170</X><Y>0</Y></Point>
+						<Point><X>170</X><Y>-100</Y></Point>
+						<Point><X>230</X><Y>-100</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -919,7 +2681,7 @@
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1511862312569</Id>
 					<Name><![CDATA[generateMessage]]></Name>
-					<X>200</X><Y>390</Y>
+					<X>30</X><Y>550</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -928,25 +2690,361 @@
 						<Name><![CDATA[agent]]></Name>
 						<Type><![CDATA[Message]]></Type>
 					</Parameter>
+					<Parameter>
+						<Name><![CDATA[clientId]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
 					<Body><![CDATA[double temp = rayleigh(messageTypes * sigma);
 agent.type = messageTypes;
-agent.difficultCalculation = difficultType1;
-if (temp < 0.3) agent.type = 1;
-if (temp < 0.5) {
-    agent.type = 2;
-    agent.difficultCalculation = difficultType2;
-}
+agent.difficultCalculation = (int)rayleigh(difficultType2 * sigma);
 if (temp < 0.7) {
     agent.type = 3;
-    agent.difficultCalculation = difficultType2;
 }
-temp = uniform(clientCount);
-agent.clientId = clientCount;
-if (temp < 1) agent.clientId = 1;
-if (temp < 2) agent.clientId = 2;
-if (temp < 3) agent.clientId = 3;
-if (temp < 4) agent.clientId = 4;
-if (temp < 5) agent.clientId = 5;]]></Body>
+if (temp < 0.5) {
+    agent.type = 2;
+    agent.difficultCalculation = (int)rayleigh(difficultType1 * sigma);
+}
+if (temp < 0.3) {
+    agent.type = 1;
+}
+agent.clientId = clientId;
+agent.from = clientId;
+while(agent.clientId == clientId) {
+	temp = rayleigh(clientCount * sigma);
+	agent.clientId = clientCount;
+	if (temp < 10) {
+	    agent.clientId = 5;
+	}
+	if (temp < 8) {
+	    agent.clientId = 4;
+	}
+	if (temp < 6) {
+	    agent.clientId = 3;
+	}
+	if (temp < 4) {
+	    agent.clientId = 2;
+	}
+	if (temp < 2) {
+	    agent.clientId = 1;
+	}
+}
+collectMessage(agent.from, agent.clientId);
+
+
+
+
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1512418672397</Id>
+					<Name><![CDATA[collectMessage]]></Name>
+					<X>30</X><Y>580</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[clientSourceId]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[clientSinkId]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[switch(clientSourceId) {
+    case 1:
+        switch(clientSinkId) {
+		    case 2:
+		        cl1_cl2++;
+		        break;
+		    case 3:
+		        cl1_cl3++;
+		        break;
+		    case 4:
+		        cl1_cl4++;
+		        break;
+		    case 5:
+		        cl1_cl5++;
+		        break;
+		    case 6:
+		        cl1_cl6++;
+		        break;
+		}
+        break;
+    case 2:
+        switch(clientSinkId) {
+		    case 1:
+		        cl2_cl1++;
+		        break;
+		    case 3:
+		        cl2_cl3++;
+		        break;
+		    case 4:
+		        cl2_cl4++;
+		        break;
+		    case 5:
+		        cl2_cl5++;
+		        break;
+		    case 6:
+		        cl2_cl6++;
+		        break;
+		}
+        break;
+    case 3:
+        switch(clientSinkId) {
+		    case 1:
+		        cl3_cl1++;
+		        break;
+		    case 2:
+		        cl3_cl2++;
+		        break;
+		    case 4:
+		        cl3_cl4++;
+		        break;
+		    case 5:
+		        cl3_cl5++;
+		        break;
+		    case 6:
+		        cl3_cl6++;
+		        break;
+		}
+        break;
+    case 4:
+        switch(clientSinkId) {
+		    case 1:
+		        cl4_cl1++;
+		        break;
+		    case 2:
+		        cl4_cl2++;
+		        break;
+		    case 3:
+		        cl4_cl3++;
+		        break;
+		    case 5:
+		        cl4_cl5++;
+		        break;
+		    case 6:
+		        cl4_cl6++;
+		        break;
+		}
+        break;
+    case 5:
+        switch(clientSinkId) {
+		    case 1:
+		        cl5_cl1++;
+		        break;
+		    case 2:
+		        cl5_cl2++;
+		        break;
+		    case 3:
+		        cl5_cl3++;
+		        break;
+		    case 4:
+		        cl5_cl4++;
+		        break;
+		    case 6:
+		        cl5_cl6++;
+		        break;
+		}
+        break;
+    case 6:
+        switch(clientSinkId) {
+		    case 1:
+		        cl6_cl1++;
+		        break;
+		    case 2:
+		        cl6_cl2++;
+		        break;
+		    case 3:
+		        cl6_cl3++;
+		        break;
+		    case 4:
+		        cl6_cl4++;
+		        break;
+		    case 5:
+		        cl6_cl5++;
+		        break;
+		}
+        break;
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1512423032247</Id>
+					<Name><![CDATA[collectSuccessMessage]]></Name>
+					<X>30</X><Y>610</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[clientSourceId]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[clientSinkId]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[switch(clientSourceId) {
+    case 1:
+        switch(clientSinkId) {
+		    case 2:
+		        cl1_cl2E++;
+		        break;
+		    case 3:
+		        cl1_cl3E++;
+		        break;
+		    case 4:
+		        cl1_cl4E++;
+		        break;
+		    case 5:
+		        cl1_cl5E++;
+		        break;
+		    case 6:
+		        cl1_cl6E++;
+		        break;
+		}
+        break;
+    case 2:
+        switch(clientSinkId) {
+		    case 1:
+		        cl2_cl1E++;
+		        break;
+		    case 3:
+		        cl2_cl3E++;
+		        break;
+		    case 4:
+		        cl2_cl4E++;
+		        break;
+		    case 5:
+		        cl2_cl5E++;
+		        break;
+		    case 6:
+		        cl2_cl6E++;
+		        break;
+		}
+        break;
+    case 3:
+        switch(clientSinkId) {
+		    case 1:
+		        cl3_cl1E++;
+		        break;
+		    case 2:
+		        cl3_cl2E++;
+		        break;
+		    case 4:
+		        cl3_cl4E++;
+		        break;
+		    case 5:
+		        cl3_cl5E++;
+		        break;
+		    case 6:
+		        cl3_cl6E++;
+		        break;
+		}
+        break;
+    case 4:
+        switch(clientSinkId) {
+		    case 1:
+		        cl4_cl1E++;
+		        break;
+		    case 2:
+		        cl4_cl2E++;
+		        break;
+		    case 3:
+		        cl4_cl3E++;
+		        break;
+		    case 5:
+		        cl4_cl5E++;
+		        break;
+		    case 6:
+		        cl4_cl6E++;
+		        break;
+		}
+        break;
+    case 5:
+        switch(clientSinkId) {
+		    case 1:
+		        cl5_cl1E++;
+		        break;
+		    case 2:
+		        cl5_cl2E++;
+		        break;
+		    case 3:
+		        cl5_cl3E++;
+		        break;
+		    case 4:
+		        cl5_cl4E++;
+		        break;
+		    case 6:
+		        cl5_cl6E++;
+		        break;
+		}
+        break;
+    case 6:
+        switch(clientSinkId) {
+		    case 1:
+		        cl6_cl1E++;
+		        break;
+		    case 2:
+		        cl6_cl2E++;
+		        break;
+		    case 3:
+		        cl6_cl3E++;
+		        break;
+		    case 4:
+		        cl6_cl4E++;
+		        break;
+		    case 5:
+		        cl6_cl5E++;
+		        break;
+		}
+        break;
+}]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1512423613540</Id>
+					<Name><![CDATA[collectErrorMessage]]></Name>
+					<X>30</X><Y>640</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[cl1_cl2Er = cl1_cl2 - cl1_cl2E;
+cl1_cl3Er = cl1_cl3 - cl1_cl3E;
+cl1_cl4Er = cl1_cl4 - cl1_cl4E;
+cl1_cl5Er = cl1_cl5 - cl1_cl5E;
+cl1_cl6Er = cl1_cl6 - cl1_cl6E;
+cl2_cl1Er = cl2_cl1 - cl2_cl1E;
+cl2_cl3Er = cl2_cl3 - cl2_cl3E;
+cl2_cl4Er = cl2_cl4 - cl2_cl4E;
+cl2_cl5Er = cl2_cl5 - cl2_cl5E;
+cl2_cl6Er = cl2_cl6 - cl2_cl6E;
+cl3_cl1Er = cl3_cl1 - cl3_cl1E;
+cl3_cl2Er = cl3_cl2 - cl3_cl2E;
+cl3_cl4Er = cl3_cl4 - cl3_cl4E;
+cl3_cl5Er = cl3_cl5 - cl3_cl5E;
+cl3_cl6Er = cl3_cl6 - cl3_cl6E;
+cl4_cl1Er = cl4_cl1 - cl4_cl1E;
+cl4_cl2Er = cl4_cl2 - cl4_cl2E;
+cl4_cl3Er = cl4_cl3 - cl4_cl3E;
+cl4_cl5Er = cl4_cl5 - cl4_cl5E;
+cl4_cl6Er = cl4_cl6 - cl4_cl6E;
+cl5_cl1Er = cl5_cl1 - cl5_cl1E;
+cl5_cl2Er = cl5_cl2 - cl5_cl2E;
+cl5_cl3Er = cl5_cl3 - cl5_cl3E;
+cl5_cl4Er = cl5_cl4 - cl5_cl4E;
+cl5_cl6Er = cl5_cl6 - cl5_cl6E;
+cl6_cl1Er = cl6_cl1 - cl6_cl1E;
+cl6_cl2Er = cl6_cl2 - cl6_cl2E;
+cl6_cl3Er = cl6_cl3 - cl6_cl3E;
+cl6_cl4Er = cl6_cl4 - cl6_cl4E;
+cl6_cl5Er = cl6_cl5 - cl6_cl5E;]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -975,8 +3073,8 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511200798065</Id>
 					<Name><![CDATA[channel1]]></Name>
-					<X>290</X><Y>80</Y>
-					<Label><X>-15</X><Y>15</Y></Label>
+					<X>300</X><Y>50</Y>
+					<Label><X>-15</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1006,6 +3104,15 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[errorIntensive]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[queueSize]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[channelId]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[1]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -1055,8 +3162,8 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511200800182</Id>
 					<Name><![CDATA[channel2]]></Name>
-					<X>390</X><Y>110</Y>
-					<Label><X>-15</X><Y>15</Y></Label>
+					<X>400</X><Y>80</Y>
+					<Label><X>-15</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1086,6 +3193,15 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[errorIntensive]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[queueSize]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[channelId]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[2]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -1135,8 +3251,8 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511200803416</Id>
 					<Name><![CDATA[channel3]]></Name>
-					<X>503</X><Y>141</Y>
-					<Label><X>-10</X><Y>20</Y></Label>
+					<X>500</X><Y>110</Y>
+					<Label><X>-15</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1166,6 +3282,15 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[errorIntensive]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[queueSize]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[channelId]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[3]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -1215,8 +3340,8 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511200805773</Id>
 					<Name><![CDATA[channel4]]></Name>
-					<X>290</X><Y>240</Y>
-					<Label><X>-20</X><Y>15</Y></Label>
+					<X>300</X><Y>220</Y>
+					<Label><X>-20</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1246,6 +3371,15 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[errorIntensive]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[queueSize]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[channelId]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[4]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -1295,7 +3429,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511215255264</Id>
 					<Name><![CDATA[router1]]></Name>
-					<X>160</X><Y>80</Y>
+					<X>170</X><Y>60</Y>
 					<Label><X>0</X><Y>40</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1338,9 +3472,21 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[routerRenouncementDelay]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[3600]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[routerRecoveryDelay]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[queueSize]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[routerId]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[1]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -1390,8 +3536,8 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511807296849</Id>
 					<Name><![CDATA[channel5]]></Name>
-					<X>390</X><Y>270</Y>
-					<Label><X>-15</X><Y>15</Y></Label>
+					<X>400</X><Y>250</Y>
+					<Label><X>-15</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1421,6 +3567,15 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[errorIntensive]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[queueSize]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[channelId]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[5]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -1470,8 +3625,8 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511807296864</Id>
 					<Name><![CDATA[channel6]]></Name>
-					<X>480</X><Y>301</Y>
-					<Label><X>-20</X><Y>15</Y></Label>
+					<X>500</X><Y>280</Y>
+					<Label><X>-20</X><Y>20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1501,6 +3656,15 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[errorIntensive]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[queueSize]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[channelId]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[6]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -1550,8 +3714,8 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511808206232</Id>
 					<Name><![CDATA[clientSink1]]></Name>
-					<X>580</X><Y>70</Y>
-					<Label><X>30</X><Y>5</Y></Label>
+					<X>590</X><Y>40</Y>
+					<Label><X>30</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1565,10 +3729,17 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 							<ClassName><![CDATA[Sink]]></ClassName>
 							<ItemName><![CDATA[1412336242929]]></ItemName>
 						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[Message]]></Code>
+						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[collectSuccessMessage(agent.from, agent.clientId);
+collectErrorMessage();]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destroyEntity]]></Name>
@@ -1620,8 +3791,8 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511808231329</Id>
 					<Name><![CDATA[clientSink2]]></Name>
-					<X>580</X><Y>100</Y>
-					<Label><X>30</X><Y>5</Y></Label>
+					<X>590</X><Y>80</Y>
+					<Label><X>30</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1635,10 +3806,17 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 							<ClassName><![CDATA[Sink]]></ClassName>
 							<ItemName><![CDATA[1412336242929]]></ItemName>
 						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[Message]]></Code>
+						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[collectSuccessMessage(agent.from, agent.clientId);
+collectErrorMessage();]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destroyEntity]]></Name>
@@ -1690,8 +3868,8 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511808263510</Id>
 					<Name><![CDATA[clientSink3]]></Name>
-					<X>580</X><Y>131</Y>
-					<Label><X>30</X><Y>5</Y></Label>
+					<X>590</X><Y>120</Y>
+					<Label><X>30</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1705,10 +3883,17 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 							<ClassName><![CDATA[Sink]]></ClassName>
 							<ItemName><![CDATA[1412336242929]]></ItemName>
 						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[Message]]></Code>
+						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[collectSuccessMessage(agent.from, agent.clientId);
+collectErrorMessage();]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destroyEntity]]></Name>
@@ -1760,8 +3945,8 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511808263514</Id>
 					<Name><![CDATA[clientSink4]]></Name>
-					<X>580</X><Y>230</Y>
-					<Label><X>30</X><Y>5</Y></Label>
+					<X>590</X><Y>210</Y>
+					<Label><X>30</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1775,10 +3960,17 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 							<ClassName><![CDATA[Sink]]></ClassName>
 							<ItemName><![CDATA[1412336242929]]></ItemName>
 						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[Message]]></Code>
+						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[collectSuccessMessage(agent.from, agent.clientId);
+collectErrorMessage();]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destroyEntity]]></Name>
@@ -1830,8 +4022,8 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511808278903</Id>
 					<Name><![CDATA[clientSink5]]></Name>
-					<X>580</X><Y>260</Y>
-					<Label><X>30</X><Y>5</Y></Label>
+					<X>590</X><Y>250</Y>
+					<Label><X>30</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1845,10 +4037,17 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 							<ClassName><![CDATA[Sink]]></ClassName>
 							<ItemName><![CDATA[1412336242929]]></ItemName>
 						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[Message]]></Code>
+						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[collectSuccessMessage(agent.from, agent.clientId);
+collectErrorMessage();]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destroyEntity]]></Name>
@@ -1900,8 +4099,8 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511808278919</Id>
 					<Name><![CDATA[clientSink6]]></Name>
-					<X>580</X><Y>291</Y>
-					<Label><X>30</X><Y>5</Y></Label>
+					<X>590</X><Y>290</Y>
+					<Label><X>30</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1915,10 +4114,17 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 							<ClassName><![CDATA[Sink]]></ClassName>
 							<ItemName><![CDATA[1412336242929]]></ItemName>
 						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[Message]]></Code>
+						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[collectSuccessMessage(agent.from, agent.clientId);
+collectErrorMessage();]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destroyEntity]]></Name>
@@ -1970,7 +4176,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511815549257</Id>
 					<Name><![CDATA[router2]]></Name>
-					<X>160</X><Y>240</Y>
+					<X>170</X><Y>230</Y>
 					<Label><X>0</X><Y>45</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2013,9 +4219,21 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[routerRenouncementDelay]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[3600]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[routerRecoveryDelay]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[queueSize]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[routerId]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[2]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -2065,7 +4283,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511815914362</Id>
 					<Name><![CDATA[client1]]></Name>
-					<X>50</X><Y>70</Y>
+					<X>60</X><Y>50</Y>
 					<Label><X>-35</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2155,6 +4373,9 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 										</Parameter>
 										<Parameter>
 											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[from]]></Name>
 										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
@@ -2265,7 +4486,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[generateMessage(agent);]]></Code>
+								<Code><![CDATA[generateMessage(agent, 1);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2318,7 +4539,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511815981336</Id>
 					<Name><![CDATA[client2]]></Name>
-					<X>50</X><Y>100</Y>
+					<X>60</X><Y>80</Y>
 					<Label><X>-35</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2408,6 +4629,9 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 										</Parameter>
 										<Parameter>
 											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[from]]></Name>
 										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
@@ -2518,7 +4742,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[generateMessage(agent);]]></Code>
+								<Code><![CDATA[generateMessage(agent, 2);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2571,7 +4795,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511815997128</Id>
 					<Name><![CDATA[client3]]></Name>
-					<X>50</X><Y>130</Y>
+					<X>60</X><Y>110</Y>
 					<Label><X>-35</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2661,6 +4885,9 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 										</Parameter>
 										<Parameter>
 											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[from]]></Name>
 										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
@@ -2771,7 +4998,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[generateMessage(agent);]]></Code>
+								<Code><![CDATA[generateMessage(agent, 3);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2824,7 +5051,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511815997140</Id>
 					<Name><![CDATA[client4]]></Name>
-					<X>50</X><Y>230</Y>
+					<X>60</X><Y>220</Y>
 					<Label><X>-35</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2914,6 +5141,9 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 										</Parameter>
 										<Parameter>
 											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[from]]></Name>
 										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
@@ -3024,7 +5254,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[generateMessage(agent);]]></Code>
+								<Code><![CDATA[generateMessage(agent, 4);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3077,7 +5307,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511816047480</Id>
 					<Name><![CDATA[client5]]></Name>
-					<X>50</X><Y>260</Y>
+					<X>60</X><Y>250</Y>
 					<Label><X>-35</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3167,6 +5397,9 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 										</Parameter>
 										<Parameter>
 											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[from]]></Name>
 										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
@@ -3277,7 +5510,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[generateMessage(agent);]]></Code>
+								<Code><![CDATA[generateMessage(agent, 5);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3330,7 +5563,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511816047493</Id>
 					<Name><![CDATA[client6]]></Name>
-					<X>50</X><Y>290</Y>
+					<X>60</X><Y>280</Y>
 					<Label><X>-35</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3420,6 +5653,9 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 										</Parameter>
 										<Parameter>
 											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[from]]></Name>
 										</Parameter>
 									</Parameters>
 									<ReplicationFlag>true</ReplicationFlag>
@@ -3530,11 +5766,81 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[generateMessage(agent);]]></Code>
+								<Code><![CDATA[generateMessage(agent, 6);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onDiscard]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialSpeedCode Class="CodeUnitValue">
+						<Code><![CDATA[10]]></Code>
+						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+					</InitialSpeedCode>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1512301530621</Id>
+					<Name><![CDATA[ErrorMessage]]></Name>
+					<X>780</X><Y>170</Y>
+					<Label><X>-40</X><Y>40</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[Sink]]></ClassName>
+							<ItemName><![CDATA[1412336242929]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[destroyEntity]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -3673,7 +5979,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Variable Class="PlainVariable">
 					<Id>1511197257573</Id>
 					<Name><![CDATA[stream]]></Name>
-					<X>140</X><Y>240</Y>
+					<X>420</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3686,39 +5992,21 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1511197257619</Id>
-					<Name><![CDATA[error]]></Name>
-					<X>240</X><Y>240</Y>
+					<Id>1512421860339</Id>
+					<Name><![CDATA[queueSumm]]></Name>
+					<X>490</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[int]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</InitialValue>
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1511197257621</Id>
-					<Name><![CDATA[errorMessage]]></Name>
-					<X>310</X><Y>240</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[int]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1511197257630</Id>
 					<Name><![CDATA[reserveTimeStart]]></Name>
-					<X>240</X><Y>490</Y>
+					<X>420</X><Y>150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3742,7 +6030,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Variable Class="Parameter">
 					<Id>1511197257633</Id>
 					<Name><![CDATA[recoveryTime]]></Name>
-					<X>240</X><Y>520</Y>
+					<X>420</X><Y>180</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3766,7 +6054,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Variable Class="Parameter">
 					<Id>1511197257636</Id>
 					<Name><![CDATA[mainProcessing]]></Name>
-					<X>240</X><Y>420</Y>
+					<X>420</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3776,7 +6064,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[2]]></Code>
+							<Code><![CDATA[625]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1511197257634</Id>
@@ -3790,7 +6078,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Variable Class="Parameter">
 					<Id>1511197257639</Id>
 					<Name><![CDATA[reserveProcessing]]></Name>
-					<X>240</X><Y>450</Y>
+					<X>420</X><Y>120</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3800,7 +6088,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[3]]></Code>
+							<Code><![CDATA[625]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1511197257637</Id>
@@ -3814,7 +6102,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Variable Class="Parameter">
 					<Id>1511197257642</Id>
 					<Name><![CDATA[errorIntensive]]></Name>
-					<X>110</X><Y>480</Y>
+					<X>420</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3835,12 +6123,57 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1512301505726</Id>
+					<Name><![CDATA[queueSize]]></Name>
+					<X>420</X><Y>210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[250000]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1512301505724</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1512417133837</Id>
+					<Name><![CDATA[channelId]]></Name>
+					<X>420</X><Y>270</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1512417133835</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<Ports>
 				<Port>
 					<Id>1511197276665</Id>
 					<Name><![CDATA[out]]></Name>
-					<X>300</X><Y>50</Y>
+					<X>170</X><Y>50</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3852,8 +6185,20 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Port>
 					<Id>1511197294308</Id>
 					<Name><![CDATA[in]]></Name>
-					<X>280</X><Y>50</Y>
+					<X>150</X><Y>50</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<IncomingMessageType><![CDATA[Object]]></IncomingMessageType>
+					<OutgoingMessageType><![CDATA[Object]]></OutgoingMessageType>
+					<CustomPort><![CDATA[false]]></CustomPort>
+				</Port>
+				<Port>
+					<Id>1512301067949</Id>
+					<Name><![CDATA[error]]></Name>
+					<X>200</X><Y>40</Y>
+					<Label><X>-15</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -3866,7 +6211,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Connector>
 					<Id>1511197257744</Id>
 					<Name><![CDATA[connector]]></Name>
-					<X>280</X><Y>50</Y>
+					<X>150</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3892,7 +6237,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Connector>
 					<Id>1511197257748</Id>
 					<Name><![CDATA[connector2]]></Name>
-					<X>340</X><Y>130</Y>
+					<X>210</X><Y>130</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3925,7 +6270,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Connector>
 					<Id>1511197257750</Id>
 					<Name><![CDATA[connector4]]></Name>
-					<X>430</X><Y>130</Y>
+					<X>300</X><Y>130</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3958,7 +6303,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Connector>
 					<Id>1511197257752</Id>
 					<Name><![CDATA[connector6]]></Name>
-					<X>350</X><Y>140</Y>
+					<X>220</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3992,7 +6337,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Connector>
 					<Id>1511197257754</Id>
 					<Name><![CDATA[connector8]]></Name>
-					<X>300</X><Y>50</Y>
+					<X>170</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4018,7 +6363,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Connector>
 					<Id>1511197257756</Id>
 					<Name><![CDATA[connector9]]></Name>
-					<X>470</X><Y>180</Y>
+					<X>340</X><Y>180</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4036,15 +6381,15 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 					<TargetId>1511197276665</TargetId>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>60</X><Y>0</Y></Point>
-						<Point><X>60</X><Y>-130</Y></Point>
+						<Point><X>40</X><Y>0</Y></Point>
+						<Point><X>40</X><Y>-130</Y></Point>
 						<Point><X>-170</X><Y>-130</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511197257758</Id>
 					<Name><![CDATA[connector10]]></Name>
-					<X>50</X><Y>10</Y>
+					<X>-40</X><Y>-80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4077,7 +6422,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Connector>
 					<Id>1511197257760</Id>
 					<Name><![CDATA[connector11]]></Name>
-					<X>450</X><Y>350</Y>
+					<X>360</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4110,7 +6455,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Connector>
 					<Id>1511197257762</Id>
 					<Name><![CDATA[connector12]]></Name>
-					<X>330</X><Y>350</Y>
+					<X>240</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4140,7 +6485,50 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						<Point><X>-60</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
+				<Connector>
+					<Id>1512301072392</Id>
+					<Name><![CDATA[connector1]]></Name>
+					<X>70</X><Y>40</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Channel]]></ClassName>
+						<ItemName><![CDATA[errorMessage]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Source]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetId>1512301067949</TargetId>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>130</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
 			</Connectors>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[int]]></ReturnType>
+					<Id>1512302612229</Id>
+					<Name><![CDATA[getSummDCMessages]]></Name>
+					<X>420</X><Y>300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[int summ = 0;
+for(int i = 0; i < queue.size(); i++) {
+    Message agent = queue.get(i);
+    summ += agent.difficultCalculation;
+}
+return summ;]]></Body>
+				</Function>
+			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1511197253645</Id>
@@ -4182,7 +6570,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511197257654</Id>
 					<Name><![CDATA[queue]]></Name>
-					<X>230</X><Y>110</Y>
+					<X>100</X><Y>110</Y>
 					<Label><X>-5</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4197,6 +6585,9 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 							<ClassName><![CDATA[Queue]]></ClassName>
 							<ItemName><![CDATA[1412336242932]]></ItemName>
 						</GenericParameterSubstituteReference>
+						<GenericParameterSubstituteValue Class="CodeValue">
+							<Code><![CDATA[Message]]></Code>
+						</GenericParameterSubstituteValue>
 					</GenericParameterSubstitute>
 					<Parameters>
 						<Parameter>
@@ -4243,6 +6634,14 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[queueSumm = getSummDCMessages();
+if (queueSize < queueSumm)
+{
+    errorMessage.inject(1);
+    queue.remove(queue.size() - 1);
+}]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
@@ -4306,7 +6705,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511197257668</Id>
 					<Name><![CDATA[selectChannel]]></Name>
-					<X>330</X><Y>120</Y>
+					<X>200</X><Y>120</Y>
 					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4397,7 +6796,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511197257684</Id>
 					<Name><![CDATA[mainProcess]]></Name>
-					<X>430</X><Y>110</Y>
+					<X>300</X><Y>110</Y>
 					<Label><X>-15</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4420,7 +6819,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[rayleigh(mainProcessing * main.sigma)]]></Code>
+								<Code><![CDATA[agent.difficultCalculation * 1.0 / mainProcessing]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 							</Value>
 						</Parameter>
@@ -4507,7 +6906,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511197257700</Id>
 					<Name><![CDATA[reserveProcess]]></Name>
-					<X>430</X><Y>160</Y>
+					<X>300</X><Y>160</Y>
 					<Label><X>-20</X><Y>50</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4530,7 +6929,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[rayleigh(reserveProcessing * main.sigma)]]></Code>
+								<Code><![CDATA[agent.difficultCalculation * 1.0 / reserveProcessing]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 							</Value>
 						</Parameter>
@@ -4617,7 +7016,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511197257719</Id>
 					<Name><![CDATA[renouncement]]></Name>
-					<X>140</X><Y>340</Y>
+					<X>50</X><Y>250</Y>
 					<Label><X>-5</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4799,7 +7198,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511197257731</Id>
 					<Name><![CDATA[recovery]]></Name>
-					<X>230</X><Y>330</Y>
+					<X>140</X><Y>240</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4851,7 +7250,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if (mainProcess.size() > 0) {
-    errorMessage += mainProcess.size();
+    errorMessage.inject(mainProcess.size());
     mainProcess.remove(mainProcess.get(0));
 }]]></Code>
 							</Value>
@@ -4915,7 +7314,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511197257735</Id>
 					<Name><![CDATA[sink2]]></Name>
-					<X>450</X><Y>340</Y>
+					<X>360</X><Y>250</Y>
 					<Label><X>-5</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4985,7 +7384,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511197257739</Id>
 					<Name><![CDATA[secondChannel]]></Name>
-					<X>330</X><Y>330</Y>
+					<X>240</X><Y>240</Y>
 					<Label><X>-20</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5050,6 +7449,277 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialSpeedCode Class="CodeUnitValue">
+						<Code><![CDATA[10]]></Code>
+						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+					</InitialSpeedCode>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1512301061535</Id>
+					<Name><![CDATA[errorMessage]]></Name>
+					<X>40</X><Y>30</Y>
+					<Label><X>-35</X><Y>-20</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Source]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[Source]]></ClassName>
+							<ItemName><![CDATA[1412336242928]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[arrivalType]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.MANUAL]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[rate]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[interarrivalTime]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[rateSchedule]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[modifyRate]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[rateExpression]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[arrivalSchedule]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[setAgentParametersFromDB]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[databaseTable]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[arrivalDate]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[multipleEntitiesPerArrival]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[entitiesPerArrival]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[limitArrivals]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxArrivals]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[newEntity]]></Name>
+							<Value Class="EntityCodeValue">
+								<EntityEmbeddedObject>
+									<ActiveObjectClass>
+										<PackageName><![CDATA[lab4]]></PackageName>
+										<ClassName><![CDATA[Message]]></ClassName>
+									</ActiveObjectClass>
+									<GenericParameterSubstitute>
+										<GenericParameterSubstituteReference>
+											<PackageName><![CDATA[lab4]]></PackageName>
+											<ClassName><![CDATA[Message]]></ClassName>
+											<ItemName><![CDATA[1511807710182]]></ItemName>
+										</GenericParameterSubstituteReference>
+									</GenericParameterSubstitute>
+									<Parameters>
+										<Parameter>
+											<Name><![CDATA[type]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[clientId]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[from]]></Name>
+										</Parameter>
+									</Parameters>
+									<ReplicationFlag>true</ReplicationFlag>
+									<Replication Class="CodeValue">
+										<Code><![CDATA[100]]></Code>
+									</Replication>
+									<CollectionType>ARRAY_LIST_BASED</CollectionType>
+									<InitialSpeedCode Class="CodeUnitValue">
+										<Code><![CDATA[10]]></Code>
+										<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+									</InitialSpeedCode>
+									<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+									<XCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</XCode>
+									<YCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</YCode>
+									<ZCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</ZCode>
+									<ColumnCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</ColumnCode>
+									<RowCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</RowCode>
+									<LatitudeCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</LatitudeCode>
+									<LongitudeCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</LongitudeCode>
+									<LocationNameCode Class="CodeValue">
+										<Code><![CDATA[""]]></Code>
+									</LocationNameCode>
+									<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+									<InitializationDatabaseTableQuery>
+										<TableReference>
+										</TableReference>
+									</InitializationDatabaseTableQuery>
+									<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+									<QuantityColumn>
+									</QuantityColumn>
+								</EntityEmbeddedObject>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationType]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationX]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationY]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationZ]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationLatitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationLongitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationGeoPlaceName]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationXYZInNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationNode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationAttractor]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[speed]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[enableCustomStartTime]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[startTime]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[addToCustomPopulation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[population]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[pushProtocol]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[discardHangingEntities]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onBeforeArrival]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onAtExit]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[switch(channelId) {
+    case 1:
+        main.channel1ErrorMessage++;
+        break;
+    case 2:
+        main.channel2ErrorMessage++;
+        break;
+    case 3:
+        main.channel3ErrorMessage++;
+        break;
+    case 4:
+        main.channel4ErrorMessage++;
+        break;
+    case 5:
+        main.channel5ErrorMessage++;
+        break;
+    case 6:
+        main.channel6ErrorMessage++;
+        break;
+}]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onDiscard]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -5186,24 +7856,21 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 			<ConnectionsId>1511201709068</ConnectionsId>
 			<Variables>
 				<Variable Class="PlainVariable">
-					<Id>1511818304090</Id>
-					<Name><![CDATA[errorMessage]]></Name>
-					<X>450</X><Y>310</Y>
+					<Id>1512421685786</Id>
+					<Name><![CDATA[queueSumm]]></Name>
+					<X>640</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[int]]></Type>        
-						<InitialValue Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1511807776547</Id>
 					<Name><![CDATA[inOutPort1]]></Name>
-					<X>450</X><Y>390</Y>
+					<X>440</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5224,7 +7891,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Variable Class="Parameter">
 					<Id>1511810242644</Id>
 					<Name><![CDATA[inOutPort2]]></Name>
-					<X>450</X><Y>420</Y>
+					<X>440</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5245,7 +7912,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Variable Class="Parameter">
 					<Id>1511810247155</Id>
 					<Name><![CDATA[inOutPort3]]></Name>
-					<X>450</X><Y>450</Y>
+					<X>440</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5266,7 +7933,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Variable Class="Parameter">
 					<Id>1511814162593</Id>
 					<Name><![CDATA[routerCalculationPerformance]]></Name>
-					<X>450</X><Y>360</Y>
+					<X>440</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5290,7 +7957,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Variable Class="Parameter">
 					<Id>1511818337193</Id>
 					<Name><![CDATA[routerRenouncementDelay]]></Name>
-					<X>450</X><Y>250</Y>
+					<X>440</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5300,7 +7967,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[360]]></Code>
+							<Code><![CDATA[3600]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1511818337191</Id>
@@ -5314,7 +7981,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Variable Class="Parameter">
 					<Id>1511818369636</Id>
 					<Name><![CDATA[routerRecoveryDelay]]></Name>
-					<X>450</X><Y>280</Y>
+					<X>440</X><Y>170</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5335,12 +8002,57 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1512300628325</Id>
+					<Name><![CDATA[queueSize]]></Name>
+					<X>440</X><Y>320</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[5000000]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1512300628323</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1512417391217</Id>
+					<Name><![CDATA[routerId]]></Name>
+					<X>440</X><Y>350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<ParameterEditor>
+							<Id>1512417391215</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<Ports>
 				<Port>
 					<Id>1511201713675</Id>
 					<Name><![CDATA[in1]]></Name>
-					<X>80</X><Y>130</Y>
+					<X>70</X><Y>20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5352,7 +8064,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Port>
 					<Id>1511201723158</Id>
 					<Name><![CDATA[in2]]></Name>
-					<X>80</X><Y>160</Y>
+					<X>70</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5364,7 +8076,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Port>
 					<Id>1511201728726</Id>
 					<Name><![CDATA[in3]]></Name>
-					<X>80</X><Y>190</Y>
+					<X>70</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5376,7 +8088,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Port>
 					<Id>1511201728728</Id>
 					<Name><![CDATA[in4]]></Name>
-					<X>80</X><Y>220</Y>
+					<X>70</X><Y>110</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5388,7 +8100,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Port>
 					<Id>1511201735055</Id>
 					<Name><![CDATA[out1]]></Name>
-					<X>130</X><Y>130</Y>
+					<X>100</X><Y>20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5400,7 +8112,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Port>
 					<Id>1511201735057</Id>
 					<Name><![CDATA[out2]]></Name>
-					<X>130</X><Y>160</Y>
+					<X>100</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5412,7 +8124,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Port>
 					<Id>1511201735059</Id>
 					<Name><![CDATA[out3]]></Name>
-					<X>130</X><Y>191.5</Y>
+					<X>100</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5424,7 +8136,19 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Port>
 					<Id>1511201735061</Id>
 					<Name><![CDATA[out4]]></Name>
-					<X>130</X><Y>220</Y>
+					<X>100</X><Y>110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<IncomingMessageType><![CDATA[Object]]></IncomingMessageType>
+					<OutgoingMessageType><![CDATA[Object]]></OutgoingMessageType>
+					<CustomPort><![CDATA[false]]></CustomPort>
+				</Port>
+				<Port>
+					<Id>1512300745884</Id>
+					<Name><![CDATA[error]]></Name>
+					<X>90</X><Y>130</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5438,7 +8162,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Connector>
 					<Id>1511201770426</Id>
 					<Name><![CDATA[connector]]></Name>
-					<X>80</X><Y>130</Y>
+					<X>70</X><Y>20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5457,14 +8181,14 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>-60</X><Y>0</Y></Point>
-						<Point><X>-60</X><Y>170</Y></Point>
-						<Point><X>-20</X><Y>170</Y></Point>
+						<Point><X>-60</X><Y>210</Y></Point>
+						<Point><X>-20</X><Y>210</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511201778689</Id>
 					<Name><![CDATA[connector1]]></Name>
-					<X>80</X><Y>160</Y>
+					<X>70</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5483,14 +8207,14 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>-60</X><Y>0</Y></Point>
-						<Point><X>-60</X><Y>140</Y></Point>
-						<Point><X>-20</X><Y>140</Y></Point>
+						<Point><X>-60</X><Y>180</Y></Point>
+						<Point><X>-20</X><Y>180</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511201786818</Id>
 					<Name><![CDATA[connector2]]></Name>
-					<X>80</X><Y>190</Y>
+					<X>70</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5509,14 +8233,14 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>-60</X><Y>0</Y></Point>
-						<Point><X>-60</X><Y>110</Y></Point>
-						<Point><X>-20</X><Y>110</Y></Point>
+						<Point><X>-60</X><Y>150</Y></Point>
+						<Point><X>-20</X><Y>150</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511201828802</Id>
 					<Name><![CDATA[connector3]]></Name>
-					<X>80</X><Y>220</Y>
+					<X>70</X><Y>110</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5535,14 +8259,14 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>-60</X><Y>0</Y></Point>
-						<Point><X>-60</X><Y>80</Y></Point>
-						<Point><X>-20</X><Y>80</Y></Point>
+						<Point><X>-60</X><Y>120</Y></Point>
+						<Point><X>-20</X><Y>120</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511202790180</Id>
 					<Name><![CDATA[connector5]]></Name>
-					<X>300</X><Y>300</Y>
+					<X>290</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5575,7 +8299,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Connector>
 					<Id>1511202862708</Id>
 					<Name><![CDATA[connector7]]></Name>
-					<X>130</X><Y>160</Y>
+					<X>100</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5593,16 +8317,15 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>240</X><Y>0</Y></Point>
-						<Point><X>240</X><Y>180</Y></Point>
-						<Point><X>210</X><Y>180</Y></Point>
-						<Point><X>190</X><Y>180</Y></Point>
+						<Point><X>260</X><Y>0</Y></Point>
+						<Point><X>260</X><Y>220</Y></Point>
+						<Point><X>210</X><Y>220</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511202896616</Id>
 					<Name><![CDATA[connector8]]></Name>
-					<X>320</X><Y>320</Y>
+					<X>310</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5621,14 +8344,14 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>40</X><Y>0</Y></Point>
-						<Point><X>40</X><Y>-130</Y></Point>
-						<Point><X>-190</X><Y>-129</Y></Point>
+						<Point><X>40</X><Y>-170</Y></Point>
+						<Point><X>-210</X><Y>-170</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511202899485</Id>
 					<Name><![CDATA[connector9]]></Name>
-					<X>320</X><Y>300</Y>
+					<X>310</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5647,14 +8370,14 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>30</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>-80</Y></Point>
-						<Point><X>-190</X><Y>-80</Y></Point>
+						<Point><X>30</X><Y>-120</Y></Point>
+						<Point><X>-210</X><Y>-120</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511809995761</Id>
 					<Name><![CDATA[connector6]]></Name>
-					<X>320</X><Y>360</Y>
+					<X>310</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5673,14 +8396,14 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>60</X><Y>0</Y></Point>
-						<Point><X>60</X><Y>-230</Y></Point>
-						<Point><X>-190</X><Y>-230</Y></Point>
+						<Point><X>60</X><Y>-270</Y></Point>
+						<Point><X>-210</X><Y>-270</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1511818304115</Id>
 					<Name><![CDATA[connector10]]></Name>
-					<X>510</X><Y>200</Y>
+					<X>500</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5713,7 +8436,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<Connector>
 					<Id>1511818304119</Id>
 					<Name><![CDATA[connector12]]></Name>
-					<X>610</X><Y>200</Y>
+					<X>600</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5744,9 +8467,33 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 					</Points>
 				</Connector>
 				<Connector>
+					<Id>1512303974626</Id>
+					<Name><![CDATA[connector4]]></Name>
+					<X>40</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[lab4]]></PackageName>
+						<ClassName><![CDATA[Router]]></ClassName>
+						<ItemName><![CDATA[errorMessage]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Source]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetId>1512300745884</TargetId>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
 					<Id>1511822039693</Id>
 					<Name><![CDATA[connector11]]></Name>
-					<X>180</X><Y>300</Y>
+					<X>170</X><Y>230</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5777,6 +8524,25 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 					</Points>
 				</Connector>
 			</Connectors>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[int]]></ReturnType>
+					<Id>1512303944180</Id>
+					<Name><![CDATA[getSummDCMessages]]></Name>
+					<X>640</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[int summ = 0;
+for(int i = 0; i < queue.size(); i++) {
+    Message agent = queue.get(i);
+    summ += agent.difficultCalculation;
+}
+return summ;]]></Body>
+				</Function>
+			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1511201709068</Id>
@@ -5818,7 +8584,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511201766167</Id>
 					<Name><![CDATA[queue]]></Name>
-					<X>60</X><Y>280</Y>
+					<X>50</X><Y>210</Y>
 					<Label><X>-5</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5870,12 +8636,23 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[restoreEntityLocationOnExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[false]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[forceStatisticsCollection]]></Name>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[queueSumm = getSummDCMessages();
+if (queueSize < queueSumm)
+{
+    errorMessage.inject(1);
+    queue.remove(queue.size() - 1);
+}]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onAtExit]]></Name>
@@ -5939,7 +8716,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511202761053</Id>
 					<Name><![CDATA[delayByType]]></Name>
-					<X>180</X><Y>280</Y>
+					<X>170</X><Y>210</Y>
 					<Label><X>-15</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6043,7 +8820,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511809961208</Id>
 					<Name><![CDATA[selectOutput]]></Name>
-					<X>290</X><Y>290</Y>
+					<X>280</X><Y>220</Y>
 					<Label><X>-25</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6176,7 +8953,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511818304094</Id>
 					<Name><![CDATA[renouncement]]></Name>
-					<X>430</X><Y>190</Y>
+					<X>420</X><Y>80</Y>
 					<Label><X>-30</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6205,7 +8982,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						<Parameter>
 							<Name><![CDATA[interarrivalTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[rayleigh(routerRenouncementDelay*main.sigma)]]></Code>
+								<Code><![CDATA[rayleigh(routerRenouncementDelay * main.sigma)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 							</Value>
 						</Parameter>
@@ -6358,7 +9135,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511818304098</Id>
 					<Name><![CDATA[recovery]]></Name>
-					<X>510</X><Y>180</Y>
+					<X>500</X><Y>70</Y>
 					<Label><X>-5</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6413,7 +9190,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if (delayByType.size() > 0) {
-    errorMessage += delayByType.size();
+    errorMessage.inject(delayByType.size());
     delayByType.remove(delayByType.get(0));
 }]]></Code>
 							</Value>
@@ -6474,7 +9251,7 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 				<EmbeddedObject>
 					<Id>1511818304104</Id>
 					<Name><![CDATA[sink2]]></Name>
-					<X>610</X><Y>190</Y>
+					<X>600</X><Y>80</Y>
 					<Label><X>-5</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6496,6 +9273,265 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[destroyEntity]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<InitialSpeedCode Class="CodeUnitValue">
+						<Code><![CDATA[10]]></Code>
+						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+					</InitialSpeedCode>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1512303970005</Id>
+					<Name><![CDATA[errorMessage]]></Name>
+					<X>10</X><Y>120</Y>
+					<Label><X>5</X><Y>35</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Source]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[Source]]></ClassName>
+							<ItemName><![CDATA[1412336242928]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[arrivalType]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.MANUAL]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[rate]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[interarrivalTime]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[rateSchedule]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[modifyRate]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[rateExpression]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[arrivalSchedule]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[setAgentParametersFromDB]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[databaseTable]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[arrivalDate]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[multipleEntitiesPerArrival]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[entitiesPerArrival]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[limitArrivals]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxArrivals]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[newEntity]]></Name>
+							<Value Class="EntityCodeValue">
+								<EntityEmbeddedObject>
+									<ActiveObjectClass>
+										<PackageName><![CDATA[lab4]]></PackageName>
+										<ClassName><![CDATA[Message]]></ClassName>
+									</ActiveObjectClass>
+									<GenericParameterSubstitute>
+										<GenericParameterSubstituteReference>
+											<PackageName><![CDATA[lab4]]></PackageName>
+											<ClassName><![CDATA[Message]]></ClassName>
+											<ItemName><![CDATA[1511807710182]]></ItemName>
+										</GenericParameterSubstituteReference>
+									</GenericParameterSubstitute>
+									<Parameters>
+										<Parameter>
+											<Name><![CDATA[type]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[clientId]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[difficultCalculation]]></Name>
+										</Parameter>
+										<Parameter>
+											<Name><![CDATA[from]]></Name>
+										</Parameter>
+									</Parameters>
+									<ReplicationFlag>true</ReplicationFlag>
+									<Replication Class="CodeValue">
+										<Code><![CDATA[100]]></Code>
+									</Replication>
+									<CollectionType>ARRAY_LIST_BASED</CollectionType>
+									<InitialSpeedCode Class="CodeUnitValue">
+										<Code><![CDATA[10]]></Code>
+										<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+									</InitialSpeedCode>
+									<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+									<XCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</XCode>
+									<YCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</YCode>
+									<ZCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</ZCode>
+									<ColumnCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</ColumnCode>
+									<RowCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</RowCode>
+									<LatitudeCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</LatitudeCode>
+									<LongitudeCode Class="CodeValue">
+										<Code><![CDATA[0]]></Code>
+									</LongitudeCode>
+									<LocationNameCode Class="CodeValue">
+										<Code><![CDATA[""]]></Code>
+									</LocationNameCode>
+									<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+									<InitializationDatabaseTableQuery>
+										<TableReference>
+										</TableReference>
+									</InitializationDatabaseTableQuery>
+									<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+									<QuantityColumn>
+									</QuantityColumn>
+								</EntityEmbeddedObject>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationType]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationX]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationY]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationZ]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationLatitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationLongitude]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationGeoPlaceName]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationXYZInNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationNetwork]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationNode]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[locationAttractor]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[speed]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[enableCustomStartTime]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[startTime]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[addToCustomPopulation]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[population]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[pushProtocol]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[discardHangingEntities]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onBeforeArrival]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onAtExit]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[switch(routerId) {
+    case 1:
+        main.router1ErrorMessage++;
+        break;
+    case 2:
+        main.router2ErrorMessage++;
+        break;
+}]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onDiscard]]></Name>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -6694,6 +9730,30 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1512422959943</Id>
+					<Name><![CDATA[from]]></Name>
+					<X>60</X><Y>150</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[from]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1512422959941</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<AgentLinks>
 				<AgentLink>
@@ -6729,8 +9789,8 @@ if (temp < 5) agent.clientId = 5;]]></Body>
 	<RelativeAccuracy>1.0E-5</RelativeAccuracy>
 	<TimeAccuracy>1.0E-5</TimeAccuracy>
 	<Frame>
-		<Width>1000</Width>
-		<Height>600</Height>
+		<Width>870</Width>
+		<Height>700</Height>
 	</Frame>
 	<Database>
 		<Logging>false</Logging>
@@ -6864,7 +9924,7 @@ getPresentation().setPresentable( getEngine().getRoot() );]]></ActionCode>
 				<Maximized>false</Maximized>
 				<CloseConfirmation>false</CloseConfirmation>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
-				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
+				<ExecutionMode><![CDATA[virtualTime]]></ExecutionMode>
 				<CpuRatio><![CDATA[ratio_1_2]]></CpuRatio>	        
 				<Title><![CDATA[lab4 : Simulation]]></Title>	
 				<FramesPerSecond><![CDATA[20.0]]></FramesPerSecond>
@@ -6887,11 +9947,11 @@ getPresentation().setPresentable( getEngine().getRoot() );]]></ActionCode>
 				<UIProperty Name="Toolbar View" Value="false"/>
 			</PresentationProperties>
 			<ModelTimeProperties>
-				<StopOption><![CDATA[Never]]></StopOption>
+				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1511136000000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1513728000000]]></FinalDate>	
-				<FinalTime><![CDATA[100.0]]></FinalTime>	
+				<FinalDate><![CDATA[1511164800000]]></FinalDate>	
+				<FinalTime><![CDATA[28800.0]]></FinalTime>	
 			</ModelTimeProperties>
 		</SimulationExperiment>	
 	</Experiments>

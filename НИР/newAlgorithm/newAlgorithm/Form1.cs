@@ -19,8 +19,8 @@ namespace newAlgorithm
         List<List<List<int>>> _temptS = new List<List<List<int>>>();
         List<List<int>> _temptT = new List<List<int>>();
 
-        public static List<List<int>> compositionSets;
-        public static List<int> timeSets;
+        public static List<List<int>> CompositionSets;//майкрософт кодстайл говорит юзать верблюжий стиль https://msdn.microsoft.com/en-us/library/ms229043%28v=vs.100%29.aspx
+        public static List<int> TimeSets;
 
         public Form1()
         {
@@ -303,19 +303,19 @@ namespace newAlgorithm
                 {2, 2, 2, 2, 0, 2, 0, 0, 0, 4}
             };
 
-            compositionSets = new List<List<int>>();
-            timeSets = new List<int>();
-            timeSets.Add(95);
-            timeSets.Add(90);
-            timeSets.Add(95);
-            timeSets.Add(90);
-            timeSets.Add(95);
+            CompositionSets = new List<List<int>>();
+            TimeSets = new List<int>();
+            TimeSets.Add(95);
+            TimeSets.Add(90);
+            TimeSets.Add(95);
+            TimeSets.Add(90);
+            TimeSets.Add(95);
             for (int i = 0; i < 5; i++)
             {
-                compositionSets.Add(new List<int>());
+                CompositionSets.Add(new List<int>());
                 for (int j = 0; j < 10; j++)
                 {
-                    compositionSets[i].Add(compositionSetsForType[i, j]);
+                    CompositionSets[i].Add(compositionSetsForType[i, j]);
                 }
             }
             
@@ -377,7 +377,7 @@ namespace newAlgorithm
 
         private void button5_Click(object sender, EventArgs e)
         {
-            int[] massi = new[] { 8, 12, 16, 24, 32 };
+            var massi = new[] { 8, 12, 16, 24, 32 };
             foreach (var intt in massi)
             {
                 countBatchesTB.Text = intt.ToString();
@@ -412,7 +412,7 @@ namespace newAlgorithm
                                 }
                                 var gaa = new GAA(_countType, listCountButches, checkBox1.Checked);
                                 gaa.SetXrom((int)numericUpDown2.Value);
-                                var CountSourceKit = gaa.calcFitnessList();
+                                var countSourceKit = gaa.calcFitnessList();
                                 int s;
                                 var result = gaa.getSelectionPopulation(_selectionType, out s);
 
@@ -433,7 +433,7 @@ namespace newAlgorithm
                                         file.WriteLine("_________________________");
                                         file.WriteLine(gaa._fitnesslist[i]);
                                         file.WriteLine("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=");
-                                        file.WriteLine("Kit" + CountSourceKit[i]);
+                                        file.WriteLine("Kit" + countSourceKit[i]);
                                         file.WriteLine("+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=");
                                         file.WriteLine("_________________________");
                                         k++;

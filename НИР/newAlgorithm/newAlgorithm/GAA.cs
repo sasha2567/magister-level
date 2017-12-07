@@ -319,24 +319,30 @@ namespace newAlgorithm
         public int[] calcFitnessList() {
             List<int> FitnessList = new List<int>();
             var r = this.ToArrayList();
-            var composition = new List<List<int>>();
-            var time = new List<int>();
-            time.Add(25);
-            time.Add(30);
-            time.Add(35);
-            composition.Add(new List<int>());
-            composition[0].Add(2);
-            composition[0].Add(2);
-            composition[0].Add(3);
-            composition.Add(new List<int>());
-            composition[1].Add(3);
-            composition[1].Add(2);
-            composition[1].Add(2);
-            composition.Add(new List<int>());
-            composition[2].Add(2);
-            composition[2].Add(3);
-            composition[2].Add(2);
-            var test = new Sets(composition, time);
+            int[,] compositionSetsForType = {
+                {2, 2, 0, 2, 2, 2, 2, 4, 2, 0},
+                {2, 0, 2, 2, 2, 4, 0, 4, 2, 0},
+                {0, 2, 2, 2, 2, 0, 4, 0, 4, 0},
+                {2, 2, 2, 0, 2, 0, 2, 0, 0, 4},
+                {2, 2, 2, 2, 0, 2, 0, 0, 0, 4}
+            };
+
+            var CompositionSets = new List<List<int>>();
+            var TimeSets = new List<int>();
+            TimeSets.Add(95);
+            TimeSets.Add(90);
+            TimeSets.Add(95);
+            TimeSets.Add(90);
+            TimeSets.Add(95);
+            for (int i = 0; i < 5; i++)
+            {
+                CompositionSets.Add(new List<int>());
+                for (int j = 0; j < 10; j++)
+                {
+                    CompositionSets[i].Add(compositionSetsForType[i, j]);
+                }
+            }
+            var test = new Sets(CompositionSets, TimeSets);
             List<int> CountKit = new List<int>();
 
             foreach (var elem in r)

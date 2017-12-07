@@ -72,27 +72,33 @@ namespace newAlgorithm
         /// <returns></returns>
         protected void AddBatches(SheduleElement sheduleElement)
         {
-            foreach (var row in _readySets)
+            if (sheduleElement.getType() > 4)
             {
-                foreach(var elem in row)
-                {
-                    if (!elem.IsSetAllComposition())
-                    {
-                        sheduleElement = elem.AddBatch(sheduleElement.getValue(), sheduleElement.getType(), sheduleElement.getTime());
-                    }
-                    if (sheduleElement.getValue() == 0)
-                    {
-                        return;
-                    }
-                }
+                return;
             }
-            if (sheduleElement.getValue() > 0)
+            while (sheduleElement.getValue() > 0)
             {
-                for (int i = 0; i < _types;i++)
+                foreach (var row in _readySets)
                 {
-                    AddKit(i);
+                    foreach (var elem in row)
+                    {
+                        if (!elem.IsSetAllComposition())
+                        {
+                            sheduleElement = elem.AddBatch(sheduleElement.getValue(), sheduleElement.getType(), sheduleElement.getTime());
+                        }
+                        if (sheduleElement.getValue() <= 0)
+                        {
+                            return;
+                        }
+                    }
                 }
-                AddBatches(sheduleElement);
+                if (sheduleElement.getValue() > 0)
+                {
+                    for (int i = 0; i < _types; i++)
+                    {
+                        AddKit(i);
+                    }
+                }
             }
         }
 

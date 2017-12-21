@@ -35,9 +35,9 @@ namespace newAlgorithm
         }
 
         /// <summary>
-        /// 
+        /// Возвращяет количество сформированных комплектов для текущего состава партий
         /// </summary>
-        /// <returns></returns>
+        /// <returns>количество сформированных комплектов для текущего состава партий</returns>
         public int CountReadySets()
         {
             int res = 0;

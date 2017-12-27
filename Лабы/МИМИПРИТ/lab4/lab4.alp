@@ -9898,9 +9898,6 @@ getPresentation().setPresentable( getEngine().getRoot() );]]></ActionCode>
 
 			<Parameters>			
 				<Parameter>
-					<ParameterName><![CDATA[sigma]]></ParameterName>
-				</Parameter>
-				<Parameter>
 					<ParameterName><![CDATA[clientDelay]]></ParameterName>
 				</Parameter>
 				<Parameter>
@@ -9914,6 +9911,9 @@ getPresentation().setPresentable( getEngine().getRoot() );]]></ActionCode>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[difficultType2]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[sigma]]></ParameterName>
 				</Parameter>
 			</Parameters>			
 			<PresentationProperties 

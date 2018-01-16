@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="7.3.6.201610042019" AlpVersion="7.3.3">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.1.0.201706091042" AlpVersion="8.0.4">
 <Model>
 	<Id>1513456944257</Id>
 	<Name><![CDATA[Model7]]></Name>
@@ -97,6 +97,32 @@
 				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
 			</ScaleRuler>
 			<ConnectionsId>1513456944258</ConnectionsId>
+			<Variables>
+				<Variable Class="Parameter">
+					<Id>1515647506159</Id>
+					<Name><![CDATA[sigma]]></Name>
+					<X>50</X><Y>360</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[sqrt(2 / PI)]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1515647506157</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
 			<Connectors>
 				<Connector>
 					<Id>1513457095243</Id>
@@ -201,7 +227,7 @@
 				<Connector>
 					<Id>1513457204375</Id>
 					<Name><![CDATA[connector3]]></Name>
-					<X>110</X><Y>170</Y>
+					<X>620</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -228,17 +254,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-10</X><Y>0</Y></Point>
-						<Point><X>-10</X><Y>-80</Y></Point>
-						<Point><X>460</X><Y>-80</Y></Point>
-						<Point><X>460</X><Y>-110</Y></Point>
-						<Point><X>450</X><Y>-110</Y></Point>
+						<Point><X>-60</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1513457332638</Id>
 					<Name><![CDATA[connector4]]></Name>
-					<X>190</X><Y>170</Y>
+					<X>700</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -271,7 +293,7 @@
 				<Connector>
 					<Id>1513457336575</Id>
 					<Name><![CDATA[connector5]]></Name>
-					<X>230</X><Y>170</Y>
+					<X>740</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -304,7 +326,7 @@
 				<Connector>
 					<Id>1513457348056</Id>
 					<Name><![CDATA[connector6]]></Name>
-					<X>150</X><Y>250</Y>
+					<X>660</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -338,7 +360,7 @@
 				<Connector>
 					<Id>1513457359011</Id>
 					<Name><![CDATA[connector7]]></Name>
-					<X>250</X><Y>250</Y>
+					<X>760</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -371,7 +393,7 @@
 				<Connector>
 					<Id>1513457372333</Id>
 					<Name><![CDATA[connector8]]></Name>
-					<X>350</X><Y>250</Y>
+					<X>860</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -404,7 +426,7 @@
 				<Connector>
 					<Id>1513457379874</Id>
 					<Name><![CDATA[connector9]]></Name>
-					<X>400</X><Y>190</Y>
+					<X>910</X><Y>80</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -438,7 +460,7 @@
 				<Connector>
 					<Id>1513457394421</Id>
 					<Name><![CDATA[connector10]]></Name>
-					<X>330</X><Y>170</Y>
+					<X>840</X><Y>60</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -471,7 +493,7 @@
 				<Connector>
 					<Id>1513457417936</Id>
 					<Name><![CDATA[connector13]]></Name>
-					<X>320</X><Y>370</Y>
+					<X>250</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -504,7 +526,7 @@
 				<Connector>
 					<Id>1513457444108</Id>
 					<Name><![CDATA[connector14]]></Name>
-					<X>360</X><Y>370</Y>
+					<X>290</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -537,7 +559,7 @@
 				<Connector>
 					<Id>1513457447908</Id>
 					<Name><![CDATA[connector15]]></Name>
-					<X>530</X><Y>370</Y>
+					<X>460</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -570,7 +592,7 @@
 				<Connector>
 					<Id>1513459226714</Id>
 					<Name><![CDATA[connector16]]></Name>
-					<X>480</X><Y>170</Y>
+					<X>40</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -597,7 +619,11 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-60</X><Y>0</Y></Point>
+						<Point><X>-20</X><Y>0</Y></Point>
+						<Point><X>-20</X><Y>-50</Y></Point>
+						<Point><X>900</X><Y>-50</Y></Point>
+						<Point><X>900</X><Y>-150</Y></Point>
+						<Point><X>890</X><Y>-150</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -669,7 +695,7 @@
 				<Connector>
 					<Id>1513512997895</Id>
 					<Name><![CDATA[connector11]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>-440</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -702,7 +728,7 @@
 				<Connector>
 					<Id>1513512997897</Id>
 					<Name><![CDATA[connector19]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>-440</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -735,7 +761,7 @@
 				<Connector>
 					<Id>1513513009490</Id>
 					<Name><![CDATA[connector12]]></Name>
-					<X>200</X><Y>370</Y>
+					<X>130</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -768,7 +794,7 @@
 				<Connector>
 					<Id>1513513009493</Id>
 					<Name><![CDATA[connector20]]></Name>
-					<X>110</X><Y>370</Y>
+					<X>40</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -795,11 +821,11 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-10</X><Y>0</Y></Point>
-						<Point><X>-10</X><Y>-50</Y></Point>
-						<Point><X>590</X><Y>-50</Y></Point>
-						<Point><X>590</X><Y>-200</Y></Point>
-						<Point><X>580</X><Y>-200</Y></Point>
+						<Point><X>-20</X><Y>0</Y></Point>
+						<Point><X>-20</X><Y>-50</Y></Point>
+						<Point><X>240</X><Y>-50</Y></Point>
+						<Point><X>240</X><Y>-80</Y></Point>
+						<Point><X>210</X><Y>-80</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -1219,7 +1245,7 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[exponential(1.0 / 2)]]></Code>
+								<Code><![CDATA[rayleigh(2 * sigma)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -1306,7 +1332,7 @@
 				<EmbeddedObject>
 					<Id>1513457201113</Id>
 					<Name><![CDATA[split]]></Name>
-					<X>110</X><Y>160</Y>
+					<X>620</X><Y>50</Y>
 					<Label><X>-5</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1434,7 +1460,7 @@
 				<EmbeddedObject>
 					<Id>1513457322928</Id>
 					<Name><![CDATA[queue1]]></Name>
-					<X>290</X><Y>150</Y>
+					<X>800</X><Y>40</Y>
 					<Label><X>-5</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1555,7 +1581,7 @@
 				<EmbeddedObject>
 					<Id>1513457330756</Id>
 					<Name><![CDATA[driving]]></Name>
-					<X>190</X><Y>150</Y>
+					<X>700</X><Y>40</Y>
 					<Label><X>0</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1578,7 +1604,7 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[exponential(1.0 / 2) + exponential(1.0 / 2)]]></Code>
+								<Code><![CDATA[rayleigh(2 * sigma) + rayleigh(2 * sigma)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -1665,7 +1691,7 @@
 				<EmbeddedObject>
 					<Id>1513457345159</Id>
 					<Name><![CDATA[queue2]]></Name>
-					<X>150</X><Y>230</Y>
+					<X>660</X><Y>120</Y>
 					<Label><X>-5</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1786,7 +1812,7 @@
 				<EmbeddedObject>
 					<Id>1513457357205</Id>
 					<Name><![CDATA[serving]]></Name>
-					<X>250</X><Y>230</Y>
+					<X>760</X><Y>120</Y>
 					<Label><X>0</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1809,14 +1835,14 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[exponential(1.0 / 10)]]></Code>
+								<Code><![CDATA[rayleigh(10 * sigma)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[15]]></Code>
+								<Code><![CDATA[13]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -1896,7 +1922,7 @@
 				<EmbeddedObject>
 					<Id>1513457369015</Id>
 					<Name><![CDATA[queue3]]></Name>
-					<X>350</X><Y>230</Y>
+					<X>860</X><Y>120</Y>
 					<Label><X>-5</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2017,7 +2043,7 @@
 				<EmbeddedObject>
 					<Id>1513457376016</Id>
 					<Name><![CDATA[combine]]></Name>
-					<X>390</X><Y>160</Y>
+					<X>900</X><Y>50</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2134,7 +2160,7 @@
 				<EmbeddedObject>
 					<Id>1513457398100</Id>
 					<Name><![CDATA[shipment]]></Name>
-					<X>650</X><Y>150</Y>
+					<X>210</X><Y>190</Y>
 					<Label><X>0</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2157,7 +2183,7 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[exponential(1.0 / 5)]]></Code>
+								<Code><![CDATA[rayleigh(5 * sigma)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -2244,7 +2270,7 @@
 				<EmbeddedObject>
 					<Id>1513457410425</Id>
 					<Name><![CDATA[queue4]]></Name>
-					<X>200</X><Y>350</Y>
+					<X>130</X><Y>270</Y>
 					<Label><X>-5</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2362,7 +2388,7 @@
 				<EmbeddedObject>
 					<Id>1513457416396</Id>
 					<Name><![CDATA[checking]]></Name>
-					<X>320</X><Y>350</Y>
+					<X>250</X><Y>270</Y>
 					<Label><X>0</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2385,7 +2411,7 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[exponential(1.0 / 2)]]></Code>
+								<Code><![CDATA[rayleigh(2 * sigma)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 							</Value>
 						</Parameter>
@@ -2472,7 +2498,7 @@
 				<EmbeddedObject>
 					<Id>1513457436873</Id>
 					<Name><![CDATA[timeMeasureEnd]]></Name>
-					<X>430</X><Y>350</Y>
+					<X>360</X><Y>270</Y>
 					<Label><X>-40</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2551,7 +2577,7 @@
 				<EmbeddedObject>
 					<Id>1513457446985</Id>
 					<Name><![CDATA[sink]]></Name>
-					<X>530</X><Y>360</Y>
+					<X>460</X><Y>280</Y>
 					<Label><X>-10</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2621,7 +2647,7 @@
 				<EmbeddedObject>
 					<Id>1513459224938</Id>
 					<Name><![CDATA[queue5]]></Name>
-					<X>480</X><Y>150</Y>
+					<X>40</X><Y>190</Y>
 					<Label><X>-5</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2883,14 +2909,14 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[exponential(1.0 / 10)]]></Code>
+								<Code><![CDATA[rayleigh(10 * sigma)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[5]]></Code>
+								<Code><![CDATA[11]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -2970,7 +2996,7 @@
 				<EmbeddedObject>
 					<Id>1513512996227</Id>
 					<Name><![CDATA[driving2]]></Name>
-					<X>570</X><Y>150</Y>
+					<X>130</X><Y>190</Y>
 					<Label><X>0</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2993,7 +3019,7 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[exponential(1.0 / 2)]]></Code>
+								<Code><![CDATA[rayleigh(2 * sigma)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 							</Value>
 						</Parameter>
@@ -3077,7 +3103,7 @@
 				<EmbeddedObject>
 					<Id>1513513006903</Id>
 					<Name><![CDATA[driving3]]></Name>
-					<X>110</X><Y>350</Y>
+					<X>40</X><Y>270</Y>
 					<Label><X>0</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3100,7 +3126,7 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[exponential(1.0 / 2)]]></Code>
+								<Code><![CDATA[rayleigh(5 * sigma)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
 							</Value>
 						</Parameter>
@@ -3193,6 +3219,10 @@
 	<FixedTimeStep>0.001</FixedTimeStep>
 	<RelativeAccuracy>1.0E-5</RelativeAccuracy>
 	<TimeAccuracy>1.0E-5</TimeAccuracy>
+	<Frame>
+		<Width>1000</Width>
+		<Height>600</Height>
+	</Frame>
 	<Database>
 		<Logging>false</Logging>
 		<AutoExport>false</AutoExport>
@@ -3201,7 +3231,30 @@
 		<ExportSettings>
 			<ExportExcelFilePath><![CDATA[]]></ExportExcelFilePath>
 		</ExportSettings>
-	</Database>	
+	</Database>
+	
+	<RunConfiguration ActiveObjectClassId="1513456944262">
+		<Id>1515647434932</Id>
+		<Name><![CDATA[RunConfiguration]]></Name>
+		<ModelTimeProperties>
+			<StopOption><![CDATA[Stop at specified time]]></StopOption>
+			<InitialDate><![CDATA[1513382400000]]></InitialDate>	
+			<InitialTime><![CDATA[0.0]]></InitialTime>	
+			<FinalDate><![CDATA[1513411200000]]></FinalDate>	
+			<FinalTime><![CDATA[28800.0]]></FinalTime>	
+		</ModelTimeProperties>
+		<AnimationProperties>
+			<StopNever>false</StopNever>
+			<ExecutionMode>virtualTime</ExecutionMode>
+			<RealTimeScale>1.0</RealTimeScale>
+			<EnableZoomAndPanning>true</EnableZoomAndPanning>
+			<Maximized>false</Maximized>
+		</AnimationProperties>
+		<Inputs>		
+		</Inputs>
+		<Outputs>
+		</Outputs>
+	</RunConfiguration>
 	<Experiments>	
 		<!--   =========   Simulation Experiment   ========  -->
 		<SimulationExperiment ActiveObjectClassId="1513456944262">
@@ -3210,14 +3263,6 @@
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
 			<PresentationTopGroupPersistent>true</PresentationTopGroupPersistent>
 			<IconTopGroupPersistent>true</IconTopGroupPersistent>
-			<Frame>
-				<X>0</X>
-				<Y>0</Y>
-				<Width>1000</Width>
-				<Height>600</Height>
-				<Maximized>false</Maximized>
-				<CloseConfirmation>false</CloseConfirmation>
-			</Frame>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>256</MaximumMemory>
 			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
@@ -3283,14 +3328,18 @@ getPresentation().setPresentable( getEngine().getRoot() );]]></ActionCode>
 			</Controls>
 
 			<Parameters>			
+				<Parameter>
+					<ParameterName><![CDATA[sigma]]></ParameterName>
+				</Parameter>
 			</Parameters>			
 			<PresentationProperties 
 				EnableAdaptiveFrameManagement="true" 
 				EnableAntiAliasing="true"
 				EnableEnhancedModelElementsAnimation="true"
-				EnablePanning="true"
-				ToolbarCustomizableAtRuntime="true"
-				EnableZoom="true">
+				ToolbarCustomizableAtRuntime="true">
+				<Maximized>false</Maximized>
+				<CloseConfirmation>false</CloseConfirmation>
+				<EnableZoomAndPanning>true</EnableZoomAndPanning>
 				<ExecutionMode><![CDATA[virtualTime]]></ExecutionMode>
 				<CpuRatio><![CDATA[ratio_1_2]]></CpuRatio>	        
 				<Title><![CDATA[Model7 : Simulation]]></Title>	
@@ -3324,9 +3373,9 @@ getPresentation().setPresentable( getEngine().getRoot() );]]></ActionCode>
 	</Experiments>
     <RequiredLibraryReference>
 		<LibraryName><![CDATA[com.anylogic.libraries.processmodeling]]></LibraryName>
-		<VersionMajor>7</VersionMajor>
-		<VersionMinor>2</VersionMinor>
-		<VersionBuild>0</VersionBuild>
+		<VersionMajor>8</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>5</VersionBuild>
     </RequiredLibraryReference>
 </Model>
 </AnyLogicWorkspace>

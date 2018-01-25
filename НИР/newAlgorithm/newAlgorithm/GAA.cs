@@ -319,12 +319,16 @@ namespace newAlgorithm
         public int[] calcFitnessList() {
             List<int> FitnessList = new List<int>();
             var r = this.ToArrayList();
+            int[] ni = { 8, 12, 16/*, 24, 32 */};
+            int[] time = { 2, 4, 8, 16, 32 };
+            int[] l = { 5, 10 };
+            int[] n = { 5, 10 };
             int[,] compositionSetsForType = {
-                {2, 2, 0, 2, 2, 2, 2, 4, 2, 0},
-                {2, 0, 2, 2, 2, 4, 0, 4, 2, 0},
-                {0, 2, 2, 2, 2, 0, 4, 0, 4, 0},
-                {2, 2, 2, 0, 2, 0, 2, 0, 0, 4},
-                {2, 2, 2, 2, 0, 2, 0, 0, 0, 4}
+                {2, 2, 0, 2, 2, 0, 0, 0, 0, 0},
+                {2, 0, 2, 2, 2, 0, 0, 0, 0, 0},
+                {0, 2, 2, 2, 2, 0, 0, 0, 0, 0},
+                {2, 2, 2, 0, 2, 0, 0, 0, 0, 0},
+                {2, 2, 2, 2, 0, 0, 0, 0, 0, 0}
             };
 
             var CompositionSets = new List<List<int>>();
@@ -342,6 +346,7 @@ namespace newAlgorithm
                     CompositionSets[i].Add(compositionSetsForType[i, j]);
                 }
             }
+
             var test = new Sets(CompositionSets, TimeSets);
             List<int> CountKit = new List<int>();
 

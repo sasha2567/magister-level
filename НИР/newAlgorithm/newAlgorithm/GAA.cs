@@ -349,18 +349,30 @@ namespace newAlgorithm
 
             var test = new Sets(CompositionSets, TimeSets);
             List<int> CountKit = new List<int>();
-
+            var GaaSecondLevel = new GaaSecondLevel();
             foreach (var elem in r)
             {
-                var shedule = new Shedule(elem);
-                shedule.ConstructShedule();
-                FitnessList.Add(shedule.GetTime());
-                test.GetSolution(shedule.RetyrnR());
-                CountKit.Add(test.CountReadySets());
+                var listint = new List<Shedule>();
+                for (var i = 0; i < 50; i++)
+                {
+                    
+                    var shedule = new Shedule(GaaSecondLevel.GetGaaSecondLevelGroup(elem));
+                    shedule.ConstructShedule();
+                    listint.Add(shedule);
+                }
+                var timelist = listint.Select(list => list.GetTime());
+                    FitnessList.Add(timelist.Min());
+                test.GetSolution(listint[timelist.ToList().IndexOf(timelist.Min())].RetyrnR());
+                    CountKit.Add(test.CountReadySets());
+                
             }
             _fitnesslist = FitnessList;
             return CountKit.ToArray();
         }
+
+
+
+
 
         public List<List<List<int>>> ToArrayList()
         {

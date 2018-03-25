@@ -58,6 +58,7 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Gaa12Level = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -202,6 +203,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.Gaa12Level);
             this.tabPage1.Controls.Add(this.setsBtn);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.numericUpDown2);
@@ -412,6 +414,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(280, 288);
             this.dataGridView1.TabIndex = 17;
             // 
+            // Gaa12Level
+            // 
+            this.Gaa12Level.Location = new System.Drawing.Point(279, 146);
+            this.Gaa12Level.Name = "Gaa12Level";
+            this.Gaa12Level.Size = new System.Drawing.Size(75, 38);
+            this.Gaa12Level.TabIndex = 23;
+            this.Gaa12Level.Text = "button6";
+            this.Gaa12Level.UseVisualStyleBackColor = true;
+            this.Gaa12Level.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,6 +477,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button setsBtn;
+        private System.Windows.Forms.Button Gaa12Level;
     }
 }
 

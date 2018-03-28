@@ -266,7 +266,7 @@ namespace newAlgorithm
             Shedule.Switching = _temptS;
             Shedule.Treatment = _temptT;
             var firstLevel = new FirstLevel(_countType, listCountButches, checkBox1.Checked);
-            firstLevel.GenetateSolutionForAllTypesSecondAlgorithm("outputSecondAlgorithm.txt");
+            firstLevel.GenetateSolutionForAllTypesSecondAlgorithm();
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
@@ -354,16 +354,10 @@ namespace newAlgorithm
                                     Shedule.Switching = _temptS;
                                     Shedule.Treatment = _temptT;
                                     var firstLevel = new FirstLevel(_countType, listCountButches, checkBox1.Checked);
-                                    count = "_" + _countBatches + "_" + _countType + "_" + _l + "_" + _maxT + "_" + _maxS;
-                                    firstLevel.GenetateSolutionForAllTypesSecondAlgorithm(file + count + s);
-                                
-                                    using (var fileIn = new StreamReader(file + count + s))
-                                    {
-                                        var first  = Convert.ToInt32(fileIn.ReadLine());
-                                        var top  = Convert.ToInt32(fileIn.ReadLine());
-                                        fileIn.Close();
-                                        fileOut.WriteLine(first + "\t" + top);
-                                    }
+                                    var result = firstLevel.GenetateSolutionForAllTypesSecondAlgorithm();
+                                    var first  = Convert.ToInt32(result[0]);
+                                    var top = Convert.ToInt32(result[1]);
+                                    fileOut.WriteLine(first + "\t" + top);
                                 }
                             }
                             fileOut.WriteLine();

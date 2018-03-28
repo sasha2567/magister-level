@@ -486,117 +486,115 @@ namespace newAlgorithm
         /// <summary>
         /// Алгоритм формирования решения по составам паритй всех типов данных
         /// </summary>
-        public void GenetateSolutionForAllTypesSecondAlgorithm(string fileName)
+        public int[] GenetateSolutionForAllTypesSecondAlgorithm()
         {
             var sets = new Sets(Form1.CompositionSets, Form1.TimeSets);
+            var result = new[] { 0, 0 };
             using (var f = new StreamWriter("standartOutData.txt", true))
             {
-                using (var file = new StreamWriter(fileName))
+                GenerateStartSolution();
+                var shedule = new Shedule(_a);
+                shedule.ConstructShedule();
+                var r = shedule.RetyrnR();
+                sets.GetSolution(r);
+                var setsCount = sets.CountReadySets();
+                var _f1 = setsCount;// shedule.GetTime();
+                //MessageBox.Show(PrintA(A) + " Время обработки " + f1);
+                _f1Buf = _f1;
+                result[0] = _f1Buf;
+                var maxA = CopyMatrix(_a);
+                _typeSolutionFlag = true;
+                if (!_staticSolution)
                 {
-                    GenerateStartSolution();
-                    var shedule = new Shedule(_a);
-                    shedule.ConstructShedule();
-                    var r = shedule.RetyrnR();
-                    sets.GetSolution(r);
-                    var setsCount = sets.CountReadySets();
-                    var _f1 = setsCount;// shedule.GetTime();
-                    //MessageBox.Show(PrintA(A) + " Время обработки " + f1);
-                    _f1Buf = _f1;
-                    file.WriteLine(_f1Buf);
-                    var maxA = CopyMatrix(_a);
-                    _typeSolutionFlag = true;
-                    if (!_staticSolution)
+                    while (CheckType(_i))
                     {
-                        while (CheckType(_i))
+                        // Буферезируем текущее решение для построение нового на его основе
+                        _ai = CopyMatrix(_a);
+                        if (_typeSolutionFlag)
                         {
-                            // Буферезируем текущее решение для построение нового на его основе
-                            _ai = CopyMatrix(_a);
-                            if (_typeSolutionFlag)
-                            {
-                                _a1 = new List<List<List<int>>>();
-                                for (var i = 0; i < _countType; i++)
-                                {
-                                    _a1.Add(new List<List<int>>());
-                                    _a1[i].Add(new List<int>());
-                                    _a1[i][0] = CopyVector(_a[i]);
-                                }
-                                _typeSolutionFlag = false;
-                            }
-
-                            var tempA = CopyMatrix(_ai);
-                            _abuf = CopyMatrix(_ai);
-                            _f1Buf = _f1;
-
-                            // Для каждого типа и каждого решения в типе строим новое решение и проверяем его на критерий
-                            _a2 = new List<List<List<int>>>();
-                            string s;
-                            //file.WriteLine("окрестность 1 вида");
+                            _a1 = new List<List<List<int>>>();
                             for (var i = 0; i < _countType; i++)
                             {
-                                _a2.Add(new List<List<int>>());
-                                if (_i[i] <= 0) continue;
-                                _a2[i] = NewData(i);
-                                for (var j = 0; j < _a2[i].Count; j++)
-                                {
-                                    tempA = SetTempAFromA2(i, j);
-                                    shedule = new Shedule(tempA);
-                                    shedule.ConstructShedule();
-                                    r = shedule.RetyrnR();
-                                    sets.GetSolution(r);
-                                    setsCount = sets.CountReadySets();
-                                    var fBuf = setsCount;// shedule.GetTime();
-                                    s = PrintA(tempA);
-                                    f.Write(s + " - " + fBuf);
-                                    //MessageBox.Show(s + " Время обработки " + fBuf);                                    
-                                    if (fBuf > _f1Buf)
-                                    {
-                                        _abuf = CopyMatrix(tempA);
-                                        _typeSolutionFlag = true;
-                                        _f1Buf = fBuf;
-                                        //file.Write(" +");
-                                    }
-                                    f.WriteLine();
-                                }
+                                _a1.Add(new List<List<int>>());
+                                _a1[i].Add(new List<int>());
+                                _a1[i][0] = CopyVector(_a[i]);
                             }
-                            if (!_typeSolutionFlag)
-                            {
-                                //file.WriteLine("комбинации типов");
-                                List<int> _n = new List<int>();
-                                _nTemp = new List<int>();
-                                for (int i = 0; i < _countType; i++)
-                                {
-                                    _nTemp.Add(0);
-                                    _n.Add(_a2[i].Count);
-                                    if (_n[i] == 0) _n[i] = -1;
-                                }
-                                GenerateCombination(0, _nTemp, f);
-                            }
-                            if (_typeSolutionFlag)
-                            {
-                                //MessageBox.Show("Лучшее решение "+PrintA(Abuf) + " Время обработки " + f1Buf);
-                                _a = CopyMatrix(_abuf);
-                                _f1 = _f1Buf;
-                            }
-                            else
-                            {
-                                for (int i = 0; i < _countType; i++)
-                                {
-                                    _a1[i] = CopyMatrix(_a2[i]);
-                                    if (!_a1[i].Any() || !_a1[i][0].Any())
-                                    {
-                                        _i[i] = 0;
-                                    }
-                                }
-                            }
-                            f.WriteLine("------------------");
+                            _typeSolutionFlag = false;
                         }
+
+                        var tempA = CopyMatrix(_ai);
+                        _abuf = CopyMatrix(_ai);
+                        _f1Buf = _f1;
+
+                        // Для каждого типа и каждого решения в типе строим новое решение и проверяем его на критерий
+                        _a2 = new List<List<List<int>>>();
+                        string s;
+                        //file.WriteLine("окрестность 1 вида");
+                        for (var i = 0; i < _countType; i++)
+                        {
+                            _a2.Add(new List<List<int>>());
+                            if (_i[i] <= 0) continue;
+                            _a2[i] = NewData(i);
+                            for (var j = 0; j < _a2[i].Count; j++)
+                            {
+                                tempA = SetTempAFromA2(i, j);
+                                shedule = new Shedule(tempA);
+                                shedule.ConstructShedule();
+                                r = shedule.RetyrnR();
+                                sets.GetSolution(r);
+                                setsCount = sets.CountReadySets();
+                                var fBuf = setsCount;// shedule.GetTime();
+                                s = PrintA(tempA);
+                                f.Write(s + " - " + fBuf);
+                                //MessageBox.Show(s + " Время обработки " + fBuf);                                    
+                                if (fBuf > _f1Buf)
+                                {
+                                    _abuf = CopyMatrix(tempA);
+                                    _typeSolutionFlag = true;
+                                    _f1Buf = fBuf;
+                                    //file.Write(" +");
+                                }
+                                f.WriteLine();
+                            }
+                        }
+                        if (!_typeSolutionFlag)
+                        {
+                            //file.WriteLine("комбинации типов");
+                            List<int> _n = new List<int>();
+                            _nTemp = new List<int>();
+                            for (int i = 0; i < _countType; i++)
+                            {
+                                _nTemp.Add(0);
+                                _n.Add(_a2[i].Count);
+                                if (_n[i] == 0) _n[i] = -1;
+                            }
+                            GenerateCombination(0, _nTemp, f);
+                        }
+                        if (_typeSolutionFlag)
+                        {
+                            //MessageBox.Show("Лучшее решение "+PrintA(Abuf) + " Время обработки " + f1Buf);
+                            _a = CopyMatrix(_abuf);
+                            _f1 = _f1Buf;
+                        }
+                        else
+                        {
+                            for (int i = 0; i < _countType; i++)
+                            {
+                                _a1[i] = CopyMatrix(_a2[i]);
+                                if (!_a1[i].Any() || !_a1[i][0].Any())
+                                {
+                                    _i[i] = 0;
+                                }
+                            }
+                        }
+                        f.WriteLine("------------------");
                     }
-                    file.WriteLine(_f1);
-                    file.Close();
-                    //MessageBox.Show("Решения найдены");
                 }
+                result[1] = _f1;
+                //MessageBox.Show("Решения найдены");
                 f.Close();
             }
+            return result;
         }
     }
 }

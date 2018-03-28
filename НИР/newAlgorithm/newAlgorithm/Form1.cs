@@ -319,10 +319,7 @@ namespace newAlgorithm
                     CompositionSets[i].Add(compositionSetsForType[i, j]);
                 }
             }
-            
-            const string s = ".txt";
-            string count = "";
-            
+                        
             foreach (var t4 in ni)
             {
                 string file = "test/" + t4 + "/testFile";

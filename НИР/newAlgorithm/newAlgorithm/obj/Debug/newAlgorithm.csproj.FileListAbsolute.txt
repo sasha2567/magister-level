@@ -28,7 +28,6 @@ D:\!УЧЕБА\repa\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.cspr
 D:\Универ\Магистратура\НИР\newAlgorithm\newAlgorithm\bin\Debug\newAlgorithm.exe.config
 D:\Универ\Магистратура\НИР\newAlgorithm\newAlgorithm\bin\Debug\newAlgorithm.exe
 D:\Универ\Магистратура\НИР\newAlgorithm\newAlgorithm\bin\Debug\newAlgorithm.pdb
-D:\Универ\Магистратура\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.csprojResolveAssemblyReference.cache
 D:\Универ\Магистратура\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.Form1.resources
 D:\Универ\Магистратура\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.Properties.Resources.resources
 D:\Универ\Магистратура\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.csproj.GenerateResource.Cache

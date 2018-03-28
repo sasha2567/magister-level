@@ -156,13 +156,12 @@ namespace newAlgorithm
             _l = Convert.ToInt32(LTB.Text);
             _maxS = Convert.ToInt32(timeSwitchingTB.Text);
             _maxT = Convert.ToInt32(timeTreatmentingTB.Text);
-            GetTime();            
+            GetTime();
             Shedule.L = _l;
             Shedule.Switching = _temptS;
             Shedule.Treatment = _temptT;
             var firstLevel = new FirstLevel(_countType, listCountButches, checkBox1.Checked);
             firstLevel.GenetateSolutionForAllTypes("outputFirstAlgorithm.txt");
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -187,13 +186,12 @@ namespace newAlgorithm
             {
                 int i = 0;
                 foreach (var elem in gaa.nabor)
-                {
-                   
+                {                   
                     foreach (var elem2 in elem.GenList)
                     {
                         foreach (var elem3 in elem2)
                         {
-                            file.Write(elem3+" ");
+                            file.Write(elem3 + " ");
                         }
                         file.WriteLine();
                     }
@@ -202,11 +200,9 @@ namespace newAlgorithm
                     file.WriteLine("_________________________");
                     i++;
                 }
-
                 file.WriteLine("***************************");
                 file.WriteLine(result);
                 file.WriteLine("***************************");
-
             }
             MessageBox.Show("Данные успешно записаны", "Учпешное завершение", MessageBoxButtons.OK);
         }
@@ -287,6 +283,11 @@ namespace newAlgorithm
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             _selectionType = 3;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -383,9 +384,9 @@ namespace newAlgorithm
                         LTB.Text = z1.ToString();
                         using (var file = new StreamWriter("outputGAASimpleResult.txt", true))
                         {
-                            file.WriteLine("________________(CB = " + intt.ToString() + ")");
+                            file.WriteLine("________________(CB = " + intt + ")");
                             file.WriteLine();
-                            file.WriteLine("_____________________(L=" + LTB.Text + ")(N=" + numericUpDown1.Value + ")_____");
+                            file.WriteLine("________________(L = " + LTB.Text + ")(N=" + numericUpDown1.Value + ")_____");
                         }
                         for (int p = 2; p <= 32; p *= 2)
                         {
@@ -451,7 +452,6 @@ namespace newAlgorithm
                     }
                 }
             }
-
             MessageBox.Show("Данные успешно записаны", "Учпешное завершение", MessageBoxButtons.OK);
         }
 

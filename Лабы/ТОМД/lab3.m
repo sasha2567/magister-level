@@ -1,92 +1,58 @@
 close all;
 clear all;
-
-a = [1,      -1.5610, 0.6414];
-b = [0.8006, -1.6012, 0.8006];
-f1 = 1;
-f2 = 6;
-f3 = 12;
-fsample = 48;
-secs1 = 0.5;
-secs2 = 5;
-
-time_imp = 0 : 1 / fsample : secs1;
-time_signal = 0 : 1 / fsample : secs2;
-frequency_signal = 0 : fsample / length(time_signal) : fsample - fsample / length(time_signal);
-
-[h, w] = freqz(b, a, 1000);
+ 
+order = 6;
+cutoff = 0.4;
+ 
+file = 'Illiac_Bay.jpg';
+ 
+image = imread(file, 'jpg');
+ 
+grey_image = rgb2gray(image);
+ 
 figure;
-plot(h);
-grid on;
-title("Complex responce");
-xlabel("Real part");
-ylabel("Imaginary part");
+imshow(grey_image);
+title('Source greyed image');
+ 
+image_with_gaussian_noise = imnoise(grey_image, 'gaussian');
+ 
 figure;
-plot(w, abs(h));
-grid on;
-title("Filter frequency responce");
-xlabel("Frequency, Hz");
-ylabel("Amplitude");
+imshow(image_with_gaussian_noise);
+title('Image with gaussian noise');
+ 
+[f1, f2] = freqspace(order);
+[x, y] = meshgrid(f1, f2);
+Hd = zeros(size(x));
+d = find(sqrt(x .* x + y .* y) < cutoff);
+Hd(d) = ones(size(d));
 figure;
-plot(w, arg(h));
-grid on;
-title("Filter frequency phase");
-xlabel("Frequency, Hz");
-ylabel("Phase");
-
-x(1 : size(time_imp)(2)) = 1;
+mesh(x, y, Hd);
+title('Wanted frequency response of filter');
+h = fwind1(Hd, hamming(order));
+Hdr = freqz2(h, order, order);
 figure;
-plot(time_imp, filter(b, a, x));
-grid on;
-title("Filter response");
-xlabel("Time, s");
-ylabel("Amplitude");
-
-s1 = sin(2 * pi * f1 * time_signal);
-s2 = sin(2 * pi * f2 * time_signal);
-s3 = sin(2 * pi * f3 * time_signal);
-s = s1 + s2 + s3;
-n = length(s);
-as = (1 / (n / 2)) * abs(fft(s));
+mesh(x, y, abs(Hdr));
+title('Real frequency response of filter');
+ 
+filtered_from_gaussian_noise = uint8(filter2(h, image_with_gaussian_noise));
+ 
 figure;
-plot(time_signal, s);
-grid on;
-title("Signals sum");
-xlabel("Time, s");
-ylabel("Amplitude");
+imshow(filtered_from_gaussian_noise);
+title('Filtered from gaussian noise by generated filter');
+ 
+image_with_salt_and_pepper_noise = imnoise(grey_image, 'salt & pepper');
 figure;
-plot(frequency_signal, as);
-grid on;
-title("Frequency responce of signals sum");
-xlabel("Frequency, Hz");
-ylabel("Amplitude");
-
-filter_in_time = filter(b, a, s);
+imshow(image_with_salt_and_pepper_noise);
+title('Image with "salt and pepper" noise');
+ 
+filtered_by_generated_filter = uint8(filter2(h, image_with_salt_and_pepper_noise));
+ 
 figure;
-plot(time_signal, filter_in_time);
-grid on;
-title("Filtered in time domain signals sum");
-xlabel("Time, s");
-ylabel("Amplitude");
-asf1 = (1 / (n / 2)) * abs(fft(filter_in_time));
+imshow(filtered_by_generated_filter);
+title('Filtered from "salt and pepper" noise by generated filter');
+ 
+filtered_by_median_filter = medfilt2(image_with_salt_and_pepper_noise);
+ 
 figure;
-plot(frequency_signal, asf1);
-grid on;
-title("Frequency responce of filtered in time domain signals sum");
-xlabel("Frequency, Hz");
-ylabel("Amplitude");
-
-filter_in_frequency = ifft(fft(s) .* fft(b, n) ./ fft(a, n));
-figure;
-plot(time_signal, filter_in_frequency);
-grid on;
-title("Filtered in frequency domain signals sum");
-xlabel("Time, s");
-ylabel("Amplitude");
-asf2 = (1 / (n / 2)) * abs(fft(filter_in_frequency));
-figure;
-plot(frequency_signal, asf2);
-grid on;
-title("Frequency responce of filtered in frequency domain signals sum");
-xlabel("Frequency, Hz");
-ylabel("Amplitude");
+imshow(filtered_by_median_filter);
+title('Filtered from "salt and pepper" noise by median filter');

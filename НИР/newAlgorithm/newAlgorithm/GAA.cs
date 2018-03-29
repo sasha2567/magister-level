@@ -332,12 +332,22 @@ namespace newAlgorithm
             };
 
             var CompositionSets = new List<List<int>>();
-            var TimeSets = new List<int>();
-            TimeSets.Add(95);
-            TimeSets.Add(90);
-            TimeSets.Add(95);
-            TimeSets.Add(90);
-            TimeSets.Add(95);
+            var TimeSets = new List<List<int>>();
+            TimeSets.Add(new List<int>());
+            TimeSets[0].Add(65);
+            TimeSets[0].Add(70);
+            TimeSets.Add(new List<int>());
+            TimeSets[1].Add(70);
+            TimeSets[1].Add(75);
+            TimeSets.Add(new List<int>());
+            TimeSets[2].Add(65);
+            TimeSets[2].Add(75);
+            TimeSets.Add(new List<int>());
+            TimeSets[3].Add(75);
+            TimeSets[3].Add(80);
+            TimeSets.Add(new List<int>());
+            TimeSets[4].Add(70);
+            TimeSets[4].Add(75);
             for (int i = 0; i < 5; i++)
             {
                 CompositionSets.Add(new List<int>());

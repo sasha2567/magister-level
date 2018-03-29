@@ -20,7 +20,7 @@ namespace newAlgorithm
         List<List<int>> _temptT = new List<List<int>>();
 
         public static List<List<int>> CompositionSets;//майкрософт кодстайл говорит юзать верблюжий стиль https://msdn.microsoft.com/en-us/library/ms229043%28v=vs.100%29.aspx
-        public static List<int> TimeSets;
+        public static List<List<int>> TimeSets;
 
         public Form1()
         {
@@ -292,7 +292,7 @@ namespace newAlgorithm
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int[] ni = { 8, 12, 16/*, 24, 32 */};
+            int[] ni = { 8, 12/*, 16, 24, 32 */};
             int[] time = { 2, 4, 8, 16, 32 };
             int[] l = { 5, 10 };
             int[] n = { 5, 10 };
@@ -305,12 +305,22 @@ namespace newAlgorithm
             };
 
             CompositionSets = new List<List<int>>();
-            TimeSets = new List<int>();
-            TimeSets.Add(95);
-            TimeSets.Add(90);
-            TimeSets.Add(95);
-            TimeSets.Add(90);
-            TimeSets.Add(95);
+            TimeSets = new List<List<int>>();
+            TimeSets.Add(new List<int>());
+            TimeSets[0].Add(65);
+            TimeSets[0].Add(70);
+            TimeSets.Add(new List<int>());
+            TimeSets[1].Add(70);
+            TimeSets[1].Add(75);
+            TimeSets.Add(new List<int>());
+            TimeSets[2].Add(65);
+            TimeSets[2].Add(75);
+            TimeSets.Add(new List<int>());
+            TimeSets[3].Add(75);
+            TimeSets[3].Add(80);
+            TimeSets.Add(new List<int>());
+            TimeSets[4].Add(70);
+            TimeSets[4].Add(75);
             for (int i = 0; i < 5; i++)
             {
                 CompositionSets.Add(new List<int>());

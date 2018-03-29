@@ -10,7 +10,7 @@ namespace newAlgorithm
     {
         private readonly int _types;
         private readonly List<List<int>> _composition;
-        private readonly List<int> _time;
+        private readonly List<List<int>> _time;
         private List<List<Kit>> _readySets;
         private int _newIndexForAddKit;
 
@@ -20,7 +20,7 @@ namespace newAlgorithm
         /// <param name="countType"></param>
         /// <param name="composition"></param>
         /// <param name="time"></param>
-        public Sets(List<List<int>> composition, List<int> time)
+        public Sets(List<List<int>> composition, List<List<int>> time)
         {
             _newIndexForAddKit = 0;
             _types = composition.Count;
@@ -30,7 +30,10 @@ namespace newAlgorithm
             for (int i = 0; i < _types; i++)
             {
                 _readySets.Add(new List<Kit>());
-                _readySets[i].Add(new Kit(composition[i], time[i]));
+                for (int j = 0; j < time[i].Count; j++)
+                {
+                    _readySets[i].Add(new Kit(composition[i], time[i][j]));
+                }
             }
         }
 
@@ -57,15 +60,6 @@ namespace newAlgorithm
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="type"></param>
-        protected void AddKit(int type)
-        {
-            _readySets[type].Add(new Kit(_composition[type], _time[type]));
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         /// <param name="batch"></param>
         /// <param name="type"></param>
         /// <param name="time"></param>
@@ -76,27 +70,17 @@ namespace newAlgorithm
             {
                 return;
             }
-            while (sheduleElement.getValue() > 0)
+            foreach (var row in _readySets)
             {
-                foreach (var row in _readySets)
+                foreach (var elem in row)
                 {
-                    foreach (var elem in row)
+                    if (!elem.IsSetAllComposition())
                     {
-                        if (!elem.IsSetAllComposition())
-                        {
-                            sheduleElement = elem.AddBatch(sheduleElement.getValue(), sheduleElement.getType(), sheduleElement.getTime());
-                        }
-                        if (sheduleElement.getValue() <= 0)
-                        {
-                            return;
-                        }
+                        sheduleElement = elem.AddBatch(sheduleElement.getValue(), sheduleElement.getType(), sheduleElement.getTime());
                     }
-                }
-                if (sheduleElement.getValue() > 0)
-                {
-                    for (int i = 0; i < _types; i++)
+                    if (sheduleElement.getValue() <= 0)
                     {
-                        AddKit(i);
+                        return;
                     }
                 }
             }

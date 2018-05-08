@@ -43,3 +43,4 @@ D:\rep\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.csproj.GenerateRe
 D:\rep\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.csproj.CoreCompileInputs.cache
 D:\rep\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.exe
 D:\rep\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.pdb
+D:\Универ\Магистратура\НИР\newAlgorithm\newAlgorithm\obj\Debug\newAlgorithm.csprojResolveAssemblyReference.cache

@@ -66,10 +66,6 @@ namespace newAlgorithm
         /// <returns></returns>
         protected void AddBatches(SheduleElement sheduleElement)
         {
-            if (sheduleElement.getType() > 4)
-            {
-                return;
-            }
             foreach (var row in _readySets)
             {
                 foreach (var elem in row)

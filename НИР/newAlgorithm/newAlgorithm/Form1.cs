@@ -292,88 +292,94 @@ namespace newAlgorithm
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int[] ni = { 8, 12/*, 16, 24, 32 */};
-            int[] time = { 2, 4, 8, 16, 32 };
-            int[] l = { 5, 10 };
+            int[] N_komplect_type = { 2, 4, 6, 8 };
+            int[] N_komplect_for_type = { 2, 4 };
+            int[] N_komplect_sostav = { 2, 4 };
             int[] n = { 5, 10 };
-            int[,] compositionSetsForType = {
-                {2, 2, 0, 2, 2, 0, 0, 0, 0, 0},
-                {2, 0, 2, 2, 2, 0, 0, 0, 0, 0},
-                {0, 2, 2, 2, 2, 0, 0, 0, 0, 0},
-                {2, 2, 2, 0, 2, 0, 0, 0, 0, 0},
-                {2, 2, 2, 2, 0, 0, 0, 0, 0, 0}
-            };
+            int[] l = { 5, 10 };
+            int[] time = { 2, 4, 8, 16, 32 };
 
             CompositionSets = new List<List<int>>();
             TimeSets = new List<List<int>>();
-            TimeSets.Add(new List<int>());
-            TimeSets[0].Add(65);
-            TimeSets[0].Add(70);
-            TimeSets.Add(new List<int>());
-            TimeSets[1].Add(70);
-            TimeSets[1].Add(75);
-            TimeSets.Add(new List<int>());
-            TimeSets[2].Add(65);
-            TimeSets[2].Add(75);
-            TimeSets.Add(new List<int>());
-            TimeSets[3].Add(75);
-            TimeSets[3].Add(80);
-            TimeSets.Add(new List<int>());
-            TimeSets[4].Add(70);
-            TimeSets[4].Add(75);
-            for (int i = 0; i < 5; i++)
+            string file = "test/testFile_";
+            using (var fileOut = new StreamWriter(file + "All.txt"))
             {
-                CompositionSets.Add(new List<int>());
-                for (int j = 0; j < 10; j++)
+                foreach (var n_kom in N_komplect_type)
                 {
-                    CompositionSets[i].Add(compositionSetsForType[i, j]);
-                }
-            }
-                        
-            foreach (var t4 in ni)
-            {
-                string file = "test/" + t4 + "/testFile";
-                using (var fileOut = new StreamWriter(file + "All.txt"))
-                {
-                    foreach (var t in n)
+                    for (int i = 0; i < n_kom; i++)
                     {
-                        foreach (var t1 in l)
+                        CompositionSets.Add(new List<int>());
+                    }
+                    foreach (var n_kom_s in N_komplect_sostav)
+                    {
+                        foreach (var t in n)
                         {
-                            foreach (var t2 in time)
+                            TimeSets.Add(new List<int>());
+                            TimeSets[0].Add(65);
+                            TimeSets[0].Add(70);
+                            TimeSets.Add(new List<int>());
+                            TimeSets[1].Add(70);
+                            TimeSets[1].Add(75);
+                            TimeSets.Add(new List<int>());
+                            TimeSets[2].Add(65);
+                            TimeSets[2].Add(75);
+                            TimeSets.Add(new List<int>());
+                            TimeSets[3].Add(75);
+                            TimeSets[3].Add(80);
+                            TimeSets.Add(new List<int>());
+                            TimeSets[4].Add(70);
+                            TimeSets[4].Add(75);
+
+                            for (var ind = 0; ind < t; ind++)
                             {
-                                foreach (var t3 in time)
+                                for (int i = 0; i < n_kom; i++)
                                 {
-                                    _countType = t;
-                                    _l = t1;
-                                    _maxS = t3;
-                                    _maxT = t2;
-                                    _temptS = new List<List<List<int>>>();
-                                    _temptT = new List<List<int>>();
-                                    RandomTime();
-                                    PrintTime();
-                                    _countBatches = t4;
-                                    var listCountButches = new List<int>();
-                                    for (var ii = 0; ii < _countType; ii++)
-                                    {
-                                        listCountButches.Add(_countBatches);
-                                    }
-                                    GetTime();
-                                    Shedule.L = _l;
-                                    Shedule.Switching = _temptS;
-                                    Shedule.Treatment = _temptT;
-                                    var firstLevel = new FirstLevel(_countType, listCountButches, checkBox1.Checked);
-                                    var result = firstLevel.GenetateSolutionForAllTypesSecondAlgorithm();
-                                    var first  = Convert.ToInt32(result[0]);
-                                    var top = Convert.ToInt32(result[1]);
-                                    fileOut.WriteLine(first + "\t" + top);
+                                    CompositionSets[i].Add(n_kom_s);
                                 }
                             }
-                            fileOut.WriteLine();
+                                
+                                
+                                
+                            foreach (var t1 in l)
+                            {
+                                foreach (var t2 in time)
+                                {
+                                    foreach (var t3 in time)
+                                    {
+                                        _countType = t;
+                                        _l = t1;
+                                        _maxS = t3;
+                                        _maxT = t2;
+                                        _temptS = new List<List<List<int>>>();
+                                        _temptT = new List<List<int>>();
+                                        RandomTime();
+                                        PrintTime();
+                                        _countBatches = t * n_kom_s * n_kom;
+                                        var listCountButches = new List<int>();
+                                        for (var ii = 0; ii < _countType; ii++)
+                                        {
+                                            listCountButches.Add(_countBatches);
+                                        }
+                                        GetTime();
+                                        Shedule.L = _l;
+                                        Shedule.Switching = _temptS;
+                                        Shedule.Treatment = _temptT;
+                                        var firstLevel = new FirstLevel(_countType, listCountButches, checkBox1.Checked);
+                                        var result = firstLevel.GenetateSolutionForAllTypesSecondAlgorithm();
+                                        var first = Convert.ToInt32(result[0]);
+                                        var top = Convert.ToInt32(result[1]);
+                                        fileOut.WriteLine(first + "\t" + top);
+                                    }
+                                }
+                                fileOut.WriteLine();
+                            }
                         }
+                        
                     }
-                    fileOut.Close();
                 }
+                fileOut.Close();
             }
+                        
             MessageBox.Show("Все сделяль, Насяника");
         }
 

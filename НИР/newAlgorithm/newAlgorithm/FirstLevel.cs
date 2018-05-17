@@ -488,7 +488,7 @@ namespace newAlgorithm
         /// </summary>
         public int[] GenetateSolutionForAllTypesSecondAlgorithm()
         {
-            var sets = new Sets(Form1.CompositionSets, Form1.TimeSets);
+            var sets = new Sets(Form1.compositionSets, Form1.timeSets);
             var result = new[] { 0, 0 };
             using (var f = new StreamWriter("standartOutData.txt", true))
             {

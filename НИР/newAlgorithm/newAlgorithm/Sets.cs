@@ -56,6 +56,26 @@ namespace newAlgorithm
             }
             return res;
         }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public int GetCriterion()
+        {
+            int res = 0;
+            foreach (var row in _readySets)
+            {
+                foreach (var elem in row)
+                {
+                    if (res < elem.GetTime())
+                    {
+                        res = elem.GetTime();
+                    }
+                }
+            }
+            return res;
+        }
 
         /// <summary>
         /// 
@@ -66,10 +86,6 @@ namespace newAlgorithm
         /// <returns></returns>
         protected void AddBatches(SheduleElement sheduleElement)
         {
-            if (sheduleElement.getType() > 4)
-            {
-                return;
-            }
             foreach (var row in _readySets)
             {
                 foreach (var elem in row)

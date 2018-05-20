@@ -32,6 +32,7 @@ namespace newAlgorithm
         {
             var result = new List<List<int>>();
             var summ = m.Sum(t => t.Count);
+            var maxColumn = 0;
             for (var j = 0; j < summ; j++)
             {
                 result.Add(new List<int>());
@@ -40,13 +41,23 @@ namespace newAlgorithm
                     result[j].Add(0);
                 }
             }
-            var ind = 0;
             for (var i = 0; i < m.Count; i++)
             {
-                for (var j = 0; j < m[i].Count; j++)
+                if (m[i].Count > maxColumn)
                 {
-                    result[ind][i] = m[i][j];
-                    ind++;
+                    maxColumn = m[i].Count;
+                }
+            }
+            var ind = 0;
+            for (var j = 0; j < maxColumn; j++)
+            {
+                for (var i = 0; i < m.Count; i++)
+                {
+                    if (m[i].Count > j)
+                    {
+                        result[ind][i] = m[i][j];
+                        ind++;
+                    }
                 }
             }
             return result;

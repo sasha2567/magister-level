@@ -79,5 +79,10 @@ namespace newAlgorithm
             }
             return true;
         }
+
+        public int GetTime()
+        {
+            return this._time;
+        }
     }
 }

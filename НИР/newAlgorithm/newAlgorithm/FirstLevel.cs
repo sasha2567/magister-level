@@ -497,8 +497,8 @@ namespace newAlgorithm
                 shedule.ConstructShedule();
                 var r = shedule.RetyrnR();
                 sets.GetSolution(r);
-                var setsCount = sets.CountReadySets();
-                var _f1 = setsCount;// shedule.GetTime();
+                var time = sets.GetCriterion();
+                var _f1 = time;// shedule.GetTime();
                 //MessageBox.Show(PrintA(A) + " Время обработки " + f1);
                 _f1Buf = _f1;
                 result[0] = _f1Buf;
@@ -542,8 +542,8 @@ namespace newAlgorithm
                                 shedule.ConstructShedule();
                                 r = shedule.RetyrnR();
                                 sets.GetSolution(r);
-                                setsCount = sets.CountReadySets();
-                                var fBuf = setsCount;// shedule.GetTime();
+                                time = sets.CountReadySets();
+                                var fBuf = time;// shedule.GetTime();
                                 s = PrintA(tempA);
                                 f.Write(s + " - " + fBuf);
                                 //MessageBox.Show(s + " Время обработки " + fBuf);                                    

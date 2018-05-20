@@ -1,3 +1,8 @@
 /**/bin/Debug/*.txt
+/**/bin/Debug/
+/**/bin/Debug/*.pdb
+/**/bin/Debug/*.suo
+/**/bin/Debug/*.ide
 /**/bin/Debug/test/
 /Лабы/ТОМД/~$TOMD3.docx
+/.vs

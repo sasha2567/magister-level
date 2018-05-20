@@ -179,8 +179,8 @@ namespace newAlgorithm
             var gaa = new GAA(_countType, listCountButches, checkBox1.Checked);
             gaa.SetXrom((int)numericUpDown2.Value);
             gaa.calcFitnessList();
-            int s;
-           var result= gaa.getSelectionPopulation(_selectionType,out s);
+            
+           var result= gaa.getSelectionPopulation(_selectionType,out var s);
 
             using (var file = new StreamWriter("outputGAA.txt",true))
             {
@@ -209,21 +209,14 @@ namespace newAlgorithm
             
         private void Change()
         {
-            try
-            {
-                _countType = (int)numericUpDown1.Value;
-                _l = Convert.ToInt32(LTB.Text);
-                _maxS = Convert.ToInt32(timeSwitchingTB.Text);
-                _maxT = Convert.ToInt32(timeTreatmentingTB.Text);
-                _temptS = new List<List<List<int>>>();
-                _temptT = new List<List<int>>();
-                RandomTime();
-                PrintTime();
-            }
-            catch 
-            {
-                return;
-            }
+            _countType = (int) numericUpDown1.Value;
+            _l = Convert.ToInt32(LTB.Text);
+            _maxS = Convert.ToInt32(timeSwitchingTB.Text);
+            _maxT = Convert.ToInt32(timeTreatmentingTB.Text);
+            _temptS = new List<List<List<int>>>();
+            _temptT = new List<List<int>>();
+            RandomTime();
+            PrintTime();
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -288,6 +281,20 @@ namespace newAlgorithm
         private void button6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button6_Click_1(object sender, EventArgs e)
+        {
+            Shedule.L = _l;
+            Shedule.Switching = _temptS;
+            Shedule.Treatment = _temptT;
+            _countType = (int)numericUpDown1.Value;
+            _countBatches = Convert.ToInt32(countBatchesTB.Text);
+            var listCountButches = new List<int>();
+            for (var ii = 0; ii < _countType; ii++)
+            {
+                listCountButches.Add(_countBatches);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)

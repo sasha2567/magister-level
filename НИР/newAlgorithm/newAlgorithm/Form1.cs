@@ -179,8 +179,8 @@ namespace newAlgorithm
             var gaa = new GAA(_countType, listCountButches, checkBox1.Checked);
             gaa.SetXrom((int)numericUpDown2.Value);
             gaa.calcFitnessList();
-            
-           var result= gaa.getSelectionPopulation(_selectionType,out var s);
+            int s;
+            var result= gaa.getSelectionPopulation(_selectionType, out s);
 
             using (var file = new StreamWriter("outputGAA.txt",true))
             {

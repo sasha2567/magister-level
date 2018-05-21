@@ -373,7 +373,9 @@ namespace newAlgorithm
                                     fileOut.WriteLine();
                                 }
                             }
-
+                            fileOut.WriteLine();
+                            fileOut.WriteLine("---------------------------------------------------------------------------------------------");
+                            fileOut.WriteLine();
                         }
                     }
                 }

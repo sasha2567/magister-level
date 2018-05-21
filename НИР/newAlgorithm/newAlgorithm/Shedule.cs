@@ -89,13 +89,20 @@ namespace newAlgorithm
                 _endProcessing.Add(new List<List<int>>());
                 for (var k = 0; k < _r.Count; k++)//количество партий
                 {
-                    var ind = ReturnRIndex(k);
-                    _startProcessing[i].Add(new List<int>());
-                    _endProcessing[i].Add(new List<int>());
-                    for (var p = 0; p < _r[k][ind]; p++)//количество требований
+                    try
                     {
-                        _startProcessing[i][k].Add(0);
-                        _endProcessing[i][k].Add(0);
+                        var ind = ReturnRIndex(k);
+                        _startProcessing[i].Add(new List<int>());
+                        _endProcessing[i].Add(new List<int>());
+                        for (var p = 0; p < _r[k][ind]; p++)//количество требований
+                        {
+                            _startProcessing[i][k].Add(0);
+                            _endProcessing[i][k].Add(0);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        break;
                     }
                 }
             }

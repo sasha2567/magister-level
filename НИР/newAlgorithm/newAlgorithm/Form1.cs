@@ -295,6 +295,11 @@ namespace newAlgorithm
             {
                 listCountButches.Add(_countBatches);
             }
+
+            var oldSecondLevel = new OldSecondLevel();
+
+            oldSecondLevel.CalcFitnessList();
+
         }
 
         private void button4_Click(object sender, EventArgs e)

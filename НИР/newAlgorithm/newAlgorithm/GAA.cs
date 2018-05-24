@@ -359,14 +359,14 @@ namespace newAlgorithm
 
             var test = new Sets(CompositionSets, TimeSets);
             List<int> CountKit = new List<int>();
-            var GaaSecondLevel = new GaaSecondLevel();
+            
             foreach (var elem in r)
             {
                 var listint = new List<Shedule>();
                 for (var i = 0; i < 50; i++)
                 {
                     
-                    var shedule = new Shedule(GaaSecondLevel.GetGaaSecondLevelGroup(elem));
+                    var shedule = new Shedule(SecondLevel.GetGaaSecondLevelGroup(elem));
                     shedule.ConstructShedule();
                     listint.Add(shedule);
                 }

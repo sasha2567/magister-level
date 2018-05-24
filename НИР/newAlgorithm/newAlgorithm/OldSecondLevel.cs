@@ -15,7 +15,10 @@ namespace newAlgorithm
         private List<List<int>> A;
         public static int countL = 4;
         public static int Tz = 80;//вот здесь надо менять время обработки при 40 оно успеваетполностьюобработать все партии
-        public int[] Prostoi = new int[4];   
+        public int[] Prostoi = new int[4];
+
+        public List<List<List<int>>> PartyList  = new List<List<List<int>>>();
+
         public OldSecondLevel()
         {
             this.groups = new Groups(5);
@@ -208,14 +211,27 @@ namespace newAlgorithm
             }
         }
 
+        public List<int> CalcFitnessList(List<List<List<int>>> r)
+        {
+            List<int> fitnessList = new List<int>();
+
+            foreach (var elem in r)
+            {
+                var sh = new Shedule(elem);
+                sh.ConstructShedule();
+                var time = sh.GetTime();
+                fitnessList.Add(time);
+            }
+            return fitnessList;
+        }
+
         public List<List<int>> ReturnAMatrix()
         {
-            List<List<int>> A1 = new List<List<int>>();
-            A1.Add(new List<int>());
+            List<List<int>> a1 = new List<List<int>> {new List<int>()};
             for (int i = 0; i < this.A.Count(); i++)
             {
-                A1.Add(new List<int>());
-                A1[i + 1].Add(0);
+                a1.Add(new List<int>());
+                a1[i + 1].Add(0);
             }
             for (int i = 0; i < 4; i++)
             {
@@ -223,11 +239,11 @@ namespace newAlgorithm
                 {
                     for (int k = 0; k < groups.Nz1[i][j].Count(); k++)
                     {
-                        A1[j + 1].Add(groups.Nz1[i][j][k]);
+                        a1[j + 1].Add(groups.Nz1[i][j][k]);
                     }
                 }
             }
-            return A1;
+            return a1;
         }
         public bool GenerateSolution(List<List<int>> matrixA)
         {

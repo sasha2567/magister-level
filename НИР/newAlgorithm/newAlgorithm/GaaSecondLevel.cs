@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace newAlgorithm
 {
-    public class GaaSecondLevel
+    public static class SecondLevel
     {
-        public List<List<int>> GetGaaSecondLevelGroup(List<List<int>> Group)
+        public static List<List<int>> GetGaaSecondLevelGroup(List<List<int>> Group)
         {
             var rand = new Random();
             var size = Group.Select(c => c.Count);

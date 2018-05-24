@@ -68,10 +68,11 @@ namespace newAlgorithm
             {
                 foreach (var elem in row)
                 {
-                    if (res < elem.GetTime())
+                    res += elem.GetTime();
+                    /*if (res < elem.GetTime())
                     {
                         res = elem.GetTime();
-                    }
+                    }*/
                 }
             }
             return res;
